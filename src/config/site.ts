@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Guides, Strategies, Units & Campaign Walkthroughs",
   description: "Your ultimate guide to Drop Command! Explore beginner guides, unit roles, mech builds, campaign strategies, missions, controls, and progression tips.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://drop-command.wiki",
-  supportEmail: `support@${new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://drop-command.wiki").hostname.replace(/^www\./, "")}`,
+  supportEmail: "support@drop-command.wiki",
   gameUrl: "https://store.steampowered.com/app/1944880/Drop_Command/",
   heroVideoId: "9bHV2Mm_BOE", // Drop Command - 2026 Launch Trailer (PillBugGames)
   social: {
