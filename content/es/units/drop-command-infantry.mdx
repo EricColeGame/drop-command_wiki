@@ -1,0 +1,124 @@
+export const metadata = {
+  title: "Guía de infantería de mando aerotransportado: cómo desplegar, sincronizar y ganar con tropas aerotransportadas",
+  description: "Aprende cómo funciona la infantería de mando aerotransportado: sincronización del despliegue, roles de las unidades, counters y consejos para convertir las inserciones aéreas en control duradero del mapa.",
+  category: "units",
+  date: "2026-10-04",
+}
+
+## ¿Qué es la mecánica de infantería de mando aerotransportado?
+
+Nada le da la vuelta a una partida más rápido que un escuadrón que aparece donde el enemigo no tiene respuesta lista. Una jugada de **infantería de mando aerotransportado** convierte un rincón vacío del mapa en una base de operaciones en cuestión de segundos, y un empuje estancado en uno decisivo. Si alguna vez has visto un transporte descargar detrás de tus líneas mientras tu ejército principal estaba comprometido en otro lugar, ya entiendes por qué la mecánica de **infantería de mando aerotransportado** es una de las herramientas más temidas en los juegos de estrategia y táctica.
+
+En esencia, la mecánica es una orden que inserta unidades de infantería directamente en el campo de batalla desde una fuente fuera del mapa: una nave en órbita, un transporte a gran altitud, una red de túneles o un portal de teletransporte. A diferencia de la producción normal, las unidades no caminan hacia el combate. Llegan a un punto elegido, normalmente tras un breve retardo, y llegan como un escuadrón completo en lugar de un goteo de reemplazos.
+
+Esa única decisión de diseño genera tres consecuencias que definen todo buen despliegue:
+
+- **La posición se convierte en un recurso.** Gastas un enfriamiento o una reserva de recursos para comprar posición en el mapa, no daño bruto.
+- **El despliegue está anunciado.** Casi todas las implementaciones tienen un marcador visible, un sonido de advertencia o un temporizador de retardo, lo que le da al defensor una ventana para reaccionar.
+- **El escuadrón desplegado está solo.** Sin refuerzos, sin ruta de retirada y, a menudo, sin reparación ni curación hasta que enlaces con tu fuerza principal.
+
+| Rasgo | Qué significa en la práctica | Por qué importa |
+|---|---|---|
+| Llegada fuera del mapa | Las unidades aparecen en un punto elegido en lugar de en un edificio de producción | Evita cuellos de botella, muros y defensa estática |
+| Ventana de aviso | Un marcador o temporizador advierte al defensor antes del aterrizaje | Los rivales hábiles pueden reposicionarse o dispersarse |
+| Escuadrón autónomo | El grupo aterriza con apoyo limitado y sin línea de suministro | Las pérdidas son permanentes y caras |
+| Limitado por enfriamiento | Normalmente limitado por un temporizador, un coste de recursos o un número de cargas | Te obliga a elegir un único objetivo de alto valor |
+| Alto tempo, poca permanencia | Fuerte para un estallido de presión, débil en un desgaste prolongado | Premia a los jugadores que convierten el despliegue en otra cosa |
+
+## Cómo funciona una inserción de infantería de mando aerotransportado
+
+La mayoría de los juegos siguen el mismo bucle de cuatro pasos, aunque la presentación sea distinta. Entender el bucle te permite planificar en torno al retardo en lugar de sorprenderte por él.
+
+| Paso | Acción | Punto de fallo común |
+|---|---|---|
+| 1. Seleccionar el objetivo | Elegir una zona de aterrizaje cerca del objetivo que quieres amenazar | Escoger un punto dentro de la visión enemiga o de defensas superpuestas |
+| 2. Confirmar el despliegue | Gastar el recurso, la carga o el enfriamiento para fijar la orden | Lanzar el despliegue "solo porque está listo" |
+| 3. Esperar el aviso | Aparece el marcador y el defensor recibe una breve ventana de reacción | Quedarse quieto en lugar de preposicionar la fuerza de seguimiento |
+| 4. Convertir el aterrizaje | Usar el escuadrón desplegado para tomar un nodo de recursos, eliminar una unidad clave o forzar una rotación | Dejar que el escuadrón se quede inactivo hasta que lo rodeen y lo maten |
+
+La parte más importante de esa tabla es el paso cuatro. Un despliegue que aterriza y no hace nada es peor que no hacer ningún despliegue, porque has cambiado un enfriamiento largo por un escuadrón que ahora está atrapado detrás de las líneas enemigas. El valor de la orden de **infantería de mando aerotransportado** no es el aterrizaje: es lo que el aterrizaje obliga a hacer a tu rival a continuación.
+
+Antes de comprometerte, comprueba tres cosas:
+
+- **Visión.** ¿Sabes de verdad qué hay en la zona de aterrizaje o estás adivinando?
+- **Distancia de refuerzo.** ¿Cuánto tardará tu ejército principal en alcanzar al escuadrón desplegado?
+- **Movilidad enemiga.** ¿Pueden sus unidades más rápidas rotar hacia el despliegue más rápido de lo que tú puedes explotarlo?
+
+## Roles de las unidades de infantería de mando aerotransportado: qué cargar en la bodega
+
+La composición del escuadrón desplegado importa tanto como la ubicación. Como no puedes reforzar a mitad del combate, cada hueco debería tener una función clara. Los informes de la comunidad de jugadores de estrategia y táctica favorecen de forma consistente los escuadrones pequeños y con un propósito concreto por encima de los grandes y polivalentes.
+
+| Rol de la unidad | Mejor uso contra | Debilidad principal | Tamaño ideal del despliegue |
+|---|---|---|---|
+| Especialistas antieestructura | Edificios de producción y nodos de recursos sin defender | Lentos contra defensores móviles | Pequeño, 1–2 escuadrones |
+| Infantería de línea a distancia | Defensas estáticas y unidades ligeras agrupadas | Vulnerables cuando el cuerpo a cuerpo se acerca | Medio, 2–3 escuadrones |
+| Tropas cuerpo a cuerpo o de asalto | Unidades a distancia aisladas y equipos de apoyo | Aniquiladas en campo abierto por fuego concentrado | Pequeño, 1–2 escuadrones |
+| Ingenieros o apoyo | Reparar estructuras capturadas, colocar cargas, construir cobertura avanzada | Casi ningún valor de combate por sí solos | Mínimo, 1 escuadrón |
+| Armas combinadas | Hostigamiento general y negación de zona | Caras; una pérdida parcial duele mucho | Medio, 2–4 escuadrones |
+
+Una regla práctica útil: si el escuadrón desplegado no puede cumplir su función en unos treinta segundos sin ayuda, es demasiado grande. Los despliegues grandes son visibles, lentos de maniobrar y fáciles de rodear. Los despliegues pequeños que fuerzan una reacción son casi siempre mejores que los grandes que intentan ganar el combate por sí solos.
+
+## Ventanas de sincronización: cuándo merece la pena una jugada de infantería de mando aerotransportado
+
+La sincronización es donde la mayoría de los jugadores gana o pierde valor. El mismo escuadrón lanzado en el momento equivocado es un enfriamiento desperdiciado; lanzado en el momento adecuado, termina la partida.
+
+| Ventana de sincronización | Por qué funciona | Nivel de riesgo |
+|---|---|---|
+| Mientras el ejército enemigo está comprometido en un combate en otro lugar | Los defensores no pueden rotar sin perder el enfrentamiento principal | Bajo |
+| En el momento en que una estructura defensiva clave termina o está a punto de terminar | Niega una inversión antes de que dé sus frutos | Medio |
+| Justo después de que el enemigo gaste su enfriamiento de detección o antiaéreo | Su mejor respuesta no está disponible | Bajo |
+| Durante un empuje de expansión de recursos | Fuerzas una respuesta dividida y ralentizas su economía | Medio |
+| En el juego tardío, cuando su ejército principal está totalmente tecnificado | La infantería desplegada se derrite contra unidades mejoradas | Alto |
+| Inmediatamente al inicio de la partida sin seguimiento planeado | Ganas una pequeña distracción y pierdes tempo | Alto |
+
+Fíjate en el patrón: los despliegues son más fuertes cuando crean un dilema en lugar de un combate. Si tu rival puede responder al despliegue sin ceder nada, la jugada fue neutra en el mejor de los casos. Si responder al despliegue significa abandonar un asedio, perder un nodo de recursos o dar la vuelta a su ejército, ya has ganado algo independientemente de si el escuadrón sobrevive.
+
+## Contraestrategia: defenderse de una ofensiva de infantería de mando aerotransportado
+
+Saber defender te hace mejor atacando, porque aprendes qué objetivos no merece la pena golpear. Todo despliegue tiene una respuesta barata si lo ves venir.
+
+| Amenaza | Contra medida práctica | Notas |
+|---|---|---|
+| Marcador de aviso detectado pronto | Dispersa a los trabajadores y saca unidades de la zona de impacto o aterrizaje | Niega por completo el objetivo del despliegue |
+| Despliegue dirigido a un nodo de recursos sin defender | Coloca de antemano una pequeña guarnición o defensa estática cerca | Un seguro barato que rentabiliza toda la partida |
+| Despliegue sobre tu producción principal | Mantén un escuadrón de respuesta rápida en reserva | Aquí la movilidad supera a la defensa estática |
+| Despliegues repetidos en el mismo flanco | Coloca detección y cobertura de visión en ese lado | Elimina la ventaja informativa del atacante |
+| Despliegue sincronizado con un empuje frontal | No persigas el despliegue; mantén primero la línea del frente | Dividir tu ejército es exactamente lo que quieren |
+
+El error defensivo más común es sobrerreaccionar. Retirar todo tu ejército para matar a un solo escuadrón desplegado le entrega el mapa a tu rival. Envía la fuerza mínima necesaria para contener el aterrizaje y mantén tu cuerpo principal centrado en el combate que de verdad importa.
+
+## Errores comunes y consejos prácticos
+
+Incluso los jugadores experimentados pierden valor con esta mecánica. Esto es lo que hay que corregir primero.
+
+- **No despliegues sin un seguimiento.** Programa tu siguiente movimiento antes de que aterrice el escuadrón.
+- **No despliegues en la niebla de guerra.** Las defensas invisibles y las unidades ocultas convierten una inserción limpia en una masacre.
+- **No despliegues sobre el mismo objetivo dos veces seguidas.** Los despliegues predecibles se contrarrestan de antemano.
+- **Sí usa el despliegue para ganar tiempo, no solo daño.** Forzar una rotación es una victoria aunque el escuadrón muera.
+- **Sí combina el aterrizaje con visión.** Una unidad de exploración barata cerca hace que el despliegue sea el doble de efectivo.
+- **Sí revisa la repetición.** Comprueba si el enfriamiento que gastaste mereció la pena por lo que obtuviste.
+
+| Nivel de habilidad | Error típico | Mejor hábito |
+|---|---|---|
+| Principiante | Desplegar sobre el edificio enemigo más cercano | Desplegar sobre el objetivo que más importa |
+| Intermedio | Desplegar sin una segunda oleada preparada | Preposicionar refuerzos antes de que aparezca el marcador |
+| Avanzado | Abusar de un único patrón de despliegue | Alternar zonas de aterrizaje para seguir siendo impredecible |
+
+Para un contexto más amplio sobre cómo encajan estas mecánicas en el género de estrategia, el [centro de categoría de estrategia de Steam](https://store.steampowered.com/tags/en/Strategy/) es un lugar útil para comparar cómo distintos títulos gestionan el despliegue fuera del mapa y el refuerzo de unidades.
+
+## Preguntas frecuentes
+
+**¿Merece la pena usar la infantería de mando aerotransportado en todas las partidas?**
+No. Es una herramienta de tempo, no una respuesta universal. Si tu rival tiene un antiaéreo fuerte, una amplia cobertura de visión y unidades de rotación rápida, el enfriamiento suele rendir más en producción convencional. Úsala cuando el enemigo esté estirado al máximo.
+
+**¿Cuántos escuadrones debería incluir una sola jugada de infantería de mando aerotransportado?**
+Normalmente de uno a tres. Los escuadrones más pequeños son más difíciles de detectar, más fáciles de reposicionar y más baratos de perder. Los despliegues grandes solo tienen sentido cuando estás seguro de que la zona de aterrizaje es segura y tienes refuerzos en camino.
+
+**¿Cuál es el mejor objetivo para un despliegue?**
+El objetivo que fuerza la mayor reacción: un nodo de recursos sin defender, un edificio de producción clave o una línea de asedio que no puede darse la vuelta a tiempo. El daño es secundario frente a la decisión que fuerzas.
+
+**¿Puede un empuje de infantería de mando aerotransportado ganar una partida por sí solo?**
+Rara vez. Crea una apertura, y las aperturas hay que convertirlas. Combina el despliegue con un empuje frontal, una expansión o un timing tecnológico para que la presión se acumule en lugar de desvanecerse.
+
+**¿Cómo dejo de perder escuadrones por despliegues?**
+Mantén visión en tus flancos, guarnece ligeramente tus expansiones y ten siempre una unidad de respuesta rápida en reserva. La mayoría de los despliegues fallan en el momento en que el defensor los ve venir y simplemente se niega a morder el anzuelo.

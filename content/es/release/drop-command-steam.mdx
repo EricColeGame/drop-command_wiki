@@ -1,0 +1,105 @@
+export const metadata = {
+  title: "Guía del comando drop en Steam: cómo funcionan realmente los drops de objetos y armas",
+  description: "Aprende qué hace el comando drop en Steam, cómo funcionan los drops por consola en los shooters del motor Source y cómo se comportan realmente los drops de objetos y cromos de Steam.",
+  category: "release",
+  date: "2026-10-04",
+}
+
+Si alguna vez has visto a un compañero de equipo fallar al cambiar de arma a mitad de ronda, ya sabes por qué importa el comando drop. Un comando drop de Steam parece sencillo —una breve línea escrita en una consola—, pero su comportamiento cambia de un juego a otro, y malinterpretarlo puede costarte una ronda, un espacio de inventario o un intercambio. Esta guía explica qué hace realmente el comando drop en Steam, cuándo resulta útil y cómo evitar los errores que pillan por sorpresa a los jugadores nuevos.
+
+## Qué significa "comando drop" en los distintos juegos de Steam
+
+Los jugadores usan la expresión "comando drop" para al menos tres cosas diferentes, y confundirlas es la vía más rápida a la confusión. Una es una auténtica instrucción de consola dentro del juego. Otra es una forma coloquial de referirse a los sistemas automáticos de drops de objetos de Steam. La tercera es un comando de chat o de bot que usan los streamers y los gestores de comunidad.
+
+| Contexto | Qué hace | Dónde se escribe | Quién lo usa |
+|---|---|---|---|
+| Consola del juego | Suelta el arma u objeto que llevas en ese momento | La consola de desarrollo del juego | Jugadores de shooters y supervivencia |
+| Drops del inventario de Steam | Otorga objetos automáticamente según el tiempo de juego o los eventos | En ningún sitio: lo gestiona el servidor | Cualquiera con una cuenta de Steam |
+| Comando de chat o bot | Activa un sorteo, la entrega de claves o una alerta | El chat del stream, Discord o un panel de bot | Streamers y gestores de comunidad |
+
+El propio cliente de Steam no incluye un comando drop. Abre la consola del cliente y encontrarás herramientas de actualización, licencias y diagnóstico, no generación de objetos. Todo lo que te entrega un objeto lo decide el servidor del propio juego, no una línea que escribas localmente. Esa única distinción explica la mayor parte de la frustración con la que se topan los jugadores.
+
+La versión de consola es la que tiene en mente la mayoría. En los títulos construidos sobre el motor Source de Valve, el comando suelta lo que sea que lleves para que un compañero pueda recogerlo. Es una utilidad, no una trampa: mueve un objeto que ya posees, y no hace nada si tienes las manos vacías.
+
+## Cómo usar un comando drop en un shooter del motor Source
+
+Conseguir que el comando funcione depende sobre todo de la preparación. Haz la configuración antes de que empiece la partida, porque escribir a mitad de un tiroteo rara vez acaba bien.
+
+| Paso | Qué hacer | Por qué importa |
+|---|---|---|
+| 1 | Activar la consola de desarrollo en los ajustes del juego | El comando es invisible hasta que existe la consola |
+| 2 | Asignar el comando a una tecla cómoda | Escribir a mitad de combate te mata |
+| 3 | Probarlo primero en un servidor privado o local | Confirma que el comando no está bloqueado |
+| 4 | Confirmar en el HUD que el objeto salió de tus manos | Evita drops duplicados y recogidas inútiles |
+| 5 | Revisar las reglas del servidor antes del modo competitivo | Algunos modos competitivos restringen los drops de armas |
+
+Unas cuantas notas prácticas. Muchos comandos de consola solo responden cuando las trampas están activadas, lo que normalmente significa servidores locales o privados en lugar del emparejamiento oficial. Si el comando devuelve un error de "unknown command", es probable que el juego no use la sintaxis de consola de Source en absoluto: busca en su lugar una asignación de tecla específica en el menú de controles.
+
+La asignación de teclas importa más de lo que la gente espera. Un comando drop asignado a una tecla que puedes alcanzar sin mover la mano te permite pasar un arma en la ventana de medio segundo antes de un avance. Los jugadores que dependen de escribir suelen perder esa carrera.
+
+## Los sistemas de drops integrados de Steam, explicados
+
+Los sistemas de drops de Steam son independientes de cualquier comando de consola y siguen las reglas que establece el desarrollador de cada juego. Cuatro categorías cubren casi todo lo que te encontrarás.
+
+| Tipo de drop | Qué lo activa | ¿Intercambiable? | Dónde comprobarlo |
+|---|---|---|---|
+| Cromos | Tiempo de juego en un juego que los admita | Normalmente sí, a través del mercado | Tu inventario de Steam |
+| Drops de objetos free-to-play | Tiempo de juego y tiradas aleatorias | Depende del juego | La pantalla de inventario del juego |
+| Drops de eventos con tiempo limitado | Ver streams o unirse a eventos | A menudo con tiempo limitado | La página de aterrizaje del evento |
+| Drops promocionales | Packs, reservas anticipadas, ofertas de hardware | Con frecuencia bloqueados al principio | La letra pequeña de la página de la tienda |
+
+Los cromos son los que más se malinterpretan. Normalmente solo consigues parte del conjunto de cromos de un juego jugando con normalidad; el resto se obtiene intercambiando o comprando en el [Mercado de la Comunidad de Steam](https://steamcommunity.com/market/). Los cromos no aparecen al instante: los drops se reparten a lo largo de varias sesiones de juego, así que una primera sesión corta puede no producir nada en absoluto.
+
+Los drops de objetos free-to-play funcionan con otro reloj. Los juegos reparten cosméticos, cajas o consumibles a intervalos que controla el desarrollador, y esos intervalos pueden cambiar con las actualizaciones. Si quieres las reglas exactas de un título concreto, la página de la tienda y las notas de parche del desarrollador son las únicas fuentes fiables.
+
+Una advertencia más: la elegibilidad para los drops está ligada a tu cuenta, no a tu máquina. Cambiar de ordenador, reinstalar o jugar sin conexión no reiniciará ni acelerará una ventana de drop.
+
+## Por qué fallan los comandos drop: lista de comprobación para solucionar problemas
+
+Cuando un comando drop deja de funcionar, la causa suele ser una de cinco cosas. Repasa esta lista antes de dar por hecho que algo está roto.
+
+| Síntoma | Causa probable | Solución |
+|---|---|---|
+| Escribir no hace nada | Trampas desactivadas o el servidor lo bloquea | Pruébalo en un servidor local o privado |
+| Error "unknown command" | El juego no usa la sintaxis de consola de Source | Busca una asignación de tecla en el menú de ajustes |
+| El drop nunca llega a un compañero | Su inventario o ranura de arma está llena | Pídele que libere una ranura primero |
+| Ningún objeto de inventario tras horas de juego | No se alcanzó la ventana de drop o ya se usó | Espera al siguiente periodo de reinicio |
+| Ningún cromo nuevo | Ya has conseguido todos los drops disponibles | Intercambia o compra los cromos restantes |
+
+Empieza por la explicación más sencilla. Nueve de cada diez veces, el comando está bien y el problema es el entorno: un servidor bloqueado, un inventario lleno o un juego que sencillamente nunca implementó esa sintaxis de consola.
+
+Si un comando funcionaba la semana pasada y hoy falla, revisa las notas de parche. Los desarrolladores eliminan o renombran comandos de consola durante las actualizaciones, y los modos competitivos suelen endurecer las restricciones entre temporadas.
+
+## Etiqueta del comando drop, estafas e informes de la comunidad
+
+En los shooters por equipos, un comando drop es una cortesía. La experiencia de los jugadores sugiere que la forma más rápida de perder la buena voluntad es spamear el comando a compañeros que ya cargan sobre sus espaldas la economía de la ronda. Pregunta primero, suelta después.
+
+Los informes de la comunidad también señalan un problema persistente: gente que vende herramientas de drop falsas. La economía de objetos de Steam atrae a los estafadores, y el anzuelo es siempre alguna variación de "ejecuta esto y consigue skins gratis".
+
+| Oferta | Qué está pasando en realidad |
+|---|---|
+| "Ejecuta este comando drop para conseguir skins gratis" | Un script o una página de phishing, no un comando de juego |
+| Una herramienta que "desbloquea drops de Steam" | Software de terceros que infringe el Acuerdo de Suscriptor |
+| Alguien que pide un código de Steam Guard para "activar drops" | Robo de cuenta en toda regla |
+
+Ningún comando drop legítimo genera objetos que no hayas ganado. Si una herramienta te pide tu inicio de sesión, tu código de Steam Guard o permiso para ejecutarse en segundo plano, ciérrala. El [centro de ayuda oficial de Soporte de Steam](https://help.steampowered.com/) es el lugar adecuado para denunciar una cuenta comprometida, y actuar con rapidez suele salvar el inventario.
+
+Para los streamers, el comando drop del lado del chat es un animal completamente distinto. Los bots los activan para anunciar sorteos o repartir claves. Son herramientas de comunidad, no mecánicas de juego, y no tienen ningún efecto en tu inventario de Steam hasta que alguien te envía realmente un regalo.
+
+## Preguntas frecuentes
+
+**¿Hay un comando drop integrado en el propio cliente de Steam?**
+
+No. La consola del cliente de Steam gestiona actualizaciones, licencias y diagnósticos. Los drops de objetos los otorgan los servidores de cada juego, así que no existe un comando universal que funcione en todos los títulos de tu biblioteca.
+
+**¿Por qué el comando drop no hace nada en mi juego?**
+
+Lo más habitual es que las trampas estén desactivadas o que el servidor bloquee la entrada de consola. Pruébalo primero en un servidor local o privado. Si sigues recibiendo un error, es probable que el juego use su propio sistema de asignación de teclas en lugar de la sintaxis de consola de Source.
+
+**¿Los cromos de Steam siguen cayendo automáticamente?**
+
+Sí. Los cromos siguen cayendo según el tiempo de juego en los juegos compatibles, aunque normalmente solo consigues parte de un conjunto. El resto hay que intercambiarlo o comprarlo. Los drops llegan de forma gradual, no todos de golpe.
+
+**¿Puede un comando drop que los jugadores de Steam encuentran online repartir objetos gratis?**
+
+No. Cualquier cosa que prometa objetos gratis a cambio de ejecutar un script, compartir una contraseña o introducir un código de Steam Guard es una estafa. Los drops reales son automáticos, se gestionan en el servidor y están ligados a tu propio tiempo de juego y a tu cuenta.

@@ -1,0 +1,137 @@
+export const metadata = {
+  title: "Guide de la commande drop : maîtrisez la commande drop pour le butin, l’inventaire et la progression sur la carte galactique",
+  description: "Apprenez comment fonctionne la commande drop, quand l’utiliser pour gérer l’inventaire et le butin, et comment elle soutient la progression dans les jeux dotés d’une carte galactique.",
+  category: "progression",
+  date: "2026-10-04",
+}
+
+## Qu’est-ce qu’une commande drop ?
+
+Une commande drop est une ligne de texte que vous tapez dans la console d’un jeu, la zone de chat ou le menu développeur pour placer un objet dans le monde plutôt que dans votre inventaire. C’est l’un des outils les plus anciens et les plus utiles du jeu vidéo — une seule ligne qui peut vous remettre une pile de ressources, vider un sac à dos plein ou remettre un objet à un autre joueur sans ouvrir le moindre menu.
+
+Cela compte plus qu’il n’y paraît. L’espace d’inventaire est l’une des limites les plus dures dans la plupart des systèmes de progression, et une commande drop est souvent le moyen le plus rapide de déplacer, tester ou retirer des objets quand vous êtes au cœur d’une partie. Les speedrunners l’utilisent pour sauter des quêtes de collecte, les moddeurs pour tester des arbres de fabrication, et les joueurs ordinaires pour récupérer après un bug qui a mangé un objet de quête.
+
+L’orthographe exacte change d’un jeu à l’autre, mais l’idée reste la même : vous nommez un objet, généralement une quantité, et parfois un emplacement cible. Une fois que vous comprenez le schéma, vous pouvez lire presque n’importe quelle liste de commandes en quelques secondes.
+
+### Pourquoi les joueurs y ont recours
+
+- **Pression sur l’inventaire** — déposer le butin en trop est plus rapide que de marcher jusqu’à un coffre de stockage.
+- **Test de progression** — vérifier si une recette ou une amélioration fonctionne avant de farmer pour l’obtenir.
+- **Récupération** — remplacer un objet perdu à cause d’un crash, d’un bug ou d’un clic mal placé.
+- **Partage** — remettre des matériaux à un coéquipier en session coopérative.
+- **Création de contenu** — préparer une scène ou un plan pour une miniature sans farmer.
+
+## Les bases de la syntaxe de la commande drop
+
+Presque toutes les commandes drop suivent le même squelette : un mot d’action, un identifiant d’objet, une quantité et une cible facultative. Ce qui change, c’est la façon dont le jeu veut organiser ces éléments — arguments positionnels séparés par des espaces, ou arguments nommés écrits sous forme de paires `key=value`.
+
+Un exemple générique ressemble à `/drop item_name 5`. L’action est `drop`, l’objet est `item_name` et `5` est la quantité. Certains jeux veulent la cible en premier, d’autres un nom de joueur, d’autres encore des coordonnées. En cas de doute, tapez la commande sans aucun argument — la plupart des consoles affichent le schéma attendu.
+
+### Les quatre parties d’une commande drop typique
+
+| Partie | Ce qu’elle fait | Exemple d’espace réservé | Remarques |
+|---|---|---|---|
+| Action | Indique au jeu quoi faire | `drop`, `spawn`, `place` | Généralement le premier jeton |
+| ID d’objet | Identifie ce qu’il faut créer | `item_name`, `item_id` | Les noms sont souvent sensibles à la casse |
+| Quantité | Combien déposer | `1`, `5`, `64` | L’omettre donne souvent 1 par défaut |
+| Cible | Où ou à qui | `@p`, coordonnées, nom de joueur | Facultative dans la plupart des jeux |
+
+### Arguments positionnels vs arguments nommés
+
+| Style | À quoi ça ressemble | Courant dans | Attention à |
+|---|---|---|---|
+| Positionnel | `/drop iron_ore 10` | Moteurs plus anciens, commandes de chat | L’ordre compte ; échangez deux valeurs et vous obtenez une erreur |
+| Nommé | `/drop item=iron_ore qty=10` | Moteurs modernes, chargeurs de mods | Les fautes dans le nom de clé cassent toute la ligne |
+| Hybride | `/drop iron_ore qty=10 @p` | Moteurs de génération intermédiaire | Règles mixtes ; lisez attentivement l’infobulle |
+
+Si vous voulez étudier comment les commandes liées aux objets sont documentées dans un jeu grand public, la [référence des commandes du wiki Minecraft](https://minecraft.wiki/w/Commands) est un exemple vraiment utile de la manière dont l’ordre des arguments, les sélecteurs de cible et les limites de quantité sont expliqués. Ces conventions se retrouvent dans des dizaines d’autres titres.
+
+## Commande drop vs autres commandes d’objets
+
+Les joueurs confondent souvent la commande drop avec ses équivalents. Elles ne sont pas interchangeables, et utiliser la mauvaise est la raison la plus fréquente pour laquelle une commande « ne fonctionne pas ».
+
+| Type de commande | Ce qu’elle fait réellement | Idéale pour | Niveau de risque |
+|---|---|---|---|
+| Drop | Place un objet dans le monde près de vous ou d’une cible | Libérer de l’espace, échanges rapides, préparation | Faible |
+| Give | Ajoute un objet directement dans un inventaire | Réapprovisionner, tester, offrir | Moyen |
+| Spawn | Crée une entité ou un objet, pas une pile d’objets | Tester des boss, construire une base | Élevé |
+| Clear | Retire des objets d’un inventaire | Nettoyer une sauvegarde en désordre | Élevé |
+| Transfer | Déplace des objets entre conteneurs | Logistique de base, tri de stockage | Moyen |
+
+La différence pratique est **l’endroit où l’objet finit**. Une commande give met quelque chose dans une poche. Une commande drop le met au sol, dans une caisse ou à un emplacement — ce qui signifie que la physique, les minuteries de disparition et les règles de collision peuvent toutes l’affecter. Sur un serveur occupé, un objet qui atterrit hors d’une zone sûre peut être ramassé par quelqu’un d’autre avant que vous ne l’atteigniez.
+
+Les retours de la communauté signalent systématiquement une chose : si votre commande drop semble ne rien faire, vérifiez si l’objet est tombé à travers le monde ou a été instantanément aspiré par un mod de ramassage automatique.
+
+## Utiliser la commande drop pour la progression
+
+La progression est le domaine où la commande drop est la plus utile. Différentes étapes d’un jeu créent différents problèmes d’inventaire, et la commande résout chacun d’eux différemment.
+
+| Étape de progression | Problème typique | Comment la commande drop aide |
+|---|---|---|
+| Début de partie | Petit inventaire, peu d’options de stockage | Déposer les objets inutiles au lieu de retourner en ville |
+| Milieu de partie | L’artisanat exige des matériaux en masse | Préparer de grandes piles pour un établi |
+| Fin de partie | Équipement de fin de partie complet, plus d’emplacements libres | Échanger du matériel sans faire un aller-retour complet à la réserve |
+| Post-game | Tester des builds et optimiser | Faire apparaître des objets de test pour comparer les statistiques |
+
+### Le contexte de la carte galactique
+
+Dans les simulateurs spatiaux, les jeux de stratégie 4X et d’autres titres construits autour d’une carte galactique, la commande drop se trouve généralement dans la même console que les commandes de navigation. La carte galactique est votre vue à long terme — systèmes stellaires, routes, positions de flotte — et la console de commandes est l’endroit où vous donnez des instructions précises.
+
+Quelques schémas reviennent souvent dans les jeux qui associent les deux :
+
+- La commande drop agit sur votre **position actuelle**, sauf si vous précisez un système ou un point de passage.
+- Les jeux basés sur les flottes interprètent souvent un drop comme un **transfert de cargaison** plutôt que comme un objet physique qui tombe.
+- La planification d’itinéraire et les drops d’objets partagent le même **argument de coordonnée ou de nom de système**, donc une faute de frappe peut envoyer des fournitures dans le mauvais système stellaire.
+
+Si vous jouez à un jeu avec une carte galactique, traitez la commande drop comme n’importe quelle instruction de navigation : confirmez le système cible avant d’appuyer sur Entrée. Annuler un drop de cargaison mal dirigé coûte généralement bien plus cher que taper un argument supplémentaire.
+
+### Un flux de travail sûr, étape par étape
+
+1. **Ouvrez la console** et lisez la chaîne de version. La syntaxe des commandes peut changer entre les correctifs.
+2. **Tapez la commande sans arguments** pour voir le format attendu.
+3. **Testez avec une seule unité** d’un objet bon marché et courant.
+4. **Vérifiez le résultat** — regardez au sol, dans la caisse ou dans l’inventaire cible.
+5. **Augmentez la quantité** seulement après que le drop de test atterrit là où vous l’attendez.
+6. **Notez tout comportement inhabituel** pour pouvoir le signaler ou éviter de le répéter.
+
+| Étape | Action | Pourquoi c’est important |
+|---|---|---|
+| 1 | Lire la chaîne de version | La syntaxe évolue entre les mises à jour |
+| 2 | Lancer une commande nue | Révèle les arguments requis |
+| 3 | Déposer un objet bon marché | Limite le coût d’une erreur |
+| 4 | Confirmer le placement | La physique et le ramassage automatique peuvent interférer |
+| 5 | Augmenter jusqu’à la quantité complète | Évite une perte massive d’objets |
+| 6 | Noter les comportements étranges | Vous constituez vos propres notes de référence |
+
+## Erreurs courantes avec la commande drop et solutions
+
+La plupart des échecs se résument à une poignée de causes. Voici un tableau de dépannage rapide basé sur l’expérience courante des joueurs.
+
+| Symptôme | Cause probable | Solution |
+|---|---|---|
+| « Commande inconnue » | Mauvais mot d’action ou console désactivée | Vérifiez si les triches ou la console de développement sont activées |
+| « Objet inconnu » | ID mal orthographié ou mauvais espace de noms | Copiez l’ID depuis la liste d’objets du jeu |
+| La commande s’exécute, rien n’apparaît | L’objet est tombé hors limites ou a été ramassé automatiquement | Déplacez-vous sur un sol solide ; désactivez le ramassage automatique |
+| Un seul objet est déposé | L’argument de quantité est ignoré ou plafonné | Vérifiez la limite par commande |
+| Fonctionne en solo, pas sur un serveur | Les autorisations du serveur bloquent la commande | Demandez à un admin ou vérifiez votre rang |
+| L’objet atterrit au mauvais endroit | Argument de cible omis ou mal saisi | Spécifiez explicitement la cible |
+
+Deux habitudes évitent presque tous ces problèmes. D’abord, **testez toujours avec une quantité de un**. Ensuite, **ne lancez jamais une commande drop avec un inventaire plein** dans un jeu qui pousse les objets en surplus dans le monde — vous pouvez vous retrouver avec une pile de butin dont les minuteries de disparition décomptent toutes en même temps.
+
+Une dernière remarque pour le multijoueur : une commande drop n’est pas privée. Tout ce que vous placez dans le monde est visible et accessible par les autres joueurs, sauf si le serveur dispose de protections. Sur les serveurs publics, utilisez une commande give pour les objets personnels et réservez la commande drop à la préparation et au partage.
+
+## FAQ
+
+**Tous les jeux ont-ils une commande drop ?**
+Non. Beaucoup de jeux n’exposent l’apparition d’objets que via une console de développeur, et certains la désactivent entièrement en jeu normal. Si vous ne trouvez pas de commande drop, cherchez un équivalent comme give, spawn ou un menu de triches — la fonction est souvent la même, même si le nom diffère.
+
+**Pourquoi ma commande drop fonctionne-t-elle en solo mais pas en ligne ?**
+Les serveurs limitent généralement les commandes derrière des autorisations. Votre sauvegarde locale vous donne un contrôle total, tandis qu’un serveur multijoueur vérifie votre rang, les paramètres de triche du monde ou la liste blanche d’un mod avant d’accepter la ligne.
+
+**Une commande drop peut-elle casser ma progression ?**
+Oui, si vous l’utilisez pour sauter du contenu que vous vouliez réellement jouer. Déposer des matériaux de fin de partie court-circuite l’artisanat, l’économie et les boucles d’exploration. Utilisez-la pour la récupération et les tests plutôt que comme substitut au jeu lui-même.
+
+**Comment utiliser une commande drop sur un écran de carte galactique ?**
+Ouvrez la console pendant que la carte est active, puis nommez votre système cible ou point de passage comme argument. Dans la plupart des jeux, la commande utilise par défaut votre position actuelle si vous laissez la cible vide, ce qui fait que la cargaison finit au mauvais endroit. Confirmez toujours la destination avant d’appuyer sur Entrée.
+
+Maîtriser la commande drop consiste moins à mémoriser des codes qu’à comprendre le schéma : action, objet, quantité, cible. Une fois que c’est clair, vous pouvez déplacer des objets en toute confiance dans presque n’importe quel jeu — y compris ceux où la carte est une galaxie et où la soute se mesure en tonnes.

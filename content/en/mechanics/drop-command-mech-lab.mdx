@@ -1,0 +1,147 @@
+export const metadata = {
+  title: "Drop Command Mech Lab Guide: How to Deploy Without Wasting a Sortie",
+  description: "Learn how the drop command mech lab flow works, from tonnage checks to launch errors, plus a pre-drop checklist that keeps every sortie on target.",
+  category: "mechanics",
+  date: "2026-10-04",
+}
+
+Few things in a mech game feel worse than tuning a build for twenty minutes and then watching the deploy button refuse to cooperate. The **drop command** is the mechanic that turns a saved configuration in the mech lab into an actual sortie — and when it fails, you lose time, resources, or a match slot. Understanding how the **drop command mech lab** flow works end to end is the fastest way to stop bleeding sorties to avoidable setup mistakes. This guide breaks down what the command does, how to sequence it, and how to troubleshoot it when the launch prompt goes quiet.
+
+## What the Drop Command Actually Does
+
+Most players think of the deploy button as a simple "start" switch. In reality, the **drop command** is a validation and loading routine. It reads your current mech lab configuration, compares it against the constraints of the selected mission or match, and only then commits your units to the field.
+
+That means the command is doing several jobs at once:
+
+- Checking total tonnage against the drop limit
+- Confirming every hardpoint has a valid weapon or is intentionally left empty
+- Verifying ammunition bins, heat sinks, and armor values are legal for the chassis
+- Assigning pilots or crew to each unit in the bay
+- Loading the map and syncing you with the match instance
+
+Because so much happens in that single click, the drop command is also where most configuration errors surface. A build can look perfectly fine in the mech lab and still be rejected at deploy time.
+
+| Action | What it does | When to use it |
+|---|---|---|
+| Save configuration | Stores the current build in the mech lab | After any change you want to keep |
+| Ready check | Flags illegal builds, missing ammo, empty hardpoints | Before committing to a sortie |
+| Drop command | Commits the lance or star and loads the match | When loadout and deck are final |
+| Re-drop / rematch | Reuses the previous configuration | Repeat runs and practice |
+
+### Why the Command Exists at All
+
+The deploy step is a gate, not a formality. In games built around persistent mech bays and limited resources, letting an illegal build into a match would break balance and waste everyone's time. The **drop command** enforces the same rules for every player in the lobby.
+
+## How to Run the Drop Command, Step by Step
+
+The exact interface differs between titles, but the underlying sequence is remarkably consistent. Community reports across mech games describe the same rough order of operations.
+
+| Step | Location | What to confirm |
+|---|---|---|
+| 1 | Mech lab | Chassis is the one you actually want to field |
+| 2 | Loadout screen | Weapons, ammo, heat sinks, and armor are all set |
+| 3 | Drop deck | Correct units are slotted in the correct order |
+| 4 | Pilot assignment | Every unit has a pilot with relevant skills |
+| 5 | Mission or lobby | Tonnage, difficulty, and map match your intent |
+| 6 | Drop command | Confirm and launch |
+
+A useful habit is to treat the drop command as the *last* thing you touch. Players who bounce between the loadout screen and the deploy button tend to trigger validation errors because they changed something after the check ran.
+
+### The Order of Operations Matters
+
+- **Save before you drop.** An unsaved configuration may not carry into the match, and some titles will silently deploy the last saved version instead.
+- **Check the deck, not just the mech.** In multi-unit drops, a legal individual build can still violate a combined tonnage cap.
+- **Assign pilots early.** Empty pilot slots are one of the most common reasons a drop command returns an error instead of launching.
+- **Read the error text.** It is usually specific. "Over tonnage" and "no pilot assigned" require completely different fixes.
+
+## Tonnage, Weight Classes, and Drop Deck Limits
+
+Tonnage is the single biggest constraint on the **drop command mech lab** loop. Every chassis sits in a weight class, and every mission or match enforces a ceiling. BattleTech-derived games have used the same four-class convention for decades, and most mech titles still follow it closely.
+
+| Class | Typical tonnage | Battlefield role | Drop considerations |
+|---|---|---|---|
+| Light | 20–35 tons | Scouting, harassment, spotting | Cheap to field; easy to fit under tight caps |
+| Medium | 40–55 tons | Flexible skirmisher | Best all-round value for mixed decks |
+| Heavy | 60–75 tons | Fire support, brawling | Usually the core of a competitive deck |
+| Assault | 80–100 tons | Anchors, siege, area denial | Eats tonnage fast; limits deck flexibility |
+
+A deck full of assaults will almost always trip the tonnage check before you ever reach the launch screen. Mixing classes is not just a balance preference — it is often a hard requirement for the drop command to succeed.
+
+| Deck Archetype | Typical Composition | Strength | Weakness |
+|---|---|---|---|
+| Scout-heavy | 3–4 lights | Map control, low cost | Struggles in prolonged fights |
+| Balanced | 1 light, 2 mediums, 1 heavy | Adaptable | No single overwhelming advantage |
+| Brawler | 2 heavies, 1 assault | Frontline pressure | Slow, vulnerable to flanking |
+| Fire support | 2 heavies, 1 medium | Long-range damage | Fragile if the line collapses |
+
+### Heat, Ammo, and the Hidden Failure States
+
+Tonnage is visible. Heat and ammo are not always obvious. A build that alpha strikes beautifully in the mech lab can cook itself on the first trigger pull in a real match. Before you issue the **drop command**, check that your heat dissipation roughly matches your weapon group output and that every ammunition-dependent weapon has bins assigned.
+
+## Troubleshooting a Drop Command That Won't Fire
+
+Player experience suggests that most failed drops fall into a handful of categories. The good news is that nearly all of them are fixable in under a minute.
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Deploy button greyed out | Deck exceeds tonnage cap | Swap a heavy for a medium or light |
+| "Invalid loadout" message | Empty hardpoint or missing ammo bin | Fill the slot or explicitly leave it unarmed |
+| No error, but nothing happens | Unsaved configuration or stale lobby | Re-save the build and re-enter the lobby |
+| Kicked back to mech lab | Pilot slot empty | Assign a pilot to every unit in the deck |
+| Loads into match with wrong mech | Multiple saved variants | Confirm the active variant before dropping |
+| Repeated disconnect at launch | Network or session timeout | Rejoin the lobby and re-issue the drop command |
+
+### Reading Validation Errors Like a Veteran
+
+Most mech titles color-code or tag the offending part of the build. If the error mentions tonnage, the problem is at the deck level. If it mentions hardpoints or ammunition, the problem is inside a single mech. If it mentions crew, pilots, or readiness, the problem is administrative — the build itself is fine.
+
+That triage alone will save you from rebuilding a perfectly good loadout because of a missing pilot.
+
+## A Pre-Drop Checklist Worth Repeating
+
+Veterans tend to run the same mental checklist every single time. It takes about thirty seconds and prevents nearly every failed **drop command** in a session.
+
+| Check | Why it matters | Quick fix |
+|---|---|---|
+| Total deck tonnage | Exceeding the cap blocks the launch | Swap one unit down a class |
+| Ammunition bins | Energy-free builds can skip this; ballistic builds cannot | Add or resize bins |
+| Heat balance | Prevents shutdown on the first exchange | Add heat sinks or trim weapon groups |
+| Armor distribution | Front-loaded armor survives brawls | Shift points from rear to front |
+| Pilot skills | Mismatched skills waste tonnage | Reassign or retrain |
+| Saved variant | Unsaved builds may not deploy | Save, then confirm the active variant |
+| Weapon groups | Grouping decides your real DPS | Rebind before you launch |
+
+If you want a broader look at how these systems fit together in a full mech combat title, the [MechWarrior 5: Mercenaries page on Steam](https://store.steampowered.com/app/784080/MechWarrior_5_Mercenaries/) shows how mech bays, deployment, and mission structure are presented to players.
+
+## Tips From Player Experience
+
+Community reports consistently highlight a few habits that separate smooth operators from players who fight the interface.
+
+- **Build to the mission, not to the fantasy.** A 100-ton assault is wasted on a reconnaissance objective with a low tonnage cap.
+- **Keep two saved variants per chassis.** One generalist, one specialist. Switching variants is faster than rebuilding.
+- **Drop in the same order every time.** Consistent sequencing makes it obvious which step broke when something goes wrong.
+- **Test heat in a low-stakes match.** Never discover a heat problem in a ranked or high-reward run.
+- **Re-check after patches.** Balance changes can invalidate builds that previously passed validation.
+- **Screenshot your working build.** When a drop command suddenly fails, comparing to a known-good configuration isolates the change fast.
+
+### Squad and Lance Coordination
+
+When you are dropping with other players, the drop command is a shared event. Confirm tonnage totals across the whole group, not just your own deck, and make sure everyone is on the same mission before the first person launches. A single out-of-sync player can stall a lobby indefinitely.
+
+## FAQ
+
+**Why is my drop command greyed out even though my build looks fine?**
+The most common cause is a deck-level constraint rather than a mech-level one. Total tonnage, an empty pilot slot, or an incomplete drop deck will block the launch even when every individual unit passes its own checks. Start by verifying the deck, then work inward.
+
+**Does the drop command mech lab flow differ between missions?**
+Yes. Mission type, tonnage caps, and difficulty modifiers change what the command will accept. A deck that deploys cleanly on one contract can be rejected on the next, so re-check constraints whenever you change mission.
+
+**Will an unsaved build deploy correctly?**
+Not reliably. Many titles deploy the last saved configuration, which is why players sometimes load into a match with the wrong mech. Save the build and confirm the active variant before issuing the drop command.
+
+**How do I fix a drop command that disconnects at launch?**
+Rejoin the lobby or session first, then re-issue the command. If it repeats, verify your connection and confirm the host has not already started the match. Persistent failures usually point to session sync rather than your loadout.
+
+## Final Thoughts
+
+The drop command is a small mechanic with an outsized effect on how a session feels. Treat it as the final validation step in a longer workflow — build, save, verify, then deploy — and you will spend your time fighting in the field instead of fighting the interface. Master the sequence once, and every **drop command** afterward becomes muscle memory.

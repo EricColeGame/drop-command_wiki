@@ -8,6 +8,13 @@
   },
   "nav": {
     "home": "Home",
+    "guide": "Guide",
+    "mechanics": "Mechanics",
+    "combat": "Combat",
+    "units": "Units",
+    "progression": "Progression",
+    "release": "Release",
+    "community": "Community",
     "menu": "Menu",
     "toggleTheme": "Toggle theme"
   },
@@ -451,7 +458,34 @@
       "secondary": "Play on Steam"
     }
   },
-  "bosses": {},
+  "guide": {
+    "overviewTitle": "Drop Command Guide",
+    "overviewDescription": "Beginner walkthroughs, tips, and strategy guides to get your Drop Command campaign off the ground."
+  },
+  "mechanics": {
+    "overviewTitle": "Drop Command Mechanics",
+    "overviewDescription": "Mech combat, the mech lab, 4X strategy, empire building, real-time combat, and combined arms explained."
+  },
+  "combat": {
+    "overviewTitle": "Drop Command Combat",
+    "overviewDescription": "Tactical combat, missions, battles, and campaign guides for winning fights in Drop Command."
+  },
+  "units": {
+    "overviewTitle": "Drop Command Units",
+    "overviewDescription": "Mechs, infantry, dropships, and factions - the full Drop Command roster and how to use it."
+  },
+  "progression": {
+    "overviewTitle": "Drop Command Progression",
+    "overviewDescription": "Upgrades, technology, economy, base building, and the galaxy map - grow your Drop Command empire."
+  },
+  "release": {
+    "overviewTitle": "Drop Command Release",
+    "overviewDescription": "Drop Command release date, Steam page, demo, and trailer - everything about the launch."
+  },
+  "community": {
+    "overviewTitle": "Drop Command Community",
+    "overviewDescription": "Drop Command Reddit, Discord, dev logs, and reviews from the community."
+  },
   "shared": {
     "wikiNavigation": "Wiki Navigation",
     "activeCodes": "Active Codes",
