@@ -43,22 +43,22 @@
         {
           "number": "1",
           "title": "Beginner Guide",
-          "description": "Master the Spirit World from day one with our comprehensive beginner guide covering controls, combat, and early progression."
+          "description": "Learn the core loop first: read the battlefield, choose a landing zone, call your first drop, and confirm where the payload actually lands before you commit to a fight."
         },
         {
           "number": "2",
-          "title": "Fastest Leveling",
-          "description": "Dominate early game and max your progression with the most efficient leveling routes and strategies."
+          "title": "Choose Your Faction",
+          "description": "Vanguard, Support, Recon, Heavy, or Swarm. Your faction locks in a roster and a deployment rhythm, so pick the archetype that matches how you want to fight."
         },
         {
           "number": "3",
-          "title": "Best Farming Spots",
-          "description": "Maximize your Soul Essence and EXP gains with optimal farming locations for every stage."
+          "title": "Combat Basics",
+          "description": "Master drop timing and landing-zone safety: call reinforcements 20 to 30 seconds before contact, keep a reserve, and never drop into a fight you have already lost."
         },
         {
           "number": "4",
-          "title": "How to Extract",
-          "description": "Learn the best methods and locations for extracting resources in Drop Command."
+          "title": "Mech Builds & Loadouts",
+          "description": "Build for immediate impact: mobility first, then heat and ammo endurance, then range coverage, and keep cheap replaceable chassis in the deck to protect your drop cadence."
         }
       ]
     },
@@ -66,237 +66,353 @@
       "eyebrow": "Popular Pages",
       "title": "Trending Now",
       "quickLinks": [
-        "Hollow Progression",
-        "Fastest Leveling",
-        "Spirit Charms",
-        "All Boss Guides"
+        "Beginner Guide",
+        "Unit Roles",
+        "Mech Builds",
+        "Drop Timing"
       ],
       "cards": [
         {
           "badge": "Beginner",
-          "title": "Beginner Guide",
-          "description": "Everything you need from your first login to mastering the basics of combat and progression.",
-          "href": "/beginner-guide"
+          "title": "Drop Command Beginner Guide",
+          "description": "The core deployment loop from your first landing zone to a repeatable drop command.",
+          "href": "/guide/drop-command-beginner-guide"
+        },
+        {
+          "badge": "Popular",
+          "title": "Drop Command Units Guide",
+          "description": "Mechs, tanks, infantry, VTOLs, dropships, and faction rosters in one overview.",
+          "href": "/units/drop-command-mech-units"
+        },
+        {
+          "badge": "Popular",
+          "title": "Drop Command Mech Builds",
+          "description": "Loadout priorities and chassis roles for drops that survive the landing.",
+          "href": "/units/drop-command-mechs"
         },
         {
           "badge": "Updated",
-          "title": "Active Codes",
-          "description": "All working codes with rewards redeem before they expire.",
-          "href": "/codes"
+          "title": "Drop Command Campaign Guide",
+          "description": "Recon, insert, secure, sustain, push, and extract, phase by phase.",
+          "href": "/combat/drop-command-campaign"
         },
         {
           "badge": "Updated",
-          "title": "Equipment Database",
-          "description": "94 items across 5 slots complete gear database with stats, rarity, and sources.",
-          "href": "/equipment"
+          "title": "Drop Command Missions Guide",
+          "description": "Drop types, timing windows, and landing-zone selection for mission play.",
+          "href": "/combat/drop-command-missions"
         },
         {
-          "badge": "Popular",
-          "title": "Which Race Should You Pick?",
-          "description": "Shinigami, Quincy, or Hollow compare all three and find your perfect playstyle.",
-          "href": "/races/best-race"
-        },
-        {
-          "badge": "New",
-          "title": "Enemies & Monsters",
-          "description": "23 enemy types across 5 regions drops, locations, and farming tips.",
-          "href": "/enemies"
-        },
-        {
-          "badge": "Popular",
-          "title": "Boss Locations & Drops",
-          "description": "Every boss location, drop table, and respawn timer in one reference.",
-          "href": "/boss-locations-drops-respawn-times"
-        },
-        {
-          "badge": "Popular",
-          "title": "Best Builds",
-          "description": "Optimal stat allocation, skill tree picks, and Charm combos for every playstyle.",
-          "href": "/builds/best-builds"
+          "badge": "Guide",
+          "title": "Drop Command Controls Guide",
+          "description": "Keybinds, modifiers, and safety toggles for clean drops under pressure.",
+          "href": "/combat/drop-command-combat"
         },
         {
           "badge": "New",
-          "title": "Shikai Tier List",
-          "description": "All 6 Shinigami Shikai types ranked by PvP and PvE performance.",
-          "href": "/tier-list/shikai"
+          "title": "Drop Command Updates",
+          "description": "Track dev log entries, patch notes, and command changes as they ship.",
+          "href": "/community/drop-command-dev-log"
         },
         {
-          "badge": "New",
-          "title": "World Events Guide",
-          "description": "Supply Caches, Raids, and endgame world events with rare rewards.",
-          "href": "/world-events"
+          "badge": "Community",
+          "title": "Drop Command Community",
+          "description": "Discord drops, community reports, and where to follow development.",
+          "href": "/community/drop-command-discord"
         }
       ]
     },
     "aboutGame": {
       "title": "What is Drop Command?",
       "paragraphs": [
-        "Drop Command is a stylized fighting RPG on Roblox inspired by the Bleach anime universe. Choose from three playable races Shinigami, Quincy, or Hollow each with unique progression systems, unlockable abilities, and evolution paths. Master over 130 skills as you fight your way to the level 100 cap.",
-        "Whether you're unlocking your first Shikai, evolving from a base Hollow into an Arrancar, or grinding Quincy Lieutenant missions, our wiki covers every system with detailed guides, data tables, and step-by-step walkthroughs."
+        "Drop Command is a tactical sci-fi strategy game built around off-map deployment. Instead of walking units through a doorway, you call mechs, tanks, infantry, VTOLs, and battle armour directly onto a landing zone you choose, spending a limited tonnage budget, a cooldown, and a delay timer to change the shape of a fight.",
+        "Every match turns on the same decisions: read the board, pick a safe landing point, match the payload to the problem, and keep roughly a third of your allowance in reserve for the push you have not seen yet. Our wiki covers unit roles, mech builds, campaign planning, mission tactics, controls, and updates so new commanders and veterans can drop with a plan."
       ],
       "stats": [
         {
           "label": "Developer",
-          "value": "Midnight Continent"
+          "value": "Pillbug Games"
         },
         {
           "label": "Platform",
-          "value": "Roblox"
+          "value": "Steam / PC"
         },
         {
           "label": "Genre",
-          "value": "Fighting RPG"
+          "value": "Mech Strategy"
         },
         {
-          "label": "Visits",
-          "value": "12.6M+"
+          "label": "Unit Types",
+          "value": "5"
         },
         {
-          "label": "Favorites",
-          "value": "243K+"
+          "label": "Weight Classes",
+          "value": "4"
         },
         {
-          "label": "Total Skills",
-          "value": "130+"
+          "label": "Drop Roles",
+          "value": "5"
         },
         {
-          "label": "Level Cap",
-          "value": "100"
+          "label": "Campaign Phases",
+          "value": "6"
         }
       ],
       "cta": "Explore All Guides"
     },
     "explore": {
       "title": "Explore Drop Command Wiki",
-      "description": "Master your seafood restaurant on Roblox with essential progression guides, active codes, complete fish & recipe catalogs, and optimal upgrade strategies.",
+      "description": "From your first landing zone to the final campaign push, browse Drop Command unit roles, mech builds, drop timing, mission tactics, controls, and patch notes.",
       "modules": [
         {
           "order": 1,
-          "name": "Drop Command Working Codes",
-          "description": "Redeem the latest working codes to claim free coins, gems, exclusive cosmetics, and boost items before they expire.",
-          "href": "/codes/drop-command-codes",
-          "displayType": "code-box",
+          "name": "Drop Command Beginner Guide",
+          "description": "A beginner-friendly guide covering the core gameplay loop, battlefield controls, campaign basics, and first mission strategies. It helps new players understand mech piloting, squad management, and how to start building their space empire.",
+          "href": "/guide/drop-command-beginner-guide",
+          "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "Code",
-              "detail": "FULLRELEASE — Free Cash & Rewards"
+              "label": "1",
+              "detail": "Locate the command prompt, drop menu, or hotkey your game uses for deployment."
             },
             {
-              "label": "Code",
-              "detail": "75KLIKES — Exclusive Ability Reroll"
+              "label": "2",
+              "detail": "Confirm the prefix, keybind, or call-in button before the fight starts."
             },
             {
-              "label": "Tip",
-              "detail": "Codes are case-sensitive; enter them in the Settings menu"
+              "label": "3",
+              "detail": "Select the target: the item, unit, or landing zone you want to affect."
+            },
+            {
+              "label": "4",
+              "detail": "Set the quantity or tonnage and start with the smallest useful payload."
+            },
+            {
+              "label": "5",
+              "detail": "Watch the arrival and confirm exactly where the payload lands."
+            },
+            {
+              "label": "6",
+              "detail": "Write down the working command so you can repeat it under pressure."
             }
           ]
         },
         {
           "order": 2,
-          "name": "Beginner Guide: How to Start & Serve Customers",
-          "description": "Step-by-step beginner guide covering customer ordering, food prep, station management, and cashier checkout mechanics.",
-          "href": "/guide/drop-command-beginner-guide",
-          "displayType": "feature-cards",
+          "name": "Drop Command Units Guide",
+          "description": "A complete overview of playable units including Mechs, Tanks, Infantry, VTOLs, and Battle Armour. This module explains unit roles, strengths, customization options, and how to build effective combined-arms forces.",
+          "href": "/units/drop-command-mech-units",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "Step 1",
-              "detail": "Take customer order at the stall front"
+              "label": "Mechs",
+              "detail": "Scout, brawler, and fire-support frames form the backbone of any drop deck."
             },
             {
-              "label": "Step 2",
-              "detail": "Cook seafood on the grill or boil station"
+              "label": "Tanks",
+              "detail": "Armoured line holders that anchor a push and absorb return fire."
             },
             {
-              "label": "Step 3",
-              "detail": "Serve warm food promptly for maximum customer tips"
+              "label": "Infantry",
+              "detail": "Cheap bodies for flank insertion, objective holds, and emergency reinforcement."
+            },
+            {
+              "label": "VTOLs",
+              "detail": "Fast air units for scouting, harassment, and punishing overextended enemies."
+            },
+            {
+              "label": "Dropships",
+              "detail": "Transports that carry the payload in and are lost with everything inside if the zone is contested."
+            },
+            {
+              "label": "Factions",
+              "detail": "Vanguard, Support, Recon, Heavy, and Swarm rosters that shape your deployment rhythm."
             }
           ]
         },
         {
           "order": 3,
-          "name": "Seafood & Fish Tier List",
-          "description": "Complete breakdown of all catchable fish and seafood ranked by market value, customer demand, and profit margins.",
-          "href": "/seafood/drop-command-tier-list",
+          "name": "Drop Command Mech Builds",
+          "description": "A build-focused section featuring recommended mech loadouts, weapon choices, equipment setups, and combat strategies. Players can learn how to optimize different playstyles for various missions.",
+          "href": "/units/drop-command-mechs",
           "displayType": "tier-grid",
           "highlights": [
             {
-              "label": "S Tier",
-              "detail": "King Crab · Lobster Boil — Highest profit per customer"
+              "label": "S",
+              "detail": "Mobility-first chassis that repositions the moment it lands and never fights as a static target."
             },
             {
-              "label": "A Tier",
-              "detail": "Salmon · Jumbo Shrimp · Tuna Steak — Reliable fast earners"
+              "label": "A",
+              "detail": "Heat and ammo endurance, so the mech can fight immediately on arrival."
             },
             {
-              "label": "B Tier",
-              "detail": "Clams · Oysters · Squid — Great mid-game margin"
+              "label": "B",
+              "detail": "Range coverage that avoids dropping three units built for the same engagement distance."
             },
             {
-              "label": "C Tier",
-              "detail": "Common Sardines · Small Crab — Starter seafood"
+              "label": "C",
+              "detail": "Cheap replaceable frames that keep your drop cadence alive while the expensive metal is repaired."
             }
           ]
         },
         {
           "order": 4,
-          "name": "Best Upgrades Progression",
-          "description": "Optimal order to spend your cash: expand kitchen stations, hire waitstaff, speed up grills, and upgrade seating.",
-          "href": "/upgrades/drop-command-best-upgrades",
-          "displayType": "feature-cards",
+          "name": "Drop Command Campaign Guide",
+          "description": "This module explains the procedural campaign system, planetary conquest, resources, diplomacy, and long-term strategic decisions. It helps players understand how individual battles affect the larger war.",
+          "href": "/combat/drop-command-campaign",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "Priority 1",
-              "detail": "Cooking Speed & Extra Burners — Clears customer backlog"
+              "label": "Recon",
+              "detail": "Locate enemies and map two approach lanes while saving every drop slot you can."
             },
             {
-              "label": "Priority 2",
-              "detail": "Customer Seating Capacity — Increases simultaneous diners"
+              "label": "Insert",
+              "detail": "Call one reinforcement or transport to get your squad grouped and armed on the map."
             },
             {
-              "label": "Priority 3",
-              "detail": "Auto-Chef / Waiter Staff — Passive hands-free revenue"
+              "label": "Secure",
+              "detail": "Take the objective, then drop supplies once ammo or health starts to dip."
+            },
+            {
+              "label": "Sustain",
+              "detail": "Absorb the enemy response with a second supply or armour drop instead of retreating."
+            },
+            {
+              "label": "Push",
+              "detail": "Convert the hold into a win with an equipment pod or vehicle drop."
+            },
+            {
+              "label": "Extract",
+              "detail": "Leave with what you earned behind smoke, cover, or a distraction drop."
             }
           ]
         },
         {
           "order": 5,
-          "name": "How to Get Cash Fast",
-          "description": "Top money-making strategies, VIP evaluation, tip maximization, and high-efficiency serving tips.",
-          "href": "/guide/drop-command-how-to-get-cash-fast",
-          "displayType": "feature-cards",
+          "name": "Drop Command Missions Guide",
+          "description": "A mission database explaining objectives, tactical approaches, defensive operations, and attack scenarios. Players can find strategies for completing different battlefield challenges efficiently.",
+          "href": "/combat/drop-command-missions",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "Combo",
-              "detail": "Chain orders quickly to build the Customer Happiness multiplier"
+              "label": "Reinforce",
+              "detail": "Add bodies to a push or hold a point, but only when you have cover to receive them."
             },
             {
-              "label": "High Margin",
-              "detail": "Focus high-tier seafood boils during peak customer rush hours"
+              "label": "Supply",
+              "detail": "Restore ammo and consumables between fights rather than during them."
             },
             {
-              "label": "Reinvest",
-              "detail": "Keep 20% cash reserve for fresh ingredient replenishment"
+              "label": "Vehicle",
+              "detail": "Change the tools available when enemy armour or a fortified position appears."
+            },
+            {
+              "label": "Medical",
+              "detail": "Recover wounded or reset a losing fight while you still control the landing zone."
+            },
+            {
+              "label": "Defensive",
+              "detail": "Deploy barriers, turrets, or mines ahead of an expected counterattack."
+            },
+            {
+              "label": "Strike",
+              "detail": "Deliver area damage from above when enemies are clustered and static."
             }
           ]
         },
         {
           "order": 6,
-          "name": "Plot Expansion & Stand Customization",
-          "description": "Unlock bigger land plots, arrange optimal cooking layouts, and add high-value decorative upgrades.",
-          "href": "/upgrades/drop-command-how-to-upgrade-plot",
-          "displayType": "feature-cards",
+          "name": "Drop Command Controls Guide",
+          "description": "A reference guide for keyboard controls, movement systems, combat commands, and gameplay settings. It helps new players quickly learn how to pilot units and manage battles.",
+          "href": "/combat/drop-command-combat",
+          "displayType": "code-cards",
           "highlights": [
             {
-              "label": "Plot 1",
-              "detail": "Starter Beach Stand (3 Tables, 1 Grill)"
+              "label": "Single Key",
+              "detail": "One dedicated key drops the selected item: fast for weight dumps, but easy to misfire."
             },
             {
-              "label": "Plot 2",
-              "detail": "Boardwalk Restaurant (6 Tables, 2 Grills, Boil Station)"
+              "label": "Mod + Key",
+              "detail": "Hold a modifier before pressing: good for crowded hotbars, slower in a panic."
             },
             {
-              "label": "Plot 3",
-              "detail": "Luxury Pier Seafood Pavilion (Full Automation & VIP Seating)"
+              "label": "Hold",
+              "detail": "Press and hold until the command registers to protect rare gear from accidental drops."
+            },
+            {
+              "label": "Confirm",
+              "detail": "A confirmation prompt guards high-value drops but breaks combat flow."
+            },
+            {
+              "label": "Bind Apart",
+              "detail": "Keep drop and destroy on separate keys, since shared binds are the top cause of lost gear."
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "Drop Command Updates",
+          "description": "A news section tracking official patches, development updates, new features, balance changes, and release information. It keeps players informed about the latest improvements from the developer.",
+          "href": "/community/drop-command-dev-log",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Changes",
+              "detail": "Every dev log entry opens with a one-line summary of what actually changed."
+            },
+            {
+              "label": "Scope",
+              "detail": "Entries name the roles, worlds, and item categories the change touches."
+            },
+            {
+              "label": "Syntax",
+              "detail": "Before-and-after examples show how the command is written now versus before."
+            },
+            {
+              "label": "Status",
+              "detail": "Rollout status tells you whether a change is on a test branch or fully live."
+            },
+            {
+              "label": "Issues",
+              "detail": "Known issues list the edge cases that are still pending a fix."
+            },
+            {
+              "label": "Feedback",
+              "detail": "A feedback channel gives players one clear place to report problems."
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "Drop Command Community",
+          "description": "A community hub collecting official discussion channels, developer updates, and player feedback sources. It helps players connect with other commanders and follow future game development.",
+          "href": "/community/drop-command-discord",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Giveaway",
+              "detail": "A host sets the prize and duration while members enter by reaction or button."
+            },
+            {
+              "label": "Catch",
+              "detail": "The bot posts an item and the first player to type the name claims it."
+            },
+            {
+              "label": "Economy",
+              "detail": "Scheduled payouts feed a server currency that members spend on upgrades and collectibles."
+            },
+            {
+              "label": "Content",
+              "detail": "Moderators post memes, art, and announcements on demand for the channel."
+            },
+            {
+              "label": "Role",
+              "detail": "Admin drops grant event passes, VIP access, or verification roles by button."
+            },
+            {
+              "label": "Cleanup",
+              "detail": "A moderation drop removes messages during channel resets and raid cleanup."
             }
           ]
         }
@@ -304,27 +420,27 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "description": "Quick answers to the most common questions about Drop Command.",
+      "description": "Quick answers to the most common questions about Drop Command deployment, timing, and progression.",
       "items": [
         {
           "question": "What is Drop Command?",
-          "answer": "Drop Command is a free-to-play fighting RPG on Roblox based on the Bleach anime. You choose one of game mechanics Shinigami (Soul Reaper), Quincy, or Hollow each with unique progression, combat abilities, and evolution systems. The game features 130+ skills, a level 100 cap, boss fights, and deep build customization."
+          "answer": "Drop Command is a tactical sci-fi strategy game about off-map deployment. You spend a limited tonnage budget and a cooldown to call mechs, tanks, infantry, VTOLs, and battle armour onto a landing zone you choose, then use that arrival to break a stalemate or re-anchor a collapsing line."
         },
         {
-          "question": "Which race should beginners pick?",
-          "answer": "Shinigami is the most straightforward starter race, while Hollow and Quincy offer more specialized progression routes. Compare their abilities before committing."
+          "question": "How does a drop command actually work in Drop Command?",
+          "answer": "A drop command has four parts: a call-in cost, a delay timer, a landing point, and a payload. The delay decides most fights, because a payload that lands after the engagement is over costs the resource and gains nothing."
         },
         {
-          "question": "What is the current level cap?",
-          "answer": "The current level cap is 100, with more than 130 skills available across trees and race progression systems."
+          "question": "Which faction should beginners pick in Drop Command?",
+          "answer": "Vanguard is the easiest faction to feel productive with because it pressures early, but it fades without follow-up. For a safer first pick, Support or Heavy gives your team a role that stays useful in the mid-game."
         },
         {
-          "question": "Where do I find active codes?",
-          "answer": "Use the Codes page for working codes, rewards, expiration notes, and redeem instructions."
+          "question": "How much tonnage should I keep in reserve in Drop Command?",
+          "answer": "A common rule is to hold roughly a third of your Drop Command allowance for the late game. Emptying the budget on one assault-class arrival leaves you with no answer when the enemy counter-pushes."
         },
         {
-          "question": "Are boss guides updated?",
-          "answer": "Boss pages are organized with spawn notes, attack patterns, strategies, drop tables, and related next steps for progression."
+          "question": "Where can I find Drop Command patch notes?",
+          "answer": "The Drop Command Updates module tracks the dev log, including permission changes, cooldown adjustments, and item-table fixes, with a summary of what changed and where to report problems."
         }
       ]
     },
