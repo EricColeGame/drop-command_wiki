@@ -1,120 +1,85 @@
 export const metadata = {
-  title: "Unidades mech de comando de despliegue: una guía completa del despliegue orbital en juegos de estrategia con mechs",
-  description: "Aprende cómo funcionan las unidades mech de comando de despliegue en juegos de estrategia con mechs: sincronización del despliegue, roles de unidad, tácticas con cápsulas y consejos para ganar los primeros minutos.",
+  title: "Drop Command: Una guía práctica para el combate de armas combinadas con mechs",
+  description: "Drop Command es el juego de armas combinadas con mechs a gran escala de PillBugGames. Así funcionan sus sistemas anunciados y cómo abordarlos.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Qué significa realmente "comando de despliegue"
+Drop Command es un juego de combate de armas combinadas con mechs del desarrollador PillBugGames, lanzado en Steam el 28 de septiembre de 2026. Si has visto el nombre asociado a otros proyectos o mods, ten en cuenta que este artículo cubre únicamente el juego independiente de Steam listado con el app 1944880. Puedes encontrar la ficha oficial aquí: https://store.steampowered.com/app/1944880/.
 
-En los juegos de estrategia con mechs, los primeros noventa segundos a menudo deciden toda la partida. Quien aterriza primero sus chasis más pesados suele controlar el mapa, y la forma más rápida de lograrlo es dominar las **unidades mech de comando de despliegue**: la mecánica de despliegue que pone a tu ejército en el campo desde la órbita, una nave de descenso o un portaaviones avanzado. Si calculas mal el momento, regalas bajas gratis al enemigo; si lo haces bien, dictas dónde ocurre cada combate. Esta guía desglosa cómo funcionan realmente las **unidades mech de comando de despliegue**, qué chasis pertenecen a una lista de despliegue y cómo secuenciar un despliegue para que tu empuje inicial nunca se estanque.
+Lo que hace que el juego merezca un examen más detenido no es una única mecánica destacada, sino la amplitud que anuncia: pilotas cualquier unidad bajo tu mando, luchas desde pequeñas escaramuzas hasta grandes batallas, te lanzas al combate solo, lideras un escuadrón o comandás un ejército. Esa flexibilidad da forma a casi todas las decisiones que enfrenta un jugador nuevo, así que conviene entender qué promete realmente la página de la tienda antes de formarte expectativas.
 
-La palabra "comando" importa más que la palabra "despliegue". Un comando de despliegue no es un botón de aparición que puedas usar sin parar. Normalmente conlleva un coste de recursos, un tiempo de reutilización, una carga útil máxima y una zona de aterrizaje que el oponente puede explorar, bloquear o castigar. Esas cuatro restricciones convierten el despliegue en una decisión en lugar de una formalidad. Los jugadores que tratan el comando de despliegue como una herramienta de precisión ganan tempo; los que lo tratan como un botón de pánico suelen perder el mapa antes de que sus mejores unidades disparen un solo tiro.
+## Qué anuncia la página oficial de la tienda
 
-Un modelo mental útil: cada despliegue intercambia economía por posición. Pagas dos veces: una en recursos y otra en el riesgo de llegar a un lugar peligroso. La recompensa es que evitas el terreno por completo. Los muros, los puntos de estrangulamiento y los largos carriles de aproximación detienen a los ejércitos terrestres, pero no hacen nada contra un escuadrón que aterriza detrás de ellos.
+Según la página oficial de appdetails de Steam, Drop Command ofrece combate con mechs a gran escala y combate de armas combinadas en el que pilotas cualquier unidad bajo tu mando. El alcance anunciado va desde pequeñas escaramuzas hasta batallas épicas, con el objetivo de construir un imperio estelar.
 
-### Las variables que definen cada comando de despliegue
+Otras características listadas en la página de la tienda incluyen:
 
-| Variable | Qué controla | Por qué importa |
-|---|---|---|
-| Coste de recursos | Precio inicial por llamada | Determina cuántos despliegues puedes permitirte antes de la fase media |
-| Tiempo de reutilización | Tiempo antes de la siguiente llamada | Castiga los despliegues desperdiciados más que los recursos desperdiciados |
-| Límite de carga útil | Unidades entregadas por despliegue | Obliga a elegir entre calidad y cantidad |
-| Zona de aterrizaje | Dónde aparecen las unidades | Una zona descuidada convierte a un escuadrón de élite en bajas gratis |
-| Radio de dispersión | Qué tan ampliamente se reparten las unidades | Los despliegues compactos acumulan daño; los amplios cubren terreno |
-| Retardo de llegada | Tiempo desde la orden hasta el aterrizaje | Los retardos largos exigen predicción, no reacción |
+- Lanzarte al combate solo, liderar un escuadrón o comandar un ejército.
+- Un campo de batalla en evolución con escombros y restos de unidades totalmente destruibles.
+- Pilotos personalizables y con niveles.
+- La elección entre escuadrones de élite y novatos desechables.
+- Unidades de Mech, Tanque, VTOL o Armadura de Combate personalizables.
 
-## Por qué las unidades mech de comando de despliegue deciden el juego temprano
+Ese es el conjunto completo de características anunciadas relevantes para la jugabilidad. Todo lo que sigue se basa en esos puntos como razonamiento general, no como datos medidos del juego.
 
-Las mecánicas de despliegue existen para resolver un problema concreto: mapas grandes y unidades lentas. Si tus chasis más pesados necesitan dos minutos para caminar hasta el frente, el oponente obtiene dos minutos de expansión gratis. Un comando de despliegue comprime ese tiempo de viaje en unos pocos segundos, lo que significa que el primer combate relevante ocurre en tus términos y no en los suyos.
+## Entender la premisa de las armas combinadas
 
-Hay un segundo beneficio más sutil. Como un comando de despliegue puede aterrizar casi en cualquier lugar, funciona como amenaza incluso cuando nunca lo usas. Un oponente que no sabe de dónde vendrá tu refuerzo tiene que repartir sus defensas, y las defensas repartidas pierden contra ataques concentrados. Los informes de la comunidad en las ligas competitivas de mechs describen de forma consistente el mismo patrón: el jugador que mantiene un despliegue disponible fuerza un juego más cauteloso que el que lo gasta de inmediato.
+Las armas combinadas tradicionalmente significan que distintos tipos de unidades cubren las debilidades de las demás. La página de la tienda nombra cuatro familias de chasis: Mech, Tanque, VTOL y Armadura de Combate. No publica estadísticas de unidades, tablas de daño ni costes de construcción, así que cualquier afirmación sobre qué chasis es "el mejor" sería una conjetura.
 
-Por último, los despliegues recompensan la información. Una zona de aterrizaje dentro de tu propia visión es segura; la misma zona sin visión es una apuesta. Por eso el reconocimiento y las mecánicas de despliegue suelen diseñarse como socios en lugar de rivales: uno compra la imagen y el otro la explota.
+Lo que sí respalda la descripción verificada es que puedes pilotar cualquier unidad bajo tu mando. Esa sola frase tiene una gran consecuencia práctica: no estás bloqueado en un rol durante toda una batalla. Un enfoque general sensato es tratar tu elección de pilotaje como una respuesta a la situación en lugar de una identidad permanente. Si un combate se estanca en una dimensión, cambiar la unidad que controlas personalmente puede cambiar aquello sobre lo que puedes influir.
 
-## Cómo construir una lista de despliegue: roles de unidad
+| Característica anunciada | Implicación práctica (razonamiento general) |
+|---|---|
+| Pilotar cualquier unidad bajo tu mando | Tu rol puede cambiar a mitad de batalla; no te encariñes demasiado con un hábito |
+| Desde pequeñas escaramuzas hasta batallas épicas | La escala cambia cuánto puedes gestionar personalmente |
+| Mando en solitario, de escuadrón o de ejército | La carga de liderazgo varía; la delegación importa a escala |
+| Escombros y restos destruibles | El propio campo de batalla puede cambiar a medida que avanza el combate |
 
-No todos los mechs pertenecen a una carga útil de despliegue. Una ranura de despliegue es un recurso escaso, así que cada unidad debe justificar su lugar haciendo algo que el resto de tu ejército no pueda hacer con rapidez.
+## Lanzamientos en solitario, escuadrones y mando de ejército
 
-| Rol | Peso típico | Prioridad de despliegue | Se combina bien con | Error común |
-|---|---|---|---|---|
-| Combatiente de vanguardia | Pesado / Asalto | Primero | Apoyo de fuego | Aterrizar en campo abierto sin cobertura |
-| Hostigador | Ligero / Medio | Segundo | Reconocimiento | Perseguir bajas lejos de la zona de aterrizaje |
-| Apoyo de fuego | Pesado | Segundo o tercero | Combatiente | Desplegar antes de que exista una línea del frente |
-| Reconocimiento / observador | Ligero | Primero, barato | Cualquier cosa con alcance | Gastar una carga útil completa solo en visión |
-| Unidad de mando / aura | Medio / Pesado | Tarde, protegida | Toda la formación | Exponerla en la línea del frente |
-| Asedio / artillería | Pesado | Último | Objetivos fijados por reconocimiento | Desplegar antes de detectar objetivos |
+La página de la tienda presenta tres modos amplios de enfrentamiento: lanzarte solo, liderar un escuadrón o comandar un ejército. No son solo ajustes de dificultad; cambian para qué sirve tu atención.
 
-- **Los combatientes de vanguardia** absorben la ventana de llegada. Aterrizan primero, reciben el fuego de respuesta inicial y crean el espacio que todos los demás necesitan.
-- **Los hostigadores** explotan ese espacio. Son lo bastante rápidos para castigar a un enemigo que se reposiciona, pero lo bastante frágiles como para que un mal aterrizaje sea fatal.
-- **El apoyo de fuego** convierte la visión en daño. Sin un observador, los chasis de largo alcance pasan sus primeros segundos disparando al terreno.
-- **Las unidades de reconocimiento** son la forma más barata de hacer más seguro cada despliegue posterior. Su valor se mide en los despliegues que habilitan, no en el daño que hacen.
-- **Las unidades de mando y aura** multiplican al resto de la lista. Protégelas aterrizando detrás de los combatientes, nunca delante.
-- **Los chasis de asedio** son el remate. Llegan después de que el enemigo se haya comprometido con una posición que no puede abandonar fácilmente.
+Cuando te lanzas solo, todas las decisiones son tuyas y no hay nadie más que absorba los errores. Cuando lideras un escuadrón, ganas la capacidad de estar en un lugar mientras tu escuadrón hace algo en otro. Cuando comandás un ejército, el volumen de eventos simultáneos probablemente supera lo que una persona puede vigilar, lo que convierte la priorización en la habilidad central.
 
-## Comparación de métodos de despliegue
+La descripción verificada no explica la interfaz de mando específica, así que cómo se emiten las órdenes es algo que tendrás que aprender en el juego. Una forma razonable de verificar los detalles es revisar los medios de la página oficial de la tienda y las publicaciones del desarrollador, y luego confirmarlo jugando.
 
-Los distintos juegos implementan el comando de despliegue de manera diferente, pero las compensaciones suelen encajar en cuatro patrones reconocibles.
+## Veteranos, novatos y progresión de pilotos
 
-| Método | Velocidad de llegada | Precisión | Perfil de coste | Mejor uso |
-|---|---|---|---|---|
-| Cápsula de descenso orbital | Rápida | Dispersión amplia | Alto por unidad | Defensa de emergencia y flanqueos sorpresa |
-| Inserción por nave de descenso | Media | Compacta, agrupada | Alto por llamada | Empujes coordinados con un escuadrón completo |
-| Despliegue terrestre desde portaaviones | Lenta | Exacta | Bajo por unidad | Refuerzo seguro detrás de tu propia línea |
-| Baliza / plataforma de teletransporte | Instantánea tras la preparación | Exacta | Barata tras la inversión | Presión sostenida y control del mapa |
+Aquí trabajan juntos dos sistemas anunciados: pilotos personalizables y con niveles, más la elección entre escuadrones de élite y novatos desechables. La redacción implica un compromiso entre calidad y cantidad o reemplazabilidad, pero la página de la tienda no publica curvas de experiencia, límites de nivel ni crecimiento de estadísticas.
 
-El patrón es consistente en los cuatro: la velocidad cuesta precisión, y la precisión cuesta tiempo o dinero. Las cápsulas orbitales son la herramienta a la que recurres cuando algo debe responderse ahora mismo. Las naves de descenso son la herramienta a la que recurres cuando quieres que una formación llegue intacta y luche como una unidad.
+Como los pilotos pueden personalizarse y subir de nivel, es razonable asumir que la inversión en un piloto se acumula con el tiempo. A partir de esa premisa, un patrón común en juegos con esta estructura es proteger a los pilotos experimentados y usar unidades menos invertidas para tareas más arriesgadas. Trata eso como razonamiento, no como una regla documentada.
 
-Si quieres ver cuán variados son estos sistemas en la práctica, puedes [explorar títulos de estrategia con mechs en Steam](https://store.steampowered.com/tags/en/Mechs/) y comparar cómo cada uno maneja el momento de refuerzo, los límites de carga útil y el riesgo de aterrizaje.
+## Un campo de batalla en evolución
 
-## Sincronizar el despliegue: un plan por fases
+Los escombros y restos de unidades totalmente destruibles se anuncian explícitamente. La palabra interesante es "en evolución". Si los restos persisten, entonces el mapa en el que luchas al final de una batalla no es el mapa con el que empezaste. En la práctica, eso sugiere dos hábitos que vale la pena formar:
 
-La mayoría de los fracasos al inicio de partida provienen de desplegar demasiado pronto o demasiado tarde por solo unos segundos. La siguiente secuencia es un marco general que se adapta a la mayoría de los juegos de estrategia con mechs en tiempo real.
+1. Vuelve a leer el terreno antes de comprometerte con una ruta, en lugar de memorizar un plan inicial.
+2. Trata las unidades destruidas como información sobre dónde se ha concentrado la lucha.
 
-| Fase | Objetivo | Qué desplegar | Qué reservar |
-|---|---|---|---|
-| Apertura (0:00–0:20) | Asegurar visión y una bolsa de aterrizaje | Reconocimiento barato o un único chasis ligero | Todas las unidades pesadas |
-| Contacto (0:20–0:45) | Confirmar la composición enemiga | Nada, salvo que estés defendiendo | La carga útil completa |
-| Compromiso (0:45–1:30) | Ganar el primer combate real | Combatientes más apoyo | Unidades de asedio y de mando |
-| Consolidación (1:30+) | Convertir la victoria en control del mapa | Refuerzos en el nuevo frente | Nada: mantén el tiempo de reutilización en ciclo |
+Cuántos restos persisten realmente, y si bloquean de forma significativa el movimiento o la línea de visión, no está documentado en la página de la tienda. Puedes verificarlo directamente jugando una batalla más larga y observando si la disposición del campo de batalla cambia.
 
-Tres hábitos hacen que este plan funcione en la práctica:
+## Personalización y elecciones de equipamiento
 
-1. **Despliega para una decisión, no para una sensación.** Si no puedes nombrar qué logra el despliegue en los próximos veinte segundos, espera a que el tiempo de reutilización siga corriendo.
-2. **Aterriza detrás, no encima.** Llegar directamente sobre una formación enemiga suele significar llegar dentro de sus arcos de disparo. Aterrizar detrás de ellos los obliga a girar, y un ejército que gira es un ejército vulnerable.
-3. **Mantén un despliegue en reserva durante la fase media.** Un comando de despliegue sin gastar es una amenaza; uno gastado es solo un recuerdo.
+La página de la tienda dice que las unidades de Mech, Tanque, VTOL y Armadura de Combate son personalizables. No lista piezas, armas ni costes, y no describe un sistema de códigos, así que cualquier guía de equipamiento que afirme cifras específicas debería tratarse con cautela. Las guías de terceros pueden ser útiles para orientarse, pero son observaciones y no documentación del desarrollador.
 
-## Tácticas, contraestrategias y errores comunes
+Dado el enfoque de armas combinadas, el principio general más seguro es construir unidades que se complementen entre sí en lugar de duplicar un patrón fuerte. Si tu fuerza cubre roles aéreos, terrestres y de escala de infantería, menos situaciones deberían dejarte sin respuesta.
 
-### Tácticas que funcionan de forma consistente
+## FAQ
 
-- **Primero tiende el cebo.** Empuja con unidades terrestres, deja que el enemigo se comprometa y luego aterriza tu despliegue detrás del enfrentamiento.
-- **Acumula daño de llegada.** Las unidades que aterrizan con daño de impacto quieren grupos compactos; un despliegue compacto sobre una línea de apoyo puede borrarla antes de que dispare.
-- **Encadena despliegues con habilidades.** Aturdimientos, humo y negación de zona comprados con una unidad hacen que el siguiente despliegue sea mucho más seguro.
-- **Ajusta la carga útil a la geometría del mapa.** Los mapas abiertos favorecen a los hostigadores rápidos; los mapas de pasillos favorecen a los combatientes que pueden sostener una puerta.
+**¿Es Drop Command lo mismo que la unidad del mod mental-omega?**
+No. Este artículo cubre únicamente el juego independiente de Steam de PillBugGames, app 1944880.
 
-### Errores que pierden partidas
+**¿Cuántas unidades o facciones hay en el juego?**
+La página oficial de la tienda no publica listas de facciones ni recuentos de unidades. Consulta la página de Steam y las actualizaciones del desarrollador para cualquier cosa confirmada.
 
-- Desplegar unidades pesadas en territorio sin explorar.
-- Gastar toda la carga útil en una sola llamada en lugar de construir un ritmo.
-- Ignorar el temporizador de reutilización y llegar tarde a un combate que ya terminó.
-- Aterrizar chasis de apoyo delante de las unidades que se supone que deben apoyar.
-- Tratar el comando de despliegue como un reemplazo del posicionamiento terrestre en lugar de un complemento.
+**¿Hay estadísticas o costes de construcción publicados?**
+No en la página de la tienda. La ficha de appdetails no contiene estadísticas de unidades, tablas de daño ni costes de construcción, así que trata cualquier cifra de ese tipo que veas en otro lugar como no verificada.
 
-### Cómo contrarrestar el despliegue de un oponente
+**¿Cuándo se lanzó?**
+La ficha oficial indica el 28 de septiembre de 2026.
 
-Contrarrestar las unidades mech de comando de despliegue consiste sobre todo en negación. Mantén visión sobre las posibles zonas de aterrizaje, conserva un escuadrón de respuesta rápida cerca de tus estructuras más valiosas y obliga al oponente a aterrizar más lejos de lo que quiere. Las herramientas antiaéreas y de negación de zona existen en la mayoría de los juegos exactamente por esta razón. El objetivo no es impedir todos los despliegues, sino hacer que cada uno cueste más de lo que renta.
+**¿Puedo jugar solo?**
+La descripción anunciada dice que puedes lanzarte al combate solo, y también liderar un escuadrón o un ejército. La estructura exacta de los modos no se detalla en la página de la tienda.
 
-## Preguntas frecuentes
-
-**¿Qué son las unidades mech de comando de despliegue?**
-Son unidades mech desplegadas mediante un comando especial en lugar de caminar al campo: normalmente llegan en cápsula orbital, nave de descenso o portaaviones. El comando suele tener un coste, un tiempo de reutilización y un límite de carga útil, lo que hace que el momento sea más importante que la fuerza bruta de la unidad.
-
-**¿Cuántas unidades mech de comando de despliegue debería desplegar a la vez?**
-La mayoría de los jugadores obtiene mejores resultados con una carga útil pequeña y con propósito: una unidad que sostiene espacio, una que inflige daño y una que apoya. Los despliegues únicos y grandes son fáciles de castigar porque toda la formación comparte la misma ventana de llegada y los mismos errores.
-
-**¿Se pueden contrarrestar las unidades mech de comando de despliegue?**
-Sí. El control de visión, los escuadrones de respuesta rápida y las herramientas antiaéreas o de negación de zona reducen el valor de un despliegue. La contraestrategia más eficaz es la información: un oponente que sabe dónde vas a aterrizar puede recibirte allí con las unidades adecuadas.
-
-**¿Los comandos de despliegue también funcionan en juegos de mechs por turnos?**
-Sí, aunque las compensaciones cambian. En los sistemas por turnos, el retardo de llegada se mide en rondas en lugar de segundos, así que un despliegue es un compromiso que planificas varios turnos antes en vez de una reacción. El principio central se mantiene: aterriza donde el enemigo no está y llega con un propósito.
+El siguiente paso más fiable es la página oficial de Steam de Drop Command, donde la propia descripción y los medios del desarrollador siguen siendo la autoridad sobre lo que el juego incluye y lo que no.

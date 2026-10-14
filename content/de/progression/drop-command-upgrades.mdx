@@ -1,134 +1,84 @@
 export const metadata = {
-  title: "Drop-Command-Upgrades: Der komplette Progressions-Leitfaden für Server-Admins und Spieler",
-  description: "Erfahre, wie Drop-Command-Upgrades in Spielen funktionieren: Berechtigungsstufen, Cooldowns, Loot-Tabellen und Progressionspfade, die Item-Spawning fair und unterhaltsam halten.",
+  title: "Drop Command: Ein praktischer Leitfaden für kombinierte Waffenkämpfe mit Mechs",
+  description: "Drop Command ist das groß angelegte Mech-Kombinationswaffenspiel von PillBugGames. So funktionieren die beworbenen Systeme und wie man über das Spielen nachdenken sollte.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Was ein Drop-Command tatsächlich macht
+Drop Command ist ein Steam-Spiel des Entwicklers PillBugGames, das am 28. September 2026 veröffentlicht wurde. Das Konzept ist für das Mech-Genre ungewöhnlich breit gefächert: Statt dich auf eine einzige Maschine festzulegen, kannst du jede Einheit unter deinem Kommando steuern, von kleinen Scharmützeln bis hin zu großen Schlachten kämpfen und entweder allein einsteigen oder einen Trupp oder eine Armee anführen. Diese Kombination aus Maßstab und Flexibilität macht die gesamte Identität des Spiels aus und prägt die Art und Weise, wie du über das Spielen nachdenken solltest.
 
-Ein Drop-Command ist der kleine Textbaustein, der entscheidet, ob ein Item auf dem Boden landet, in einer Truhe erscheint oder direkt ins Inventar eines Spielers wandert — und sobald ein Server über eine Handvoll Leute hinauswächst, wird dieses winzige Kommando zu einem der am meisten missbrauchten Werkzeuge im Spiel. Wer eine Community leitet oder sich durch eine lange Survival-Welt gründet, für den ist das Verständnis von Drop-Command-Upgrades der Unterschied zwischen einer gesunden Wirtschaft und einem Loot-Freiflauf. Die Progression richtig hinzubekommen ist wichtig, weil Item-Spawning an der Schnittstelle von Spielerbelohnung, Serverleistung und Vertrauen sitzt.
+Die offizielle Store-Seite findest du hier: [Drop Command auf Steam](https://store.steampowered.com/app/1944880/). Alles Folgende trennt das, was der Entwickler tatsächlich bewirbt, von dem, was schlicht nicht veröffentlicht ist, damit du weißt, wo die Fakten enden und vernünftige Schlussfolgerungen beginnen.
 
-Das Kommando selbst ist selten kompliziert. Man tippt ein Schlüsselwort, richtet es auf ein Item oder einen Loot-Pool, und das Spiel platziert das Item entweder in der Welt oder übergibt es an einen Zielspieler. Die eigentliche Komplexität steckt in den Regeln darum herum: wer es ausführen darf, wie oft, was sie erhalten und was passiert, wenn jemand versucht, es auszunutzen.
+## Was Drop Command tatsächlich ist
 
-Die meisten Implementierungen fallen in eine von wenigen erkennbaren Formen:
+Die verifizierte Store-Beschreibung ist präzise, was die Prämisse angeht. Drop Command ist „Mech-Kampf in großem Maßstab", aufgebaut auf kombinierten Waffenkämpfen, bei denen du jede Einheit unter deinem Kommando steuerst. Die Schlachten reichen von kleinen Scharmützeln bis hin zu epischen Gefechten. Du kannst allein in den Kampf einsteigen, einen Trupp anführen oder eine Armee befehligen.
 
-- **Inventar-Injektion** — das Item geht direkt ins Inventar eines Spielers, ohne Welt-Entität.
-- **Welt-Spawning** — das Item erscheint an Koordinaten, auf dem Boden oder in einem Container.
-- **Loot-Rolls** — das Kommando konsultiert eine gewichtete Tabelle statt einer festen Item-ID.
-- **Chat-Bot-Drops** — ein Bot postet eine abholbare Belohnung, um die sich Community-Mitglieder streiten.
+Es wird außerdem ein sich entwickelndes Schlachtfeld mit vollständig zerstörbaren Trümmern und Einheitenwracks beworben, anpassbare und levelbare Piloten, die Wahl zwischen Elitetrupps und entbehrlichen Neulingen sowie die Individualisierung von Mechs, Panzern, VTOLs und Kampfrüstung.
 
-| Form | Typischer Auslöser | Am besten geeignet für | Hauptrisiko |
-|---|---|---|---|
-| Inventar-Injektion | Personal- oder Self-Service-Kommando | Wiederherstellung verlorener Items, Belohnungen | Stille Duplikation |
-| Welt-Spawning | Koordinaten oder Spielerposition | Events, Arenen, Tests | Item-Haufen und Lag |
-| Loot-Roll | Nachschlagen in gewichteter Tabelle | Kisten, Bosse, tägliche Belohnungen | Unausgewogene Chancen |
-| Chat-Bot-Drop | Nachricht oder Reaktion | Community-Verlosungen | Sniping, Zweitaccounts |
+Das ist das vollständige beworbene Funktionspaket. Bemerkenswert ist, dass es dir die *Kategorien* der Einheiten nennt (Mech, Panzer, VTOL, Kampfrüstung), aber nicht ihre Werte, und dass es Fortschritt beschreibt (Piloten, die aufsteigen, Trupps, die du aufbaust), ohne irgendwelche Zahlen zu veröffentlichen. Wenn du wissen willst, was eine bestimmte Ausrüstung bewirkt, wird dir die Store-Seite das nicht verraten — du musst es im Spiel testen.
 
-Zu wissen, welche Form man betreibt, ist Schritt null. Man kann kein System upgraden, das man nicht identifiziert hat.
+## Die Kombinationswaffen-Prämisse in der Praxis
 
-## Warum Drop-Command-Upgrades die Progression vorantreiben
+Kombinierte Waffen sind ein echtes militärisches Konzept: Verschiedene Einheitentypen decken die Schwächen der jeweils anderen ab. Da Drop Command ausdrücklich vier Einheitenkategorien nennt und dich jede davon befehligen lässt, liegt die natürliche Lesart nahe, dass kein einzelnes Chassis jede Situation dominiert.
 
-Progression funktioniert hier in zwei Richtungen. Für Spieler sind Upgrades verdienter Zugang — eine Vertrauensleiter, die einen stumpfen Schalter „du darfst Dinge spawnen" in eine Reihe von Privilegien mit Namen, Anforderungen und Grenzen verwandelt. Für Admins sind Upgrades Sicherheitsfunktionen, die mit der Zeit freigeschaltet werden: Logging, Rate Limits, Rollback und Audit-Trails.
+Dies ist allgemeine Schlussfolgerung aus der Prämisse, keine gemessenen Daten. Aber es gibt dir eine vernünftige Herangehensweise an Kämpfe:
 
-Der Trick besteht darin, beide Leitern als ein System zu behandeln. Wenn ein Spieler eine höhere Stufe verdient, sollte er einen echten Quality-of-Life-Sprung spüren. Wenn ein Admin eine neue Kontrolle freischaltet, sollte sie ein Loch schließen, das die vorherige Stufe offen gelassen hat. Ein Drop-Command-Upgrade, das keins von beidem tut, ist nur Dekoration.
+- **Mechs** sind die traditionellen Allrounder des Genres und tauschen üblicherweise Geschwindigkeit gegen Robustheit und Feuerkraft.
+- **Panzer** bevorzugen in der Regel Bodenpanzerung und Direktfeuer.
+- **VTOLs** implizieren Luftmobilität, was tendenziell Geschwindigkeit und vertikale Winkel auf Kosten der Durchhaltefähigkeit bedeutet.
+- **Kampfrüstung** deutet auf kleine Einheiten in Infanteriegröße hin — billig, zahlreich oder spezialisiert.
 
-| Stufe | Was freigeschaltet wird | Typische Voraussetzung | Wer den Unterschied spürt |
-|---|---|---|---|
-| Stufe 0 — Basis | Self-Drop oder nur für Personal | Standardzugang | Alle |
-| Stufe 1 — Vertraut | Kleiner Item-Pool, langer Cooldown | Spielzeit oder ein Einstiegsrang | Regelmäßige Spieler |
-| Stufe 2 — Verifiziert | Größerer Pool, kürzerer Cooldown | Aktivität plus Verifizierung | Aktive Mitglieder |
-| Stufe 3 — Personal | Massen-Drops und Drops auf andere Ziele | Manuelle Ernennung | Moderatoren |
-| Stufe 4 — Automatisiert | Geplante Drops, API- oder Skript-Hooks | Serverseitige Konfiguration | Event-Organisatoren |
+Keine dieser Eigenschaften ist speziell für Drop Command bestätigt. Der Punkt ist: Wenn das Spiel das meint, was „kombinierte Waffen" besagt, sollte das Mischen von Kategorien Lücken schließen, die eine Streitmacht aus nur einem Typ offen lässt. Der beste Weg, das zu bestätigen, ist, dasselbe Szenario zweimal mit unterschiedlichen Zusammensetzungen durchzuführen und zu beobachten, was zusammenbricht.
 
-Stufennamen unterscheiden sich stark zwischen Communities, also betrachte diese Tabelle als Vorlage und nicht als Standard. Wichtig ist, dass jede Sprosse eine klare Freischaltbedingung und eine klare Obergrenze hat.
+## Piloten, Veteranen und Neulinge
 
-## Die wichtigsten Upgrade-Kategorien
+Hier wirken zwei beworbene Systeme zusammen: Piloten sind „anpassbar und levelbar", und du wählst zwischen „Elitetrupps oder entbehrlichen Neulingen".
 
-### Berechtigungen und Zugangsstufen
+Zusammengelesen deutet das auf einen Risiko-und-Belohnungs-Kompromiss hin. Veteranen sind vermutlich fähiger, repräsentieren aber investierte Zeit; Neulinge sind vermutlich entbehrlich, aber weniger effektiv. Das ist eine Schlussfolgerung aus dem Wortlaut, keine dokumentierte Mechanik.
 
-Permission-Nodes sind das Rückgrat jedes Drop-Command-Upgrades. Statt einer pauschalen Berechtigung teilst du den Zugang in einen Basis-Node plus Tier-Nodes auf, die sich übereinander stapeln. So kannst du eine einzelne Stufe entziehen, ohne jemandem den gesamten Kommandozugang zu nehmen.
+Ein praktischer Ansatz, den viele Spieler in Spielen mit dieser Struktur wählen: Setze Neulinge dort ein, wo Verluste zu erwarten sind, und Veteranen dort, wo ein Kampf gewinnbar, aber kostspielig zu verlieren ist. Da die Store-Seite nicht angibt, wie das Leveln von Piloten funktioniert oder was passiert, wenn ein gelevelter Pilot stirbt, behandle jede konkrete Behauptung über XP-Kurven oder Todesstrafen als unbestätigt. Du kannst den Pilotenbildschirm im Spiel direkt überprüfen.
 
-| Muster | Zweck | Beispiel-Node | Hinweise |
-|---|---|---|---|
-| Basis-Node | Gewährt das Basiskommando | `drop.use` | Aus Standardgruppen heraushalten |
-| Tier-Node | Schaltet einen größeren Pool frei | `drop.tier.2` | Stapelt sich mit dem Basis-Node |
-| Cooldown-Node | Überschreibt den Standardtimer | `drop.cooldown.short` | Von niedrigeren Stufen erben |
-| Admin-Node | Massen- und Fremdziel-Drops | `drop.admin` | Jede Nutzung loggen |
-| Bypass-Node | Umgeht Rate Limits vollständig | `drop.bypass` | Auf ein oder zwei Accounts beschränken |
-
-Die Node-Namen oben sind Platzhalter — die echte Syntax deiner Plattform wird anders aussehen. Übertragbar ist die Struktur.
-
-### Cooldowns und Rate Limits
-
-Ein Drop-Command ohne Cooldown ist eine Duplikationsmaschine, die nur darauf wartet, zu passieren. Cooldown-Design ist ein echter Kompromiss zwischen der Großzügigkeit des Systems und dem Moderationsaufwand, den es erzeugt.
-
-| Cooldown-Stil | Spielergefühl | Admin-Aufwand | Am besten geeignet |
-|---|---|---|---|
-| Fester Timer | Vorhersehbar | Gering | Kleine Server |
-| Skalierender Timer | Fair, bestraft Spam | Gering | Mittelgroße Communities |
-| Aufladungs- oder Token-System | Belohnend | Mittel | Progression-orientierte Server |
-| Nur-Event-Fenster | Spannend und selten | Hoch | Saisonale Events |
-
-### Loot-Tabellen und Item-Pools
-
-Sobald dein Kommando aus einer Tabelle ziehen kann, wird Seltenheit eine Designentscheidung statt eines Zufalls. Gewichtete Einträge, eskalierende Stufen und Pity-Systeme leben hier. Die häufigste Beschwerde aus der Community ist nicht, dass seltene Items zu selten sind — sondern dass niemand die Chancen veröffentlicht hat. Dokumentiere sie.
-
-### Logging, Rollback und Anti-Dupe
-
-Jedes Drop-Command-Upgrade sollte mit einem Log-Eintrag ausgeliefert werden: wer es ausgeführt hat, wann, auf welches Ziel und mit welchem Ergebnis. Logs verwandeln Streitigkeiten in Beweise und machen Rollback möglich. Wenn deine Plattform Transaktions-IDs unterstützt, zeichne sie auf — sie machen Duplikations-Forensik deutlich einfacher.
-
-## Deinen Drop-Command-Upgrade-Pfad aufbauen
-
-Rolle Upgrades der Reihe nach aus. Vorauszuspringen bedeutet meist, später neu zu bauen.
-
-| Schritt | Aktion | Warum es wichtig ist | Erledigt, wenn |
-|---|---|---|---|
-| 1 | Aktuellen Zugang prüfen | Man kann nicht absichern, was man nicht sieht | Du hast eine Liste jeder Gruppe mit Zugang |
-| 2 | Berechtigungen in Stufen aufteilen | Macht aus einem Schalter eine Leiter | Jeder Rang hat seinen eigenen Node |
-| 3 | Standard-Cooldown festlegen | Stoppt Spam, bevor er beginnt | Timer erscheinen in der Kommandoausgabe |
-| 4 | Auf gewichtete Loot-Tabellen umsteigen | Fügt Seltenheit ohne neue Kommandos hinzu | Chancen sind öffentlich dokumentiert |
-| 5 | Logging aktivieren | Schafft Rechenschaft | Jeder Drop hat Zeitstempel und Akteur |
-| 6 | Überprüfen und neu balancieren | Hält das System ehrlich | Ein kurzes, datiertes Changelog existiert |
-
-Ein paar praktische Tipps, die Zeit sparen:
-
-- Teste jede neue Stufe auf einer Staging-Kopie, bevor sie den Live-Server berührt.
-- Kündige Upgrades öffentlich an — Spieler, die wissen, dass die Leiter existiert, werden sie erklimmen.
-- Begrenze den Bypass-Node auf die kleinstmögliche Anzahl von Accounts.
-- Überprüfe deine Cooldowns nach jedem größeren Content-Update neu, da neue Items die Rechnung ändern.
-
-Wenn du speziell in Minecraft arbeitest, ist die Kommando-Dokumentation des Minecraft Wiki die Referenz, die du prüfen solltest, bevor du eigene Syntax schreibst, da sich das Verhalten zwischen Editionen ändern kann.
-
-## Häufige Fehler und Community-Berichte
-
-Die meisten Fehlschläge gehen auf dieselben wenigen Ursachen zurück. Community-Berichte von Survival-, Rollenspiel- und Fraktionsservern kreisen immer wieder um dieselbe Liste.
-
-| Fehler | Was passiert | Die Lösung |
+| Beworbenes Feature | Was es für die Planung bedeutet | Dokumentierte Details |
 |---|---|---|
-| Eine pauschale Berechtigung | Jeder Vertraute kann alles spawnen | In Basis- plus Tier-Nodes aufteilen |
-| Kein Cooldown auf Stufe eins | Früher Spam flutet die Wirtschaft | Ab Tag eins einen festen Timer anwenden |
-| Undokumentierte Loot-Chancen | Spieler nehmen das Schlimmste an | Gewichtungen und Pity-Regeln veröffentlichen |
-| Logging zuletzt hinzugefügt | Exploits sind monatelang unsichtbar | Logging vor den Upgrades einschalten |
-| Ignorieren von Item-Wert-Drift | Alte Drops werden wertlos | Nach Content-Updates neu balancieren |
+| Jede Einheit unter deinem Kommando steuern | Du bist nicht auf ein Chassis festgelegt | Welche Einheiten und wann, ist nicht veröffentlicht |
+| Anpassbare, levelbare Piloten | Langfristige Investition in Individuen | Levelregeln sind nicht veröffentlicht |
+| Elitetrupps oder entbehrliche Neulinge | Eine bewusste Entscheidung Qualität gegen Quantität | Kosten und Effektivität sind nicht veröffentlicht |
+| Zerstörbare Trümmer und Wracks | Das Schlachtfeld verändert sich, während du kämpfst | Keine Mechaniken oder Zahlen veröffentlicht |
 
-**Spieler-Erfahrung**-Hinweis: In vielen Communities ist das eine Upgrade, das Spieler am meisten bemerken, ein kürzerer Cooldown — nicht ein größerer Item-Pool. Geschwindigkeit fühlt sich besser an als Volumen. Das sollte man sich merken, wenn man entscheidet, wo die nächste Entwicklungsstunde hingeht.
+## Das sich entwickelnde Schlachtfeld lesen
 
-Es gibt auch eine soziale Dimension. Ein Drop-Command, den nur Personal ausführen kann, erzeugt eine sichtbare Machtlücke. Selbst eine bescheidene Self-Service-Stufe, streng begrenzt, neigt dazu, Vorwürfe von Günstlingswirtschaft zu reduzieren und Support-Tickets zu verringern, die um ein Hand-out bitten.
+„Sich entwickelndes Schlachtfeld mit vollständig zerstörbaren Trümmern und Einheitenwracks" ist eine der konkreteren Aussagen in der Beschreibung, und sie hat taktische Konsequenzen, selbst ohne Zahlen. Wenn Trümmer und Wracks bestehen bleiben, ist Deckung nicht statisch. Eine Position, die zu Beginn eines Gefechts sauber war, kann später übersät sein — oder eine zerstörte Einheit kann selbst zum Hindernis werden.
+
+Der ehrliche Vorbehalt: PillBugGames hat nicht veröffentlicht, ob Wracks Bewegung blockieren, Sichtlinien blockieren, beseitigt werden können oder nichts außer der Optik beeinflussen. Genau das sind die Fragen, die man in einem risikofreien Scharmützel testen sollte, bevor man eine Armee einsetzt. Lade einen kleinen Kampf, zerstöre etwas Großes und beobachte, ob deine Einheiten darum herumlaufen.
+
+## Planung trotz Unsicherheit
+
+Da keine Einheitenwerte, Schadensstabellen, Baukosten, Techbäume, Fraktionslisten oder ein Code-System veröffentlicht sind, arbeitet jeder, der exakte Zahlen behauptet, mit Vermutungen Dritter oder erfindet sie. Leitfäden Dritter können als sekundäre Beobachtung nützlich sein, sind aber keine Entwicklerdokumentation und spiegeln möglicherweise einen frühen Build wider.
+
+Die sichere Methode ist, das Spiel früh als Hypothesentest zu behandeln:
+
+1. Beginne mit kleinen Scharmützeln, die die Beschreibung ausdrücklich unterstützt.
+2. Ändere jeweils eine Variable — eine Einheitenkategorie oder eine Truppqualität.
+3. Beobachte, was die zerstörbare Umgebung über einen langen Kampf hinweg bewirkt.
+4. Skaliere erst dann zu größeren Schlachten, wenn du die Einzelteile verstehst.
+
+Dies ist allgemeine Schlussfolgerung aus einer Kombinationswaffen-Prämisse. Es ist keine Erfolgsgarantie und kein Ersatz für die eigenen Tooltips und Tutorials des Spiels.
 
 ## FAQ
 
-**Was genau ist ein Drop-Command-Upgrade?**
-Ein Drop-Command-Upgrade ist jede Änderung, die erweitert oder einschränkt, was das Kommando tun kann — eine neue Berechtigungsstufe, ein kürzerer Cooldown, eine gewichtete Loot-Tabelle oder zusätzliches Logging. Upgrades können von Spielern durch Progression verdient oder von Admins freigeschaltet werden, während der Server reift.
+**Wer hat Drop Command entwickelt und wann wurde es veröffentlicht?**
+PillBugGames, veröffentlicht am 28. September 2026 auf Steam. Die App-ID ist 1944880.
 
-**Brauche ich Drop-Command-Upgrades, wenn mein Server winzig ist?**
-Ja, wobei du klein anfangen kannst. Selbst ein bescheidenes Setup — eine Basisberechtigung, ein fester Cooldown und einfaches Logging — verhindert die frühen Fehler, die schmerzhaft abzuwickeln sind, sobald deine Spielerbasis wächst. Sicherheit nachträglich in eine etablierte Wirtschaft einzubauen ist weit schwieriger, als sie von Anfang an mitzubauen.
+**Kann ich jede Einheit steuern?**
+Die Beschreibung besagt, dass du jede Einheit unter deinem Kommando steuern kannst, einschließlich Mechs, Panzern, VTOLs und Kampfrüstung. Genaue Wechselregeln sind nicht veröffentlicht.
 
-**Wie oft sollte ich Loot-Chancen neu balancieren?**
-Überprüfe sie nach jedem bedeutenden Content-Update und ansonsten etwa einmal pro Season. Neue Items ändern den relativen Wert schnell, und Chancen, die vor sechs Monaten großzügig wirkten, können heute knauserig — oder ausnutzbar — wirken.
+**Gibt es veröffentlichte Einheitenwerte oder Baukosten?**
+Nein. Die offizielle Store-Seite veröffentlicht keine Einheitenwerte, Schadensstabellen, Baukosten, Techbäume oder ein Code-System. Überprüfe alles Numerische im Spiel.
 
-**Können Drop-Command-Upgrades bestehende Speicherstände oder Inventare beschädigen?**
-Das Ändern von Berechtigungen und Cooldowns ist im Allgemeinen sicher. Das Ändern von Item-Pools oder Tabellengewichtungen kann beeinflussen, was zukünftige Drops produzieren, verändert aber normalerweise keine Items, die bereits in der Welt sind. Teste immer zuerst auf einer Kopie und halte ein Backup bereit, bevor du deployst.
+**Ist das dasselbe wie die mental-omega-Mod-Einheit?**
+Nein. Drop Command von PillBugGames ist ein eigenständiges Steam-Spiel und nicht diese Mod-Einheit.
 
-**Wer sollte die Bypass-Berechtigung erhalten?**
-So wenige Accounts wie möglich — idealerweise ein oder zwei, gebunden an eine benannte Rolle statt an eine Einzelperson. Jeder Bypass, den du gewährst, ist ein Loch in deinem Rate Limiting, und Löcher sind genau das, was die Drop-Command-Upgrade-Leiter schließen soll.
+**Kann ich solo spielen?**
+Die Beschreibung besagt ausdrücklich, dass du allein in den Kampf einsteigen kannst, Solo-Spiel wird also beworben.
+
+Für maßgebliche Details prüfe stets zuerst die [offizielle Steam-Seite](https://store.steampowered.com/app/1944880/).

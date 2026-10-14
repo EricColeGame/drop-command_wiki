@@ -1,136 +1,86 @@
 export const metadata = {
-  title: "Drop Command Missions Explained: Master Combat Drops, Timing, and Tactics",
-  description: "Learn how drop command missions work in combat games — drop types, timing windows, zone selection, and the mistakes that get squads wiped.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Learn how Drop Command approaches large-scale mech warfare: piloting any unit, leading squads or armies, and fighting on a destructible battlefield.",
   category: "combat",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Why Drop Command Decides Fights Before They Start
+Drop Command is a Steam game from developer PillBugGames that launched on 28 September 2026. Its pitch is mech combat at a grand scale, and the most useful way to understand the game is to read its official description carefully. Rather than a single hero character or a fixed roster, Drop Command frames you as a commander who can personally pilot any unit under your command, fighting anywhere from a small skirmish to an epic battle. That single design decision shapes everything else: how you build squads, how you approach the evolving battlefield, and how you think about victory.
 
-In combat games, the difference between a clean mission and a squad wipe often comes down to one order issued at the right second. **Drop command** missions are the moments when you call reinforcements, supplies, vehicles, or a full insertion package into an active fight — and they punish hesitation harder than almost any other mechanic. If you have ever watched a firefight collapse because the airdrop landed behind enemy cover, you already understand why mastering **drop command** matters more than raw aim.
+If you are searching for "drop command" and wondering what the game actually asks of you, this article sticks to verified facts from the [official Steam page](https://store.steampowered.com/app/1944880/) and clearly labels anything that is community reasoning rather than documented data. Where numbers or systems are not published, we say so instead of guessing.
 
-This guide breaks down how drops actually work, what each drop type is good for, when to call them, where to place them, and the habits that separate players who win missions from players who waste their best cooldowns. Everything here is written for mission-based combat games broadly — squad shooters, tactical RPGs, and real-time strategy — so the principles travel with you between titles.
+## What Is Drop Command?
 
-## What a Drop Command Actually Does
+Drop Command is advertised as a combined-arms mech combat game built around scale and flexibility. The verifiedSteam description says you take part in "mech combat at a grand scale" and "combined arms combat," and that you pilot any unit under your command. It also promises you can "drop into combat alone or leading a squad or army," and that you fight "from small skirmishes to epic battles." Finally, it markets "an evolving battlefield with fully destructible debris and unit wreckage," "customisable and levelable pilots," and "elite squads or disposable rookies."
 
-A drop command is an order that moves something into the battlespace from outside it. Instead of walking a unit through a doorway, you deliver it from above, from off-map, or from a staging area directly onto a marker you control. The command usually has four parts: a call-in cost, a delay, a landing point, and a payload.
+That is the entire verified scope. The store page does **not** publish unit statistics, damage tables, build costs, a tech tree, faction lists, or a code system. Any guide that claims to have exact weapon values or unlock codes is going beyond what the developer documents. If you want those specifics, verify them inside the game itself or on the official Steam page after launch.
 
-Different genres handle the same idea differently. In single-player campaigns, drops are frequently scripted — the mission hands you a reinforcement wave at a fixed story beat. In co-op and multiplayer, drops are player-issued, which means the value of the command depends entirely on your judgment. Community reports consistently point to the same pattern: the players who treat a drop like a resource to be spent carefully outperform players who treat it like a panic button.
+## Piloting Any Unit Changes How You Play
 
-| Component | What It Controls | Why It Matters |
+The most distinctive advertised feature is that you can pilot any unit under your command. In practical terms, this means you should think of yourself as a flexible commander rather than a locked-in loadout. The four unit families named on the store page are Mechs, Tanks, VTOLs, and Battle Armour, and the description says these can be personally customised.
+
+That flexibility suggests a few general habits, framed as reasoning rather than measured advice:
+
+- **Match the unit to the situation.** A VTOL and a Tank behave differently on a battlefield, so the unit you personally take into a fight is a real decision, not a formality.
+- **Treat your own presence as a resource.** If you can jump into whichever unit matters most, you can reinforce a weak flank or press an advantage instead of being stuck in one role.
+- **Expect customisation to matter.** Since Mechs, Tanks, VTOLs, and Battle Armour are all described as personalisable, investing time in understanding one family deeply before spreading across all four is a reasonable approach.
+
+Because no stats are published, we cannot tell you which unit wins a given matchup. You can only learn that by playing or by reading developer notes if they appear.
+
+## Squads, Veterans, and Disposable Rookies
+
+Drop Command explicitly advertises two opposing philosophies: building "elite squads" of veterans, or rushing opponents with "disposable rookies." This is a genuine strategic trade-off framed by the developer, and it maps onto a familiar combined-arms dilemma.
+
+| Approach | Advertised framing | General reasoning |
 |---|---|---|
-| Call-in cost | Points, currency, or ability charge spent | Limits how often you can drop per mission |
-| Delay timer | Time between order and impact | Determines whether the drop arrives before or after the fight ends |
-| Landing point | Where the payload touches down | The single biggest factor in drop survival |
-| Payload | Troops, ammo, vehicle, medical, fortification | Must match the problem you are solving |
-| Cooldown | Wait before the next drop | Punishes wasted drops far more than missed shots |
+| Veterans | "Elite squads" | Slower to build, likely more resilient, better for holding key ground |
+| Rookies | "Disposable rookies" | Faster to field, good for pressure, screening, and absorbing losses |
 
-### Player-Issued vs. Scripted Drops
+The description also mentions "customisable and levelable pilots." That implies pilots improve over time, which strengthens the case for keeping veterans alive while using rookies to absorb risk. However, the store page does not state how leveling works, what pilots gain per level, or whether losses are permanent. Those are undocumented, so treat any claim otherwise as a third-party assumption.
 
-Scripted drops are training wheels. They teach you what a good insertion looks like. Player-issued drops are the real test, because nobody tells you when the timing is right — you have to read the fight and commit.
+A sensible framework: if your pilots gain lasting value, protect them; if you need to buy time or scout, spend rookies. You can confirm how pilot progression actually functions by checking the in-game pilot screen after launch.
 
-## The Main Types of Combat Drops
+## The Evolving Battlefield and Destructible Debris
 
-Not every drop solves every problem. Using a reinforcement drop when you needed ammunition is one of the most common ways missions stall out in the mid-game.
+The official description highlights "an evolving battlefield with fully destructible debris and unit wreckage." This is more than scenery. If debris and wreckage accumulate, the terrain you fight over can change during a match, and cover or routes may shift as the battle wears on.
 
-| Drop Type | Primary Purpose | Relative Risk | Best Used When |
-|---|---|---|---|
-| Troop / reinforcement drop | Add bodies to a push or hold a point | High | You have cover to receive them |
-| Supply / ammo drop | Restore consumables mid-mission | Low to medium | Between fights, not during them |
-| Weapon or vehicle drop | Change the tools available to the squad | Medium | Enemy armor or a fortified position appears |
-| Medical / evac drop | Recover wounded or reset a losing fight | High | You still control the landing zone |
-| Defensive drop | Deploy barriers, turrets, or mines | Low | You expect a counterattack |
-| Offensive strike drop | Deliver area damage from above | Medium | Enemies are clustered and static |
+From a combined-arms perspective, this rewards commanders who stay flexible:
 
-The pattern is straightforward: the more a drop changes the fight, the more dangerous it is to call. Reinforcement and medical drops demand a safe landing zone. Supply and defensive drops are forgiving, which is why they are the correct choice when you are unsure.
+- Re-evaluate positions as wreckage builds up rather than committing to one plan.
+- Consider that destroyed units may leave obstacles or cover that did not exist at the start.
+- Plan drops and advances knowing the map is not static.
 
-## Timing: The Skill Nobody Practices
+The developer does not document how much debris affects movement, line of sight, or cover, so we cannot give exact numbers. What we can say is that "fully destructible" and "evolving" are the words used, and that planning around a changing field is consistent with that promise.
 
-Timing is where drop command missions are won or lost. A drop that lands ten seconds late is worse than no drop at all, because you spent the resource and gained nothing.
+## Leading an Army Versus Dropping Alone
 
-| Timing Window | Situation | Recommended Drop |
-|---|---|---|
-| Pre-push | Fight has not started, you control ground | Reinforcement or vehicle drop |
-| Mid-fight, winning | Enemy is falling back | Offensive strike or supply top-up |
-| Mid-fight, losing | You are being pushed | Defensive drop first, medical second |
-| Post-fight | Area is quiet | Supply, ammo, and repositioning drops |
-| Retreat | You are disengaging | Evac only, and only with smoke or cover |
+Drop Command markets a wide range of scale: you can "drop into combat alone or leading a squad or army." That range is the core of the game's identity. A solo drop is likely a precision or harassment tool, while leading an army is about coordination across multiple unit types.
 
-A useful rule from experienced players: never call a drop into a fight that will be over before the payload lands. Watch the delay timer, not the current moment. If the delay is longer than the fight is likely to last, hold the command.
+Practical reasoning for the command layer:
 
-### Reading the Delay Timer
+- **Decide your role before you drop.** If you are alone, you are one unit; if you lead, you are a coordinator.
+- **Use combined arms.** With Mechs, Tanks, VTOLs, and Battle Armour all present, pairing units that cover each other's weaknesses is the natural reading of "combined arms."
+- **Scale your ambition.** Start with small skirmishes to learn unit behavior before committing to an epic battle.
 
-Delay timers exist to give the enemy a chance to react. Treat the timer as a countdown during which the landing zone must stay safe. If your squad cannot hold that ground for the full countdown, the drop is a donation to the other team.
+None of this is measured data. It is a reading of the advertised premise, and your mileage will vary with your own skill and the game's balance.
 
-## Landing Zone Selection: Where Drops Live or Die
+## What Is Not Documented
 
-A great drop into a bad zone is a bad drop. Zone selection is the most transferable skill in drop command, because it applies to every genre.
+To be clear about the limits of any guide at this stage: PillBugGames has not published unit stats, weapon damage values, construction costs, technology trees, faction lists, or a cheat code system on the Steam store page. If you see a site promising a "Drop Command codes list" or exact damage numbers, treat it as unverified. The reliable ways to check details are the in-game interface itself and the [official Steam store page](https://store.steampowered.com/app/1944880/), where the developer controls the information.
 
-- **Behind hard cover, not behind smoke.** Smoke hides the drop from you as much as from the enemy.
-- **Off the objective, not on it.** Landing directly on a contested point means landing inside grenade range.
-- **With a retreat path.** A drop that cannot be reinforced or extracted is a trap.
-- **Away from chokepoints.** Doorways and stairwells turn landing troops into a queue.
-- **On high ground when available.** Height gives dropped units time to organize before contact.
+## FAQ
 
-| Zone Factor | Good Sign | Red Flag |
-|---|---|---|
-| Cover | Walls, terrain, or vehicles nearby | Open ground with clear sightlines |
-| Enemy distance | Outside immediate threat range | Inside grenade or melee range |
-| Escape route | Two or more exits | Single corridor |
-| Visibility | You can see the zone | Zone is behind enemy lines |
-| Reinforcement | Allies can reach it | Isolated from the squad |
+**Is Drop Command the same as the mental-omega mod unit?**
+No. Drop Command is the Steam game by PillBugGames (app 1944880). It is not the mental-omega mod unit.
 
-## A Step-by-Step Drop Command Workflow
+**When did Drop Command release?**
+The official Steam listing gives a release date of 28 September 2026.
 
-This sequence works whether you are playing a tactical shooter, a squad-based strategy title, or a mission-driven co-op game. You can browse combat strategy titles on Steam to see how widely these systems vary between games.
+**Can I pilot any unit?**
+Yes, that is an advertised feature. The store page says you pilot any unit under your command, and it names Mechs, Tanks, VTOLs, and Battle Armour as personalisable.
 
-| Step | Action | Why It Matters |
-|---|---|---|
-| 1 | Identify the actual problem | Ammo, bodies, damage, or time — pick one |
-| 2 | Match the drop type to the problem | Wrong payload wastes the cooldown |
-| 3 | Check the delay timer against the fight | Prevents late, useless drops |
-| 4 | Pick a landing zone with cover and an exit | Keeps the payload alive |
-| 5 | Mark the zone and confirm with your squad | Prevents friendly-fire and confusion |
-| 6 | Cover the descent | Dropped units are vulnerable on arrival |
-| 7 | Consolidate, then push or reset | A drop is a setup, not a finish |
+**Are there official codes or cheat commands?**
+The developer does not publish a code system on the store page. Any codes you see elsewhere are not verified by official sources.
 
-Steps five and six are the ones players skip. A drop without squad awareness turns into a scramble, and a drop without covering fire becomes a highlight reel for the enemy.
-
-## Common Mistakes in Drop Command Missions
-
-Most failed drops fall into a handful of recognizable categories. Fixing these alone will noticeably improve your mission completion rate.
-
-- **Panic dropping.** Calling reinforcements the moment a fight turns bad, instead of when the landing zone is safe.
-- **Objective dropping.** Landing directly on a contested point because it feels decisive.
-- **Payload mismatch.** Bringing extra bodies to a fight that needed ammo or anti-armor.
-- **Ignoring the cooldown economy.** Spending a long-cooldown drop early means it is unavailable for the mission's hardest moment.
-- **No follow-up.** Dropping units and then doing nothing with the space they create.
-- **Solo dropping.** Calling a drop without telling teammates, then blaming the drop when it fails.
-
-Community reports from co-op players repeatedly highlight the last point: communication is not optional for player-issued drops. A mediocre drop that everyone expects beats a brilliant drop nobody sees coming.
-
-## How to Practice Drops Without Wasting Missions
-
-You do not need a full campaign to improve. Three drills cover most of the skill:
-
-1. **Timer drill.** Before every drop, say the expected delay out loud and predict whether the fight will still be active. Check your prediction afterward.
-2. **Zone drill.** On any map, pick three landing zones for a hypothetical reinforcement drop and rank them by cover, exit routes, and enemy sightlines.
-3. **Budget drill.** Play a mission where you are only allowed two drops. Decide in advance which moments deserve them, then stick to the plan.
-
-These drills build the two habits that matter most: thinking ahead of the delay timer, and treating every drop as a limited resource rather than a reflex.
-
-## Frequently Asked Questions
-
-**What is a drop command in combat games?**
-A drop command is an order that delivers troops, supplies, vehicles, or support into a mission area from outside the battlefield. It typically includes a cost, a delay, a landing point, and a payload, and it is one of the strongest tools available in most mission-based combat games.
-
-**Are drop command missions better played aggressively or defensively?**
-Defensively, most of the time. Reinforcement and medical drops require a safe landing zone, so the reliable play is to secure ground first and drop second. Aggressive strike drops are useful, but they are a supplement to good positioning, not a replacement for it.
-
-**How do I stop wasting my drop command cooldown?**
-Match the payload to the problem, check the delay timer against how long the fight will last, and only land on ground you can hold. If any of those three checks fails, hold the command for a better moment.
-
-**Do drops work the same way in every game?**
-No. Delay timers, costs, and payload types vary widely between titles, and some games restrict drops to scripted mission beats. The underlying principles — timing, zone safety, and payload matching — transfer across all of them.
-
-Master these fundamentals and drop command stops being a gamble. It becomes the moment you control the mission instead of reacting to it.
+**How do I learn the actual stats?**
+Play the game and check its internal unit and pilot screens, or watch the official Steam page for developer updates. No third-party guide can substitute for what the developer has not published.

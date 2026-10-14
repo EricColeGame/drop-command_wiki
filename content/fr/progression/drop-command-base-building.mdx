@@ -1,136 +1,74 @@
 export const metadata = {
-  title: "Guide de construction de base avec la commande drop : invoquez des ressources et accélérez votre progression",
-  description: "Découvrez comment fonctionne la commande drop dans les jeux de construction de base, quand l'utiliser, et comment éviter de corrompre votre sauvegarde ou d'être signalé sur les serveurs multijoueurs.",
+  title: "Drop Command : un guide pratique du combat interarmes en mech",
+  description: "Découvrez comment Drop Command mêle pilotage, création d'escouade et tactiques interarmes. Un guide pratique et sourcé du jeu de mech sur Steam.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Pourquoi la commande drop change votre façon de construire
+Drop Command est un jeu Steam de PillBugGames, sorti le 28 septembre 2026, qui vous place dans le cockpit d'une guerre à l'échelle des mechs. Ce qui le distingue d'un simple shooter de mechs, c'est le mot dans son propre nom : command. Vous ne pilotez pas seulement une machine ; vous êtes responsable de tout ce qui se trouve sur le terrain avec vous. Cela inclut une seule escouade, une armée complète ou, si vous préférez, rien d'autre que vous-même. Cet article explique ce que le jeu annonce réellement, où la communauté a comblé les vides, et ce que vous devriez simplement vérifier vous-même plutôt que de faire confiance à un guide.
 
-Si vous avez déjà fixé une forteresse à moitié terminée avec un inventaire vide, vous comprenez déjà l'attrait d'une configuration de construction de base avec la commande drop. La commande drop est l'instruction de console ou de chat qui place des objets, des ressources ou des structures directement dans votre monde au lieu de vous obliger à les farmer nœud par nœud. Utilisée avec discipline, elle transforme une semaine de grind en un après-midi de construction véritable.
+Pour la page produit officielle, commencez ici : [Drop Command sur Steam](https://store.steampowered.com/app/1944880/).
 
-Cela compte parce que les jeux de construction de base reposent sur une tension : la partie amusante consiste à concevoir et défendre une structure, mais la partie lente consiste à rassembler les matériaux pour y parvenir. Un flux de travail de construction de base avec la commande drop vous permet de sauter la partie lente selon vos propres conditions — pour tester, pour récupérer, ou pour des projets créatifs — sans abandonner entièrement la boucle de survie.
+## Ce qu'est réellement Drop Command
 
-Ce guide couvre ce que la commande fait réellement, comment elle interagit avec les systèmes de progression, et comment l'utiliser sans ruiner votre fichier de sauvegarde ni agacer votre administrateur de serveur.
+La description Steam vérifiée présente Drop Command comme un « combat de mechs à grande échelle » avec un « combat interarmes ». L'accroche centrale est que vous pouvez piloter « n'importe quelle unité sous votre commandement ». C'est une affirmation de design significative, pas du remplissage marketing. Cela implique que le joueur n'est pas enfermé dans un seul châssis ou un seul rôle pour tout un match. Si vous pouvez prendre les commandes d'un Mech, d'un Tank, d'un VTOL ou d'une Armure de combat, alors votre décision sur ce qu'il faut piloter est en elle-même un choix tactique, et non un choix d'équipement fait avant le début du match.
 
-## Ce que fait réellement une commande drop
+La description promet aussi une amplitude d'échelle : « de petites escarmouches à des batailles épiques ». Combiné avec « largué au combat seul ou à la tête d'une escouade ou d'une armée », cela suggère que le jeu prend en charge des styles de jeu très différents. Un largage en solo et un commandement d'armée ne sont pas de simples réglages de difficulté ; ils changent ce que le jeu exige de vous. Le jeu en solo teste votre pilotage et votre positionnement. Le commandement d'armée teste votre capacité à gérer de nombreuses unités à la fois tout en contribuant en tant que pilote.
 
-Une commande drop est une commande de type invocation. Là où la plupart des commandes modifient un paramètre ou téléportent un joueur, une commande drop crée quelque chose : une pile de matériaux, un outil, un meuble, ou dans certains jeux une structure préfabriquée entière. Le mot « drop » signale généralement que l'objet apparaît dans le monde — souvent en tombant au sol près de vous ou aux coordonnées que vous spécifiez — plutôt que de glisser discrètement dans votre inventaire.
+Un détail important : la page du magasin est pauvre en données concrètes. Elle ne publie ni statistiques d'unités, ni tables de dégâts, ni coûts de construction, ni système de codes. Tout guide qui présente ces chiffres comme des faits s'appuie soit sur l'expérience de jeu, soit sur des suppositions. Traitez ces chiffres comme des observations tierces et testez-les vous-même.
 
-La syntaxe exacte varie énormément entre les titres et même entre les versions d'un même titre, alors traitez tout code spécifique que vous lisez en ligne comme un point de départ et vérifiez-le dans le menu d'aide de votre propre jeu ou dans la documentation officielle. La plupart des moteurs suivent un schéma similaire : un caractère déclencheur comme une barre oblique, le nom de la commande, puis des arguments pour ce qu'il faut invoquer, combien, et où.
+## La boucle interarmes en pratique
 
-| Famille de commandes | Ce qu'elle crée typiquement | Où cela apparaît | Triches généralement requises |
-|---|---|---|---|
-| Invocation d'objet | Matériaux, nourriture, outils, munitions | Inventaire ou au sol | Oui |
-| Invocation d'entité | Créatures, PNJ, véhicules | À votre position ou aux coordonnées | Oui |
-| Structure ou préfabriqué | Bâtiments entiers, murs, fondations | À un emplacement ciblé | Oui |
-| Remplissage de butin ou de conteneur | Coffres et caisses pré-remplis | À l'intérieur d'un bloc conteneur | Oui |
-| Copie ou plan | Duplicatas d'une construction existante | Superposés au monde | Oui |
+« Interarmes » est un véritable concept militaire : différents types d'unités couvrant mutuellement leurs faiblesses. Dans un contexte de jeu, cela signifie généralement que vous êtes puni pour avoir misé sur un seul type d'unité et récompensé pour les avoir mélangés. Comme Drop Command liste les Mechs, Tanks, VTOLs et Armures de combat comme options pilotables, le raisonnement pratique est simple.
 
-Si vous jouez à un titre sandbox comme Minecraft, l'architecture des commandes est bien documentée et vaut la peine d'être lue avant d'expérimenter — la [référence des commandes du wiki Minecraft](https://minecraft.wiki/w/Commands) est un bon exemple du type de documentation quasi-officielle que vous devriez rechercher dans votre propre jeu.
-
-## Pourquoi la commande drop compte pour la progression
-
-La progression dans les jeux de construction de base est généralement verrouillée derrière des paliers de ressources. Vous avez besoin de bois pour obtenir de la pierre, de pierre pour obtenir du métal, de métal pour obtenir des murs renforcés, et ainsi de suite. Chaque palier exige des heures de récolte, ce qui est acceptable la première fois et fastidieux la cinquième.
-
-La commande drop court-circuite cette échelle. C'est exactement pourquoi elle est à la fois puissante et controversée.
-
-| Étape de progression | Voie normale | Voie de la commande drop | Meilleur cas d'usage |
-|---|---|---|---|
-| Début de partie | Récolte manuelle des matériaux de base | Invoquer des ressources de départ | Récupération après un wipe ou une sauvegarde perdue |
-| Milieu de partie | Farmer, fondre, fabriquer | Invoquer des matériaux transformés | Tester rapidement un design de construction |
-| Fin de partie | Raid, commerce, ou grind de drops rares | Invoquer des composants rares | Projets de vitrine créatifs |
-| Après la partie | Décorer et optimiser | Invoquer des ensembles décoratifs | Captures d'écran et contenu vidéo |
-
-L'expérience des joueurs suggère que la commande est plus satisfaisante quand vous l'utilisez pour supprimer la *friction* plutôt que pour supprimer le *défi*. Sauter la récolte pour prototyper un plan de base est très différent d'invoquer une armure de fin de partie dès le premier jour et de supprimer la raison de jouer.
-
-## Commande drop vs récolte manuelle
-
-Les retours de la communauté des serveurs de survie et sandbox décrivent systématiquement le même compromis : la commande drop économise énormément de temps mais draine le sentiment d'accomplissement si elle est surutilisée. Voici comment les deux approches se comparent en pratique.
-
-| Facteur | Récolte manuelle | Commande drop |
+| Classe d'unité | Rôle probable dans une force mixte | Généralisation raisonnable |
 |---|---|---|
-| Temps pour une base terminée | Heures à jours | Minutes à heures |
-| Sentiment d'accomplissement | Élevé | Variable |
-| Risque pour l'intégrité de la sauvegarde | Faible | Modéré en cas d'abus |
-| Acceptation multijoueur | Universelle | Restreinte ou interdite |
-| Idéal pour apprendre les recettes | Oui | Non |
-| Idéal pour tester les agencements | Lent | Excellent |
+| Mech | Ancre et plateforme de tir direct | Généralement le plus flexible, souvent le plus lent à repositionner |
+| Tank | Puissance de feu au sol et durabilité | Habituellement fort en terrain découvert, vulnérable au contournement |
+| VTOL | Mobilité et pression verticale | Probablement rapide mais exposé à l'arrêt |
+| Armure de combat | Harcèlement à petite échelle et travail d'objectifs | Probablement bon marché et sacrifiable, faible en combat frontal |
 
-Un compromis pratique que de nombreux constructeurs adoptent est un rythme « phase créative, phase survie ». Construisez et itérez avec la commande drop, puis reconstruisez le design final légitimement dans une nouvelle sauvegarde ou un monde en survie. Vous conservez les connaissances de conception sans transporter d'objets invoqués dans une partie qui vous tient à cœur.
+Ce tableau relève du raisonnement à partir du principe interarmes, et non de données mesurées. La page du magasin ne confirme pas ces rôles. Utilisez-le comme hypothèse de départ, puis testez-le en escarmouche avant de vous engager dans une stratégie.
 
-## Comment utiliser la commande drop en toute sécurité : étape par étape
+## Pilotes, vétérans et recrues jetables
 
-L'invocation imprudente est la première cause de sauvegardes corrompues, de géométrie flottante et de quêtes cassées. Suivez cet ordre à chaque fois.
+Drop Command annonce des « pilotes personnalisables et évolutifs ». Il mentionne aussi des « escouades d'élite ou des recrues jetables ». Ce duo constitue la tension de design la plus intéressante du jeu. Un pilote qui monte en niveau est un investissement. Une recrue est une chair à canon bon marché. La question que tout commandant affronte est de savoir s'il faut dépenser un vétéran sur un objectif de grande valeur ou le retenir et laisser les recrues absorber le risque.
 
-| Étape | Action | Pourquoi c'est important |
-|---|---|---|
-| 1 | Sauvegardez votre fichier de sauvegarde | Les commandes de triche peuvent écrire des changements permanents |
-| 2 | Confirmez que les triches ou le mode admin sont activés | La plupart des jeux bloquent les commandes d'invocation sinon |
-| 3 | Testez d'abord dans un monde jetable | Isole les plantages et les erreurs |
-| 4 | Invoquez de petites quantités avant les grosses | Évite le débordement d'objets et les pics de lag |
-| 5 | Placez les structures sur un sol plat et dégagé | Évite les bugs de clipping et de collision |
-| 6 | Vérifiez le statut des quêtes et succès après | Certains indicateurs se désactivent définitivement à l'usage de triches |
-| 7 | Notez ce que vous avez invoqué | Vous aide à annuler ou reconstruire plus tard |
+La description vérifiée n'explique pas comment fonctionne la progression des pilotes, quelles statistiques s'améliorent, ni si les pilotes peuvent mourir définitivement. Ne présumez rien. Si vous décidez d'engager un vétéran, vérifiez en jeu si ce pilote persiste après une défaite. Ce seul fait change la façon dont vous devriez les utiliser agressivement.
 
-Quelques habitudes supplémentaires à développer :
+Une approche raisonnable, formulée comme un raisonnement général plutôt qu'un conseil testé : utilisez les recrues pour éclairez, couvrir et contester les objectifs mineurs, et réservez les pilotes expérimentés aux moments où leur expérience compte. Si les pilotes sont permanents et la mort définitive, cette logique devient bien plus forte. Si les pilotes sont remplaçables, vous pouvez vous permettre d'être agressif.
 
-- **Ne lancez jamais de commandes d'invocation pendant un combat de boss ou un événement scénarisé.** Les conflits de timing peuvent bloquer définitivement les déclencheurs de progression.
-- **Évitez d'invoquer des milliers d'entités à la fois.** Les objets à forte physique font chuter les fréquences d'images rapidement.
-- **Gardez une sauvegarde « propre » séparée de votre sauvegarde « d'expérimentation ».** Cette seule habitude épargne plus de frustration que toute autre.
-- **Lisez la sortie de la console.** Les messages d'erreur vous indiquent généralement exactement quel argument est incorrect.
+## Le champ de bataille évolutif
 
-## Erreurs courantes avec la commande drop
+La description met en avant un champ de bataille aux « débris et épaves d'unités entièrement destructibles » qui évolue pendant le combat. C'est plus qu'un effet visuel. Le terrain destructible et les épaves modifient généralement les lignes de vue, créent des couverts et bloquent les déplacements au fil du temps. Une voie qui était dégagée au début d'un match peut être encombrée dix minutes plus tard.
 
-La plupart des problèmes proviennent d'une courte liste d'erreurs évitables. Si quelque chose ne va pas, vérifiez d'abord celles-ci.
+Concrètement, cela signifie que vous devriez éviter de vous engager sur une seule position de tir pour tout le match. Si les épaves s'accumulent, vos lignes de vue se dégraderont. À l'inverse, des débris frais peuvent offrir à une unité fragile un endroit où se cacher. Comme la page du magasin ne documente pas le fonctionnement de la physique des débris, vérifiez-le vous-même : combattez au même endroit, détruisez quelques unités et observez si le terrain modifie vos tirs disponibles.
 
-| Erreur | Symptôme | Correction |
-|---|---|---|
-| Mauvais ordre des arguments | La commande ne fait rien | Vérifiez l'aide syntaxique en jeu |
-| Valeur de quantité manquante | Invoque un au lieu d'une pile | Ajoutez l'argument de comptage |
-| Identifiant d'objet invalide | Erreur ou objet de remplacement | Vérifiez le nom exact de l'ID |
-| Invocation à l'intérieur d'un mur | Les objets disparaissent ou passent à travers | Déplacez-vous d'abord sur un terrain dégagé |
-| Utilisation sur un serveur protégé | Échec silencieux ou expulsion | Vérifiez les règles et permissions du serveur |
-| Ignorer les indicateurs de succès | Les trophées cessent de se débloquer | Utilisez une sauvegarde séparée pour les triches |
+## Construire des escouades sans inventer de chiffres
 
-Le problème d'identifiant piège plus de joueurs que tout le reste. Les noms d'objets sont sensibles à la casse dans de nombreux moteurs, et le contenu moddé ou mis à jour renomme fréquemment les entrées. En cas de doute, copiez l'identifiant depuis une source officielle plutôt que de le retaper de mémoire.
+La page du magasin ne liste ni coûts de construction, ni statistiques d'unités, ni arbre technologique. Cela vaut la peine d'être dit clairement, car beaucoup de résultats de recherche sur les jeux de mechs remplissent leurs articles de chiffres fabriqués. Il n'existe aucun système de codes vérifié, aucune valeur de dégâts publiée, et aucun roster officiel d'unités au-delà des quatre classes nommées.
 
-## Règles de serveur et étiquette multijoueur
+Ce que vous pouvez faire à la place, c'est raisonner à partir de la structure annoncée du jeu. Si vous pouvez piloter n'importe quelle unité sous votre commandement, et que vous pouvez construire des escouades, alors votre véritable ressource est l'attention. Plus vous contrôlez d'unités, moins chacune reçoit d'attention. Une petite force de vétérans récompense la concentration. Une grande force de recrues récompense la délégation et les ordres simples. Adaptez la taille de votre force à votre capacité réelle à la gérer. Une armée que vous ne pouvez pas commander n'est qu'une foule.
 
-Sur un monde privé, la commande drop est votre affaire. Sur un serveur partagé, c'est l'affaire de tout le monde. Les admins se répartissent généralement en trois camps.
+## Personnalisation et vérification
 
-| Type de serveur | Politique typique de la commande drop | Conseil pratique |
-|---|---|---|
-| Survie stricte | Entièrement désactivée | Ne demandez pas ; jouez la boucle prévue |
-| Semi-vanilla | Admin uniquement, usage événementiel | Demandez via les canaux du staff |
-| Serveur créatif ou de construction | Entièrement autorisée | Évitez tout de même le spam d'entités |
-| Coop privée | Dépend de l'hôte | Convenez des règles de base à l'avance |
-| PvP public | Généralement interdite | Partez du principe que l'invocation équivaut à un bannissement |
+Les Mechs, Tanks, VTOLs et Armures de combat sont tous décrits comme « personnalisables ». La personnalisation dans les jeux interarmes signifie généralement échanger vitesse, puissance de feu et durabilité les unes contre les autres. Sans statistiques publiées, le conseil honnête est expérimental : changez une chose à la fois, puis jouez une escarmouche et voyez si le changement a aidé. Ne copiez pas une configuration depuis un guide qui ne peut pas montrer sa source.
 
-Même là où la commande est autorisée, la retenue gagne la bienveillance. Invoquer une pile de pierre pour un projet communautaire partagé est généralement bien accueilli. Invoquer de l'équipement de raid et raser la base d'un voisin est le moyen le plus rapide de perdre l'accès.
+Pour vérifier tout ce que cet article ne peut pas confirmer, utilisez deux endroits. D'abord, les détails d'unités en jeu et tout tutoriel ou panneau d'aide, car ceux-ci reflètent la version réelle. Ensuite, la [page Steam officielle](https://store.steampowered.com/app/1944880/), qui est la propre déclaration du développeur sur les fonctionnalités. Si une affirmation ne figure ni dans l'un ni dans l'autre, traitez-la comme non confirmée.
 
-## Idées de construction pratiques qui justifient la commande
+## FAQ
 
-Si vous voulez utiliser la commande drop sans saboter votre progression, ciblez des tâches qui sont réellement fastidieuses plutôt que réellement difficiles.
+**Drop Command est-il un jeu de stratégie ou un jeu d'action ?**
+Les deux, selon la description officielle. Vous pilotez une unité directement tout en commandant d'autres. L'équilibre entre les deux dépend de la taille de la force que vous amenez.
 
-- **Prototypage de plans :** construisez trois variantes d'un design de mur et comparez-les côte à côte.
-- **Vérifications de symétrie :** invoquez des pièces d'angle assorties pour qu'une grande base paraisse délibérée plutôt qu'improvisée.
-- **Tests de redstone ou de logique :** isolez un mécanisme dans un monde vide avant de l'intégrer à votre vraie base.
-- **Récupération :** remplacez l'équipement perdu à cause d'un plantage, d'un bug ou d'une disparition malchanceuse.
-- **Création de contenu :** mettez en scène une base entièrement décorée pour des captures d'écran, des tutoriels ou des guides vidéo.
+**Puis-je jouer en solo ?**
+Oui. La page du magasin indique que vous pouvez être largué au combat seul, avec une escouade ou à la tête d'une armée.
 
-Chacune de ces utilisations emploie la commande pour supprimer le travail fastidieux tout en laissant intactes les parties créatives et stratégiques de la construction de base. C'est le juste équilibre que visent la plupart des constructeurs expérimentés.
+**Le jeu a-t-il un système de codes ou des statistiques d'unités publiées ?**
+Non. Au 14 octobre 2026, la page Steam ne publie ni statistiques d'unités, ni tables de dégâts, ni coûts de construction, ni système de codes. Vérifiez toute affirmation de ce type en jeu.
 
-## Questions fréquentes
+**Les pilotes sont-ils permanents ?**
+Non documenté. Vérifiez en jeu avant de risquer un pilote expérimenté.
 
-**L'utilisation d'une commande drop désactive-t-elle les succès ?**
-Dans de nombreux jeux, oui — activer les triches ou le mode admin marque définitivement une sauvegarde, et certains succès cessent de se débloquer. L'approche la plus sûre est de tester dans un monde séparé et de garder votre sauvegarde de chasse aux succès intacte. Consultez la documentation spécifique de votre jeu, car les politiques varient considérablement entre les titres et les mises à jour.
-
-**Une commande drop peut-elle corrompre mon fichier de sauvegarde ?**
-Elle le peut, mais généralement à cause d'un mauvais usage plutôt que de la commande elle-même. Invoquer d'énormes quantités d'entités, placer des structures dans un terrain invalide, ou interrompre des événements scénarisés sont les causes courantes. Sauvegardez toujours avant d'expérimenter.
-
-**La commande drop est-elle autorisée sur les serveurs multijoueurs ?**
-Cela dépend entièrement du serveur. Les serveurs de survie stricte et de PvP public l'interdisent presque universellement, tandis que les serveurs créatifs et axés sur la construction l'autorisent souvent librement. Demandez à un admin avant de présumer, et ne l'utilisez jamais pour obtenir un avantage sur d'autres joueurs.
-
-**Quelle est la façon la plus rapide d'apprendre un flux de travail de construction de base avec la commande drop ?**
-Commencez dans un monde jetable, ne sauvegardez rien d'important, et expérimentez par petites étapes. Lisez l'aide intégrée de votre jeu ou le wiki officiel pour la syntaxe exacte, invoquez un objet à la fois jusqu'à être à l'aise, puis montez en échelle. Les retours de la communauté s'accordent systématiquement pour dire qu'une pratique lente et délibérée vaut mieux que copier des commandes depuis des posts de forum aléatoires.
+**Que devrais-je apprendre en premier ?**
+Piloter une unité correctement, puis commander une petite escouade. Montez en échelle seulement quand la force plus réduite cesse de vous suffire.

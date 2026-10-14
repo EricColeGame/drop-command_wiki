@@ -1,129 +1,78 @@
 export const metadata = {
-  title: "Comando de despliegue en combate en tiempo real: guía de tiempos, tácticas y ejecución",
-  description: "Aprende cómo funciona el comando de despliegue en combate en tiempo real: ventanas de tiempo, posicionamiento de unidades, errores comunes y ejercicios que convierten despliegues arriesgados en victorias.",
+  title: "Drop Command: Lo que realmente promete el juego de armas combinadas con mechs",
+  description: "Drop Command es el juego de armas combinadas con mechs a gran escala de PillBugGames en Steam. Esto es lo que está documentado, lo que reportan los jugadores y lo que sigue sin verificarse.",
   category: "mechanics",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Un comando de despliegue bien cronometrado puede dar la vuelta a una partida más rápido que casi cualquier otra entrada en combate en tiempo real. Es el momento en que una orden de transporte, lanzamiento aéreo o refuerzo deja de ser un detalle logístico y se convierte en un arma apuntada a la parte más blanda de la configuración del rival. Ya juegues a un clásico de estrategia en tiempo real o a un moderno título de escaramuzas por escuadrones, el comando de despliegue es la mecánica que castiga a cualquiera que aparte la mirada durante cinco segundos.
+"Drop Command" no es un comando que escribes. Es el nombre de un juego de Steam de PillBugGames, lanzado el 28 de septiembre de 2026, y la frase funciona mejor como punto de partida para entender qué tipo de juego de mechs intenta ser. La ficha oficial de Steam para la app 1944880 describe combate de mechs a gran escala, batallas de armas combinadas donde pilotas cualquier unidad bajo tu mando, y un campo de batalla que evoluciona a medida que se acumulan escombros y restos. Eso es lo que está documentado. Casi todo lo demás que buscan los jugadores —estadísticas de unidades, costes de construcción, un sistema de códigos, tablas de daño— no lo publica el desarrollador, y cualquier guía que afirme lo contrario debería tratarse con escepticismo. Este artículo separa lo que confirma la página de la tienda de lo que ha observado la comunidad, y señala las lagunas con claridad.
 
-Entender el comando de despliegue importa porque intercambia riesgo por tempo. Comprometes unidades caras y frágiles detrás de las líneas enemigas y apuestas a que la disrupción vale más que los recursos que podrías perder. Si lo haces bien, ganas control del mapa, fuerzas una reacción y compras tiempo para una ventaja tecnológica o económica. Si lo haces mal, donas una parte de tu ejército a la defensa del rival.
+## Qué anuncia PillBugGames
 
-Esta guía desglosa qué es en realidad un comando de despliegue, cuándo emitir uno, cómo ejecutarlo con limpieza y los ejercicios que lo vuelven automático bajo presión.
+La descripción verificada de Steam es la autoridad aquí, y es inusualmente específica sobre escala y libertad en lugar de números. Según los appdetails oficiales, Drop Command se centra en:
 
-## ¿Qué cuenta como comando de despliegue en combate en tiempo real?
+- Pilotar cualquier unidad bajo tu mando, no un único mech héroe fijo
+- Combate de armas combinadas desde pequeñas escaramuzas hasta grandes batallas
+- Desplegarte en combate solo, liderando un escuadrón o comandando un ejército
+- Un campo de batalla que evoluciona, con escombros destructibles y restos de unidades
+- Pilotos personalizables y con niveles
+- Una elección entre escuadrones de élite de veteranos y novatos desechables
+- Personalización para Mechs, Tanques, VTOLs y Battle Armour
 
-Un comando de despliegue es cualquier orden que coloca unidades, suministros o efectos en una ubicación sin usar una ruta terrestre convencional. En lugar de caminar con tu ejército por el mapa, omites terreno, defensas y tiempo de viaje, que es exactamente por lo que la orden es tan poderosa y tan arriesgada.
+Fíjate en lo que está ausente. La página de la tienda no publica estadísticas de unidades, valores de daño de armas, costes de construcción, árboles tecnológicos, listas de facciones ni un sistema de códigos. Esa ausencia importa porque "drop command" como frase de búsqueda suele atraer a jugadores que buscan códigos de trucos o comandos ocultos, y no hay evidencia en el material oficial de que exista tal sistema. Si quieres confirmarlo por ti mismo, la página de la tienda en https://store.steampowered.com/app/1944880/ es el lugar donde comprobarlo, y los menús del juego mostrarán si hay alguna consola o interfaz de comandos presente.
 
-La mayoría de los juegos de combate en tiempo real comparten cuatro familias de órdenes de despliegue. Se ven distintas en pantalla, pero la decisión de fondo es la misma: ¿qué gano por saltarme el trayecto?
+## Por qué "cualquier unidad bajo tu mando" cambia cómo juegas
 
-| Tipo de despliegue | Qué hace la orden | Uso típico | Nivel de riesgo |
-|---|---|---|---|
-| Inserción aérea | Descarga unidades desde un transporte directamente sobre un objetivo | Acosar trabajadores, eliminar estructuras clave | Alto: el transporte es lento y vulnerable |
-| Despliegue de refuerzos | Entrega unidades frescas a una posición avanzada | Sostener un avance sin caminar de vuelta | Medio: la zona de aterrizaje es predecible |
-| Entrega de suministros/objetos | Coloca consumibles, munición o recursos en el campo | Mantener viva a una escuadra durante un combate | Bajo: normalmente no hay pérdida de unidades |
-| Despliegue de aggro/objetivo | Elimina un objetivo bloqueado, una desventaja o un efecto de estado | Recuperarse de un mal enfrentamiento | Bajo, pero sensible al tiempo |
+La mayoría de los juegos de mechs te encierran en un chasis. La premisa anunciada de Drop Command es la opuesta: la unidad que pilotas es una de las muchas que controlas, lo que convierte el juego en una cuestión de perspectiva más que de potencia bruta. Aquí es donde el razonamiento general a partir de la premisa de armas combinadas resulta útil, y debe leerse como razonamiento, no como datos medidos.
 
-Los dos primeros son los que deciden partidas. Los dos últimos son mantenimiento: importantes, pero rara vez la razón por la que ganas o pierdes.
+Si puedes ocupar la cabina de cualquier cosa, tu decisión real en cada batalla es qué asiento te da más ventaja. Pilotar un VTOL rápido te permite ver todo el enfrentamiento y reaccionar a los flanqueos, pero te aleja del combate terrestre que quizá intentas ganar. Subir a un Mech pesado concentra tu atención en una parte de la línea mientras el resto de tu fuerza continúa por su cuenta. Battle Armour te sitúa lo más cerca de la acción a escala de infantería. Ninguna de estas son afirmaciones de equilibrio documentadas: se derivan del simple hecho de que un solo jugador solo puede estar en un lugar a la vez.
 
-## Por qué el tiempo decide si un despliegue tiene éxito
+La conclusión práctica es decidir antes de cada despliegue si juegas como un comandante que dispara ocasionalmente, o como un tirador que comanda ocasionalmente. La estructura del juego parece admitir ambas cosas, y cambiar a mitad de batalla es presumiblemente posible, ya que controlas unidades en lugar de un único avatar.
 
-Un comando de despliegue emitido en el momento equivocado no es más que un servicio de entrega caro. La orden en sí casi nunca es el problema; la ventana de tiempo sí lo es.
+## Veteranos, novatos y la economía de escuadrones
 
-El desencadenante clásico es posicional. Si el ejército enemigo está a más de una pantalla de distancia del objetivo, un despliegue fuerza una elección imposible: seguir presionando y perder la base, o volver atrás y perder el avance. Los informes de la comunidad y la experiencia de los jugadores apuntan de forma consistente a la misma regla: despliega cuando el enemigo esté comprometido en otro lugar, no cuando tu transporte simplemente esté listo.
+La descripción oficial ofrece una elección genuinamente interesante: formar escuadrones de veteranos o abrumar a los oponentes con novatos. Este es el tipo de diseño donde lo interesante es el equilibrio de costes y beneficios, y ese equilibrio es legible incluso sin números publicados.
 
-| Fase de la partida | Objetivo del despliegue | Señal de éxito | Señal de fracaso |
-|---|---|---|---|
-| Inicio | Forzar gasto defensivo, matar unidades de economía | El rival trae su ejército a casa | El explorador lo ve y la defensa está preposicionada |
-| Medio | Dividir la atención, romper una línea de asedio | La formación enemiga se descompone | La antiaérea o la detección ya cubren la base |
-| Final | Intercambiar con eficiencia, eliminar producción | La producción se detiene durante un ciclo completo | Pierdes el transporte *y* la carga útil |
-
-Vale la pena seguir tres señales de tiempo en cada partida:
-
-- **Huecos de visión.** Si no ves sus defensas, no puedes saber si el despliegue es seguro.
-- **Enfriamientos.** Las habilidades defensivas de largo alcance y las herramientas de detección tienen ventanas. Despliega dentro de ellas.
-- **Distancia del ejército.** Mide en tiempo de viaje, no en distancia del mapa. Un ejército lento está, en la práctica, más lejos.
-
-### Las cuentas de tempo detrás de un despliegue
-
-Incluso un despliegue fallido puede valer la pena si le cuesta al rival más atención de la que te cuesta a ti en recursos. Ese es el verdadero tipo de cambio en el combate en tiempo real: atención por daño. Un despliegue que arrastra a un ejército al otro lado del mapa ya se ha pagado solo, porque compraste tiempo libre para tu propia expansión o tecnología.
-
-## Ejecutar el comando de despliegue: lista de pasos
-
-Una ejecución limpia separa una jugada de reel de highlights de una donación. Sigue estos pasos en orden y trata el comando de despliegue como una secuencia, no como un solo clic.
-
-1. **Confirma que el objetivo vale la pena.** Economía, producción o una estructura defensiva clave, no un edificio cualquiera.
-2. **Preposiciona el transporte fuera de la visión enemiga.** Reúnelo detrás de terreno o niebla, y espera.
-3. **Elimina o suprime detección y antiaérea.** Envía primero un explorador si tienes dudas.
-4. **Emite el comando de despliegue cuando el transporte cruce la aproximación final.** Demasiado pronto y los defensores reaccionan; demasiado tarde y pierdes el transporte antes de descargar.
-5. **Descarga disperso, no en un grupo apretado.** Un racimo compacto está a un solo hechizo de área de distancia del desastre.
-6. **Ten un plan de salida.** O el transporte sobrevive para un segundo viaje, o las unidades desplegadas tienen una ruta para escapar.
-
-| Paso | Acción | Comprobación antes de comprometerte |
+| Enfoque | Ventaja plausible | Riesgo plausible |
 |---|---|---|
-| 1 | Elegir el objetivo | ¿Matar esto cambia los próximos dos minutos? |
-| 2 | Preparar el transporte | ¿Está oculto de la visión de la base principal? |
-| 3 | Explorar la zona de aterrizaje | ¿Hay antiaérea, detección o defensa estática? |
-| 4 | Emitir la orden | ¿El ejército enemigo está realmente lejos? |
-| 5 | Descargar y dispersar | ¿Las unidades forman una línea, no un círculo? |
-| 6 | Salir o reforzar | ¿Puede irse el transporte, o es un viaje solo de ida? |
+| Escuadrones de veteranos | Las unidades sobreviven más tiempo, acumulan experiencia, mantienen terreno | Más lentos de reunir, dolorosos de perder, menos cobertura del mapa |
+| Avalanchas de novatos | Rápidos de desplegar, baratos de reemplazar, amplia presencia | Frágiles, probablemente intercambien mal en combates prolongados |
 
-### La posición importa más que la velocidad
+Esta tabla es una inferencia de la característica anunciada "escuadrones de élite o novatos desechables", no una hoja de datos. El desarrollador no ha publicado curvas de experiencia, costes de reemplazo ni bonificaciones por veterania. Lo que puedes verificar es si los pilotos suben de nivel visiblemente, si los reemplazos llegan más rápido de lo que se recuperan los veteranos, y si el juego recompensa el desgaste o la preservación. Pruébalo en una escaramuza pequeña antes de comprometerte con una estrategia a escala de campaña.
 
-Los jugadores nuevos se obsesionan con la rapidez con la que pueden desplegar. Los jugadores experimentados se obsesionan con dónde. Un despliegue un poco más lento que aterriza detrás de la línea de minerales, o al otro lado de un muro, logra más que un despliegue relámpago en medio de una base defendida.
+La característica de escombros destructibles y restos de unidades refuerza la cuestión del desgaste. Si el campo de batalla se llena con los restos de unidades destruidas, entonces los empujes baratos repetidos pueden obstruir el terreno tanto como abruman a un oponente. Si los restos bloquean el movimiento, proporcionan cobertura o son puramente estéticos no está documentado en la página de la tienda. Los jugadores deberían comprobarlo en el juego en lugar de asumirlo.
 
-## Comando de despliegue vs. otras órdenes: cuándo usar cada una
+## Lo que no está documentado
 
-No toda situación exige un despliegue. A veces una simple orden de ataque-movimiento hace el trabajo con mucho menos riesgo. La comparación siguiente es una buena comprobación visceral antes de comprometerte.
+Merece la pena ser directo sobre las lagunas, porque las búsquedas de Drop Command con frecuencia derivan hacia cosas que el juego no anuncia:
 
-| Orden | Para qué sirve | Compromiso | Recuperación si falla |
-|---|---|---|---|
-| Orden de movimiento | Reposicionarse sin entrar en combate | Mínimo | Total: las unidades conservan su salud |
-| Ataque-movimiento | Avanzar mientras se autoenfrenta | Medio | Parcial: puedes retirarte, pero sufres pérdidas |
-| Comando de despliegue | Omitir defensas para golpear la retaguardia | Alto | Bajo: las unidades suelen quedar atrapadas |
-| Mantener/patrullar | Bloquear un punto de estrangulamiento o expansión | Bajo | Total: no se comprometen recursos |
+- No se publican estadísticas de unidades, valores de daño ni tablas de blindaje
+- No se publican costes de construcción ni tasas de recursos
+- No se publica árbol tecnológico, lista de facciones ni ruta de progresión
+- No se publica sistema de códigos, comandos de consola ni lista de teclas rápidas
+- No aparecen notas de parche ni hoja de ruta posterior al lanzamiento en la descripción oficial
 
-Una regla simple: usa un comando de despliegue cuando el camino esté bloqueado, el objetivo esté indefenso y puedas permitirte perder todo lo que va en el transporte. Si alguna de esas condiciones es falsa, haz caminar a tu ejército.
+Si una guía de terceros afirma tener números de daño exactos o una lista de códigos funcional, trátala como una observación de la comunidad en el mejor de los casos y como no verificada en el peor. Las guías de terceros son fuentes secundarias, no documentación del desarrollador. El método fiable es abrir el juego, revisar las pantallas de unidades o personalización del juego y compararlas con la página oficial de Steam.
 
-## Errores comunes con el comando de despliegue (y cómo corregirlos)
+## Cómo evaluar el juego por ti mismo
 
-La mayoría de los despliegues fallidos caen en unos pocos patrones recurrentes. Corregirlos suele ser cuestión de disciplina, no de mecánica.
+Como la página de la tienda describe sistemas en lugar de números, lo más útil que puedes hacer es verificar las características anunciadas directamente. Confirma que realmente puedes pilotar varios tipos de unidades cambiando de asiento. Confirma que los pilotos suben de nivel y que el nivel es visible. Confirma que los escombros se acumulan y que hacen algo. Confirma que la composición del escuadrón cambia significativamente los resultados en lugar de ser algo cosmético.
 
-| Error | Por qué te cuesta | Solución |
-|---|---|---|
-| Desplegar a la vista | Los defensores ganan tiempo gratis para reposicionarse | Acércate desde un ángulo no explorado o espera a la niebla |
-| Amontonar en el punto de aterrizaje | Un ataque de área borra la carga útil | Dispersa la descarga a lo largo de una línea corta |
-| No hacer seguimiento | El daño se repara y nada cambia | Programa el siguiente objetivo antes de que aterrice el primer despliegue |
-| Reutilizar el mismo ángulo | Los rivales construyen defensas allí con antelación | Rota dos o tres rutas de despliegue por partida |
-| Ignorar el transporte | Un transporte muerto también mata el siguiente despliegue | Retíralo pronto o acéptalo como prescindible |
-
-Vale la pena construir dos hábitos más. Primero, cuenta siempre lo que envías: un despliegue que no puede matar a su objetivo solo es una distracción. Segundo, mira el minimapa durante el despliegue, no el despliegue en sí. La información que necesitas suele estar ocurriendo en otra parte del mapa.
-
-## Ejercicios para que el comando de despliegue sea automático
-
-La mecánica solo se vuelve fiable con repetición. Estos ejercicios toman de diez a quince minutos y apuntan a las habilidades específicas que exige un comando de despliegue.
-
-| Ejercicio | Preparación | Objetivo |
-|---|---|---|
-| Despliegue a ciegas | Escaramuza contra un rival fácil, sin permitir exploración | Aprender las rutas de despliegue predeterminadas en cada mapa |
-| Ejercicio de teclas rápidas | Asignar transporte y carga útil a grupos de control separados | Emitir la orden sin mirar el teclado |
-| Descarga dividida | Practicar la descarga en línea contra un objetivo estacionario | Reducir el amontonamiento en tres intentos o menos |
-| Reacción contra-despliegue | Haz que un compañero despliegue sobre ti repetidamente | Reconocer el sonido y la señal visual al instante |
-
-Si quieres una referencia sobre cómo los títulos pulidos de estrategia en tiempo real ajustan el transporte, los refuerzos y el comportamiento de despliegue, el [sitio oficial de Age of Empires](https://www.ageofempires.com/) es un buen punto de partida para estudiar el diseño de órdenes y los roles de las unidades.
-
-Un último consejo: revisa tus propias repeticiones y cuenta cuántos despliegues se convirtieron realmente en daño. Si el número es bajo, el problema suele ser el tiempo, no la ejecución. Baja el ritmo, elige mejores ventanas y el comando de despliegue se convertirá en una de las herramientas más fiables de tu arsenal.
+Si todo eso se sostiene, Drop Command cumple con su propuesta central: un juego de mechs de armas combinadas donde la decisión interesante no es qué mech desbloquear, sino dónde te sitúas personalmente en un campo de batalla en evolución. Si algunas resultan ser superficiales, ninguna guía externa lo arreglará, porque ninguna guía externa tiene los datos.
 
 ## FAQ
 
-**¿Qué es un comando de despliegue en combate en tiempo real?**
-Un comando de despliegue es una orden que entrega unidades, suministros o efectos a una ubicación sin una ruta terrestre, normalmente mediante transporte o lanzamiento aéreo. En combate en tiempo real se usa para omitir defensas, acosar una economía o reforzar un avance rápidamente.
+**¿"drop command" es un código de trucos para el juego?**
+No hay ningún sistema de códigos documentado. La descripción oficial de Steam para la app 1944880 no menciona códigos, consolas ni comandos. Verifícalo en el juego si tienes curiosidad.
 
-**¿Cuándo debería emitir un comando de despliegue?**
-Emite el comando de despliegue cuando el ejército enemigo esté comprometido en otro lugar, cuando la zona de aterrizaje no esté explorada o esté poco defendida, y cuando puedas permitirte perder las unidades implicadas. Si falta alguna de esas condiciones, un ataque convencional suele ser la opción más segura.
+**¿Cuándo se lanzó Drop Command?**
+Los appdetails oficiales de Steam indican el 28 de septiembre de 2026, desarrollado por PillBugGames.
 
-**¿Por qué mis despliegues siguen fallando?**
-Las causas más comunes son desplegar dentro de la visión enemiga, amontonar unidades en el punto de aterrizaje y no tener un plan de seguimiento. Corregir solo la ventana de tiempo suele mejorar el éxito de los despliegues más que cualquier ajuste de micro.
+**¿También puedes pilotar tanques, VTOLs y Battle Armour?**
+Sí, la página de la tienda anuncia personalización y control de Mechs, Tanques, VTOLs y Battle Armour.
 
-**¿Vale la pena aprender el comando de despliegue como principiante?**
-Sí, pero apréndelo después de sentirte cómodo con la economía básica y el control del ejército. El comando de despliegue recompensa a los jugadores que ya entienden la visión del mapa y el tempo; sin esas bases, tiende a intercambiar unidades por muy poco.
+**¿Hay estadísticas de unidades o costes de construcción publicados?**
+No. La página de la tienda no publica estadísticas de unidades, tablas de daño, costes de construcción, árboles tecnológicos ni listas de facciones.
+
+**¿Dónde debería consultar información precisa?**
+La página oficial de Steam en https://store.steampowered.com/app/1944880/ y la interfaz del juego son las fuentes autorizadas.

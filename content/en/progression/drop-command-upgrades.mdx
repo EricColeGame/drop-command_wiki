@@ -1,134 +1,84 @@
 export const metadata = {
-  title: "Drop Command Upgrades: The Complete Progression Guide for Server Admins and Players",
-  description: "Learn how drop command upgrades work in games: permission tiers, cooldowns, loot tables, and progression paths that keep item spawning fair and fun.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Drop Command is PillBugGames' large-scale mech combined-arms game. Here's how its advertised systems work and how to reason about play.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What a Drop Command Actually Does
+Drop Command is a Steam game from developer PillBugGames, released on 28 September 2026. Its pitch is unusually broad for the mech genre: instead of locking you into one machine, it lets you pilot any unit under your command, fight from small skirmishes up to large battles, and either drop in alone or lead a squad or an army. That combination of scale and flexibility is the whole identity of the game, and it shapes how you should think about playing it.
 
-A drop command is the small piece of text that decides whether an item lands on the ground, appears in a chest, or slides straight into a player's inventory — and once a server grows past a handful of people, that tiny command becomes one of the most abused tools in the game. If you run a community or grind through a long survival world, understanding drop command upgrades is the difference between a healthy economy and a loot free-for-all. Getting the progression right matters because item spawning sits at the intersection of player reward, server performance, and trust.
+You can find the official store page here: [Drop Command on Steam](https://store.steampowered.com/app/1944880/). Everything below separates what the developer actually advertises from what is simply not published, so you know where the facts end and reasonable inference begins.
 
-The command itself is rarely complicated. You type a keyword, point it at an item or a loot pool, and the game either places the item in the world or hands it to a target player. The real complexity lives in the rules wrapped around it: who can run it, how often, what they receive, and what happens when someone tries to exploit it.
+## What Drop Command Actually Is
 
-Most implementations fall into one of a few recognizable shapes:
+The verified store description is specific about the premise. Drop Command is "mech combat at a grand scale," built around combined-arms combat where you pilot any unit under your command. Battles range from small skirmishes to epic battles. You can drop into combat alone, lead a squad, or command an army.
 
-- **Inventory injection** — the item goes directly into a player's inventory, no world entity involved.
-- **World spawning** — the item appears at coordinates, on the ground, or in a container.
-- **Loot rolls** — the command consults a weighted table instead of a fixed item ID.
-- **Chat bot drops** — a bot posts a claimable reward that community members race to grab.
+It also advertises an evolving battlefield with fully destructible debris and unit wreckage, customisable and levelable pilots, the choice between elite squads and disposable rookies, and personalisation of Mechs, Tanks, VTOLs and Battle Armour.
 
-| Form | Typical trigger | Best used for | Main risk |
-|---|---|---|---|
-| Inventory injection | Staff or self-service command | Restoring lost items, rewards | Silent duplication |
-| World spawning | Coordinates or player position | Events, arenas, testing | Item piles and lag |
-| Loot roll | Weighted table lookup | Crates, bosses, daily rewards | Unbalanced odds |
-| Chat bot drop | Message or reaction | Community giveaways | Sniping, alt accounts |
+That is the complete advertised feature set. Notably, it tells you the *categories* of units (Mech, Tank, VTOL, Battle Armour) but not their stats, and it describes progression (pilots that level, squads you build) without publishing any numbers. If you want to know what a specific loadout does, the store page will not tell you — you have to test it in game.
 
-Knowing which form you're running is step zero. You cannot upgrade a system you haven't identified.
+## The Combined-Arms Premise in Practice
 
-## Why Drop Command Upgrades Drive Progression
+Combined arms is a real military concept: different unit types cover each other's weaknesses. Since Drop Command explicitly names four unit categories and lets you command any of them, the natural reading is that no single chassis dominates every situation.
 
-Progression works in two directions here. For players, upgrades are earned access — a ladder of trust that turns a blunt "you can spawn things" switch into a set of privileges with names, requirements, and limits. For admins, upgrades are safety features unlocked over time: logging, rate limits, rollback, and audit trails.
+This is general reasoning from the premise, not measured data. But it gives you a sensible way to approach fights:
 
-The trick is treating both ladders as one system. When a player earns a higher tier, they should feel a genuine quality-of-life jump. When an admin unlocks a new control, it should close a hole that the previous tier left open. A drop command upgrade that does neither is just decoration.
+- **Mechs** are the genre's traditional all-rounders, typically trading speed for durability and firepower.
+- **Tanks** usually favour ground armour and direct fire.
+- **VTOLs** imply air mobility, which tends to mean speed and vertical angles at the cost of staying power.
+- **Battle Armour** suggests small, infantry-scale units — cheap, numerous, or specialist.
 
-| Tier | What unlocks | Typical requirement | Who feels the difference |
-|---|---|---|---|
-| Tier 0 — Baseline | Self-drop or staff-only use | Default access | Everyone |
-| Tier 1 — Trusted | Small item pool, long cooldown | Playtime or an entry rank | Regular players |
-| Tier 2 — Verified | Wider pool, shorter cooldown | Activity plus verification | Active members |
-| Tier 3 — Staff | Bulk drops and target-other drops | Manual appointment | Moderators |
-| Tier 4 — Automated | Scheduled drops, API or script hooks | Server-side configuration | Event organizers |
+None of those traits are confirmed for Drop Command specifically. The point is that if the game means what "combined arms" says, mixing categories should cover gaps that a single-type force leaves open. The best way to confirm this is to run the same scenario twice with different compositions and watch what breaks.
 
-Tier names differ wildly between communities, so treat that table as a template rather than a standard. What matters is that each rung has a clear unlock condition and a clear ceiling.
+## Pilots, Veterans and Rookies
 
-## The Upgrade Categories That Matter Most
+Two advertised systems interact here: pilots are "customisable and levelable," and you choose between "elite squads or disposable rookies."
 
-### Permissions and Access Tiers
+Read together, that suggests a risk-and-reward tradeoff. Veterans are presumably more capable but represent invested time; rookies are presumably expendable but less effective. That is inference from the wording, not documented mechanics.
 
-Permission nodes are the backbone of any drop command upgrade. Instead of granting one blanket permission, you split access into a base node plus tier nodes that stack on top of each other. This lets you revoke a single tier without stripping someone's entire command access.
+A practical approach many players adopt in games with this structure: use rookies where losses are expected and veterans where a fight is winnable but costly to lose. Because the store page does not state how pilot leveling works or what happens when a leveled pilot dies, treat any specific claim about XP curves or death penalties as unverified. You can check the in-game pilot screen directly.
 
-| Pattern | Purpose | Illustrative node | Notes |
-|---|---|---|---|
-| Base node | Grants the base command | `drop.use` | Keep out of default groups |
-| Tier node | Unlocks a bigger pool | `drop.tier.2` | Stacks with the base node |
-| Cooldown node | Overrides the default timer | `drop.cooldown.short` | Inherit from lower tiers |
-| Admin node | Bulk and target-other drops | `drop.admin` | Log every use |
-| Bypass node | Skips rate limits entirely | `drop.bypass` | Restrict to one or two accounts |
-
-The node names above are placeholders — your platform's real syntax will look different. The structure is what transfers.
-
-### Cooldowns and Rate Limits
-
-A drop command without a cooldown is a duplication engine waiting to happen. Cooldown design is a genuine trade-off between how generous the system feels and how much moderation work it creates.
-
-| Cooldown style | Player feel | Admin workload | Best fit |
-|---|---|---|---|
-| Fixed timer | Predictable | Low | Small servers |
-| Scaling timer | Fair, punishes spam | Low | Mid-size communities |
-| Charge or token system | Rewarding | Medium | Progression-focused servers |
-| Event-only windows | Exciting and rare | High | Seasonal events |
-
-### Loot Tables and Item Pools
-
-Once your command can pull from a table, rarity becomes a design choice instead of an accident. Weighted entries, escalating tiers, and pity systems all live here. The most common community complaint is not that rare items are too rare — it's that nobody published the odds. Document them.
-
-### Logging, Rollback, and Anti-Dupe
-
-Every drop command upgrade should ship with a log entry: who ran it, when, on what target, and with what result. Logs turn disputes into evidence and make rollback possible. If your platform supports transaction identifiers, record them — they make duplication forensics dramatically easier.
-
-## Building Your Drop Command Upgrade Path
-
-Roll upgrades out in order. Skipping ahead usually means rebuilding later.
-
-| Step | Action | Why it matters | Done when |
-|---|---|---|---|
-| 1 | Audit current access | You can't secure what you can't see | You have a list of every group with access |
-| 2 | Split permissions into tiers | Turns one switch into a ladder | Each rank has its own node |
-| 3 | Set a default cooldown | Stops spam before it starts | Timers show in command output |
-| 4 | Move to weighted loot tables | Adds rarity without new commands | Odds are documented publicly |
-| 5 | Enable logging | Creates accountability | Every drop has a timestamp and actor |
-| 6 | Review and rebalance | Keeps the system honest | A short, dated changelog exists |
-
-A few practical tips that save time:
-
-- Test every new tier on a staging copy before it touches the live server.
-- Announce upgrades publicly — players who know the ladder exists will climb it.
-- Cap the bypass node at the smallest possible number of accounts.
-- Re-check your cooldowns after every major content update, since new items change the math.
-
-If you're working inside Minecraft specifically, the Minecraft Wiki's command documentation is the reference to check before you write custom syntax, since behavior can shift between editions.
-
-## Common Mistakes and Community Reports
-
-Most failures trace back to the same handful of causes. Community reports from survival, roleplay, and faction servers keep circling the same list.
-
-| Mistake | What happens | The fix |
+| Advertised feature | What it means for planning | Documented detail |
 |---|---|---|
-| One blanket permission | Anyone trusted can spawn anything | Split into base plus tier nodes |
-| No cooldown on tier one | Early spam floods the economy | Apply a fixed timer from day one |
-| Undocumented loot odds | Players assume the worst | Publish weights and pity rules |
-| Logging added last | Exploits are invisible for months | Turn logging on before upgrades |
-| Ignoring item value drift | Old drops become worthless | Rebalance after content updates |
+| Pilot any unit under your command | You are not locked to one chassis | Which units, and when, is not published |
+| Customisable, levelable pilots | Long-term investment in individuals | Leveling rules are not published |
+| Elite squads or disposable rookies | A deliberate quality-vs-quantity choice | Costs and effectiveness are not published |
+| Destructible debris and wreckage | The battlefield changes as you fight | No mechanics or numbers published |
 
-**Player experience** note: across many communities, the single upgrade players notice most is a shorter cooldown — not a bigger item pool. Speed feels better than volume. That's worth remembering when you decide where to spend your next development hour.
+## Reading the Evolving Battlefield
 
-There's also a social dimension. A drop command that only staff can run creates a visible power gap. Even a modest self-service tier, tightly limited, tends to reduce accusations of favoritism and cut down on support tickets asking for a hand-out.
+"Evolving battlefield with fully destructible debris and unit wreckage" is one of the more concrete claims in the description, and it has tactical consequences even without numbers. If debris and wreckage persist, cover is not static. A position that was clean at the start of an engagement may be cluttered later — or a destroyed unit may itself become an obstacle.
+
+The honest caveat: PillBugGames has not published whether wreckage blocks movement, blocks line of sight, can be cleared, or affects nothing but visuals. Those are exactly the questions to test in a low-stakes skirmish before committing an army. Load a small fight, destroy something large, and observe whether your units path around it.
+
+## Building Around Uncertainty
+
+Because no unit stats, damage tables, build costs, tech trees, faction lists, or code system are published, anyone claiming exact numbers is working from third-party guesses or inventing them. Third-party guides can be useful as secondary observation, but they are not developer documentation and may reflect an early build.
+
+The safe method is to treat the game as a hypothesis-testing exercise early on:
+
+1. Start with small skirmishes, which the description explicitly supports.
+2. Change one variable at a time — one unit category or one squad quality.
+3. Watch what the destructible environment does over a long fight.
+4. Scale to larger battles only once you understand the pieces.
+
+This is general reasoning from a combined-arms premise. It is not a guarantee of success, and it is not a substitute for the game's own tooltips and tutorials.
 
 ## FAQ
 
-**What is a drop command upgrade, exactly?**
-A drop command upgrade is any change that expands or constrains what the command can do — a new permission tier, a shorter cooldown, a weighted loot table, or added logging. Upgrades can be earned by players through progression or unlocked by admins as the server matures.
+**Who developed Drop Command and when did it release?**
+PillBugGames, released 28 September 2026 on Steam. The app ID is 1944880.
 
-**Do I need drop command upgrades if my server is tiny?**
-Yes, though you can start small. Even a modest setup — a base permission, a fixed cooldown, and basic logging — prevents the early mistakes that are painful to unwind once your player base grows. Retrofitting security onto an established economy is far harder than building it in.
+**Can I pilot any unit?**
+The description says you can pilot any unit under your command, including Mechs, Tanks, VTOLs and Battle Armour. Exact switching rules are not published.
 
-**How often should I rebalance loot odds?**
-Review after every significant content update and roughly once a season otherwise. New items change relative value quickly, and odds that felt generous six months ago can feel stingy — or exploitable — today.
+**Are there published unit stats or build costs?**
+No. The official store page does not publish unit stats, damage tables, build costs, tech trees, or a code system. Verify anything numeric in game.
 
-**Can drop command upgrades break existing saves or inventories?**
-Changing permissions and cooldowns is generally safe. Changing item pools or table weights can shift what future drops produce, but it does not typically alter items already in the world. Always test on a copy first, and keep a backup before you deploy.
+**Is this the same as the mental-omega mod unit?**
+No. Drop Command by PillBugGames is a standalone Steam game and is not that mod unit.
 
-**Who should get the bypass permission?**
-As few accounts as possible — ideally one or two, tied to a named role rather than an individual. Every bypass you grant is a hole in your rate limiting, and holes are exactly what the drop command upgrade ladder exists to close.
+**Can I play solo?**
+The description explicitly says you can drop into combat alone, so solo play is advertised.
+
+For authoritative details, always check the [official Steam page](https://store.steampowered.com/app/1944880/) first.

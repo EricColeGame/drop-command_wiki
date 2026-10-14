@@ -1,111 +1,99 @@
 export const metadata = {
-  title: "Drop Command Walkthrough: How to Use Drop Commands Safely in Games, Bots, and Databases",
-  description: "A complete drop command walkthrough covering game chat drops, Discord bot drops, SQL DROP statements, and firewall rules, plus safety tips and troubleshooting.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command by PillBugGames actually offers, how combined-arms thinking works in practice, and what the store page leaves undocumented.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What Is a Drop Command and Why It Matters
+Drop Command is a mech combined-arms combat game from developer PillBugGames, released on Steam on 28 September 2026. Its hook is scale plus direct control: you pilot any unit under your command, and the fight can be a small skirmish or a full battle. You can drop into combat alone, lead a squad, or command an army, on a battlefield that evolves as debris and wreckage accumulate.
 
-A **drop command** is a short instruction — typed into a chat box, a game console, a database query window, or a terminal — that tells a program to release, remove, or hand over something. If you have ever typed `/drop` in a survival game, `!drop` in a Discord server, or `DROP TABLE` in a SQL client, you have already used one. This drop command walkthrough breaks down each flavor, shows how to run them safely, and explains how to recover when a command does exactly what you told it to.
+That is the shape of the game as described on its [official Steam store page](https://store.steampowered.com/app/1944880/). This guide sticks to what the developer advertises, separates that from community impressions, and is honest about what is not documented. Where it offers tactical advice, that advice is reasoning from the combined-arms premise, not measured data.
 
-Why does it matter? Because drop commands are destructive or semi-destructive by design. A mistyped item name wastes a resource. A mistyped table name can erase a schema. Knowing the syntax, the permission rules, and the confirmation prompts for your specific environment is the difference between a clean action and a bad afternoon.
+## What PillBugGames Actually Advertises
 
-At its core, a drop command does one of three things: it **releases** an object into a shared space, it **removes** an object from a system entirely, or it **transfers** ownership from one holder to another. Most confusion comes from mixing those three jobs up, especially in games where "drop" and "give" are separate commands with separate rules.
+According to the game's official description, Drop Command is built around several pillars:
 
-## Drop Command Walkthrough Across Four Environments
+- **Grand-scale mech combat with combined arms.** You are not locked to one chassis type. Mechs, Tanks, VTOLs, and Battle Armour are all listed as personalisable units.
+- **Pilot any unit under your command.** You can take direct control of a unit rather than only issuing orders from above.
+- **Scales from skirmish to epic battle.** The same game supports dropping in alone, leading a squad, or commanding an army.
+- **An evolving battlefield.** Fully destructible debris and unit wreckage change the environment as the fight continues.
+- **Customisable, levelable pilots.** Pilots can be developed over time.
+- **Elite squads or disposable rookies.** You can build veteran squads or rush opponents with rookies.
+- **Unit personalisation.** Mechs, Tanks, VTOLs, and Battle Armour can be modified.
 
-The same two-word phrase means very different things depending on where you type it. The table below is the fastest way to figure out which version you are dealing with.
+What the description does not include matters just as much. The store page does not publish unit stats, damage tables, build costs, tech trees, faction lists, or a code system. Anyone presenting exact numbers as official is going beyond the source.
 
-| Environment | Typical Form | Who Can Run It | Risk Level |
-|---|---|---|---|
-| Game chat or console | `/drop <item> <amount>` | Any player, sometimes admins only | Low to medium |
-| Chat bot (Discord, etc.) | `!drop`, `/drop`, or a button prompt | Members with the bot's drop permission | Low |
-| SQL database client | `DROP TABLE`, `DROP DATABASE`, `DROP INDEX` | Users with DDL privileges | Very high |
-| Firewall or network rules | `DROP` as a rule target | Administrators with root access | High (silent failures) |
+## Combined Arms as a Decision Framework
 
-### Game chat drop commands
+Combined arms is not a buzzword here; it is the core decision loop. The advertised roster spans ground, air, and infantry-scale options, and each has natural strengths and weaknesses. General reasoning suggests the following, and you should treat it as a starting hypothesis rather than a rulebook:
 
-In most sandbox, survival, and role-playing games, a drop command moves an item out of your inventory and into the world so another player can pick it up. Player experience across many titles suggests the pattern is nearly universal: a slash prefix, an item identifier, and an optional quantity. Some games require you to be facing a valid drop point; others let you drop anywhere.
-
-### Chat bot drop commands
-
-Community-run economy and collectible bots often expose a drop command that spawns a reward in a channel for whoever claims it first. Community reports consistently mention two things: these commands are usually rate-limited, and they almost always require a specific role or permission node before they will respond to you.
-
-### SQL DROP statements
-
-This is where the drop command earns its reputation. In SQL, `DROP` is a data definition language (DDL) statement that removes an object — a table, a view, an index, or an entire database — rather than just the rows inside it. Microsoft's official DROP TABLE documentation is worth reading before you touch a production schema, because the statement is not reversible without a backup.
-
-### Firewall DROP rules
-
-In networking, `DROP` is a rule target that silently discards matching packets instead of rejecting them with an error. A drop rule is quieter than a reject rule, which is exactly why administrators use it — and exactly why it is hard to debug when you forget you added it.
-
-## Step-by-Step: Running Your First Drop Command
-
-This drop command walkthrough procedure works whether you are in a game, a bot, or a query console. Follow the order; skipping step three is the single most common cause of accidental data loss.
-
-| Step | Action | Why It Matters |
+| Unit type | Likely role in a combined-arms force | Reasoning |
 |---|---|---|
-| 1 | Identify your environment | Syntax rules differ completely between chat and SQL |
-| 2 | Confirm you have permission | Most failures are permission failures, not syntax failures |
-| 3 | Verify the exact target name | One character off can mean a different item or table |
-| 4 | Preview or dry-run if available | Some tools offer a `--dry-run` or confirmation prompt |
-| 5 | Execute the command | Type it manually rather than pasting from an old note |
-| 6 | Verify the result | Check inventory, query the schema, or test the connection |
-| 7 | Log what you did | Future you will not remember which rule you added |
+| Mech | Flexible frontline anchor | Piloted units in mech games usually trade speed for durability and firepower |
+| Tank | Ground pressure and direct fire | Tracked vehicles typically favor stability and sustained ground combat |
+| VTOL | Mobility, flanking, air presence | Aircraft commonly exploit vertical space and reposition quickly |
+| Battle Armour | Infantry-scale support | Smaller units often fill gaps, screen, or operate in tight spaces |
 
-A quick word on step four. Many command-line tools support a dry-run flag, and many database clients wrap destructive statements in a confirmation dialog. Those guardrails exist because experienced users still make mistakes. If your tool does not offer one, run the equivalent read-only command first — a `SELECT` before a `DROP`, or an inventory check before a chat drop.
+The table is inference from the genre and the advertised unit list, not from published statistics. The practical takeaway is to avoid mono-type forces. If you commit only Mechs, you may lack the speed or reach another unit type provides. If you commit only VTOLs, you may struggle to hold ground.
 
-For chat-based drops, the practical advice is simpler: type the command in a private channel or a test server the first time. Player experience suggests that public drop commands in busy channels get sniped within seconds, which makes verifying your syntax unnecessarily stressful.
+## Dropping Alone, Leading a Squad, or Commanding an Army
 
-## Parameters, Syntax, and Common Variations
+The description explicitly supports all three command scales. Each changes what you should pay attention to:
 
-Once you know your environment, the next question is what goes after the command. The placeholder syntax below is generic on purpose — always check the specific documentation for the game, bot, or database engine you are using, because the exact spelling of arguments varies widely.
+- **Alone.** You are the whole force. Positioning, timing, and knowing when to disengage matter more than raw output.
+- **Squad.** You have a handful of units to coordinate. The value of a squad is covering each other's weaknesses, so composition and spacing become the priority.
+- **Army.** At this scale, you cannot personally control every engagement. You will rely on unit grouping and broad orders, and you should expect to pick the fights that decide the battle rather than win every one.
 
-| Parameter | Meaning | Typical Placement |
-|---|---|---|
-| Target | Item name, table name, or rule target | Immediately after the command |
-| Quantity or amount | How many units to drop | Second argument, often optional |
-| Recipient | Player or account receiving the item | Third argument in "give-style" drops |
-| Filter or condition | Limits which objects are affected | Usually a `WHERE` clause or flag |
-| Confirmation flag | Skips or forces a prompt | End of the statement |
+Because the game lets you pilot any unit under your command, a useful habit is to switch into the unit that currently matters most: the one holding a key position, the one that can break a stalemate, or the one about to be lost. That is general combined-arms reasoning, not a documented mechanic.
 
-Two habits pay off here. First, use the tool's own help output — most chat bots respond to a help command that lists every argument, and most database engines ship a manual page. Second, prefer explicit names over wildcards. A wildcard in a drop command is a shortcut to deleting something you did not mean to delete.
+## Veterans or Rookies: A Trade-Off, Not a Rule
 
-### Common variations worth knowing
+PillBugGames advertises two paths: building squads of veterans, or rushing opponents with rookies. These imply different curves.
 
-- **Give versus drop.** A drop puts an item on the ground; a give puts it directly into another player's inventory. They are not interchangeable.
-- **Drop one versus drop all.** Many systems default to a single unit. Dropping a full stack usually requires an explicit quantity.
-- **Cascading drops.** In databases, dropping a parent object can remove dependent objects with it, depending on the engine's cascade behavior.
-- **Silent versus verbose.** Firewall drops are silent by design; SQL drops usually return a confirmation message.
+Veteran squads presumably take time and investment to assemble but should perform more reliably in sustained fights. Rookie rushes presumably trade long-term quality for immediate numbers or tempo. Neither is stated to be stronger. The honest position is that the balance depends on tuning the developer has not published, so you should test both in-game rather than trust a tier list.
 
-## Troubleshooting and Safety Rules
+If you want to know how pilot leveling affects performance, the only reliable method is to level a pilot yourself and compare behavior in the same situation. The store page does not quantify it.
 
-When a drop command does not behave, the cause is usually one of a handful of predictable problems. Work down the table before you start changing things at random.
+## The Evolving Battlefield
 
-| Symptom | Likely Cause | Fix |
-|---|---|---|
-| No response at all | Wrong prefix or wrong channel | Check the bot's or game's command prefix |
-| "Permission denied" | Missing role or privilege | Ask an admin to grant the required node |
-| "Unknown item" | Misspelled target name | Copy the exact name from the help list |
-| Command works, nothing drops | Inventory or ground limit reached | Free up space and retry |
-| SQL error about dependencies | Other objects reference the target | Drop dependents first, or use cascade if intended |
-| Network rule seems ignored | Rule order or priority | Move the drop rule above the conflicting rule |
+Destructible debris and unit wreckage are advertised as part of the battlefield evolution. In practice, this likely means the terrain you fight over changes as the battle proceeds: cover can be created or removed, and wreckage can shape movement lanes.
 
-Safety comes down to three rules. **Back up before destructive drops.** A schema export takes seconds and saves days. **Test in a staging environment.** If you would not run it on a live system, do not run it on a live system. **Keep a change log.** A one-line note about which drop rule you added, and when, prevents hours of confused debugging later.
+Practical implications, framed as reasoning rather than confirmed rules:
 
-It also helps to know who else shares the environment. On a multiplayer server, an admin-level drop command can remove items other players earned. On a shared database, a DDL statement can break an application that depends on the object you just removed. Scope your permissions tightly and give destructive capabilities only to people who understand the blast radius.
+- Do not assume a firing position stays viable for the whole match.
+- Treat fresh wreckage as an unknown: it may block, channel, or shelter movement.
+- Re-check sightlines after major engagements rather than relying on an early read.
+
+Because the page does not document collision behavior or cover values, verify these in a controlled skirmish before relying on them in a large battle.
+
+## Customisation and What Is Not Documented
+
+Mechs, Tanks, VTOLs, and Battle Armour are all described as personalisable, and pilots as customisable and levelable. What that means in slot counts, upgrade paths, or costs is not published.
+
+If you want specifics, the reliable sources are:
+
+1. The [official Steam page](https://store.steampowered.com/app/1944880/) for developer statements and updates.
+2. The in-game interface itself, which shows what options actually exist.
+3. Patch notes or developer posts, if and when they appear.
+
+Third-party guides can be useful, but they are secondary observations. Attribute them as such and expect them to age as the game is updated.
 
 ## FAQ
 
-**What exactly is a drop command?**
-A drop command is any instruction that releases, removes, or transfers an object. It appears in game chats, chat bots, SQL clients, and firewall rule sets, and the correct syntax depends entirely on which of those you are using.
+**Is Drop Command the same as a mental-omega mod unit?**
+No. Drop Command is the Steam game by PillBugGames (app 1944880). Any association with an unrelated mod unit is a naming coincidence, not the same product.
 
-**Is a drop command reversible?**
-Sometimes. In games, dropped items can usually be picked back up. In databases, a `DROP` statement is not reversible without a backup, which is why a restore plan should exist before you run one.
+**When did it release?**
+The official store page lists 28 September 2026.
 
-**Why does my drop command return nothing?**
-Silence usually means one of three things: the command prefix is wrong, you lack the required permission, or — in the case of firewall rules — the drop is working exactly as designed and quietly discarding traffic.
+**Can I play as infantry?**
+Battle Armour is listed as a personalisable unit type and sits at the smaller end of the scale, but the page does not describe it in detail.
 
-**Where can I find the correct syntax for my setup?**
-Start with the built-in help output. Chat bots list their arguments, games publish command references, and database engines maintain official documentation for every DDL statement they support. Following a drop command walkthrough for your specific platform beats guessing every time.
+**Does the game have published unit stats or build costs?**
+No. The store page does not publish unit stats, damage tables, build costs, tech trees, faction lists, or a code system. Anyone claiming otherwise is speculating or referencing third-party data.
+
+**Can I command an army?**
+Yes, the official description states you can drop into combat alone, lead a squad, or command an army.
+
+**Will following this guide guarantee success?**
+No. It is reasoning from the advertised combined-arms premise. Actual balance depends on tuning that has not been documented, so test in-game.

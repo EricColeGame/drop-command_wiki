@@ -1,130 +1,78 @@
 export const metadata = {
-  title: "Facciones de comando de despliegue explicadas: cómo funcionan los despliegues de unidades, la elección de facción y las configuraciones",
-  description: "Aprende cómo las facciones de comando de despliegue determinan el despliegue de unidades, las configuraciones y los resultados de las partidas, con tablas comparativas, elecciones de facción y consejos prácticos.",
+  title: "Drop Command: Una guía práctica para el combate combinado de mechs",
+  description: "Drop Command es un juego de combate combinado de mechs a gran escala en el que pilotas cualquier unidad que comandes. Así encajan sus sistemas entre sí.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Qué hace realmente el sistema de facciones de comando de despliegue
+**Drop Command** es un juego de combate de mechs construido en torno a una promesa sencilla pero ambiciosa: puedes pilotar cualquier unidad bajo tu mando. Desarrollado por PillBugGames y lanzado el 28 de septiembre de 2026, aparece en Steam como la app 1944880. Si has jugado a juegos de mechs que te encierran en un único chasis durante toda una campaña, la propuesta aquí es diferente. La escala va de escaramuzas pequeñas a grandes batallas, y la unidad que controlas es una decisión que tomas tú, no una clase que te asignan.
 
-Un comando de despliegue es la orden que coloca unidades en el campo en una ubicación que tú eliges. Las facciones son las listas asociadas a esa orden. Cuando fijas una facción, no solo eliges un esquema de colores: eliges un grupo de unidades, un conjunto de bonificaciones pasivas y un ritmo de despliegue que decide con qué frecuencia puedes actuar.
+Este artículo se ciñe a lo que el desarrollador realmente anuncia en la [página oficial de la tienda de Steam](https://store.steampowered.com/app/1944880/) y lo separa del razonamiento general sobre cómo suelen funcionar los juegos de armas combinadas. Donde algo no está documentado, así se indica.
 
-En la práctica, las facciones de comando de despliegue son un sistema de tres partes: la llamada en sí, la lista que hay detrás y la restricción de recursos o enfriamiento que la limita. Si falla cualquiera de esas partes, tus despliegues se sentirán aleatorios, incluso si tu puntería y tu sincronización son sólidas.
+## Qué anuncia realmente Drop Command
 
-| Componente | Qué controla | Por qué importa |
-|---|---|---|
-| Comando de despliegue | Dónde y cuándo entran las unidades al campo | Marca tu ritmo y control del mapa |
-| Lista de facción | Qué unidades puedes invocar | Define tu techo y tus carencias |
-| Coste de despliegue | Cuántos recursos gasta cada llamada | Limita con qué frecuencia puedes desplegar |
-| Temporizadores de enfriamiento | Con qué rapidez puede repetirse una llamada | Da forma a la presión sostenida |
-| Pasivas de facción | Bonificaciones aplicadas a toda tu lista | Recompensa la especialización frente a la dispersión |
+La descripción de la tienda es la autoridad aquí. Afirma que Drop Command es combate de mechs a gran escala con combate de armas combinadas, y que pilotas cualquier unidad bajo tu mando. Enumera estas características anunciadas:
 
-La idea clave es que el comando es temporal, pero la facción es permanente. Puedes desplegar cien veces en una partida, pero solo obtienes un bloqueo de facción. Esa asimetría es la razón por la que la elección de facción importa más que cualquier despliegue individual bien colocado.
+- Combate que abarca desde escaramuzas pequeñas hasta grandes batallas.
+- Un campo de batalla en evolución con escombros y restos de unidades totalmente destructibles.
+- Desplegarte en combate solo, liderando un escuadrón o comandando un ejército.
+- Pilotos personalizables y mejorables con niveles.
+- Formar escuadrones de veteranos de élite o abrumar a los oponentes con novatos desechables.
+- Mechs, Tanques, VTOL y Armadura de Combate personalizables.
 
-**Los informes de la comunidad** de jugadores de despliegue de escuadrones y estrategia de equipo describen de forma consistente el mismo patrón: los equipos que coordinan roles de facción ganan con más regularidad que los que simplemente acumulan las unidades de mayor daño. La experiencia de los jugadores sugiere que la cobertura de roles supera los totales de estadísticas brutas en la mayoría de las partidas prolongadas.
+Ese es todo el conjunto de características anunciadas. Cabe destacar que la página de la tienda no publica estadísticas de unidades, tablas de daño, costes de construcción, árboles tecnológicos, listas de facciones ni ningún sistema de códigos. Si ves una guía que afirma cifras exactas, trátala como una observación de terceros y no como documentación del desarrollador.
 
-## Arquetipos de facción de un vistazo
+## Las cuatro familias de unidades
 
-No todos los juegos usan los mismos nombres, pero la mayoría de las facciones de comando de despliegue encajan en unos pocos arquetipos reconocibles. Aprender los arquetipos te permite leer una lista rápidamente, incluso en un juego que nunca has tocado.
+Los tipos de unidad anunciados son Mechs, Tanques, VTOL y Armadura de Combate. Cada uno se describe como personalizable, lo que implica una capa de personalización, pero la página no detalla qué opciones existen ni hasta qué punto llegan.
 
-| Arquetipo | Identidad central | Fortalezas | Debilidades | Elígelo cuando |
-|---|---|---|---|---|
-| Vanguardia | Despliegues rápidos y agresivos | Presión temprana, bola de nieve en línea | Se queda corta sin seguimiento | Necesitas ritmo ahora mismo |
-| Apoyo / Logística | Reparaciones, mejoras, refuerzos | Mantiene vivos los empujes | Poco daño directo | Tu equipo ya tiene generadores de daño |
-| Reconocimiento | Visión y disrupción | Información, eliminaciones, conciencia del mapa | Unidades frágiles | El mapa es grande o tiene mucha niebla |
-| Pesado / Asedio | Unidades lentas y de alto impacto | Romper posiciones fortificadas | Vulnerables a los flancos | El enemigo se atrinchera |
-| Enjambre | Unidades baratas y numerosas | Desgaste, saturación de área | Débiles individualmente | Las partidas se alargan y son de desgaste |
+| Familia de unidad | Rol típico en armas combinadas (razonamiento general) | Lo que está documentado |
+| --- | --- | --- |
+| Mech | Plataforma flexible de primera línea | Personalizable, pilotable |
+| Tanque | Potencia de fuego terrestre y capacidad de aguante | Personalizable, pilotable |
+| VTOL | Movilidad y ataque aéreos | Personalizable, pilotable |
+| Armadura de Combate | Acción a escala de infantería a pequeña escala | Personalizable, pilotable |
 
-La mayoría de los jugadores se siente atraída por Vanguardia porque parece gratificante de inmediato. El problema es que la presión de Vanguardia sin un ancla de Apoyo o Pesado tiende a evaporarse a mitad de partida, cuando las defensas enemigas maduran y los despliegues de una sola unidad dejan de intercambiar favorablemente.
+La columna de rol es una inferencia de cómo los juegos de armas combinadas suelen dividir el trabajo, no una ficha técnica. El único punto documentado es que las cuatro existen y pueden personalizarse.
 
-Un hábito útil es preguntarte qué hace tu facción cuando está *por detrás*. Vanguardia sufre, Apoyo estabiliza, Pesado aguanta, Enjambre resiste más y Reconocimiento encuentra una forma de rodear. Si no puedes responder esa pregunta para tu elección, estás apostando por una ventaja temprana.
+## Pilotar cualquier unidad cambia tu forma de pensar
 
-## Cómo elegir una facción antes de desplegar
+La mayoría de los juegos de mechs te piden dominar una sola máquina. El gancho anunciado de Drop Command es que la máquina es una decisión. En la práctica, eso reformula muchas decisiones momento a momento. Si puedes saltar a un tanque cuando el combate terrestre se atasca, o a un VTOL cuando necesitas alcance, tu trabajo es menos "volverte bueno con un chasis" y más "leer la batalla y elegir la herramienta".
 
-Elegir bien es una decisión previa a la partida, no una corrección a mitad de partida. Sigue esta secuencia antes de comprometerte:
+Aquí es donde importan las armas combinadas. Una fuerza de un solo tipo de unidad tiende a tener una debilidad obvia. Mezclar Mechs, Tanques, VTOL y Armadura de Combate reparte esa debilidad por todo el campo. Como la página de la tienda también anuncia escombros y restos destructibles como un campo de batalla en evolución, es probable que la cobertura y el terreno cambien a medida que se alarga un combate: razonamiento general a partir de la línea "campo de batalla en evolución", no datos medidos.
 
-1. **Lee primero la composición del equipo.** Identifica qué arquetipos ya están cubiertos.
-2. **Comprueba el tipo de mapa.** Los mapas abiertos favorecen a Reconocimiento y Vanguardia; los mapas con cuellos de botella favorecen a Pesado y Apoyo.
-3. **Decide tu condición de victoria.** La presión temprana, el asedio sostenido y el desgaste exigen listas diferentes.
-4. **Confirma tu curva de recursos.** Algunas facciones necesitan ingresos constantes para funcionar; otras alcanzan su pico con un único despliegue grande.
-5. **Fija tu elección y deja de dudar.** Dividir la atención entre dos planes de facción suele producir peores despliegues que comprometerse con uno.
+## Escala de mando: solo, escuadrón o ejército
 
-| Pregunta que hacer | Qué comprobar | Señal para elegir |
-|---|---|---|
-| ¿A mi equipo le falta una primera línea? | Tipos de unidades aliadas | Pesado o Vanguardia |
-| ¿Morimos por daño de desgaste? | Peleas recientes | Apoyo / Logística |
-| ¿Nos siguen flanqueando? | Diseño del mapa y visión | Reconocimiento |
-| ¿El enemigo acumula élites? | Lista enemiga | Enjambre o Pesado |
-| ¿Necesitamos cerrar rápido? | Temporizador y marcador de la partida | Vanguardia |
+Las opciones de mando anunciadas son solo, un escuadrón o un ejército. Es un rango amplio, y sugiere que el juego admite estilos de juego muy distintos en lugar de una estructura obligatoria única.
 
-Si eres nuevo en un juego, el punto de partida más seguro suele ser la facción con el bucle de recursos más simple. La complejidad en las facciones de comando de despliegue casi siempre se traduce en más formas de cometer errores bajo presión.
+- **Solo.** Menos piezas en movimiento, más control personal. Lo mejor cuando quieres sentir que cada entrada importa.
+- **Escuadrón.** Un punto intermedio en el que puedes liderar un puñado de unidades sin gestionar toda una línea de batalla.
+- **Ejército.** La escala más grande, donde el posicionamiento y la mezcla de unidades importan más que cualquier enfrentamiento individual.
 
-## Comparación de unidades entre facciones
+Estos son enfoques de las opciones anunciadas, no afirmaciones de rendimiento medido. Cómo equilibra realmente el juego cada escala es algo que solo el juego mostrará.
 
-El mismo rol de unidad puede comportarse de forma muy diferente según qué facción lo invoque. La tabla siguiente asigna roles comunes a las facciones que suelen manejarlos mejor.
+## Veteranos, novatos y progresión de pilotos
 
-| Rol de unidad | Rango de coste típico | Facción que suele destacar | Momento ideal de despliegue | Error común |
-|---|---|---|---|---|
-| Infantería de línea | Bajo | Enjambre | Continuo, escalonado | Amontonarse y recibir daño en área |
-| Asalto / rompebrechas | Medio | Vanguardia | Justo después de una eliminación | Desplegar sin apoyo |
-| Médico / ingeniero | Bajo a medio | Apoyo | Detrás de la primera línea | Posicionamiento expuesto |
-| Explorador / francotirador | Medio | Reconocimiento | Antes de un empuje, no durante | Quedarse quieto demasiado tiempo |
-| Asedio / artillería | Alto | Pesado | Una vez asegurada la visión | Disparar sin cobertura |
-| Unidad de élite / héroe | Alto | Cualquiera, pero varía | Cuando el enemigo se compromete | Gastarla en una pelea perdida |
+Dos sistemas anunciados están muy cerca: pilotos personalizables y mejorables con niveles, y la elección entre escuadrones de élite y novatos desechables. La tensión implícita es la gestión de recursos. Los veteranos presumiblemente acumulan experiencia que preferirías no perder. Los novatos son más baratos de desplegar y más fáciles de reemplazar, pero probablemente menos capaces.
 
-Una conclusión práctica: ajusta el rango de coste de tu despliegue al valor de la pelea. Las unidades caras desplegadas en una escaramuza que ya estabas perdiendo simplemente le entregan al enemigo una recompensa mayor. Las unidades baratas desplegadas en una pelea decisiva a menudo no logran nada.
+La línea de "abrumar a los oponentes con novatos" sugiere que existe una estrategia agresiva legítima en el diseño, no solo un recurso de reserva. Si te gusta el juego de desgaste, esa es la vía anunciada para ello. Si prefieres conservar un núcleo de pilotos experimentados, el sistema de niveles es la vía anunciada para eso. No se documentan curvas de experiencia, límites de nivel ni valores de crecimiento de estadísticas, así que verifícalos en el juego.
 
-Los informes de la comunidad suelen destacar el mismo error a la inversa: jugadores que acumulan unidades de alto coste hasta que termina la partida. Las facciones de comando de despliegue recompensan el rendimiento tanto como el poder bruto, así que una lista sin usar es una lista desperdiciada.
+## Qué no está documentado
 
-## Errores comunes del comando de despliegue y cómo corregirlos
-
-La mayoría de los fallos con las facciones de comando de despliegue se reducen a un pequeño conjunto de errores repetidos, no a la mala suerte.
-
-| Error | Por qué perjudica | Solución |
-|---|---|---|
-| Desplegar en piloto automático | Las unidades llegan donde la pelea ya terminó | Espera un momento y confirma el objetivo |
-| Ignorar los enfriamientos | Gastas llamadas que no puedes repetir | Controla los temporizadores antes de comprometerte |
-| Duplicar roles del equipo | Nadie cubre la carencia | Cubre el arquetipo que falta |
-| Invertir demasiado en un solo empuje | Una única derrota termina con tu ritmo | Reparte recursos entre dos oleadas |
-| Desplegar sin visión | Las unidades caen en emboscadas | Explora primero, despliega después |
-| No cambiar nunca de objetivo | El enemigo se adapta y te contrarresta con dureza | Rota la presión entre líneas |
-
-La última fila merece énfasis. Incluso una facción bien elegida se vuelve predecible si siempre despliegas en el mismo lugar. Rotar la presión obliga al enemigo a repartir defensas, lo que hace que cada despliegue posterior sea más eficiente.
-
-Si quieres un contexto más amplio sobre cómo los juegos de estrategia y despliegue de unidades estructuran estos sistemas, [el catálogo de juegos de estrategia de Steam](https://store.steampowered.com/tags/en/Strategy/) es un punto de referencia útil para comparar cómo distintos títulos gestionan listas, recursos y sincronización.
-
-## Consejos prácticos para mejores despliegues
-
-Más allá de la elección de facción, los pequeños hábitos separan a los jugadores que ganan de forma constante de los que ganan ocasionalmente.
-
-- **Ancla tus despliegues a los objetivos**, no a las eliminaciones. El territorio crea oportunidades; las eliminaciones son un efecto secundario.
-- **Planifica de antemano los dos primeros despliegues** antes de que empiece la partida para no improvisar bajo presión.
-- **Observa la facción de tu oponente**, no solo sus unidades. Su lista te dice qué no puede contrarrestar.
-- **Mantén una unidad barata lista** para emergencias. Una llamada pequeña que tapa una brecha supera a una llamada grande que llega tarde.
-- **Revisa tus repeticiones** específicamente en busca de despliegues que lamentas. Los patrones aparecen rápido.
-- **Comunica la cobertura de roles** con tu equipo antes del primer enfrentamiento.
-- **Practica una facción a fondo** antes de dispersarte por toda la lista.
-
-La profundidad supera a la amplitud en casi todos los sistemas de facciones de comando de despliegue. Un jugador que entiende la curva de recursos, los enfriamientos y los contras de un arquetipo superará a un jugador que tiene conocimientos superficiales de cinco.
-
-También ayuda pensar en oleadas en lugar de momentos. Un despliegue no es un evento único: es el inicio de una secuencia que o bien construye impulso o bien lo entrega. Planifica el seguimiento antes de enviar la primera unidad.
+Ten cuidado con cualquier guía que afirme tasas de obtención, costes de construcción, cifras de daño de armas, un árbol tecnológico, listas de facciones o un sistema de códigos para Drop Command. La página oficial no publica nada de eso. Si necesitas esos detalles, los lugares fiables que puedes consultar son el propio juego tras el lanzamiento y la página oficial de la tienda de Steam y sus notas de parche. Las wikis de la comunidad y las guías de terceros pueden ser útiles, pero son observaciones secundarias y pueden ir por detrás de los parches.
 
 ## Preguntas frecuentes
 
-**¿Las facciones de comando de despliegue se fijan para toda la partida?**
+**¿Qué tipo de juego es Drop Command?**
+Un juego de combate combinado de mechs a gran escala de PillBugGames, lanzado el 28 de septiembre de 2026 en Steam.
 
-En la mayoría de las implementaciones, sí: la elección de facción se hace antes del despliegue y permanece fija durante toda la partida. Algunos juegos permiten cambios a mitad de partida con una penalización de recursos, pero incluso entonces, cambiar durante una pelea suele costar más ritmo del que recupera. Trata tu facción como un compromiso.
+**¿De verdad puedo pilotar cualquier unidad?**
+La página de la tienda anuncia que se puede pilotar cualquier unidad bajo tu mando, incluidos Mechs, Tanques, VTOL y Armadura de Combate.
 
-**¿Qué facción es mejor para principiantes?**
+**¿Hay un sistema de códigos?**
+No hay ningún sistema de códigos documentado en la página oficial. Trata cualquier lista de códigos como no verificada.
 
-Apoyo y Vanguardia suelen ser los puntos de entrada más indulgentes. Apoyo enseña posicionamiento y sincronización porque tus unidades sobreviven lo suficiente para aprender de los errores, mientras que Vanguardia enseña ritmo y agresividad. Pesado y Reconocimiento exigen más conciencia del mapa para dar resultados.
+**¿Cómo consulto estadísticas específicas?**
+La página oficial no las publica. Verifícalas en el juego o mediante las notas de parche oficiales en lugar de fiarte de cifras de terceros.
 
-**¿Cuántas unidades debería desplegar a la vez?**
-
-En lugar de un número fijo, ajusta el tamaño del despliegue al valor del objetivo. Las peleas disputadas y de alto valor justifican un compromiso mayor; las escaramuzas de bajo riesgo rara vez lo hacen. Los informes de la comunidad sugieren que escalonar los despliegues en oleadas supera a un único compromiso gigantesco en la mayoría de las partidas.
-
-**¿Por qué mis despliegues siguen fallando incluso con una buena facción?**
-
-La elección de facción es solo una variable. La visión, la sincronización, la gestión de enfriamientos y la rotación de objetivos suelen importar más que la lista en sí. Si tus elecciones de facciones de comando de despliegue son sólidas pero los resultados no lo son, revisa *cuándo* y *dónde* desplegaste en lugar de *qué* desplegaste.
-
-Sentirse cómodo con las facciones de comando de despliegue se trata realmente de construir un proceso de decisión repetible: lee el equipo, lee el mapa, elige un rol y comprométete. Hazlo de forma consistente y tus despliegues dejarán de sentirse como apuestas y empezarán a sentirse como presión que el otro equipo tiene que responder.
+El atractivo de Drop Command es su amplitud: elige tu unidad, elige tu escala y elige cuánto te importa mantener vivos a tus pilotos. Ese es el diseño anunciado. Todo lo que va más allá es algo que tendrás que confirmar por tu cuenta.

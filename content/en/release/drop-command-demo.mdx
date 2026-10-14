@@ -1,125 +1,87 @@
 export const metadata = {
-  title: "Drop Command Demo: How the SQL DROP Statement Works and How to Use It Safely",
-  description: "A practical drop command demo covering SQL DROP TABLE, DROP DATABASE, MongoDB, and Redis, plus safety checks that keep you from deleting the wrong object.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "How Drop Command handles large-scale mech warfare, from piloting any unit to building veteran squads, plus what the official page does and does not document.",
   category: "release",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Few tools in a database engineer's toolkit are as decisive as the DROP command. It removes an object — a table, a view, an index, an entire database — in a fraction of a second, and it rarely asks twice. Running a drop command demo in a throwaway environment is the cheapest way to learn that lesson before you learn it the expensive way on production.
+Drop Command is a Steam game from developer PillBugGames, released on 28 September 2026 under app ID 1944880. Its pitch is straightforward but ambitious: mech combat at a grand scale, with combined-arms battles where you can pilot any unit under your command. That single sentence changes how you should approach the game, because it means the traditional "you are one soldier" mindset does not fully apply here. You are not locked into a single chassis for a whole campaign, and you are not necessarily fighting alone.
 
-A good drop command demo shows two things at once: the exact syntax that removes an object, and the aftermath that follows. The object is gone, dependent code starts throwing errors, and the disk space may or may not come back. This guide walks through the whole picture so you can run the command with confidence instead of crossed fingers.
+What follows is grounded in the verified official description from the [Drop Command Steam store page](https://store.steampowered.com/app/1944880/) plus general reasoning about how combined-arms games tend to work. Anything the store page does not publish — unit stats, damage tables, build costs, tech trees, hotkeys, or any code system — is called out as undocumented rather than guessed at.
 
-## What the DROP Command Actually Does
+## What Drop Command Actually Is
 
-The DROP command belongs to the DDL (Data Definition Language) family, alongside CREATE and ALTER. That matters more than it sounds. DDL statements change the structure of a database rather than the rows inside it, and most engines treat them as auto-committing operations. In plain terms: once the statement finishes, the object's definition and its data are removed together.
+The official description frames Drop Command as mech combat at a grand scale, with combined-arms combat where you pilot any unit under your command. Battles range from small skirmishes to epic battles. You drop into combat alone, lead a squad, or command an army. The battlefield evolves, with fully destructible debris and unit wreckage. Pilots are customisable and can be levelled. You can build squads of elite veterans or rush opponents with disposable rookies. Mechs, Tanks, VTOLs, and Battle Armour are all personally modifiable.
 
-In many systems, DROP is also cascading by request. If other objects depend on the one you are removing — a view that reads from a table, a foreign key that points at it — the engine will refuse the drop unless you explicitly tell it to cascade. That refusal is a feature, not an obstacle. It is the database asking whether you really meant to take the whole neighborhood down with the house.
+Two things stand out. First, "pilot any unit under your command" is a flexibility promise, not a class system — the store page does not describe fixed roles or locked loadouts. Second, "combined arms" tells you the roster spans ground, air, and infantry-scale platforms, which is exactly what the Mech/Tank/VTOL/Battle Armour list confirms.
 
-| Command | What it removes | Typical environment | Easy to undo? |
-|---|---|---|---|
-| DROP TABLE | Table structure and all rows | SQL databases | Only via backup or PITR |
-| DROP DATABASE / SCHEMA | Every object inside the database | SQL databases | Only via backup or PITR |
-| DROP INDEX | A single index definition | SQL databases | Yes — recreate the index |
-| DROP VIEW | A saved query definition | SQL databases | Yes — recreate the view |
-| ALTER TABLE ... DROP COLUMN | One column and its data | SQL databases | Only via backup |
-| DROP FUNCTION / PROCEDURE | A stored routine | SQL databases | Yes — redeploy the code |
-| db.collection.drop() | A collection and its documents | MongoDB | Only via backup |
-| DEL / UNLINK | One or more keys | Redis | No |
+What the official page does *not* say is equally important. It publishes no unit statistics, no weapon damage values, no build costs, no technology tree, no faction list, and no code system. If you see a "Drop Command codes" list or a stat table on a third-party site, treat it as unverified. The most reliable check is the in-game interface and the official store page.
 
-The pattern is consistent across platforms: dropping structure is fast, permanent, and only as reversible as your last backup.
+## Why "Pilot Any Unit" Changes Your Decision-Making
 
-## A Safe Drop Command Demo, Step by Step
+In most mech games your loadout is your identity. In Drop Command, the advertised flexibility means your identity is your *judgment* — which unit to take and when, rather than which mech you main.
 
-The goal of a drop command demo is not to prove you can type the statement. It is to prove you understand the blast radius. Run yours against a disposable database or a local container, never against anything a customer depends on.
+That has practical consequences:
 
-A reliable sequence looks like this:
+- **You can respond to the battlefield instead of preparing for it.** If the store description holds in play, switching platforms mid-battle lets you answer air threats, armour pushes, or infantry-scale fights without restarting.
+- **Your pilot progression matters across platforms.** Pilots are described as customisable and levelable, so investment is in the person, not only the machine.
+- **Command is a separate skill from piloting.** Leading an army implies ordering units you are not personally controlling, which is a different mental load from aiming a single weapon.
 
-| Step | Action | Why it matters |
+None of this is measured data. It is reasoning from the premise. Confirm how switching actually works in a match before building a plan around it.
+
+## Reading the Battlefield: Debris and Wreckage
+
+The official description specifically advertises "an evolving battlefield with fully destructible debris and unit wreckage." That is one of the few concrete mechanical claims on the page, and it deserves attention.
+
+In games with persistent wreckage, terrain that was open at the start may be cluttered later. Practically, that means:
+
+- **Sight lines close as the fight goes on.** Ranges that worked in the opening minutes may not work in the late game.
+- **Movement lanes narrow.** Wrecks can create chokepoints, which favours defensive play or area denial if your units support it.
+- **Cover appears where there was none.** Debris is often usable, so a losing position can become a holdable one.
+
+Whether wreckage blocks movement, blocks line of sight, provides cover, or all three is not documented on the store page. Test it in a low-stakes match rather than assuming.
+
+## Veterans or Rookies: A Squad-Building Tradeoff
+
+The page offers two explicit philosophies: build squads of elite veterans, or rush opponents with disposable rookies. That is a resource-timing choice, not a moral one.
+
+| Approach | Likely strength | Likely weakness |
 |---|---|---|
-| 1 | Confirm the environment and connection string | Most accidental drops happen on the wrong host |
-| 2 | Identify every object that depends on the target | Prevents broken views, foreign keys, and app code |
-| 3 | Take a fresh backup or snapshot | Your only real undo button |
-| 4 | Announce the change and get a second pair of eyes | A two-minute review beats a two-day restore |
-| 5 | Run the drop with an IF EXISTS guard | Avoids confusing errors on re-runs |
-| 6 | Verify the object is gone and the app still works | Confirms success and catches hidden dependencies |
-| 7 | Record what was dropped, when, and by whom | Makes future forensics possible |
+| Veteran squads | Survive longer, benefit from pilot levelling | Slower to assemble, costly to lose |
+| Rookie rushes | Fast to field, expendable pressure | Fragile, poor long-term value |
 
-A typical statement looks like `DROP TABLE IF EXISTS staging_orders;` for a table, or `DROP DATABASE analytics_sandbox;` for a whole database. The `IF EXISTS` clause is a small habit with a large payoff: it makes scripts idempotent, so a failed deployment that reruns will not halt on an object that was already removed.
+This table is general reasoning, not tested numbers. The store page does not publish recruitment costs, experience curves, or squad sizes, so treat the tradeoff as a design direction to verify in your own matches. Third-party guides may offer opinions, but they are secondary observations, not developer documentation.
 
-For the exact syntax and every available option, [PostgreSQL's official DROP TABLE documentation](https://www.postgresql.org/docs/current/sql-droptable.html) is an excellent reference, and other engines follow a very similar grammar.
+## Customisation Without a Published Meta
 
-## DROP vs. DELETE vs. TRUNCATE
+Drop Command advertises personally modifiable Mechs, Tanks, VTOLs, and Battle Armour, plus customisable and levelable pilots. It does not advertise a specific mod list, slot count, or upgrade economy.
 
-This is the comparison that trips people up most often, and it deserves a place in every drop command demo. All three remove data, but they operate at different levels and carry different consequences.
+That absence is actually useful. It means you should not import a build order from another game and expect it to hold. Instead:
 
-| Feature | DROP | TRUNCATE | DELETE |
-|---|---|---|---|
-| Type | DDL | DDL (usually) | DML |
-| Removes table structure | Yes | No | No |
-| Supports a WHERE clause | No | No | Yes |
-| Can be rolled back | Depends on engine | Depends on engine | Yes, inside a transaction |
-| Fires row-level triggers | No | No | Yes |
-| Resets auto-increment counters | Object is gone | Typically yes | No |
-| Relative speed | Instant | Very fast | Slower on large tables |
+1. Learn what each platform category is for in a match.
+2. Learn how pilot levelling affects what you can field.
+3. Learn how wreckage changes the map over time.
+4. Then, and only then, commit to a preferred configuration.
 
-The practical takeaway: use DELETE when you need to remove specific rows, TRUNCATE when you want an empty table that still exists, and DROP when the object itself should no longer exist. Reaching for the wrong one is the single most common cause of an incident that starts with "I thought it would just clear the data."
+If the game later publishes detailed stats or a wiki, the official page is the place to confirm it. Until then, in-game observation is your best source.
 
-## Running a Drop Command Demo Beyond SQL
+## What Is Not Documented
 
-Relational databases are not the only place a drop-style command lives. Most data platforms and developer tools have their own destructive verb, and the naming varies enough that it is worth a short tour.
+To be blunt about the limits of public information: there is no published code system, no damage table, no build cost list, no tech tree, no faction roster, and no confirmed hotkey scheme for Drop Command. The store page describes direction and features, not numbers. Anyone presenting exact figures as developer-confirmed should be treated with caution. You can verify claims yourself by checking the [official Steam listing](https://store.steampowered.com/app/1944880/) and by testing behaviour inside the game.
 
-| Platform | Command | Notes |
-|---|---|---|
-| MongoDB | `db.collection.drop()` | Removes the collection and all documents |
-| Redis | `DEL key` / `UNLINK key` | UNLINK frees memory asynchronously in a background thread |
-| Elasticsearch | `DELETE /index_name` | Removes the index and its mappings |
-| Docker | `docker rm` / `docker rmi` | Removes containers and images |
-| Kubernetes | `kubectl delete` | Removes namespaced resources |
-| Game admin consoles | `drop item_id` | Removes an item from an inventory or world |
+## FAQ
 
-Community reports from Redis users consistently note that UNLINK returns immediately while memory is reclaimed in the background, which makes it a safer choice on busy instances than a blocking DEL on a large key. The underlying principle is the same everywhere: the command removes a reference, and the data becomes unreachable.
+**Is Drop Command the same as the mental-omega mod unit?**
+No. Drop Command here refers to the Steam game by PillBugGames, app 1944880, released 28 September 2026. It is a distinct product from any mod unit sharing the name.
 
-## Safety Rules, Recovery, and Rollback
+**Can I really pilot any unit?**
+The official description says you can pilot any unit under your command, covering Mechs, Tanks, VTOLs, and Battle Armour. The exact switching rules are not documented publicly.
 
-Most teams do not lose data because they ran the wrong command. They lose data because they had no plan for what happens after. A drop command demo is a good place to rehearse the recovery path, not just the destructive one.
+**Does it have a code system?**
+No code system is published on the store page. If one exists, it has not been officially documented.
 
-| Risk | Mitigation |
-|---|---|
-| Dropping the wrong object | Enforce naming conventions and require a schema prefix |
-| Dropping on the wrong server | Separate credentials per environment; production read-only by default |
-| Losing data with no restore point | Automated snapshots plus point-in-time recovery |
-| Breaking dependent code | Search the codebase and dependency graph before dropping |
-| Silent failures in deployment scripts | Use IF EXISTS and log every destructive statement |
-| Over-privileged application accounts | Grant DROP rights only to migration roles |
+**Can I play solo?**
+Yes — the description states you can drop into combat alone, lead a squad, or command an army.
 
-Rollback support varies by engine, and this is where platform knowledge pays off. PostgreSQL supports transactional DDL, so a DROP inside a transaction can be rolled back if something goes wrong before you commit. MySQL, by contrast, performs an implicit commit on DDL statements, meaning the drop is effectively final the moment it executes. If you are not certain which behavior applies to your engine, assume the stricter case and rely on backups.
-
-A few habits separate teams that sleep well from teams that do not:
-
-- Prefer a rename-then-drop pattern: rename the object, wait a week, then drop it.
-- Keep a soft-delete or archive table for anything with business value.
-- Restrict DROP privileges to migration roles, never application roles.
-- Log every destructive statement with a timestamp and an operator identity.
-- Rehearse restores regularly — an untested backup is a hope, not a plan.
-
-None of these steps are glamorous, but each one turns a potential outage into a routine maintenance task.
-
-## Frequently Asked Questions
-
-**Can I run a drop command demo on production?**
-
-No. Run it on a disposable copy, a local container, or a dedicated sandbox. The point of a drop command demo is to practice the workflow and the verification steps, and you can do all of that without touching live data. If you must execute a drop in production, follow a change-management process with a backup, a review, and a rollback plan.
-
-**Is the DROP command reversible?**
-
-Sometimes, and only under specific conditions. In engines that support transactional DDL, a drop can be rolled back before the transaction commits. In engines that auto-commit DDL, the operation is permanent the moment it completes. Across every platform, the reliable recovery method is restoring from a backup or using point-in-time recovery.
-
-**What is the difference between DROP TABLE and DELETE FROM?**
-
-DELETE FROM removes rows while keeping the table and its structure intact, and it supports a WHERE clause so you can target specific records. DROP TABLE removes the table itself, along with every row and the definition. After a DROP, any query that references the table will fail until you recreate it.
-
-**Why does my drop command fail with a dependency error?**
-
-The database is protecting you. Objects such as views, foreign keys, or stored routines still reference the target, so the engine refuses to remove it. Resolve each dependency first, or use the cascade option if your platform supports it — but only after confirming that cascading will not remove something you still need.
-
-Run the demo, study the aftermath, and treat every destructive statement as if it will be reviewed later. Because it probably will be.
+**Are there guaranteed winning strategies?**
+No. The information available describes features, not tuned statistics. Any tactic described here is reasoning from the combined-arms premise and should be tested in your own matches.

@@ -1,111 +1,99 @@
 export const metadata = {
-  title: "Drop-Command-Anleitung: So verwenden Sie Drop-Befehle sicher in Spielen, Bots und Datenbanken",
-  description: "Eine vollständige Drop-Command-Anleitung zu Drops im Spielchat, Discord-Bot-Drops, SQL-DROP-Anweisungen und Firewall-Regeln sowie Sicherheitstipps und Fehlerbehebung.",
+  title: "Drop Command: Ein praktischer Leitfaden für kombinierten Waffengang in Mech-Kämpfen",
+  description: "Was Drop Command von PillBugGames tatsächlich bietet, wie kombiniertes Waffendenken in der Praxis funktioniert und was die Store-Seite undokumentiert lässt.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Was ist ein Drop-Befehl und warum er wichtig ist
+Drop Command ist ein Mech-Kampfspiel mit kombinierten Waffen des Entwicklers PillBugGames, das am 28. September 2026 auf Steam veröffentlicht wurde. Der Reiz liegt in der Kombination aus Maßstab und direkter Kontrolle: Du steuerst jede Einheit unter deinem Kommando, und der Kampf kann ein kleines Scharmützel oder eine ganze Schlacht sein. Du kannst allein in den Kampf ziehen, einen Trupp anführen oder eine Armee befehligen – auf einem Schlachtfeld, das sich weiterentwickelt, während Trümmer und Wracks sich ansammeln.
 
-Ein **Drop-Befehl** ist eine kurze Anweisung – eingegeben in ein Chatfenster, eine Spielkonsole, ein Datenbank-Abfragefenster oder ein Terminal –, die ein Programm anweist, etwas freizugeben, zu entfernen oder zu übergeben. Wenn Sie jemals `/drop` in einem Survival-Spiel, `!drop` auf einem Discord-Server oder `DROP TABLE` in einem SQL-Client eingegeben haben, haben Sie bereits einen verwendet. Diese Drop-Command-Anleitung schlüsselt jede Variante auf, zeigt, wie man sie sicher ausführt, und erklärt, wie man sich erholt, wenn ein Befehl genau das tut, was man ihm gesagt hat.
+Das ist die Form des Spiels, wie sie auf der [offiziellen Steam-Store-Seite](https://store.steampowered.com/app/1944880/) beschrieben wird. Dieser Leitfaden hält sich an das, was der Entwickler bewirbt, trennt das von Community-Eindrücken und ist ehrlich darüber, was nicht dokumentiert ist. Wo er taktische Ratschläge gibt, sind diese Ratschläge Schlussfolgerungen aus der Prämisse der kombinierten Waffen, keine gemessenen Daten.
 
-Warum ist das wichtig? Weil Drop-Befehle von Natur aus destruktiv oder semi-destruktiv sind. Ein falsch geschriebener Item-Name verschwendet eine Ressource. Ein falsch geschriebener Tabellenname kann ein Schema löschen. Die Kenntnis der Syntax, der Berechtigungsregeln und der Bestätigungsaufforderungen für Ihre spezifische Umgebung ist der Unterschied zwischen einer sauberen Aktion und einem schlechten Nachmittag.
+## Was PillBugGames tatsächlich bewirbt
 
-Im Kern tut ein Drop-Befehl eines von drei Dingen: Er **gibt** ein Objekt in einen gemeinsamen Raum **frei**, er **entfernt** ein Objekt vollständig aus einem System, oder er **überträgt** den Besitz von einem Inhaber auf einen anderen. Die meiste Verwirrung entsteht dadurch, dass diese drei Aufgaben verwechselt werden, insbesondere in Spielen, in denen "drop" und "give" separate Befehle mit separaten Regeln sind.
+Laut der offiziellen Spielbeschreibung basiert Drop Command auf mehreren Säulen:
 
-## Drop-Command-Anleitung für vier Umgebungen
+- **Mech-Kampf in großem Maßstab mit kombinierten Waffen.** Du bist nicht auf einen Chassis-Typ festgelegt. Mechs, Panzer, VTOLs und Battle Armour sind alle als personalisierbare Einheiten aufgeführt.
+- **Steuere jede Einheit unter deinem Kommando.** Du kannst die direkte Kontrolle über eine Einheit übernehmen, anstatt nur Befehle von oben zu erteilen.
+- **Skaliert vom Scharmützel zur epischen Schlacht.** Dasselbe Spiel unterstützt das alleinige Einspringen, das Anführen eines Trupps oder das Befehligen einer Armee.
+- **Ein sich entwickelndes Schlachtfeld.** Vollständig zerstörbare Trümmer und Einheitenwracks verändern die Umgebung, während der Kampf weitergeht.
+- **Anpassbare, levelbare Piloten.** Piloten können über die Zeit entwickelt werden.
+- **Elite-Trupps oder entbehrliche Rekruten.** Du kannst Veteranentrupps aufbauen oder Gegner mit Rekruten überrennen.
+- **Einheiten-Personalisierung.** Mechs, Panzer, VTOLs und Battle Armour können modifiziert werden.
 
-Dieselbe zweiwörtige Phrase bedeutet sehr unterschiedliche Dinge, je nachdem, wo Sie sie eingeben. Die folgende Tabelle ist der schnellste Weg, um herauszufinden, mit welcher Version Sie es zu tun haben.
+Was die Beschreibung nicht enthält, ist genauso wichtig. Die Store-Seite veröffentlicht keine Einheitenwerte, Schadenstabellen, Baukosten, Technologiebäume, Fraktionslisten oder ein Codesystem. Wer genaue Zahlen als offiziell präsentiert, geht über die Quelle hinaus.
 
-| Umgebung | Typische Form | Wer kann sie ausführen | Risikostufe |
-|---|---|---|---|
-| Spielchat oder Konsole | `/drop <item> <amount>` | Jeder Spieler, manchmal nur Admins | Niedrig bis mittel |
-| Chat-Bot (Discord usw.) | `!drop`, `/drop` oder eine Button-Aufforderung | Mitglieder mit der Drop-Berechtigung des Bots | Niedrig |
-| SQL-Datenbank-Client | `DROP TABLE`, `DROP DATABASE`, `DROP INDEX` | Benutzer mit DDL-Berechtigungen | Sehr hoch |
-| Firewall- oder Netzwerkregeln | `DROP` als Regelziel | Administratoren mit Root-Zugriff | Hoch (stille Fehler) |
+## Kombinierte Waffen als Entscheidungsrahmen
 
-### Drop-Befehle im Spielchat
+Kombinierte Waffen sind hier kein Schlagwort, sondern der zentrale Entscheidungszyklus. Das beworbene Aufgebot umfasst Boden-, Luft- und infanteriegestützte Optionen, und jede hat natürliche Stärken und Schwächen. Allgemeine Überlegungen legen Folgendes nahe, und du solltest es als Ausgangshypothese und nicht als Regelwerk behandeln:
 
-In den meisten Sandbox-, Survival- und Rollenspielen verschiebt ein Drop-Befehl ein Item aus Ihrem Inventar in die Welt, damit ein anderer Spieler es aufheben kann. Spielererfahrungen aus vielen Titeln deuten darauf hin, dass das Muster nahezu universell ist: ein Slash-Präfix, eine Item-Kennung und eine optionale Menge. Manche Spiele verlangen, dass Sie einem gültigen Drop-Punkt zugewandt sind; andere lassen Sie überall droppen.
-
-### Drop-Befehle von Chat-Bots
-
-Von der Community betriebene Wirtschafts- und Sammel-Bots bieten oft einen Drop-Befehl an, der eine Belohnung in einem Kanal für denjenigen erzeugt, der sie zuerst beansprucht. Community-Berichte erwähnen durchweg zwei Dinge: Diese Befehle sind normalerweise ratenbegrenzt, und sie erfordern fast immer eine bestimmte Rolle oder einen Berechtigungsknoten, bevor sie auf Sie reagieren.
-
-### SQL-DROP-Anweisungen
-
-Hier verdient sich der Drop-Befehl seinen Ruf. In SQL ist `DROP` eine Anweisung der Data Definition Language (DDL), die ein Objekt entfernt – eine Tabelle, eine View, einen Index oder eine gesamte Datenbank – und nicht nur die darin enthaltenen Zeilen. Microsofts offizielle DROP TABLE-Dokumentation ist es wert, gelesen zu werden, bevor Sie ein Produktionsschema anfassen, denn die Anweisung ist ohne Backup nicht umkehrbar.
-
-### Firewall-DROP-Regeln
-
-In der Netzwerktechnik ist `DROP` ein Regelziel, das passende Pakete still verwirft, anstatt sie mit einem Fehler abzulehnen. Eine Drop-Regel ist leiser als eine Reject-Regel, weshalb Administratoren sie genau deshalb verwenden – und genau deshalb ist es schwer zu debuggen, wenn man vergisst, dass man sie hinzugefügt hat.
-
-## Schritt für Schritt: Ihren ersten Drop-Befehl ausführen
-
-Dieses Drop-Command-Anleitungsverfahren funktioniert, egal ob Sie sich in einem Spiel, einem Bot oder einer Abfragekonsole befinden. Befolgen Sie die Reihenfolge; das Überspringen von Schritt drei ist die häufigste Ursache für versehentlichen Datenverlust.
-
-| Schritt | Aktion | Warum es wichtig ist |
+| Einheitentyp | Wahrscheinliche Rolle in einer Streitkraft mit kombinierten Waffen | Begründung |
 |---|---|---|
-| 1 | Umgebung identifizieren | Syntaxregeln unterscheiden sich völlig zwischen Chat und SQL |
-| 2 | Berechtigung bestätigen | Die meisten Fehler sind Berechtigungsfehler, keine Syntaxfehler |
-| 3 | Exakten Zielnamen überprüfen | Ein Zeichen daneben kann ein anderes Item oder eine andere Tabelle bedeuten |
-| 4 | Vorschau oder Dry-Run, falls verfügbar | Manche Tools bieten ein `--dry-run` oder eine Bestätigungsaufforderung |
-| 5 | Befehl ausführen | Tippen Sie ihn manuell ein, anstatt aus einer alten Notiz einzufügen |
-| 6 | Ergebnis überprüfen | Inventar prüfen, Schema abfragen oder Verbindung testen |
-| 7 | Dokumentieren, was Sie getan haben | Ihr zukünftiges Ich wird sich nicht erinnern, welche Regel Sie hinzugefügt haben |
+| Mech | Flexibler Frontanker | Gesteuerte Einheiten in Mech-Spielen tauschen üblicherweise Geschwindigkeit gegen Robustheit und Feuerkraft |
+| Panzer | Bodendruck und Direktfeuer | Kettenfahrzeuge begünstigen typischerweise Stabilität und anhaltenden Bodenkampf |
+| VTOL | Mobilität, Flankierung, Luftpräsenz | Luftfahrzeuge nutzen häufig den vertikalen Raum und repositionieren sich schnell |
+| Battle Armour | Unterstützung auf Infanterie-Ebene | Kleinere Einheiten füllen oft Lücken, schirmen ab oder operieren in engen Räumen |
 
-Ein kurzes Wort zu Schritt vier. Viele Kommandozeilen-Tools unterstützen ein Dry-Run-Flag, und viele Datenbank-Clients verpacken destruktive Anweisungen in einen Bestätigungsdialog. Diese Schutzmaßnahmen existieren, weil auch erfahrene Benutzer Fehler machen. Wenn Ihr Tool keines bietet, führen Sie zuerst den entsprechenden schreibgeschützten Befehl aus – ein `SELECT` vor einem `DROP` oder eine Inventarprüfung vor einem Chat-Drop.
+Die Tabelle ist eine Schlussfolgerung aus dem Genre und der beworbenen Einheitenliste, nicht aus veröffentlichten Statistiken. Die praktische Lehre ist, einheitliche Streitkräfte zu vermeiden. Wenn du nur Mechs einsetzt, fehlt dir möglicherweise die Geschwindigkeit oder Reichweite, die ein anderer Einheitentyp bietet. Wenn du nur VTOLs einsetzt, könntest du Schwierigkeiten haben, Boden zu halten.
 
-Für chat-basierte Drops ist der praktische Rat einfacher: Geben Sie den Befehl beim ersten Mal in einem privaten Kanal oder einem Testserver ein. Spielererfahrungen deuten darauf hin, dass öffentliche Drop-Befehle in belebten Kanälen innerhalb von Sekunden weggeschnappt werden, was die Überprüfung Ihrer Syntax unnötig stressig macht.
+## Allein einspringen, einen Trupp anführen oder eine Armee befehligen
 
-## Parameter, Syntax und häufige Variationen
+Die Beschreibung unterstützt ausdrücklich alle drei Kommando-Ebenen. Jede verändert, worauf du achten solltest:
 
-Sobald Sie Ihre Umgebung kennen, ist die nächste Frage, was nach dem Befehl kommt. Die folgende Platzhalter-Syntax ist absichtlich generisch – prüfen Sie immer die spezifische Dokumentation für das Spiel, den Bot oder die Datenbank-Engine, die Sie verwenden, denn die genaue Schreibweise der Argumente variiert stark.
+- **Allein.** Du bist die gesamte Streitkraft. Positionierung, Timing und das Wissen, wann man sich zurückzieht, sind wichtiger als reine Feuerkraft.
+- **Trupp.** Du hast eine Handvoll Einheiten zu koordinieren. Der Wert eines Trupps liegt darin, die Schwächen der anderen abzudecken, sodass Zusammensetzung und Abstand zur Priorität werden.
+- **Armee.** In diesem Maßstab kannst du nicht jedes Gefecht persönlich kontrollieren. Du wirst dich auf Einheitengruppierung und allgemeine Befehle verlassen, und du solltest erwarten, die Kämpfe auszuwählen, die die Schlacht entscheiden, anstatt jeden zu gewinnen.
 
-| Parameter | Bedeutung | Typische Platzierung |
-|---|---|---|
-| Ziel | Item-Name, Tabellenname oder Regelziel | Direkt nach dem Befehl |
-| Menge oder Anzahl | Wie viele Einheiten gedroppt werden sollen | Zweites Argument, oft optional |
-| Empfänger | Spieler oder Konto, das das Item erhält | Drittes Argument bei "Give-Style"-Drops |
-| Filter oder Bedingung | Begrenzt, welche Objekte betroffen sind | Normalerweise eine `WHERE`-Klausel oder ein Flag |
-| Bestätigungsflag | Überspringt oder erzwingt eine Aufforderung | Ende der Anweisung |
+Da das Spiel es dir erlaubt, jede Einheit unter deinem Kommando zu steuern, ist eine nützliche Gewohnheit, in die Einheit zu wechseln, die gerade am wichtigsten ist: diejenige, die eine Schlüsselposition hält, diejenige, die ein Patt brechen kann, oder diejenige, die kurz davor steht, verloren zu gehen. Das ist allgemeine Logik der kombinierten Waffen, keine dokumentierte Mechanik.
 
-Zwei Gewohnheiten zahlen sich hier aus. Erstens: Nutzen Sie die Hilfe-Ausgabe des Tools selbst – die meisten Chat-Bots reagieren auf einen Help-Befehl, der jedes Argument auflistet, und die meisten Datenbank-Engines liefern eine Handbuchseite mit. Zweitens: Bevorzugen Sie explizite Namen gegenüber Wildcards. Eine Wildcard in einem Drop-Befehl ist eine Abkürzung zum Löschen von etwas, das Sie nicht löschen wollten.
+## Veteranen oder Rekruten: Ein Kompromiss, keine Regel
 
-### Häufige Variationen, die man kennen sollte
+PillBugGames bewirbt zwei Wege: den Aufbau von Veteranentrupps oder das Überrennen von Gegnern mit Rekruten. Diese implizieren unterschiedliche Verläufe.
 
-- **Give versus Drop.** Ein Drop legt ein Item auf den Boden; ein Give legt es direkt in das Inventar eines anderen Spielers. Sie sind nicht austauschbar.
-- **Drop one versus Drop all.** Viele Systeme standardmäßig auf eine einzelne Einheit. Das Droppen eines ganzen Stapels erfordert normalerweise eine explizite Menge.
-- **Kaskadierende Drops.** In Datenbanken kann das Löschen eines übergeordneten Objekts abhängige Objekte mitentfernen, je nach Kaskadenverhalten der Engine.
-- **Stumm versus ausführlich.** Firewall-Drops sind konstruktionsbedingt stumm; SQL-Drops geben normalerweise eine Bestätigungsnachricht zurück.
+Veteranentrupps brauchen vermutlich Zeit und Investition, um zusammengestellt zu werden, sollten aber in anhaltenden Kämpfen zuverlässiger abschneiden. Rekrutenstürme tauschen vermutlich langfristige Qualität gegen sofortige Zahlen oder Tempo. Keines von beiden wird als stärker bezeichnet. Die ehrliche Position ist, dass die Balance von der Abstimmung abhängt, die der Entwickler nicht veröffentlicht hat, sodass du beides im Spiel testen solltest, anstatt einer Tier-Liste zu vertrauen.
 
-## Fehlerbehebung und Sicherheitsregeln
+Wenn du wissen möchtest, wie sich das Leveln von Piloten auf die Leistung auswirkt, ist die einzige zuverlässige Methode, einen Piloten selbst zu leveln und das Verhalten in derselben Situation zu vergleichen. Die Store-Seite quantifiziert es nicht.
 
-Wenn ein Drop-Befehl sich nicht wie erwartet verhält, ist die Ursache normalerweise eines von einer Handvoll vorhersehbarer Probleme. Arbeiten Sie die Tabelle von oben nach unten ab, bevor Sie anfangen, wahllos Dinge zu ändern.
+## Das sich entwickelnde Schlachtfeld
 
-| Symptom | Wahrscheinliche Ursache | Lösung |
-|---|---|---|
-| Überhaupt keine Antwort | Falsches Präfix oder falscher Kanal | Präfix des Bots oder Spiels überprüfen |
-| "Permission denied" | Fehlende Rolle oder Berechtigung | Einen Admin bitten, den erforderlichen Knoten zu gewähren |
-| "Unknown item" | Falsch geschriebener Zielname | Den exakten Namen aus der Hilfe-Liste kopieren |
-| Befehl funktioniert, nichts wird gedroppt | Inventar- oder Bodenlimit erreicht | Platz freimachen und erneut versuchen |
-| SQL-Fehler zu Abhängigkeiten | Andere Objekte referenzieren das Ziel | Zuerst Abhängigkeiten droppen oder Cascade verwenden, falls beabsichtigt |
-| Netzwerkregel scheint ignoriert zu werden | Regelreihenfolge oder -priorität | Die Drop-Regel über die konfliktierende Regel verschieben |
+Zerstörbare Trümmer und Einheitenwracks werden als Teil der Schlachtfeldentwicklung beworben. In der Praxis bedeutet dies wahrscheinlich, dass sich das Gelände, über das du kämpfst, im Verlauf der Schlacht verändert: Deckung kann entstehen oder entfernt werden, und Wracks können Bewegungswege formen.
 
-Sicherheit läuft auf drei Regeln hinaus. **Vor destruktiven Drops ein Backup erstellen.** Ein Schema-Export dauert Sekunden und spart Tage. **In einer Staging-Umgebung testen.** Wenn Sie es nicht auf einem Live-System ausführen würden, führen Sie es nicht auf einem Live-System aus. **Ein Änderungsprotokoll führen.** Eine einzeilige Notiz darüber, welche Drop-Regel Sie wann hinzugefügt haben, verhindert später stundenlanges verwirrtes Debugging.
+Praktische Implikationen, formuliert als Überlegung und nicht als bestätigte Regeln:
 
-Es hilft auch zu wissen, wer sich die Umgebung sonst noch teilt. Auf einem Multiplayer-Server kann ein Drop-Befehl auf Admin-Ebene Items entfernen, die andere Spieler verdient haben. In einer gemeinsam genutzten Datenbank kann eine DDL-Anweisung eine Anwendung beschädigen, die von dem gerade entfernten Objekt abhängt. Begrenzen Sie Ihre Berechtigungen eng und geben Sie destruktive Fähigkeiten nur an Personen, die den Wirkungsradius verstehen.
+- Gehe nicht davon aus, dass eine Feuerposition für das gesamte Match rentabel bleibt.
+- Behandle frische Wracks als Unbekannte: Sie können Bewegung blockieren, kanalisieren oder Schutz bieten.
+- Überprüfe Sichtlinien nach größeren Gefechten erneut, anstatt dich auf eine frühe Einschätzung zu verlassen.
+
+Da die Seite Kollisionsverhalten oder Deckungswerte nicht dokumentiert, verifiziere diese in einem kontrollierten Scharmützel, bevor du dich in einer großen Schlacht auf sie verlässt.
+
+## Anpassung und was nicht dokumentiert ist
+
+Mechs, Panzer, VTOLs und Battle Armour werden alle als personalisierbar beschrieben, und Piloten als anpassbar und levelbar. Was das in Bezug auf Slot-Anzahl, Upgrade-Pfade oder Kosten bedeutet, wird nicht veröffentlicht.
+
+Wenn du Einzelheiten wissen möchtest, sind die zuverlässigen Quellen:
+
+1. Die [offizielle Steam-Seite](https://store.steampowered.com/app/1944880/) für Entwickleraussagen und Updates.
+2. Die Spieloberfläche selbst, die zeigt, welche Optionen tatsächlich existieren.
+3. Patch-Notizen oder Entwicklerbeiträge, falls und wenn sie erscheinen.
+
+Drittanbieter-Leitfäden können nützlich sein, aber sie sind sekundäre Beobachtungen. Kennzeichne sie als solche und erwarte, dass sie veralten, wenn das Spiel aktualisiert wird.
 
 ## FAQ
 
-**Was genau ist ein Drop-Befehl?**
-Ein Drop-Befehl ist jede Anweisung, die ein Objekt freigibt, entfernt oder überträgt. Er erscheint in Spielchats, Chat-Bots, SQL-Clients und Firewall-Regelsätzen, und die korrekte Syntax hängt ganz davon ab, welche davon Sie verwenden.
+**Ist Drop Command dasselbe wie eine Mental-Omega-Mod-Einheit?**
+Nein. Drop Command ist das Steam-Spiel von PillBugGames (App 1944880). Jede Assoziation mit einer unabhängigen Mod-Einheit ist ein Namenszufall, nicht dasselbe Produkt.
 
-**Ist ein Drop-Befehl umkehrbar?**
-Manchmal. In Spielen können gedroppte Items normalerweise wieder aufgehoben werden. In Datenbanken ist eine `DROP`-Anweisung ohne Backup nicht umkehrbar, weshalb ein Wiederherstellungsplan existieren sollte, bevor Sie eine ausführen.
+**Wann wurde es veröffentlicht?**
+Die offizielle Store-Seite listet den 28. September 2026.
 
-**Warum gibt mein Drop-Befehl nichts zurück?**
-Stille bedeutet normalerweise eines von drei Dingen: Das Befehlspräfix ist falsch, Ihnen fehlt die erforderliche Berechtigung, oder – im Fall von Firewall-Regeln – der Drop funktioniert genau wie vorgesehen und verwirft den Datenverkehr still.
+**Kann ich als Infanterie spielen?**
+Battle Armour ist als personalisierbarer Einheitentyp aufgeführt und liegt am unteren Ende des Maßstabs, aber die Seite beschreibt es nicht im Detail.
 
-**Wo finde ich die korrekte Syntax für mein Setup?**
-Beginnen Sie mit der integrierten Hilfe-Ausgabe. Chat-Bots listen ihre Argumente auf, Spiele veröffentlichen Befehlsreferenzen, und Datenbank-Engines pflegen offizielle Dokumentation für jede DDL-Anweisung, die sie unterstützen. Einer Drop-Command-Anleitung für Ihre spezifische Plattform zu folgen, schlägt jedes Mal Raten.
+**Hat das Spiel veröffentlichte Einheitenwerte oder Baukosten?**
+Nein. Die Store-Seite veröffentlicht keine Einheitenwerte, Schadenstabellen, Baukosten, Technologiebäume, Fraktionslisten oder ein Codesystem. Wer etwas anderes behauptet, spekuliert oder verweist auf Drittanbieter-Daten.
+
+**Kann ich eine Armee befehligen?**
+Ja, die offizielle Beschreibung besagt, dass du allein in den Kampf ziehen, einen Trupp anführen oder eine Armee befehligen kannst.
+
+**Garantiert das Befolgen dieses Leitfadens Erfolg?**
+Nein. Es ist eine Schlussfolgerung aus der beworbenen Prämisse der kombinierten Waffen. Die tatsächliche Balance hängt von der Abstimmung ab, die nicht dokumentiert wurde, also teste im Spiel.

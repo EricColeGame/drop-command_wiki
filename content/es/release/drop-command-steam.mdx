@@ -1,105 +1,81 @@
 export const metadata = {
-  title: "Guía del comando drop en Steam: cómo funcionan realmente los drops de objetos y armas",
-  description: "Aprende qué hace el comando drop en Steam, cómo funcionan los drops por consola en los shooters del motor Source y cómo se comportan realmente los drops de objetos y cromos de Steam.",
+  title: "Drop Command: Combate de Armas Combinadas con Mechs Explicado",
+  description: "Lo que Drop Command anuncia, lo que añaden las guías de terceros y lo que simplemente no está documentado sobre el battler de mechs a gran escala de PillBugGames.",
   category: "release",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Si alguna vez has visto a un compañero de equipo fallar al cambiar de arma a mitad de ronda, ya sabes por qué importa el comando drop. Un comando drop de Steam parece sencillo —una breve línea escrita en una consola—, pero su comportamiento cambia de un juego a otro, y malinterpretarlo puede costarte una ronda, un espacio de inventario o un intercambio. Esta guía explica qué hace realmente el comando drop en Steam, cuándo resulta útil y cómo evitar los errores que pillan por sorpresa a los jugadores nuevos.
+Drop Command es un juego de Steam del desarrollador PillBugGames, lanzado el 28 de septiembre de 2026 (Steam app 1944880). Su propuesta es combate de mechs a gran escala: batallas de armas combinadas donde pilotas cualquier unidad bajo tu mando, te lanzas a un combate solo o con un escuadrón, y avanzas por un campo de batalla que cambia a medida que se acumulan escombros y restos. Este artículo se ciñe a lo que realmente indica la página oficial de la tienda, señala lo que afirman las guías de terceros y es honesto sobre lo que nadie ha documentado todavía.
 
-## Qué significa "comando drop" en los distintos juegos de Steam
+## Lo que Drop Command anuncia oficialmente
 
-Los jugadores usan la expresión "comando drop" para al menos tres cosas diferentes, y confundirlas es la vía más rápida a la confusión. Una es una auténtica instrucción de consola dentro del juego. Otra es una forma coloquial de referirse a los sistemas automáticos de drops de objetos de Steam. La tercera es un comando de chat o de bot que usan los streamers y los gestores de comunidad.
+Según la página oficial de la tienda de Steam, Drop Command se construye en torno al **combate de armas combinadas a gran escala**, con el jugador pilotando cualquier unidad bajo su mando. El alcance anunciado va desde pequeñas escaramuzas hasta batallas épicas. Dos ideas estructurales destacan:
 
-| Contexto | Qué hace | Dónde se escribe | Quién lo usa |
-|---|---|---|---|
-| Consola del juego | Suelta el arma u objeto que llevas en ese momento | La consola de desarrollo del juego | Jugadores de shooters y supervivencia |
-| Drops del inventario de Steam | Otorga objetos automáticamente según el tiempo de juego o los eventos | En ningún sitio: lo gestiona el servidor | Cualquiera con una cuenta de Steam |
-| Comando de chat o bot | Activa un sorteo, la entrega de claves o una alerta | El chat del stream, Discord o un panel de bot | Streamers y gestores de comunidad |
+- **Te lanzas al combate a tu manera.** La tienda describe lanzarse solo, liderar un escuadrón o comandar un ejército.
+- **El campo de batalla evoluciona.** Los escombros totalmente destructibles y los restos de unidades se acumulan durante un combate, cambiando el terreno con el que tú y tus oponentes estáis trabajando.
 
-El propio cliente de Steam no incluye un comando drop. Abre la consola del cliente y encontrarás herramientas de actualización, licencias y diagnóstico, no generación de objetos. Todo lo que te entrega un objeto lo decide el servidor del propio juego, no una línea que escribas localmente. Esa única distinción explica la mayor parte de la frustración con la que se topan los jugadores.
+El juego también anuncia pilotos personalizables y mejorables, con una elección entre escuadrones de élite de veteranos o reclutas desechables que puedes lanzar contra un oponente. En el lado del hardware, la tienda lista **Mechs, Tanques, VTOLs y Battle Armour** personalizables — cuatro amplias categorías de unidades en lugar de un roster detallado.
 
-La versión de consola es la que tiene en mente la mayoría. En los títulos construidos sobre el motor Source de Valve, el comando suelta lo que sea que lleves para que un compañero pueda recogerlo. Es una utilidad, no una trampa: mueve un objeto que ya posees, y no hace nada si tienes las manos vacías.
+La página también menciona "construir un imperio estelar", lo que encaja con el enfoque estratégico del juego pero no se amplía públicamente.
 
-## Cómo usar un comando drop en un shooter del motor Source
+## Lo que la página de la tienda no documenta
 
-Conseguir que el comando funcione depende sobre todo de la preparación. Haz la configuración antes de que empiece la partida, porque escribir a mitad de un tiroteo rara vez acaba bien.
+Aquí es donde mucho tráfico de búsqueda se equivoca. La página oficial **no** publica:
 
-| Paso | Qué hacer | Por qué importa |
-|---|---|---|
-| 1 | Activar la consola de desarrollo en los ajustes del juego | El comando es invisible hasta que existe la consola |
-| 2 | Asignar el comando a una tecla cómoda | Escribir a mitad de combate te mata |
-| 3 | Probarlo primero en un servidor privado o local | Confirma que el comando no está bloqueado |
-| 4 | Confirmar en el HUD que el objeto salió de tus manos | Evita drops duplicados y recogidas inútiles |
-| 5 | Revisar las reglas del servidor antes del modo competitivo | Algunos modos competitivos restringen los drops de armas |
+- Estadísticas de unidades, valores de blindaje o cifras de velocidad
+- Tablas de daño de armas o números de precisión
+- Costes de construcción, tasas de recursos o reglas económicas
+- Un árbol tecnológico, lista de facciones u orden de desbloqueo de unidades
+- Ningún sistema de códigos, códigos de trucos o códigos de canje
+- Teclas de acceso rápido o asignaciones de controles
 
-Unas cuantas notas prácticas. Muchos comandos de consola solo responden cuando las trampas están activadas, lo que normalmente significa servidores locales o privados en lugar del emparejamiento oficial. Si el comando devuelve un error de "unknown command", es probable que el juego no use la sintaxis de consola de Source en absoluto: busca en su lugar una asignación de tecla específica en el menú de controles.
+Si ves una página que promete "códigos de Drop Command" o una hoja de cálculo completa de estadísticas sin fuente alguna, trátala como no verificada. La forma más fiable de comprobar cualquiera de estas cosas es abrir la [página oficial de Drop Command en Steam](https://store.steampowered.com/app/1944880/) y leer el panel de características por ti mismo, y luego confirmarlo en el juego una vez que lo tengas.
 
-La asignación de teclas importa más de lo que la gente espera. Un comando drop asignado a una tecla que puedes alcanzar sin mover la mano te permite pasar un arma en la ventana de medio segundo antes de un avance. Los jugadores que dependen de escribir suelen perder esa carrera.
+## Pilotaje, mando y elección de unidad
 
-## Los sistemas de drops integrados de Steam, explicados
+La mecánica estrella — pilotar cualquier unidad bajo tu mando — es una fuerte señal de diseño incluso sin números. En los juegos de armas combinadas, esto normalmente significa que la diferencia entre un Mech, un Tanque, un VTOL y un Battle Armour es el *rol*, no solo la durabilidad. Los Mechs tienden a anclar una pelea y absorber atención. Los Tanques suelen cambiar movilidad por fuego directo. Los VTOLs aportan verticalidad y velocidad pero quedan expuestos. El Battle Armour se sitúa en el extremo pequeño y ágil.
 
-Los sistemas de drops de Steam son independientes de cualquier comando de consola y siguen las reglas que establece el desarrollador de cada juego. Cuatro categorías cubren casi todo lo que te encontrarás.
+Dado que la tienda confirma que las cuatro categorías son personalizables, la pregunta práctica no es "cuál es el mejor" — eso depende de un ajuste que nadie ha publicado — sino **qué unidad te permite influir en la pelea en la que realmente estás**. Si tu bando está perdiendo la pelea terrestre, un VTOL puede permitirte reposicionarte más rápido de lo que un Mech jamás podría. Si estás manteniendo una línea, una plataforma más pesada normalmente le compra tiempo a tu escuadrón.
 
-| Tipo de drop | Qué lo activa | ¿Intercambiable? | Dónde comprobarlo |
-|---|---|---|---|
-| Cromos | Tiempo de juego en un juego que los admita | Normalmente sí, a través del mercado | Tu inventario de Steam |
-| Drops de objetos free-to-play | Tiempo de juego y tiradas aleatorias | Depende del juego | La pantalla de inventario del juego |
-| Drops de eventos con tiempo limitado | Ver streams o unirse a eventos | A menudo con tiempo limitado | La página de aterrizaje del evento |
-| Drops promocionales | Packs, reservas anticipadas, ofertas de hardware | Con frecuencia bloqueados al principio | La letra pequeña de la página de la tienda |
+## Reclutas, veteranos y construcción de escuadrones
 
-Los cromos son los que más se malinterpretan. Normalmente solo consigues parte del conjunto de cromos de un juego jugando con normalidad; el resto se obtiene intercambiando o comprando en el [Mercado de la Comunidad de Steam](https://steamcommunity.com/market/). Los cromos no aparecen al instante: los drops se reparten a lo largo de varias sesiones de juego, así que una primera sesión corta puede no producir nada en absoluto.
+La descripción oficial ofrece una tensión genuina: construir escuadrones de veteranos, o abrumar a los oponentes con reclutas. Ese planteamiento sugiere que los veteranos aportan experiencia y supervivencia, mientras que los reclutas son más baratos o más rápidos de desplegar y por lo tanto prescindibles.
 
-Los drops de objetos free-to-play funcionan con otro reloj. Los juegos reparten cosméticos, cajas o consumibles a intervalos que controla el desarrollador, y esos intervalos pueden cambiar con las actualizaciones. Si quieres las reglas exactas de un título concreto, la página de la tienda y las notas de parche del desarrollador son las únicas fuentes fiables.
+Razonamiento general a partir de la premisa:
 
-Una advertencia más: la elegibilidad para los drops está ligada a tu cuenta, no a tu máquina. Cambiar de ordenador, reinstalar o jugar sin conexión no reiniciará ni acelerará una ventana de drop.
+- **Lanzar reclutas** encaja con presión temprana, mapas amplios y oponentes que necesitan tiempo para montar unidades pesadas.
+- **Escuadrones de veteranos** encajan con peleas largas donde las unidades individuales sobreviven y acumulan su valor.
+- Como los pilotos son mejorables, perder un piloto probablemente cuesta más que perder un chasis. Es una inferencia razonable de "pilotos personalizables y mejorables", no una regla documentada.
 
-## Por qué fallan los comandos drop: lista de comprobación para solucionar problemas
+No se publica ninguna curva de XP, límite de nivel ni límite de tamaño de escuadrón, así que cualquier guía que afirme números exactos está adivinando.
 
-Cuando un comando drop deja de funcionar, la causa suele ser una de cinco cosas. Repasa esta lista antes de dar por hecho que algo está roto.
+## Leer el campo de batalla cambiante
 
-| Síntoma | Causa probable | Solución |
-|---|---|---|
-| Escribir no hace nada | Trampas desactivadas o el servidor lo bloquea | Pruébalo en un servidor local o privado |
-| Error "unknown command" | El juego no usa la sintaxis de consola de Source | Busca una asignación de tecla en el menú de ajustes |
-| El drop nunca llega a un compañero | Su inventario o ranura de arma está llena | Pídele que libere una ranura primero |
-| Ningún objeto de inventario tras horas de juego | No se alcanzó la ventana de drop o ya se usó | Espera al siguiente periodo de reinicio |
-| Ningún cromo nuevo | Ya has conseguido todos los drops disponibles | Intercambia o compra los cromos restantes |
-
-Empieza por la explicación más sencilla. Nueve de cada diez veces, el comando está bien y el problema es el entorno: un servidor bloqueado, un inventario lleno o un juego que sencillamente nunca implementó esa sintaxis de consola.
-
-Si un comando funcionaba la semana pasada y hoy falla, revisa las notas de parche. Los desarrolladores eliminan o renombran comandos de consola durante las actualizaciones, y los modos competitivos suelen endurecer las restricciones entre temporadas.
-
-## Etiqueta del comando drop, estafas e informes de la comunidad
-
-En los shooters por equipos, un comando drop es una cortesía. La experiencia de los jugadores sugiere que la forma más rápida de perder la buena voluntad es spamear el comando a compañeros que ya cargan sobre sus espaldas la economía de la ronda. Pregunta primero, suelta después.
-
-Los informes de la comunidad también señalan un problema persistente: gente que vende herramientas de drop falsas. La economía de objetos de Steam atrae a los estafadores, y el anzuelo es siempre alguna variación de "ejecuta esto y consigue skins gratis".
-
-| Oferta | Qué está pasando en realidad |
+| Característica anunciada | Implicación práctica |
 |---|---|
-| "Ejecuta este comando drop para conseguir skins gratis" | Un script o una página de phishing, no un comando de juego |
-| Una herramienta que "desbloquea drops de Steam" | Software de terceros que infringe el Acuerdo de Suscriptor |
-| Alguien que pide un código de Steam Guard para "activar drops" | Robo de cuenta en toda regla |
+| Escombros destructibles | La cobertura puede aparecer o desaparecer a mitad de combate |
+| Restos de unidades | Los campos de batalla se desordenan, bloqueando o canalizando el movimiento |
+| Lanzarse solo, con un escuadrón o un ejército | La escala parece ser una elección del jugador por enfrentamiento |
 
-Ningún comando drop legítimo genera objetos que no hayas ganado. Si una herramienta te pide tu inicio de sesión, tu código de Steam Guard o permiso para ejecutarse en segundo plano, ciérrala. El [centro de ayuda oficial de Soporte de Steam](https://help.steampowered.com/) es el lugar adecuado para denunciar una cuenta comprometida, y actuar con rapidez suele salvar el inventario.
+Si los restos se acumulan, la movilidad y las líneas de visión se degradan con el tiempo. Eso favorece a los jugadores que mantienen una opción rápida en reserva en lugar de comprometerlo todo en un solo carril. También significa que una batalla que estás ganando al principio todavía puede estancarse al final.
 
-Para los streamers, el comando drop del lado del chat es un animal completamente distinto. Los bots los activan para anunciar sorteos o repartir claves. Son herramientas de comunidad, no mecánicas de juego, y no tienen ningún efecto en tu inventario de Steam hasta que alguien te envía realmente un regalo.
+## Cómo verificar cualquier cosa que leas
 
-## Preguntas frecuentes
+Dado que la cobertura de terceros es observación secundaria en lugar de documentación del desarrollador, contrasta las afirmaciones con el propio juego. Filtra las discusiones de la comunidad por fecha de parche, ya que los cambios de equilibrio invalidan los consejos antiguos. Y mantén las expectativas calibradas: la página de la tienda describe las ambiciones de Drop Command, no su equilibrio final. Un juego de armas combinadas a gran escala con campos de batalla destructibles es exactamente el tipo de diseño que se ajusta mucho tras el lanzamiento, así que verifica en el juego en lugar de confiar en una guía estática.
 
-**¿Hay un comando drop integrado en el propio cliente de Steam?**
+## FAQ
 
-No. La consola del cliente de Steam gestiona actualizaciones, licencias y diagnósticos. Los drops de objetos los otorgan los servidores de cada juego, así que no existe un comando universal que funcione en todos los títulos de tu biblioteca.
+**¿Ya ha salido Drop Command?**
+Sí. La ficha oficial de Steam da una fecha de lanzamiento del 28 de septiembre de 2026.
 
-**¿Por qué el comando drop no hace nada en mi juego?**
+**¿Tiene Drop Command códigos?**
+Nada en la página oficial de la tienda describe un sistema de códigos. Cualquier lista de códigos no está verificada.
 
-Lo más habitual es que las trampas estén desactivadas o que el servidor bloquee la entrada de consola. Pruébalo primero en un servidor local o privado. Si sigues recibiendo un error, es probable que el juego use su propio sistema de asignación de teclas en lugar de la sintaxis de consola de Source.
+**¿Puedo pilotar cualquier unidad?**
+La tienda dice que pilotas cualquier unidad bajo tu mando, entre Mechs, Tanques, VTOLs y Battle Armour.
 
-**¿Los cromos de Steam siguen cayendo automáticamente?**
+**¿Hay una campaña o un árbol tecnológico?**
+Ninguno de los dos está documentado en la descripción verificada de la tienda. Consulta la página oficial y los menús del juego para detalles actuales.
 
-Sí. Los cromos siguen cayendo según el tiempo de juego en los juegos compatibles, aunque normalmente solo consigues parte de un conjunto. El resto hay que intercambiarlo o comprarlo. Los drops llegan de forma gradual, no todos de golpe.
-
-**¿Puede un comando drop que los jugadores de Steam encuentran online repartir objetos gratis?**
-
-No. Cualquier cosa que prometa objetos gratis a cambio de ejecutar un script, compartir una contraseña o introducir un código de Steam Guard es una estafa. Los drops reales son automáticos, se gestionan en el servidor y están ligados a tu propio tiempo de juego y a tu cuenta.
+**¿La unidad del mod mental-omega es lo mismo?**
+No. Esa es una unidad de mod separada y no tiene nada que ver con este juego.

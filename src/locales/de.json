@@ -2,129 +2,129 @@
   "site": {
     "name": "Drop Command Wiki",
     "shortName": "Drop Command",
-    "tagline": "Guides, Strategien, Einheiten & Kampagnen-Walkthroughs",
-    "description": "Dein ultimativer Leitfaden zu Drop Command! Entdecke Einsteiger-Guides, Einheitenrollen, Mech-Builds, Kampagnenstrategien, Missionen, Steuerung und Fortschrittstipps.",
-    "legalNotice": "Inoffizielles Fan-Wiki. Von Spielern für Spieler. Nicht mit PillBug Games verbunden."
+    "tagline": "Anleitungen, Strategien, Einheiten & Kampagnen-Walkthroughs",
+    "description": "Dein ultimativer Leitfaden für Drop Command! Entdecke Anfängeranleitungen, Einheitenrollen, Mech-Builds, Kampagnenstrategien, Missionen, Steuerung und Fortschrittstipps.",
+    "legalNotice": "Inoffizielles Fan-Wiki. Von Spielern gemacht, für Spieler. Nicht mit PillBug Games verbunden."
   },
   "nav": {
     "home": "Startseite",
-    "guide": "Guide",
-    "mechanics": "Mechanik",
+    "guide": "Anleitung",
+    "mechanics": "Mechaniken",
     "combat": "Kampf",
     "units": "Einheiten",
     "progression": "Fortschritt",
-    "release": "Release",
+    "release": "Veröffentlichung",
     "community": "Community",
     "menu": "Menü",
-    "toggleTheme": "Design wechseln"
+    "toggleTheme": "Theme umschalten"
   },
   "home": {
     "meta": {
-      "title": "Drop Command Wiki - Guides, Strategien & Befehle",
-      "description": "Entdecke das Drop Command Wiki für Gameplay-Guides, Strategietipps, Befehlsinformationen, Updates und wichtige Ressourcen, die Spielern helfen, ihr Erlebnis zu verbessern."
+      "title": "Drop Command Wiki - Anleitungen, Strategien & Kommandos",
+      "description": "Entdecke das Drop Command Wiki für Gameplay-Anleitungen, Strategietipps, Kommando-Informationen, Updates und wichtige Ressourcen, die Spielern helfen sollen, ihr Erlebnis zu verbessern."
     },
     "hero": {
-      "eyebrow": "Strategisches Command-Drop-Spiel",
+      "eyebrow": "Strategisches Kommando-Drop-Spiel",
       "title": "Drop Command Wiki",
-      "description": "Das Drop Command Wiki bietet Gameplay-Guides, Strategien, Mechanik-Informationen und wichtige Ressourcen, damit Spieler jeden Befehl und jede Herausforderung meistern.",
+      "description": "Das Drop Command Wiki bietet Gameplay-Anleitungen, Strategien, Mechanik-Informationen und wichtige Ressourcen, um Spielern zu helfen, jedes Kommando und jede Herausforderung zu meistern.",
       "stats": [
-        "Gesamtbesuche",
+        "Besuche insgesamt",
         "Verfügbare Einheiten",
         "Aktive Codes",
         "Tägliche Updates"
       ],
-      "primaryCta": "Einsteiger-Guide",
-      "secondaryCta": "Einheiten-Guide",
+      "primaryCta": "Anfängeranleitung",
+      "secondaryCta": "Einheiten-Anleitung",
       "tertiaryCta": "Auf Steam spielen",
       "videoLabel": "Offizielle Medien"
     },
     "updates": {
       "title": "Neueste Updates",
-      "browse": "Alle Guides durchsuchen",
+      "browse": "Alle Anleitungen durchsuchen",
       "viewAll": "Alle anzeigen"
     },
     "start": {
       "eyebrow": "Hier starten",
-      "title": "Deine Drop-Command-Reise",
+      "title": "Deine Drop Command-Reise",
       "cards": [
         {
           "number": "1",
-          "title": "Einsteiger-Guide",
-          "description": "Lerne zuerst den Kernablauf: Lies das Schlachtfeld, wähle eine Landezone, rufe deinen ersten Drop und bestätige, wo die Fracht tatsächlich landet, bevor du dich auf einen Kampf einlässt."
+          "title": "Anfängeranleitung",
+          "description": "Lerne zuerst die Kernschleife: Lies das sich entwickelnde Schlachtfeld, wähle eine Landezone, rufe deinen ersten Drop und bestätige, wo die Nutzlast tatsächlich landet, bevor du dich auf einen Kampf einlässt."
         },
         {
           "number": "2",
-          "title": "Wähle deine Fraktion",
-          "description": "Vanguard, Support, Recon, Heavy oder Swarm. Deine Fraktion legt ein Roster und einen Einsatzrhythmus fest – wähle den Archetyp, der zu deiner Kampfweise passt."
+          "title": "Wähle deinen Spielstil",
+          "description": "Entscheide, ob du allein einsteigen, eine Veteranengruppe anführen oder Gegner mit Rookies überrennen willst. Das Spiel unterstützt alle drei Ansätze, wähle also den Rhythmus, der zu deiner Kampfweise passt."
         },
         {
           "number": "3",
-          "title": "Kampf-Grundlagen",
-          "description": "Meistere Drop-Timing und Sicherheit der Landezone: Rufe Verstärkung 20 bis 30 Sekunden vor dem Kontakt, halte eine Reserve und droppe nie in einen Kampf, den du bereits verloren hast."
+          "title": "Kampfgrundlagen",
+          "description": "Meistere Drop-Timing und Sicherheit der Landezone: Ruf Verstärkung vor dem Kontakt, halte eine Reserve und droppe nie in einen Kampf, den du bereits verloren hast."
         },
         {
           "number": "4",
           "title": "Mech-Builds & Loadouts",
-          "description": "Baue für sofortige Wirkung: erst Mobilität, dann Hitze- und Munitionsausdauer, dann Reichweitenabdeckung, und halte günstige austauschbare Chassis im Deck, um deinen Drop-Rhythmus zu schützen."
+          "description": "Passe deine Piloten an und levele sie, dann modifiziere deinen Mech, Panzer, VTOL oder Battle Armour. Baue für sofortige Wirkung: Mobilität zuerst, dann Hitze- und Munitionsausdauer, dann Reichweitenabdeckung, und halte günstige austauschbare Chassis in deinem Roster, um deinen Drop-Rhythmus zu schützen."
         }
       ]
     },
     "popular": {
       "eyebrow": "Beliebte Seiten",
-      "title": "Gerade im Trend",
+      "title": "Jetzt im Trend",
       "quickLinks": [
-        "Einsteiger-Guide",
+        "Anfängeranleitung",
         "Einheitenrollen",
         "Mech-Builds",
         "Drop-Timing"
       ],
       "cards": [
         {
-          "badge": "Einsteiger",
-          "title": "Drop Command Einsteiger-Guide",
-          "description": "Der Kern-Einsatzablauf von deiner ersten Landezone bis zu einem wiederholbaren Drop-Befehl.",
+          "badge": "Anfänger",
+          "title": "Drop Command Anfängeranleitung",
+          "description": "Die Kern-Deployment-Schleife von deiner ersten Landezone bis zu einem wiederholbaren Drop-Kommando.",
           "href": "/guide/drop-command-beginner-guide"
         },
         {
           "badge": "Beliebt",
-          "title": "Drop Command Einheiten-Guide",
-          "description": "Mechs, Panzer, Infanterie, VTOLs, Dropschiffe und Fraktionsroster in einer Übersicht.",
+          "title": "Drop Command Einheiten-Anleitung",
+          "description": "Mechs, Panzer, Infanterie, VTOLs, Battle Armour und Dropships in einer Übersicht.",
           "href": "/units/drop-command-mech-units"
         },
         {
           "badge": "Beliebt",
           "title": "Drop Command Mech-Builds",
-          "description": "Loadout-Prioritäten und Chassis-Rollen für Drops, die die Landung überstehen.",
+          "description": "Loadout-Prioritäten und Chassis-Rollen für Drops, die die Landung überleben.",
           "href": "/units/drop-command-mechs"
         },
         {
           "badge": "Aktualisiert",
-          "title": "Drop Command Kampagnen-Guide",
-          "description": "Recon, Insert, Secure, Sustain, Push und Extract, Phase für Phase.",
+          "title": "Drop Command Kampagnen-Anleitung",
+          "description": "Aufklären, einfügen, sichern, aufrechterhalten, vorstoßen und extrahieren, Phase für Phase.",
           "href": "/combat/drop-command-campaign"
         },
         {
           "badge": "Aktualisiert",
-          "title": "Drop Command Missions-Guide",
-          "description": "Drop-Typen, Timing-Fenster und Auswahl der Landezone für Missionen.",
+          "title": "Drop Command Missions-Anleitung",
+          "description": "Drop-Typen, Zeitfenster und Landezonen-Auswahl für Missionsspiele.",
           "href": "/combat/drop-command-missions"
         },
         {
-          "badge": "Guide",
-          "title": "Drop Command Steuerungs-Guide",
+          "badge": "Anleitung",
+          "title": "Drop Command Steuerungs-Anleitung",
           "description": "Tastenbelegungen, Modifikatoren und Sicherheitsschalter für saubere Drops unter Druck.",
           "href": "/combat/drop-command-combat"
         },
         {
           "badge": "Neu",
           "title": "Drop Command Updates",
-          "description": "Verfolge Dev-Log-Einträge, Patch-Notes und Befehlsänderungen, sobald sie erscheinen.",
+          "description": "Verfolge Dev-Log-Einträge, Patch Notes und Kommandoänderungen, sobald sie erscheinen.",
           "href": "/community/drop-command-dev-log"
         },
         {
           "badge": "Community",
           "title": "Drop Command Community",
-          "description": "Discord-Drops, Community-Berichte und wo du die Entwicklung verfolgen kannst.",
+          "description": "Community-Diskussionen, Spielerberichte und wo du der Entwicklung folgen kannst.",
           "href": "/community/drop-command-discord"
         }
       ]
@@ -132,13 +132,13 @@
     "aboutGame": {
       "title": "Was ist Drop Command?",
       "paragraphs": [
-        "Drop Command ist ein taktisches Sci-Fi-Strategiespiel, das auf Off-Map-Einsatz aufgebaut ist. Statt Einheiten durch eine Tür zu führen, rufst du Mechs, Panzer, Infanterie, VTOLs und Kampfpanzerung direkt auf eine Landezone deiner Wahl, wobei du ein begrenztes Tonnage-Budget, einen Cooldown und einen Verzögerungstimer einsetzt, um die Form eines Kampfes zu verändern.",
-        "Jedes Match dreht sich um dieselben Entscheidungen: Lies das Spielfeld, wähle einen sicheren Landepunkt, passe die Fracht an das Problem an und halte etwa ein Drittel deines Budgets für den Vorstoß zurück, den du noch nicht gesehen hast. Unser Wiki behandelt Einheitenrollen, Mech-Builds, Kampagnenplanung, Missionstaktik, Steuerung und Updates, damit neue Kommandanten und Veteranen mit einem Plan droppen können."
+        "Drop Command ist ein groß angelegtes Mech-Combined-Arms-Kampfspiel, bei dem der Spieler jede Einheit unter seinem Kommando steuert. Du kämpfst von kleinen Scharmützeln bis zu großen Schlachten, steigst allein in den Kampf ein, führst eine Gruppe an oder befehligst eine Armee auf einem sich entwickelnden Schlachtfeld mit zerstörbaren Trümmern und Einheitenwracks.",
+        "Du kannst Piloten anpassen und leveln, Veteranengruppen aufbauen oder Gegner mit Rookies überrennen sowie Mechs, Panzer, VTOLs und Battle Armour modifizieren. Unser Wiki behandelt Einheitenrollen, Mech-Builds, Kampagnenplanung, Missionstaktiken, Steuerung und Updates, damit neue Kommandanten und Veteranen mit einem Plan droppen können. Die Steam-Shop-Seite veröffentlicht keine Einheitenwerte, Schadenstabellen, Baukosten oder ein Codesystem."
       ],
       "stats": [
         {
           "label": "Entwickler",
-          "value": "Pillbug Games"
+          "value": "PillBugGames"
         },
         {
           "label": "Plattform",
@@ -146,45 +146,45 @@
         },
         {
           "label": "Genre",
-          "value": "Mech Strategy"
+          "value": "Mech-Combined-Arms-Kampf"
         },
         {
           "label": "Einheitentypen",
-          "value": "5"
+          "value": "Mechs, Panzer, VTOLs, Battle Armour, Infanterie"
         },
         {
-          "label": "Gewichtsklassen",
-          "value": "4"
+          "label": "Veröffentlichungsdatum",
+          "value": "28. September 2026"
         },
         {
-          "label": "Drop-Rollen",
-          "value": "5"
+          "label": "Spielmodi",
+          "value": "Solo, Gruppe, Armee"
         },
         {
-          "label": "Kampagnenphasen",
-          "value": "6"
+          "label": "Pilot Fortschritt",
+          "value": "Anpassbar & levelbar"
         }
       ],
-      "cta": "Alle Guides erkunden"
+      "cta": "Alle Anleitungen erkunden"
     },
     "explore": {
       "title": "Drop Command Wiki erkunden",
-      "description": "Von deiner ersten Landezone bis zum finalen Kampagnenvorstoß – durchsuche Drop-Command-Einheitenrollen, Mech-Builds, Drop-Timing, Missionstaktik, Steuerung und Patch-Notes.",
+      "description": "Von deiner ersten Landezone bis zum finalen Kampagnenvorstoß: Durchsuche Drop Command Einheitenrollen, Mech-Builds, Drop-Timing, Missionstaktiken, Steuerung und Patch Notes.",
       "modules": [
         {
           "order": 1,
-          "name": "Drop Command Einsteiger-Guide",
-          "description": "Ein einsteigerfreundlicher Guide zum Kern-Gameplay-Loop, zur Schlachtfeldsteuerung, zu Kampagnengrundlagen und ersten Missionsstrategien. Er hilft neuen Spielern, Mech-Steuerung, Squad-Verwaltung und den Aufbau ihres Weltraumimperiums zu verstehen.",
+          "name": "Drop Command Anfängeranleitung",
+          "description": "Eine anfängerfreundliche Anleitung, die die Kern-Gameplay-Schleife, Schlachtfeldsteuerung, Kampagnengrundlagen und erste Missionsstrategien behandelt. Sie hilft neuen Spielern, Mech-Piloten, Gruppenverwaltung und den Aufbau ihres Weltraumimperiums zu verstehen.",
           "href": "/guide/drop-command-beginner-guide",
           "displayType": "step-by-step",
           "highlights": [
             {
               "label": "1",
-              "detail": "Finde die Kommandozeile, das Drop-Menü oder den Hotkey, den dein Spiel für den Einsatz verwendet."
+              "detail": "Finde den Kommando-Prompt, das Drop-Menü oder den Hotkey, den dein Spiel für das Deployment verwendet."
             },
             {
               "label": "2",
-              "detail": "Bestätige das Präfix, die Tastenbelegung oder die Call-in-Taste, bevor der Kampf beginnt."
+              "detail": "Bestätige das Präfix, die Tastenbelegung oder den Call-in-Button, bevor der Kampf beginnt."
             },
             {
               "label": "3",
@@ -192,22 +192,22 @@
             },
             {
               "label": "4",
-              "detail": "Lege die Menge oder Tonnage fest und beginne mit der kleinsten nützlichen Fracht."
+              "detail": "Lege die Menge oder Tonnage fest und beginne mit der kleinsten nützlichen Nutzlast."
             },
             {
               "label": "5",
-              "detail": "Beobachte die Ankunft und bestätige genau, wo die Fracht landet."
+              "detail": "Beobachte die Ankunft und bestätige genau, wo die Nutzlast landet."
             },
             {
               "label": "6",
-              "detail": "Notiere den funktionierenden Befehl, damit du ihn unter Druck wiederholen kannst."
+              "detail": "Schreibe das funktionierende Kommando auf, damit du es unter Druck wiederholen kannst."
             }
           ]
         },
         {
           "order": 2,
-          "name": "Drop Command Einheiten-Guide",
-          "description": "Eine vollständige Übersicht der spielbaren Einheiten, darunter Mechs, Panzer, Infanterie, VTOLs und Kampfpanzerung. Dieses Modul erklärt Einheitenrollen, Stärken, Anpassungsoptionen und den Aufbau effektiver Combined-Arms-Truppen.",
+          "name": "Drop Command Einheiten-Anleitung",
+          "description": "Eine vollständige Übersicht spielbarer Einheiten einschließlich Mechs, Panzer, Infanterie, VTOLs und Battle Armour. Dieses Modul erklärt Einheitenrollen, Stärken, Anpassungsoptionen und wie man effektive Combined-Arms-Streitkräfte aufbaut.",
           "href": "/units/drop-command-mech-units",
           "displayType": "card-list",
           "highlights": [
@@ -216,173 +216,173 @@
               "detail": "Scout-, Brawler- und Fire-Support-Rahmen bilden das Rückgrat jedes Drop-Decks."
             },
             {
-              "label": "Tanks",
-              "detail": "Gepanzerte Linienhalter, die einen Vorstoß verankern und Rückfeuer absorbieren."
+              "label": "Panzer",
+              "detail": "Gepanzerte Linienhalter, die einen Vorstoß verankern und Gegenfeuer absorbieren."
             },
             {
-              "label": "Infantry",
-              "detail": "Günstige Einheiten für Flankeninfiltration, Zielhalten und Notverstärkung."
+              "label": "Infanterie",
+              "detail": "Günstige Einheiten für Flankeneinsatz, Zielpunkthalten und Notfallverstärkung."
             },
             {
               "label": "VTOLs",
-              "detail": "Schnelle Lufteinheiten für Aufklärung, Belästigung und das Bestrafen überdehnter Gegner."
+              "detail": "Schnelle Lufteinheiten für Aufklärung, Störangriffe und Bestrafung überdehnter Gegner."
             },
             {
               "label": "Dropships",
-              "detail": "Transporter, die die Fracht bringen und mit allem darin verloren gehen, wenn die Zone umkämpft ist."
+              "detail": "Transporter, die die Nutzlast hineinbringen und mit allem darin verloren gehen, wenn die Zone umkämpft ist."
             },
             {
-              "label": "Factions",
-              "detail": "Vanguard-, Support-, Recon-, Heavy- und Swarm-Roster, die deinen Einsatzrhythmus prägen."
+              "label": "Battle Armour",
+              "detail": "Personalisierte Powered Suits, die die Lücke zwischen Infanterie und Mechs schließen."
             }
           ]
         },
         {
           "order": 3,
           "name": "Drop Command Mech-Builds",
-          "description": "Ein build-orientierter Abschnitt mit empfohlenen Mech-Loadouts, Waffenauswahl, Ausrüstungssetups und Kampfstrategien. Spieler lernen, verschiedene Spielstile für unterschiedliche Missionen zu optimieren.",
+          "description": "Ein build-orientierter Abschnitt mit empfohlenen Mech-Loadouts, Waffenauswahl, Ausrüstungssetups und Kampfstrategien. Spieler können lernen, verschiedene Spielstile für unterschiedliche Missionen zu optimieren.",
           "href": "/units/drop-command-mechs",
           "displayType": "tier-grid",
           "highlights": [
             {
-              "label": "S",
-              "detail": "Mobilitätsorientierte Chassis, die sich sofort nach der Landung neu positionieren und nie als statisches Ziel kämpfen."
+              "label": "Mobilität",
+              "detail": "Mobilitätsorientierte Chassis, die sich neu positionieren, sobald sie landen, und nie als statisches Ziel kämpfen."
             },
             {
-              "label": "A",
-              "detail": "Hitze- und Munitionsausdauer, damit der Mech direkt bei Ankunft kämpfen kann."
+              "label": "Ausdauer",
+              "detail": "Hitze- und Munitionsausdauer, damit der Mech bei Ankunft sofort kämpfen kann."
             },
             {
-              "label": "B",
-              "detail": "Reichweitenabdeckung, damit du nicht drei Einheiten für dieselbe Kampfdistanz droppst."
+              "label": "Reichweite",
+              "detail": "Reichweitenabdeckung, die vermeidet, drei Einheiten für dieselbe Kampfdistanz zu droppen."
             },
             {
-              "label": "C",
+              "label": "Einweg",
               "detail": "Günstige austauschbare Rahmen, die deinen Drop-Rhythmus am Leben halten, während das teure Metall repariert wird."
             }
           ]
         },
         {
           "order": 4,
-          "name": "Drop Command Kampagnen-Guide",
+          "name": "Drop Command Kampagnen-Anleitung",
           "description": "Dieses Modul erklärt das prozedurale Kampagnensystem, planetare Eroberung, Ressourcen, Diplomatie und langfristige strategische Entscheidungen. Es hilft Spielern zu verstehen, wie einzelne Schlachten den größeren Krieg beeinflussen.",
           "href": "/combat/drop-command-campaign",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Recon",
-              "detail": "Finde Feinde und kartiere zwei Annäherungswege, während du jeden möglichen Drop-Slot sparst."
+              "label": "Aufklären",
+              "detail": "Finde Gegner und kartiere zwei Annäherungsrouten, während du jeden möglichen Drop-Slot sparst."
             },
             {
-              "label": "Insert",
-              "detail": "Rufe eine Verstärkung oder einen Transporter, um dein Squad auf der Karte zu gruppieren und zu bewaffnen."
+              "label": "Einfügen",
+              "detail": "Rufe eine Verstärkung oder einen Transporter, um deine Gruppe auf der Karte zu sammeln und zu bewaffnen."
             },
             {
-              "label": "Secure",
-              "detail": "Nimm das Ziel ein und droppe Nachschub, sobald Munition oder Gesundheit sinken."
+              "label": "Sichern",
+              "detail": "Nimm das Ziel ein und droppe dann Vorräte, sobald Munition oder Gesundheit sinkt."
             },
             {
-              "label": "Sustain",
-              "detail": "Absorbiere die gegnerische Reaktion mit einem zweiten Nachschub- oder Panzerungsdrop statt dich zurückzuziehen."
+              "label": "Aufrechterhalten",
+              "detail": "Absorbiere die gegnerische Reaktion mit einem zweiten Vorrats- oder Panzerungs-Drop, statt dich zurückzuziehen."
             },
             {
-              "label": "Push",
-              "detail": "Verwandle das Halten in einen Sieg mit einer Ausrüstungskapsel oder einem Fahrzeugdrop."
+              "label": "Vorstoßen",
+              "detail": "Verwandle das Halten in einen Sieg mit einer Ausrüstungskapsel oder einem Fahrzeug-Drop."
             },
             {
-              "label": "Extract",
-              "detail": "Ziehe dich mit deiner Beute hinter Rauch, Deckung oder einem Ablenkungsdrop zurück."
+              "label": "Extrahieren",
+              "detail": "Verlasse das Feld mit dem, was du verdient hast, hinter Rauch, Deckung oder einem Ablenkungs-Drop."
             }
           ]
         },
         {
           "order": 5,
-          "name": "Drop Command Missions-Guide",
-          "description": "Eine Missionsdatenbank, die Ziele, taktische Vorgehensweisen, Defensivoperationen und Angriffsszenarien erklärt. Spieler finden Strategien, um verschiedene Schlachtfeldherausforderungen effizient zu meistern.",
+          "name": "Drop Command Missions-Anleitung",
+          "description": "Eine Missionsdatenbank, die Ziele, taktische Ansätze, Verteidigungsoperationen und Angriffsszenarien erklärt. Spieler können Strategien finden, um verschiedene Schlachtfeldherausforderungen effizient zu bewältigen.",
           "href": "/combat/drop-command-missions",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Reinforce",
-              "detail": "Füge einem Vorstoß Einheiten hinzu oder halte einen Punkt, aber nur wenn du Deckung hast, um sie aufzunehmen."
+              "label": "Verstärken",
+              "detail": "Füge Körper zu einem Vorstoß hinzu oder halte einen Punkt, aber nur wenn du Deckung hast, um sie zu empfangen."
             },
             {
-              "label": "Supply",
+              "label": "Versorgen",
               "detail": "Stelle Munition und Verbrauchsgüter zwischen Kämpfen wieder her, nicht währenddessen."
             },
             {
-              "label": "Vehicle",
-              "detail": "Ändere die verfügbaren Werkzeuge, wenn feindliche Panzerung oder eine befestigte Stellung auftaucht."
+              "label": "Fahrzeug",
+              "detail": "Ändere die verfügbaren Werkzeuge, wenn gegnerische Panzerung oder eine befestigte Position auftaucht."
             },
             {
-              "label": "Medical",
-              "detail": "Bergen Verwundete oder setze einen verlorenen Kampf zurück, solange du noch die Landezone kontrollierst."
+              "label": "Medizinisch",
+              "detail": "Stelle Verwundete wieder her oder setze einen verlorenen Kampf zurück, solange du noch die Landezone kontrollierst."
             },
             {
-              "label": "Defensive",
+              "label": "Defensiv",
               "detail": "Setze Barrieren, Türme oder Minen vor einem erwarteten Gegenangriff ein."
             },
             {
-              "label": "Strike",
-              "detail": "Bringe Flächenschaden von oben, wenn Feinde dicht gedrängt und statisch sind."
+              "label": "Schlag",
+              "detail": "Verursache Flächenschaden von oben, wenn Gegner gruppiert und statisch sind."
             }
           ]
         },
         {
           "order": 6,
-          "name": "Drop Command Steuerungs-Guide",
-          "description": "Ein Referenzleitfaden für Tastatursteuerung, Bewegungssysteme, Kampfbefehle und Gameplay-Einstellungen. Er hilft neuen Spielern, Einheiten schnell zu steuern und Schlachten zu verwalten.",
+          "name": "Drop Command Steuerungs-Anleitung",
+          "description": "Eine Referenzanleitung für Tastatursteuerung, Bewegungssysteme, Kampfkommandos und Gameplay-Einstellungen. Sie hilft neuen Spielern, schnell zu lernen, wie man Einheiten steuert und Schlachten verwaltet.",
           "href": "/combat/drop-command-combat",
           "displayType": "code-cards",
           "highlights": [
             {
-              "label": "Single Key",
+              "label": "Einzelne Taste",
               "detail": "Eine dedizierte Taste lässt den ausgewählten Gegenstand fallen: schnell für Gewichtsabwürfe, aber leicht zu Fehlauslösungen."
             },
             {
-              "label": "Mod + Key",
-              "detail": "Halte einen Modifikator vor dem Drücken: gut für überfüllte Hotbars, langsamer in der Panik."
+              "label": "Mod + Taste",
+              "detail": "Halte einen Modifikator gedrückt, bevor du drückst: gut für überfüllte Hotbars, langsamer in Panik."
             },
             {
-              "label": "Hold",
-              "detail": "Drücke und halte, bis der Befehl registriert wird, um seltene Ausrüstung vor versehentlichen Drops zu schützen."
+              "label": "Halten",
+              "detail": "Drücke und halte, bis das Kommando registriert wird, um seltene Ausrüstung vor versehentlichen Drops zu schützen."
             },
             {
-              "label": "Confirm",
-              "detail": "Eine Bestätigungsabfrage schützt wertvolle Drops, unterbricht aber den Kampffluss."
+              "label": "Bestätigen",
+              "detail": "Eine Bestätigungsaufforderung schützt wertvolle Drops, unterbricht aber den Kampffluss."
             },
             {
-              "label": "Bind Apart",
-              "detail": "Halte Drop und Zerstören auf getrennten Tasten, da gemeinsame Belegungen die Hauptursache für verlorene Ausrüstung sind."
+              "label": "Getrennt binden",
+              "detail": "Halte Drop und Zerstören auf getrennten Tasten, da gemeinsame Bindungen die Hauptursache für verlorene Ausrüstung sind."
             }
           ]
         },
         {
           "order": 7,
           "name": "Drop Command Updates",
-          "description": "Ein News-Bereich, der offizielle Patches, Entwicklungsupdates, neue Funktionen, Balance-Änderungen und Release-Informationen verfolgt. Er hält Spieler über die neuesten Verbesserungen des Entwicklers auf dem Laufenden.",
+          "description": "Ein Nachrichtenbereich, der offizielle Patches, Entwicklungsupdates, neue Funktionen, Balance-Änderungen und Veröffentlichungsinformationen verfolgt. Er hält Spieler über die neuesten Verbesserungen des Entwicklers informiert.",
           "href": "/community/drop-command-dev-log",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Changes",
+              "label": "Änderungen",
               "detail": "Jeder Dev-Log-Eintrag beginnt mit einer einzeiligen Zusammenfassung dessen, was sich tatsächlich geändert hat."
             },
             {
-              "label": "Scope",
+              "label": "Umfang",
               "detail": "Einträge nennen die Rollen, Welten und Gegenstandskategorien, die die Änderung betrifft."
             },
             {
               "label": "Syntax",
-              "detail": "Vorher-Nachher-Beispiele zeigen, wie der Befehl jetzt im Vergleich zu vorher geschrieben wird."
+              "detail": "Vorher-Nachher-Beispiele zeigen, wie das Kommando jetzt im Vergleich zu vorher geschrieben wird."
             },
             {
               "label": "Status",
-              "detail": "Der Rollout-Status zeigt, ob eine Änderung auf einem Testzweig oder vollständig live ist."
+              "detail": "Der Rollout-Status sagt dir, ob eine Änderung auf einem Testzweig oder vollständig live ist."
             },
             {
-              "label": "Issues",
-              "detail": "Bekannte Probleme listen die Randfälle auf, die noch auf eine Behebung warten."
+              "label": "Probleme",
+              "detail": "Bekannte Probleme listen die Randfälle auf, die noch auf eine Korrektur warten."
             },
             {
               "label": "Feedback",
@@ -393,7 +393,7 @@
         {
           "order": 8,
           "name": "Drop Command Community",
-          "description": "Ein Community-Hub, der offizielle Diskussionskanäle, Entwickler-Updates und Spieler-Feedbackquellen sammelt. Er hilft Spielern, sich mit anderen Kommandanten zu verbinden und die zukünftige Spielentwicklung zu verfolgen.",
+          "description": "Ein Community-Hub, der offizielle Diskussionskanäle, Entwickler-Updates und Spieler-Feedback-Quellen sammelt. Er hilft Spielern, sich mit anderen Kommandanten zu verbinden und die zukünftige Spielentwicklung zu verfolgen.",
           "href": "/community/drop-command-discord",
           "displayType": "card-list",
           "highlights": [
@@ -402,24 +402,24 @@
               "detail": "Ein Host legt Preis und Dauer fest, während Mitglieder per Reaktion oder Button teilnehmen."
             },
             {
-              "label": "Catch",
+              "label": "Fangen",
               "detail": "Der Bot postet einen Gegenstand und der erste Spieler, der den Namen tippt, beansprucht ihn."
             },
             {
-              "label": "Economy",
-              "detail": "Geplante Auszahlungen speisen eine Serverwährung, die Mitglieder für Upgrades und Sammelobjekte ausgeben."
+              "label": "Wirtschaft",
+              "detail": "Geplante Auszahlungen speisen eine Server-Währung, die Mitglieder für Upgrades und Sammlerstücke ausgeben."
             },
             {
-              "label": "Content",
-              "detail": "Moderatoren posten Memes, Kunst und Ankündigungen auf Anfrage für den Kanal."
+              "label": "Inhalt",
+              "detail": "Moderatoren posten Memes, Kunst und Ankündigungen auf Abruf für den Kanal."
             },
             {
-              "label": "Role",
+              "label": "Rolle",
               "detail": "Admin-Drops gewähren Event-Pässe, VIP-Zugang oder Verifizierungsrollen per Button."
             },
             {
-              "label": "Cleanup",
-              "detail": "Ein Moderations-Drop entfernt Nachrichten bei Kanal-Resets und Raid-Aufräumaktionen."
+              "label": "Aufräumen",
+              "detail": "Ein Moderations-Drop entfernt Nachrichten bei Kanal-Resets und Raid-Bereinigungen."
             }
           ]
         }
@@ -427,99 +427,99 @@
     },
     "faq": {
       "title": "Häufig gestellte Fragen",
-      "description": "Schnelle Antworten auf die häufigsten Fragen zu Drop-Command-Einsatz, Timing und Fortschritt.",
+      "description": "Schnelle Antworten auf die häufigsten Fragen zu Drop Command Deployment, Timing und Fortschritt.",
       "items": [
         {
           "question": "Was ist Drop Command?",
-          "answer": "Drop Command ist ein taktisches Sci-Fi-Strategiespiel über Off-Map-Einsatz. Du gibst ein begrenztes Tonnage-Budget und einen Cooldown aus, um Mechs, Panzer, Infanterie, VTOLs und Kampfpanzerung auf eine Landezone deiner Wahl zu rufen, und nutzt diese Ankunft dann, um ein Patt zu brechen oder eine zusammenbrechende Linie neu zu verankern."
+          "answer": "Drop Command ist ein groß angelegtes Mech-Combined-Arms-Kampfspiel, bei dem der Spieler jede Einheit unter seinem Kommando steuert. Du kämpfst von kleinen Scharmützeln bis zu großen Schlachten, steigst allein in den Kampf ein, führst eine Gruppe an oder befehligst eine Armee auf einem sich entwickelnden Schlachtfeld mit zerstörbaren Trümmern und Einheitenwracks."
         },
         {
-          "question": "Wie funktioniert ein Drop-Befehl in Drop Command tatsächlich?",
-          "answer": "Ein Drop-Befehl hat vier Teile: Anrufkosten, Verzögerungstimer, Landepunkt und Fracht. Die Verzögerung entscheidet die meisten Kämpfe, denn eine Fracht, die nach dem Ende des Gefechts landet, kostet die Ressource und bringt nichts."
+          "question": "Wie funktioniert ein Drop-Kommando in Drop Command tatsächlich?",
+          "answer": "Ein Drop-Kommando hat vier Teile: Call-in-Kosten, Verzögerungstimer, Landepunkt und Nutzlast. Die Verzögerung entscheidet die meisten Kämpfe, denn eine Nutzlast, die landet, nachdem der Kampf vorbei ist, kostet die Ressource und bringt nichts. Die Steam-Shop-Seite veröffentlicht keine genauen Werte, Kosten oder Timings."
         },
         {
-          "question": "Welche Fraktion sollten Anfänger in Drop Command wählen?",
-          "answer": "Vanguard ist die einfachste Fraktion, um sich produktiv zu fühlen, weil sie früh Druck macht, aber ohne Nachverfolgung verblasst sie. Für eine sicherere erste Wahl gibt Support oder Heavy deinem Team eine Rolle, die im Midgame nützlich bleibt."
+          "question": "Welchen Spielstil sollten Anfänger in Drop Command wählen?",
+          "answer": "Du kannst allein einsteigen, eine Veteranengruppe anführen oder Gegner mit Rookies überrennen. Anfänger finden es oft einfacher, eine Gruppe anzuführen, weil du dich auf Veteranenpiloten verlassen kannst, während du den Ablauf lernst. Letztendlich wähle den Rhythmus, der zu deiner Kampfweise passt."
         },
         {
           "question": "Wie viel Tonnage sollte ich in Drop Command in Reserve halten?",
-          "answer": "Eine gängige Regel ist, etwa ein Drittel deines Drop-Command-Budgets für das Late Game zurückzuhalten. Wenn du das Budget für eine Ankunft der Assault-Klasse leerst, hast du keine Antwort, wenn der Gegner gegenstößt."
+          "answer": "Eine übliche Regel ist, etwa ein Drittel deines Drop Command-Budgets für das späte Spiel zurückzuhalten. Wenn du das Budget für eine einzelne Assault-Class-Ankunft leerst, hast du keine Antwort, wenn der Gegner gegenstößt. Genaue Tonnagegrenzen sind auf der Steam-Shop-Seite nicht dokumentiert."
         },
         {
-          "question": "Wo finde ich Drop Command Patch-Notes?",
-          "answer": "Das Modul Drop Command Updates verfolgt das Dev-Log, einschließlich Berechtigungsänderungen, Cooldown-Anpassungen und Item-Tabellen-Korrekturen, mit einer Zusammenfassung dessen, was sich geändert hat und wo Probleme gemeldet werden können."
+          "question": "Wo finde ich Drop Command Patch Notes?",
+          "answer": "Das Drop Command Updates-Modul verfolgt das Dev-Log, einschließlich Berechtigungsänderungen, Cooldown-Anpassungen und Item-Table-Korrekturen, mit einer Zusammenfassung dessen, was sich geändert hat und wo man Probleme melden kann."
         }
       ]
     },
     "finalCta": {
       "title": "Bereit, Drop Command zu meistern?",
-      "description": "Von deinem ersten Drop bis zu Endgame-Kampagnenschlachten – unser Community-Wiki bietet dir kostenlose, aktuelle Guides.",
-      "primary": "Den Einsteiger-Guide lesen",
+      "description": "Von deinem ersten Drop bis zu Endgame-Kampagnenschlachten deckt unser Community-Wiki alles mit kostenlosen, aktuellen Anleitungen ab.",
+      "primary": "Die Anfängeranleitung lesen",
       "secondary": "Auf Steam spielen"
     }
   },
   "guide": {
-    "overviewTitle": "Drop Command Guide",
-    "overviewDescription": "Einsteiger-Walkthroughs, Tipps und Strategie-Guides, um deine Drop-Command-Kampagne in Gang zu bringen."
+    "overviewTitle": "Drop Command Anleitung",
+    "overviewDescription": "Anfänger-Walkthroughs, Tipps und Strategieanleitungen, um deine Drop Command-Kampagne in Gang zu bringen."
   },
   "mechanics": {
-    "overviewTitle": "Drop Command Mechanik",
+    "overviewTitle": "Drop Command Mechaniken",
     "overviewDescription": "Mech-Kampf, das Mech-Labor, 4X-Strategie, Imperiumsaufbau, Echtzeitkampf und Combined Arms erklärt."
   },
   "combat": {
     "overviewTitle": "Drop Command Kampf",
-    "overviewDescription": "Taktischer Kampf, Missionen, Schlachten und Kampagnen-Guides, um Kämpfe in Drop Command zu gewinnen."
+    "overviewDescription": "Taktischer Kampf, Missionen, Schlachten und Kampagnenanleitungen, um Kämpfe in Drop Command zu gewinnen."
   },
   "units": {
     "overviewTitle": "Drop Command Einheiten",
-    "overviewDescription": "Mechs, Infanterie, Dropschiffe und Fraktionen – das vollständige Drop-Command-Roster und seine Verwendung."
+    "overviewDescription": "Mechs, Infanterie, Dropships und Fraktionen – das vollständige Drop Command-Roster und wie man es einsetzt."
   },
   "progression": {
     "overviewTitle": "Drop Command Fortschritt",
-    "overviewDescription": "Upgrades, Technologie, Wirtschaft, Basisaufbau und die Galaxiekarte – baue dein Drop-Command-Imperium aus."
+    "overviewDescription": "Upgrades, Technologie, Wirtschaft, Basisaufbau und die Galaxiskarte – baue dein Drop Command-Imperium aus."
   },
   "release": {
-    "overviewTitle": "Drop Command Release",
-    "overviewDescription": "Drop Command Release-Datum, Steam-Seite, Demo und Trailer – alles zum Launch."
+    "overviewTitle": "Drop Command Veröffentlichung",
+    "overviewDescription": "Drop Command Veröffentlichungsdatum, Steam-Seite, Demo und Trailer – alles zum Launch."
   },
   "community": {
     "overviewTitle": "Drop Command Community",
-    "overviewDescription": "Drop Command Reddit, Discord, Dev-Logs und Reviews aus der Community."
+    "overviewDescription": "Drop Command Reddit, Discord, Dev-Logs und Bewertungen aus der Community."
   },
   "shared": {
     "wikiNavigation": "Wiki-Navigation",
     "activeCodes": "Aktive Codes",
     "updated": "Aktualisiert",
-    "viewAllCodes": "Alle Codes ansehen",
-    "playOnRoblox": "Auf Roblox spielen",
+    "viewAllCodes": "Alle Codes anzeigen",
+    "playOnRoblox": "Auf Steam spielen",
     "inThisSection": "In diesem Abschnitt",
     "tableOfContents": "Inhaltsverzeichnis",
     "nextSteps": "Nächste Schritte",
     "needHelp": "Brauchst du Hilfe?",
     "relatedReading": "Verwandte Lektüre",
-    "relatedGuides": "Verwandte Guides",
+    "relatedGuides": "Verwandte Anleitungen",
     "readMore": "Mehr lesen",
     "officialMedia": "Offizielle Medien",
     "home": "Startseite",
-    "noGuidesAvailable": "Noch keine Guides verfügbar. Schau bald wieder vorbei!"
+    "noGuidesAvailable": "Noch keine Anleitungen verfügbar. Schau bald wieder vorbei!"
   },
   "footer": {
     "aboutTitle": "Drop Command Wiki",
-    "about": "Das Drop Command Wiki ist ein unabhängiger, von Fans erstellter Guide-Hub zu Einheiten, Mech-Builds, Kampagnenstrategien, Missionen und wichtigem Spielwissen für neue und erfahrene Spieler.",
+    "about": "Drop Command Wiki ist ein unabhängiger, von Fans erstellter Anleitungs-Hub, der Einheiten, Mech-Builds, Kampagnenstrategien, Missionen und wichtiges Spielwissen für neue und erfahrene Spieler gleichermaßen abdeckt.",
     "quickLinks": "Schnelllinks",
-    "guides": "Guides",
+    "guides": "Anleitungen",
     "legal": "Rechtliches",
     "copyright": "2026 Drop Command Wiki. Nicht mit PillBug Games oder Steam verbunden.",
-    "description": "Taktisches Sci-Fi-Strategiespiel. Kommandiere Mechs, Panzer und Infanterie in einer dynamischen Kampagne.",
+    "description": "Taktisches Sci-Fi-Strategiespiel. Befehlige Mechs, Panzer und Infanterie in einer dynamischen Kampagne.",
     "playGame": "Drop Command auf Steam spielen",
     "officialDiscord": "Offizieller Discord",
     "officialYoutube": "Offizielles YouTube",
     "vvBuilder": "Drop Command Planer",
-    "beginnerGuide": "Einsteiger-Guide",
-    "raceGuides": "Einheiten-Guides",
-    "bossGuides": "Kampagnen-Guide",
+    "beginnerGuide": "Anfängeranleitung",
+    "raceGuides": "Einheiten-Anleitungen",
+    "bossGuides": "Kampagnen-Anleitung",
     "buildGuide": "Mech-Builds",
-    "privacyPolicy": "Datenschutzerklärung",
+    "privacyPolicy": "Datenschutzrichtlinie",
     "termsOfService": "Nutzungsbedingungen"
   }
 }

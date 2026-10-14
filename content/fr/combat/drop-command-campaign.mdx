@@ -1,114 +1,74 @@
 export const metadata = {
-  title: "Guide de la campagne de largage : maîtrisez les largages de combat, le timing et les équipements",
-  description: "Découvrez comment fonctionne une campagne de largage dans les jeux de combat : timing des largages, priorités d'équipement, rôles d'escouade et tactiques pour remporter les zones contestées.",
+  title: "Drop Command : un combat de mechs à grande échelle",
+  description: "Drop Command est le jeu de combat interarmes de mechs à grande échelle de PillBugGames. Voici ce que Steam confirme réellement, ainsi que des tactiques pratiques et des mises en garde.",
   category: "combat",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Qu'est-ce qu'une campagne de largage ?
+Drop Command est un jeu Steam du développeur PillBugGames, sorti le 28 septembre 2026. Si vous avez vu ce nom circuler et que vous voulez savoir ce qu'il est réellement, la réponse est plus étroite que ne le suggère le bruit marketing : c'est un jeu de combat de mechs interarmes joué à grande échelle, où vous pilotez n'importe quelle unité sous votre commandement. Cet article s'en tient à ce que dit réellement la fiche officielle du magasin pour Drop Command (application Steam 1944880), puis raisonne soigneusement sur la manière dont ce postulat se traduit en pratique. Lorsque quelque chose n'est pas documenté, il le dit au lieu de deviner.
 
-Un seul largage bien synchronisé peut renverser un combat perdu en quelques secondes, et c'est précisément pourquoi une **campagne de largage** récompense la planification plutôt que les réflexes. Que vous appeliez des renforts aéroportés, une caisse de ravitaillement ou une capsule d'équipement dans un jeu de tir tactique, la **campagne de largage** est le cadre qui détermine quand, où et quoi vous amenez dans le combat. Réussissez et vous renforcez un point contesté avant que l'ennemi puisse réagir ; ratez et vous offrez des éliminations gratuites à l'équipe adverse.
+## Ce qu'est réellement Drop Command
 
-Une campagne de largage est une manière structurée de planifier, d'appeler et d'exploiter chaque livraison hors carte que votre équipe reçoit pendant une partie ou une mission. Au lieu de traiter un largage comme un bouton de panique, vous le traitez comme une ressource avec un calendrier. Les joueurs qui gagnent régulièrement sont généralement ceux qui décident *avant* le contact quel sera leur premier largage, où il atterrit et qui le sécurise.
+La description officielle vérifiée est le point d'ancrage ici. Drop Command est décrit comme « du combat de mechs à grande échelle » avec « du combat interarmes en pilotant n'importe quelle unité sous votre commandement », allant « de petites escarmouches à des batailles épiques ». Vous pouvez « vous lancer au combat seul ou mener une escouade ou une armée ». Le champ de bataille évolue, avec « des débris et des épaves d'unités entièrement destructibles ». Les pilotes sont « personnalisables et peuvent monter en niveau », et vous pouvez aligner « des escouades d'élite ou des recrues jetables ». Les unités que vous pouvez personnaliser incluent « Mech, Tank, VTOL ou Battle Armour ».
 
-Le terme est utilisé de façon assez libre selon les communautés. Certains joueurs désignent la commande littérale qui demande une livraison de ravitaillement ou de troupes. D'autres utilisent « campagne de largage » pour décrire toute une opération construite autour de largages enchaînés : insertion, sécurisation, ravitaillement, percée, extraction. Les deux lectures renvoient à la même idée : les largages ne sont pas des événements isolés. Ils forment une campagne.
+C'est l'ensemble des fonctionnalités publiées. Point crucial, la page Steam ne publie pas de statistiques d'unités, de tables de dégâts, de coûts de construction, d'arbres technologiques, de listes de factions, ni de système de codes. Si vous avez vu une liste de valeurs d'unités ou une feuille de codes de triche, elle ne vient pas de PillBugGames. Il vaut la peine de vérifier tout chiffre en jeu plutôt que de s'y fier.
 
-| Élément | Ce qu'il contrôle | Pourquoi il décide des combats |
+Le développeur est PillBugGames, et la page du magasin est la meilleure source unique : https://store.steampowered.com/app/1944880/
+
+## L'idée de « piloter n'importe quelle unité », analysée
+
+La plupart des jeux de mechs vous enferment dans un seul châssis et vous demandent de le maîtriser. Drop Command dit plutôt que vous pouvez piloter n'importe quelle unité sous votre commandement. Lu littéralement, cela reformule tout le jeu comme un problème de commandement enveloppé autour d'un problème de pilotage.
+
+La conséquence pratique est que votre attention est la ressource rare, pas votre puissance de feu. Si vous pouvez sauter dans un VTOL, un Tank ou une Battle Armour quand cela vous convient, la question cesse d'être « quelle unité je main » et devient « de quelle unité ce moment a-t-il besoin ». Une crête contestée peut vouloir un Mech tenant la ligne. Un flanc qui s'effondre peut vouloir une Battle Armour rapide. Une ligne de tir dégagée peut vouloir le VTOL. Rien de tout cela n'est une donnée mesurée, c'est une inférence directe à partir de « interarmes » plus « piloter n'importe quelle unité ».
+
+Le piège est de traiter cette liberté comme une invitation à sauter constamment. Chaque transition vous coûte de la conscience situationnelle. Les débutants s'en sortent souvent mieux en s'engageant sur une seule unité pendant un moment, en apprenant sa sensation, et seulement ensuite en en ajoutant une seconde.
+
+## Lire un champ de bataille évolutif et destructible
+
+« Des débris et des épaves d'unités entièrement destructibles » est une mécanique de combat déguisée en fonctionnalité graphique. Sur un champ de bataille persistant, les épaves s'accumulent. Cela signifie que la carte sur laquelle vous avez débarqué n'est pas la carte sur laquelle vous combattez dix minutes plus tard.
+
+Deux implications raisonnables en découlent. Premièrement, la couverture créée par les débris est temporaire et asymétrique. Le camp qui a perdu des unités tôt pourrait se retrouver avec plus de couverture physique mais moins de tireurs. Deuxièmement, les lignes de tir se ferment avec le temps. Un couloir qui permettait à un Tank de dominer une approche peut être encombré d'épaves au milieu de la partie. Planifiez vos itinéraires en supposant que le terrain change.
+
+Rien de tout cela n'est documenté comme une mécanique spécifique par le développeur, alors traitez-le comme une hypothèse de travail et testez-le vous-même. Lancez-vous dans une escarmouche, combattez la même approche deux fois, et observez si les épaves modifient réellement ce que vous pouvez voir et traverser par le tir.
+
+## Vétérans, recrues et composition d'escouade
+
+La page officielle indique que vous pouvez « constituer des escouades de vétérans ou submerger les adversaires avec des recrues ». Elle présente explicitement le choix comme élite contre jetable. C'est une véritable bifurcation stratégique, et elle correspond à une réelle tension coût-bénéfice.
+
+| Approche | Force (raisonnée) | Risque (raisonné) |
 |---|---|---|
-| Emplacements de largage | Combien de livraisons vous pouvez appeler | Tomber à sec en pleine percée fait perdre l'objectif |
-| Temps de recharge | Délai avant le prochain appel | Vous force à dépenser vos largages plutôt qu'à les thésauriser |
-| Zone d'atterrissage | Où la charge arrive | Le terrain à découvert invite les tirs croisés ; un abri crée un point de ralliement sûr |
-| Type de charge | Troupes, ravitaillement, armes, véhicules | La mauvaise charge gaspille tout un temps de recharge |
-| Plan de suivi | Ce que fait votre escouade après l'atterrissage | Un largage sans plan n'est qu'un cadeau pour l'ennemi |
+| Escouades de vétérans | L'expérience se cumule ; moins de pertes | Un anéantissement est coûteux ; lent à reconstruire |
+| Ruée de recrues | Volume et vitesse ; pertes bon marché | Faible survavibilité ; faible montée en puissance en fin de partie |
 
-## L'anatomie d'un largage : types, minuteries et risques
+Le tableau est un raisonnement général à partir du postulat interarmes, pas des données mesurées. Il n'y a pas de coûts d'unités ni de courbes d'expérience publiés. Si vous voulez savoir comment la montée en niveau des pilotes affecte réellement la performance, la seule méthode fiable est de faire monter un pilote en niveau en jeu et d'observer la différence vous-même.
 
-Chaque largage partage trois propriétés : un coût d'appel, un délai avant l'arrivée et un risque à l'arrivée. C'est le délai qui distingue un largage solide d'un largage bâclé. Si vous appelez un largage à l'instant où vous voyez les ennemis, il atterrit alors que le combat est déjà joué. Si vous l'appelez avant le contact, il atterrit exactement quand vous en avez besoin.
+## Personnalisation et ce qui reste non documenté
 
-Les différents jeux gèrent ces systèmes de manières très variées, il est donc utile de comparer les mécaniques entre les titres — parcourir un catalogue comme [la bibliothèque de combat et de stratégie de Steam](https://store.steampowered.com/) est un moyen rapide de voir à quel point les systèmes de largage peuvent être variés, des appels orbitaux aux escouades aéroportées en passant par le butin généré à la mort.
+Drop Command annonce des pilotes personnalisables et pouvant monter en niveau, ainsi que des unités Mech, Tank, VTOL et Battle Armour personnalisables. Cette combinaison suggère une couche d'équipement plus une couche de progression, mais la page Steam ne décrit pas d'arbre technologique, d'ordre de déblocage, ni de liste de modifications.
 
-### Connaître vos types de largage
+C'est ici que vous devriez être sceptique face aux guides tiers. Les auteurs écrivant avant ou peu après la sortie comblent souvent les lacunes avec des chiffres plausibles : valeurs de dégâts exactes, temps de construction ou tier list. Selon les règles que suit cet article, les guides tiers sont des observations secondaires, pas de la documentation du développeur. Traitez tout chiffre spécifique comme non vérifié jusqu'à ce que vous le confirmiez en jeu. Une habitude sensée est de consulter d'abord la page officielle, puis le jeu lui-même, et seulement ensuite une source communautaire.
 
-| Type de largage | Livraison typique | Idéal pour | Risque principal |
-|---|---|---|---|
-| Largage de renfort | Vague de réapparition, insertion d'escouade, unités alliées | Tenir ou reprendre un point | Atterrir face à un ennemi préparé |
-| Largage de ravitaillement | Munitions, objets médicaux, armure | Soutenir une longue défense | Se faire camper pendant qu'on pille |
-| Capsule d'équipement | Arme spéciale, gadget, véhicule | Briser un statu quo | La capsule elle-même devient un appât |
-| Largage de butin | Apparaît sur les ennemis vaincus | Faire croître votre économie | Se disputer une zone chaude pour des miettes |
+## Conseils pratiques pour débuter
 
-### La fenêtre de timing
+- Commencez de façon restreinte. Choisissez un type d'unité, apprenez-le dans de petites escarmouches, puis élargissez.
+- Utilisez les escarmouches pour apprendre la carte. Les grandes batailles punissent la méconnaissance.
+- Attendez-vous à ce que le terrain change. Revérifiez les lignes de vue à mesure que les épaves s'accumulent.
+- Décidez de votre philosophie d'escouade avant la partie, pas pendant. Vétérans et recrues exigent un jeu différent.
+- Vérifiez vous-même chaque chiffre. Rien de numérique n'est publié officiellement.
+- Si vous commandez une armée, déléguez. Piloter et commander en même temps divise votre attention.
 
-Le timing est la compétence qui décide la plupart des combats de largage. Un largage de renfort appelé 20 à 30 secondes avant le contact arrive au moment où les tirs commencent. Un largage de ravitaillement appelé *pendant* une défense garde votre escouade sur le point au lieu de l'abandonner pour se réapprovisionner. Une capsule appelée dans un statu quo ajoute un outil auquel l'ennemi ne peut pas répondre.
-
-Ce qu'il ne faut jamais faire, c'est appeler un largage dans un combat que vous avez déjà perdu. Ce temps de recharge est parti, et votre équipe dispose désormais de moins d'options pour l'engagement suivant. Les retours de la communauté décrivent systématiquement la « discipline de largage » — la volonté de garder un largage plutôt que de le dépenser — comme la plus grande différence entre les escouades moyennes et celles de haut niveau.
-
-| Situation | Largage à appeler | Pourquoi ça marche |
-|---|---|---|
-| Avant le contact, à 20–30 secondes | Renfort sur un flanc | Arrive au début de l'engagement |
-| En pleine défense, munitions ou vie basses | Largage de ravitaillement derrière un abri | Garde le point occupé |
-| Statu quo à un point de passage | Capsule d'équipement | Introduit une réponse que l'ennemi n'a pas |
-| Juste après une élimination totale | Rien pour l'instant | Appeler dans un combat perdu gaspille le temps de recharge |
-| Ennemi trop avancé | Largage retardé derrière lui | Coupe sa retraite |
-
-## Planifier une campagne de largage phase par phase
-
-La manière la plus fiable de mener une campagne de largage est de la découper en phases et d'attribuer une priorité de largage à chacune. La plupart des parties ratées sautent la reconnaissance ou le soutien, puis se demandent pourquoi la percée finale s'effondre.
-
-| Phase | Objectif | Priorité de largage | Condition de sortie |
-|---|---|---|---|
-| Reconnaissance | Localiser les ennemis et cartographier les routes | Aucune — gardez tout | Vous connaissez deux voies d'approche |
-| Insertion | Mettre votre escouade sur la carte | Un renfort ou un transport | L'escouade est regroupée et armée |
-| Sécurisation | Prendre et tenir un objectif | Largage de ravitaillement dès que les munitions baissent | L'objectif est dégagé et couvert |
-| Soutien | Absorber la réponse ennemie | Deuxième ravitaillement ou armure | La poussée ennemie est brisée |
-| Percée | Convertir la défense en victoire | Capsule d'équipement ou véhicule | Une position avancée est établie |
-| Extraction | Partir avec ce que vous avez gagné | Fumigène, abri ou diversion | L'escouade est sortie |
-
-Remarquez combien de phases n'exigent *aucun* largage. Une campagne de largage ne consiste pas à appeler tout ce que vous avez — il s'agit d'appeler la bonne chose à la bonne phase. Les équipes qui dépensent leur premier largage pendant la reconnaissance dépensent généralement leur dernier pendant une retraite.
-
-## Équipements et rôles d'escouade qui font fonctionner les largages
-
-Une campagne de largage échoue quand chaque joueur porte le même équipement. Les largages existent pour combler les lacunes, votre escouade doit donc être construite en gardant ces lacunes à l'esprit. Si tout le monde apporte de l'anti-blindage, personne ne peut tenir une porte. Si tout le monde apporte des soins, personne ne peut percer un bunker.
-
-| Rôle | Tâche principale | Responsabilité de largage |
-|---|---|---|
-| Appelant | Lit le combat et décide | Demande le largage et nomme la zone d'atterrissage |
-| Briseur | Entre en premier, dégage l'espace | Sécurise le site de largage avant l'atterrissage |
-| Soutien | Munitions, soins, réparations | Porte l'équipe entre les largages |
-| Surveillance | Observe les longues lignes de vue | Signale les ennemis qui se dirigent vers le largage |
-| Polyvalent | Comble ce qui manque | Escorte la capsule ou la caisse jusqu'à l'escouade |
-
-Le poids compte aussi. Les équipements lourds gagnent les défenses mais arrivent lentement ; les équipements légers tournent vite mais perdent les combats directs. La réponse pratique est un mélange — deux joueurs construits pour tenir, deux construits pour bouger — afin que le largage atterrisse dans une escouade capable à la fois de l'utiliser et de le défendre.
-
-## Erreurs courantes et tactiques avancées
-
-Une campagne de largage meurt rarement d'un seul mauvais combat. Elle meurt de petites erreurs répétées qui drainent votre économie de largages avant le moment décisif.
-
-- **Appeler des largages de façon réactive.** Si la demande arrive après le début des tirs, la charge arrive trop tard.
-- **Empiler les largages sur un seul point.** Deux livraisons dans la même zone contestée, c'est un temps de recharge gaspillé.
-- **Ignorer la zone d'atterrissage.** Une charge parfaite à découvert est une cible parfaite.
-- **Piller au lieu de pousser.** Rester planté dans un largage de ravitaillement, c'est ainsi que les défenses se transforment en défaites.
-- **Aucun plan de sortie.** Chaque largage devrait vous rapprocher de l'extraction, pas vous enfoncer plus loin dans les ennuis.
-
-| Erreur | Symptôme | Correctif |
-|---|---|---|
-| Appel réactif | Les largages atterrissent après la fin des combats | Appelez 20–30 secondes avant le contact |
-| Empilement de largages | Temps de recharge épuisés à mi-partie | Une livraison par phase |
-| Mauvaises zones d'atterrissage | Charge détruite à l'arrivée | Utilisez abris, angles et toits |
-| Camping de butin | L'escouade stagne sur l'objectif | Désignez un pilleur, gardez les autres en surveillance |
-| Aucun plan de sortie | Vous gagnez des combats, vous perdez des parties | Liez chaque largage à la phase suivante |
-
-Les joueurs avancés vont plus loin et utilisent les largages comme appât. D'après l'expérience des joueurs, une capsule ou une caisse bien visible attire les ennemis comme rien d'autre, ce qui fait d'un largage de renfort retardé derrière les pilleurs une contre-attaque dévastatrice. Parmi les autres coups de grande valeur figurent le double largage décalé — une caisse de ravitaillement d'abord pour attirer l'attention, puis une capsule d'équipement du côté opposé — et le largage inversé, où vous appelez derrière un ennemi trop avancé pour couper sa retraite au lieu de renforcer votre propre ligne.
+Rien de tout cela ne garantit le succès. C'est un raisonnement à partir de la liste de fonctionnalités vérifiée, et vos résultats dépendront de la manière dont les systèmes interagissent réellement.
 
 ## FAQ
 
-**Qu'est-ce qu'une campagne de largage exactement ?**
-Une campagne de largage est un plan qui définit comment votre équipe utilise chaque livraison hors carte pendant une partie — quel type, quelle phase, quelle zone d'atterrissage et qui la sécurise. Elle transforme les largages de boutons d'urgence en ressource coordonnée.
+**Drop Command est-il la même chose que l'unité de mod mental-omega ?**
+Non. Ils ne sont pas liés. Drop Command est le jeu Steam de PillBugGames, application 1944880.
 
-**Combien de largages faut-il garder pour la percée finale ?**
-Gardez au moins une livraison en réserve pour la dernière phase. Une seule capsule d'équipement ou un largage de renfort au moment décisif vaut plus que trois largages dépensés tôt dans des combats sans importance.
+**Quand est-il sorti ?**
+Le 28 septembre 2026, selon la fiche officielle Steam.
 
-**Une campagne de largage fonctionne-t-elle en solo ?**
-Oui, même si elle prend une autre forme. Les joueurs solo devraient privilégier les largages qui créent de l'espace — fumigène, abri ou diversion — plutôt que ceux qui exigent une escouade pour tenir le terrain. Le principe du timing reste le même.
+**Le jeu publie-t-il des statistiques d'unités ou des codes ?**
+Non. La page du magasin ne publie pas de statistiques d'unités, de tables de dégâts, de coûts de construction, d'arbre technologique, de liste de factions, ni de système de codes. Quiconque présente ces éléments comme officiels se trompe.
 
-**Quel est le moyen le plus rapide de progresser sur les largages ?**
-Analysez une partie perdue et posez-vous trois questions : le largage a-t-il été appelé trop tard, la zone d'atterrissage était-elle exposée, et quelqu'un l'a-t-il sécurisée ? Corriger ces trois habitudes fait généralement grimper le taux de victoire d'une escouade plus vite que d'améliorer sa visée.
+**Comment vérifier une affirmation sur le jeu ?**
+Consultez la page Steam à https://store.steampowered.com/app/1944880/ puis testez-la en jeu.

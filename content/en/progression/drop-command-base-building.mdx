@@ -1,136 +1,74 @@
 export const metadata = {
-  title: "Drop Command Base Building Guide: Spawn Resources and Speed Up Progression",
-  description: "Learn how the drop command works in base building games, when to use it, and how to avoid breaking your save or getting flagged on multiplayer servers.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Learn how Drop Command blends piloting, squad building, and combined-arms tactics. A practical, source-grounded guide to the Steam mech game.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Why the Drop Command Changes How You Build
+Drop Command is a Steam game by PillBugGames, released on 28 September 2026, that puts you in the cockpit of a mech-scale war. What separates it from a straightforward mech shooter is the word in its own name: command. You are not only piloting a machine; you are responsible for whatever else is on the field with you. That includes a single squad, a full army, or, if you prefer, nothing but yourself. This article explains what the game actually advertises, where the community has filled in the blanks, and what you should simply verify yourself rather than trust from a guide.
 
-If you have ever stared at a half-finished fortress with an empty inventory, you already understand the appeal of a drop command base building setup. The drop command is the console or chat instruction that places items, resources, or structures directly into your world instead of making you farm them one node at a time. Used with discipline, it turns a week of grinding into an afternoon of actual building.
+For the official product page, start here: [Drop Command on Steam](https://store.steampowered.com/app/1944880/).
 
-That matters because base building games are built on a tension: the fun part is designing and defending a structure, but the slow part is gathering the materials to do it. A drop command base building workflow lets you skip the slow part on your own terms — for testing, for recovery, or for creative projects — without abandoning the survival loop entirely.
+## What Drop Command Actually Is
 
-This guide covers what the command actually does, how it interacts with progression systems, and how to use it without wrecking your save file or annoying your server admin.
+The verified Steam description frames Drop Command as "mech combat at a grand scale" with "combined arms combat." The core hook is that you can pilot "any unit under your command." That is a meaningful design claim, not marketing filler. It implies the player is not locked to one chassis or one role for an entire match. If you can jump into a Mech, a Tank, a VTOL, or Battle Armour, then your decision about what to pilot is itself a tactical choice, not a loadout choice made before the match starts.
 
-## What a Drop Command Actually Does
+The description also promises a scale range: "from small skirmishes to epic battles." Combined with "dropping into combat alone or leading a squad or army," this suggests the game supports very different playstyles. A solo drop and an army command are not just difficulty settings; they change what the game asks of you. Solo play tests your piloting and positioning. Army command tests your ability to manage many units at once while still contributing as a pilot.
 
-A drop command is a spawn-type command. Where most commands change a setting or teleport a player, a drop command creates something: a stack of materials, a tool, a piece of furniture, or in some games an entire prefab structure. The word "drop" usually signals that the object appears in the world — often falling to the ground near you or at coordinates you specify — rather than sliding quietly into your inventory.
+One important detail: the store page is thin on hard data. It does not publish unit stats, damage tables, build costs, or a code system. Any guide that presents those numbers as fact is either drawing from play experience or guessing. Treat those numbers as third-party observations and test them yourself.
 
-Exact syntax varies enormously between titles and even between versions of the same title, so treat any specific code you read online as a starting point and verify it in your own game's help menu or official documentation. Most engines follow a similar pattern: a trigger character such as a forward slash, the command name, then arguments for what to spawn, how many, and where.
+## The Combined-Arms Loop in Practice
 
-| Command family | What it typically creates | Where it appears | Cheats usually required |
-|---|---|---|---|
-| Item spawn | Materials, food, tools, ammo | Inventory or on the ground | Yes |
-| Entity spawn | Creatures, NPCs, vehicles | At your position or coordinates | Yes |
-| Structure or prefab | Whole buildings, walls, foundations | At a targeted location | Yes |
-| Loot or container fill | Pre-stocked chests and crates | Inside a container block | Yes |
-| Copy or blueprint | Duplicates of an existing build | Overlaid on the world | Yes |
+"Combined arms" is a real military concept: different unit types covering each other's weaknesses. In a game context, it usually means you are punished for relying on one unit type and rewarded for mixing them. Since Drop Command lists Mechs, Tanks, VTOLs, and Battle Armour as piloted options, the practical reasoning is straightforward.
 
-If you are playing a sandbox title like Minecraft, the command architecture is well documented and worth reading before you experiment — the [Minecraft Wiki command reference](https://minecraft.wiki/w/Commands) is a good example of the kind of official-adjacent documentation you should look for in your own game.
-
-## Why the Drop Command Matters for Progression
-
-Progression in base building games is usually gated behind resource tiers. You need wood to get stone, stone to get metal, metal to get reinforced walls, and so on. Each tier demands hours of harvesting, which is fine the first time and tedious the fifth.
-
-The drop command short-circuits that ladder. That is exactly why it is both powerful and controversial.
-
-| Progression stage | Normal path | Drop command path | Best use case |
-|---|---|---|---|
-| Early game | Hand-gather basic materials | Spawn starter resources | Recovering from a wipe or lost save |
-| Mid game | Farm, smelt, craft | Spawn processed materials | Testing a build design quickly |
-| Late game | Raid, trade, or grind rare drops | Spawn rare components | Creative showcase projects |
-| Post-game | Decorate and optimize | Spawn decorative sets | Screenshots and video content |
-
-Player experience suggests the command is most satisfying when you use it to remove *friction* rather than to remove *challenge*. Skipping the harvest to prototype a base layout is very different from spawning endgame armor on day one and deleting the reason to play.
-
-## Drop Command vs. Manual Gathering
-
-Community reports from survival and sandbox servers consistently describe the same trade-off: the drop command saves enormous amounts of time but drains the sense of accomplishment if overused. Here is how the two approaches compare in practice.
-
-| Factor | Manual gathering | Drop command |
+| Unit class | Likely role in a mixed force | Reasonable generalization |
 |---|---|---|
-| Time to a finished base | Hours to days | Minutes to hours |
-| Sense of achievement | High | Variable |
-| Risk to save integrity | Low | Moderate if abused |
-| Multiplayer acceptance | Universal | Restricted or banned |
-| Best for learning recipes | Yes | No |
-| Best for testing layouts | Slow | Excellent |
+| Mech | Anchor and direct-fire platform | Typically the most flexible, often the slowest to reposition |
+| Tank | Ground firepower and durability | Usually strong in open ground, vulnerable to flanking |
+| VTOL | Mobility and vertical pressure | Likely fast but exposed when stationary |
+| Battle Armour | Small-scale harassment and objective work | Probably cheap and expendable, weak in a straight fight |
 
-A practical compromise many builders adopt is a "creative phase, survival phase" rhythm. Build and iterate with the drop command, then rebuild the final design legitimately in a fresh save or a survival world. You keep the design knowledge without carrying spawned items into a run you care about.
+That table is reasoning from the combined-arms premise, not measured data. The store page does not confirm these roles. Use it as a starting hypothesis, then test it in skirmishes before committing to a strategy.
 
-## How to Use the Drop Command Safely: Step by Step
+## Pilots, Veterans, and Disposable Rookies
 
-Careless spawning is the number one cause of corrupted saves, floating geometry, and broken quest flags. Follow this order every time.
+Drop Command advertises "customisable and levelable pilots." It also mentions "elite squads or disposable rookies." That pairing is the most interesting design tension in the game. A pilot who levels up is an investment. A rookie is a cheap body. The question every commander faces is whether to spend a veteran on a high-value objective or hold them back and let rookies absorb the risk.
 
-| Step | Action | Why it matters |
-|---|---|---|
-| 1 | Back up your save file | Cheat commands can write permanent changes |
-| 2 | Confirm cheats or admin mode is enabled | Most games block spawn commands otherwise |
-| 3 | Test in a throwaway world first | Isolates crashes and errors |
-| 4 | Spawn small quantities before bulk | Prevents item overflow and lag spikes |
-| 5 | Place structures on flat, clear ground | Avoids clipping and collision bugs |
-| 6 | Check quest and achievement status after | Some flags permanently disable on cheat use |
-| 7 | Record what you spawned | Helps you undo or rebuild later |
+The verified description does not explain how pilot leveling works, what stats improve, or whether pilots can permanently die. Do not assume. If you are deciding whether to commit a veteran, check in-game whether that pilot persists after a loss. That single fact changes how aggressively you should use them.
 
-A few extra habits worth building:
+A reasonable approach, framed as general reasoning rather than tested advice: use rookies to scout, screen, and contest minor objectives, and save leveled pilots for moments where their experience matters. If pilots are permanent and death is permanent, that logic becomes much stronger. If pilots are replaceable, you can afford to be aggressive.
 
-- **Never run spawn commands during a boss fight or scripted event.** Timing conflicts can soft-lock progression triggers.
-- **Avoid spawning thousands of entities at once.** Physics-heavy objects tank frame rates fast.
-- **Keep a "clean" save separate from your "experiment" save.** This one habit saves more frustration than any other.
-- **Read the console output.** Error messages usually tell you exactly which argument is wrong.
+## The Evolving Battlefield
 
-## Common Drop Command Mistakes
+The description highlights a "fully destructible debris and unit wreckage" battlefield that evolves during combat. This is more than a visual effect. Destructible terrain and wreckage typically change line of sight, create cover, and block movement over time. A lane that was open at the start of a match may be cluttered ten minutes in.
 
-Most problems come from a short list of avoidable errors. If something goes wrong, check these first.
+Practically, this means you should avoid committing to a single firing position for the whole match. If wreckage accumulates, your sightlines will degrade. Conversely, fresh debris can give a fragile unit a place to hide. Because the store page does not document how debris physics work, verify it yourself: fight in one spot, destroy a few units, and watch whether the terrain changes your available shots.
 
-| Mistake | Symptom | Fix |
-|---|---|---|
-| Wrong argument order | Command does nothing | Check syntax help in-game |
-| Missing quantity value | Spawns one instead of a stack | Add the count argument |
-| Invalid item identifier | Error or placeholder object | Verify the exact ID name |
-| Spawning inside a wall | Items vanish or clip through | Move to open ground first |
-| Using on a protected server | Silent failure or kick | Check server rules and permissions |
-| Ignoring achievement flags | Trophies stop unlocking | Use a separate save for cheats |
+## Building Squads Without Inventing Numbers
 
-The identifier problem trips up more players than anything else. Item names are case-sensitive in many engines, and modded or updated content frequently renames entries. When in doubt, copy the identifier from an official source rather than retyping it from memory.
+The store page does not list build costs, unit stats, or a tech tree. That is worth stating plainly, because a lot of search results for mech games pad articles with fabricated numbers. There is no verified code system, no published damage values, and no official unit roster beyond the four classes named.
 
-## Server Rules and Multiplayer Etiquette
+What you can do instead is reason from the game's stated structure. If you can pilot any unit under your command, and you can build squads, then your real resource is attention. The more units you control, the less attention each one gets. A small force of veterans rewards focus. A large force of rookies rewards delegation and simple orders. Match your force size to how well you can actually manage it. An army you cannot command is just a crowd.
 
-On a private world, the drop command is your business. On a shared server, it is everyone's business. Admins generally fall into three camps.
+## Customization and Verification
 
-| Server type | Typical drop command policy | Practical advice |
-|---|---|---|
-| Strict survival | Fully disabled | Don't ask; play the intended loop |
-| Semi-vanilla | Admin-only, event use | Request through staff channels |
-| Creative or build server | Fully allowed | Still avoid entity spam |
-| Private co-op | Depends on the host | Agree on ground rules up front |
-| Public PvP | Usually banned | Assume spawning equals a ban |
+Mechs, Tanks, VTOLs, and Battle Armour are all described as "personalisable." Customization in combined-arms games usually means trading speed, firepower, and durability against each other. Without published stats, the honest advice is experimental: change one thing at a time, then play a skirmish and see whether the change helped. Do not copy a build from a guide that cannot show its source.
 
-Even where the command is allowed, restraint earns goodwill. Spawning a stack of stone for a shared community project is usually welcomed. Spawning raid gear and flattening a neighbor's base is the fastest way to lose access.
+To verify anything this article cannot confirm, use two places. First, the in-game unit details and any tutorial or help panel, since those reflect the actual build. Second, the [official Steam page](https://store.steampowered.com/app/1944880/), which is the developer's own statement of features. If a claim is not in either place, treat it as unconfirmed.
 
-## Practical Build Ideas That Justify the Command
+## FAQ
 
-If you want to use the drop command without gutting your progression, aim it at tasks that are genuinely tedious rather than genuinely challenging.
+**Is Drop Command a strategy game or an action game?**
+Both, per the official description. You pilot a unit directly while also commanding others. The balance between the two depends on how large a force you bring.
 
-- **Blueprint prototyping:** Build three variations of a wall design and compare them side by side.
-- **Symmetry checks:** Spawn matching corner pieces so a large base looks deliberate rather than improvised.
-- **Redstone or logic testing:** Isolate a mechanism in a blank world before committing it to your real base.
-- **Recovery:** Replace gear lost to a crash, a bug, or an unlucky despawn.
-- **Content creation:** Stage a fully decorated base for screenshots, tutorials, or video guides.
+**Can I play solo?**
+Yes. The store page states you can drop into combat alone, with a squad, or leading an army.
 
-Each of these uses the command to remove busywork while leaving the creative and strategic parts of base building intact. That is the sweet spot most experienced builders aim for.
+**Does the game have a code system or unit stats published?**
+No. As of 14 October 2026, the Steam page does not publish unit stats, damage tables, build costs, or a code system. Verify any such claims in-game.
 
-## Frequently Asked Questions
+**Are pilots permanent?**
+Not documented. Check in-game before risking a leveled pilot.
 
-**Does using a drop command disable achievements?**
-In many games, yes — enabling cheats or admin mode permanently flags a save, and some achievements stop unlocking. The safest approach is to test in a separate world and keep your achievement-hunting save untouched. Check your specific game's documentation, since policies vary widely between titles and updates.
-
-**Can a drop command break my save file?**
-It can, though usually through misuse rather than the command itself. Spawning enormous quantities of entities, placing structures into invalid terrain, or interrupting scripted events are the common culprits. Always back up before experimenting.
-
-**Is the drop command allowed on multiplayer servers?**
-That depends entirely on the server. Strict survival and public PvP servers almost universally ban it, while creative and build-focused servers often allow it freely. Ask an admin before assuming, and never use it to gain an advantage over other players.
-
-**What is the fastest way to learn a drop command base building workflow?**
-Start in a throwaway world, back up nothing important, and experiment in small steps. Read your game's built-in help or official wiki for exact syntax, spawn one item at a time until you are comfortable, then scale up. Community reports consistently agree that slow, deliberate practice beats copying commands from random forum posts.
+**What should I learn first?**
+Piloting one unit well, then commanding a small squad. Scale up only when the smaller force stops feeling like enough.

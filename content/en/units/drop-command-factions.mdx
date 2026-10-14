@@ -1,130 +1,78 @@
 export const metadata = {
-  title: "Drop Command Factions Explained: How Unit Drops, Faction Choice, and Loadouts Work",
-  description: "Learn how drop command factions shape unit deployment, loadouts, and match outcomes, with comparison tables, faction picks, and practical tips.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Drop Command is a large-scale mech combined-arms game where you pilot any unit you command. Here's how its systems fit together.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What the Drop Command Factions System Actually Does
+**Drop Command** is a mech combat game built around a simple but ambitious promise: you can pilot any unit under your command. Developed by PillBugGames and released on 28 September 2026, it appears on Steam as app 1944880. If you have played mech games that lock you into a single chassis for an entire campaign, the pitch here is different. The scale moves from small skirmishes up to large battles, and the unit you control is a choice you make, not a class you are assigned.
 
-A drop command is the order that places units onto the field at a location you choose. Factions are the rosters attached to that order. When you lock in a faction, you are not just picking a color scheme — you are picking a unit pool, a set of passive bonuses, and a deployment rhythm that decides how often you can act.
+This article sticks to what the developer actually advertises on the [official Steam store page](https://store.steampowered.com/app/1944880/) and separates that from general reasoning about how combined-arms games usually work. Where something is not documented, it says so.
 
-In practice, drop command factions are a three-part system: the call itself, the roster behind it, and the resource or cooldown gate that limits it. Miss any one of those parts and your drops will feel random, even if your aim and timing are solid.
+## What Drop Command Actually Advertises
 
-| Component | What it controls | Why it matters |
-|---|---|---|
-| Drop command | Where and when units enter the field | Sets your tempo and map control |
-| Faction roster | Which units you can call in | Defines your ceiling and your gaps |
-| Deployment cost | How much resource each call spends | Limits how often you can drop |
-| Cooldown timers | How fast a call can repeat | Shapes sustained pressure |
-| Faction passives | Bonuses applied across your roster | Rewards specialization over dabbling |
+The store description is the authority here. It states that Drop Command is mech combat at a grand scale with combined-arms combat, and that you pilot any unit under your command. It lists these advertised features:
 
-The key insight is that the command is temporary but the faction is permanent. You can drop a hundred times in a match, but you only get one faction lock. That asymmetry is why faction choice matters more than any single well-placed drop.
+- Combat ranging from small skirmishes to large battles.
+- An evolving battlefield with fully destructible debris and unit wreckage.
+- Dropping into combat alone, leading a squad, or commanding an army.
+- Customisable and levelable pilots.
+- Building squads of elite veterans or rushing opponents with disposable rookies.
+- Personalisable Mechs, Tanks, VTOLs, and Battle Armour.
 
-**Community reports** from squad-deployment and team strategy players consistently describe the same pattern: teams that coordinate faction roles win more consistently than teams that simply stack the highest-damage units. Player experience suggests that role coverage beats raw stat totals in most extended matches.
+That is the whole advertised feature set. Notably, the store page does not publish unit statistics, damage tables, build costs, tech trees, faction lists, or any code system. If you see a guide claiming exact numbers, treat it as a third-party observation rather than developer documentation.
 
-## Faction Archetypes at a Glance
+## The Four Unit Families
 
-Not every game uses the same names, but most drop command factions fall into a handful of recognizable archetypes. Learning the archetypes lets you read a roster quickly, even in a game you have never touched before.
+The advertised unit types are Mechs, Tanks, VTOLs, and Battle Armour. Each is described as personalisable, which implies a customisation layer, but the page does not detail what options exist or how deep they go.
 
-| Archetype | Core identity | Strengths | Weaknesses | Pick it when |
-|---|---|---|---|---|
-| Vanguard | Fast, aggressive drops | Early pressure, lane snowballing | Falls off without follow-up | You need tempo right now |
-| Support / Logistics | Repairs, buffs, reinforcements | Keeps pushes alive | Low direct damage | Your team already has damage dealers |
-| Recon | Vision and disruption | Information, picks, map awareness | Fragile units | The map is large or fog-heavy |
-| Heavy / Siege | Slow, high-impact units | Breaking fortified positions | Vulnerable to flanks | The enemy turtles up |
-| Swarm | Cheap, numerous units | Attrition, area saturation | Weak individually | Matches run long and grindy |
+| Unit family | Typical combined-arms role (general reasoning) | What is documented |
+| --- | --- | --- |
+| Mech | Flexible frontline platform | Personalisable, pilotable |
+| Tank | Ground firepower and staying power | Personalisable, pilotable |
+| VTOL | Air mobility and strike | Personalisable, pilotable |
+| Battle Armour | Small-scale infantry-scale action | Personalisable, pilotable |
 
-Most players gravitate to Vanguard because it feels immediately rewarding. The problem is that Vanguard pressure without a Support or Heavy anchor tends to evaporate in the mid-game, when enemy defenses mature and single-unit drops stop trading favorably.
+The role column is inference from how combined-arms games generally divide labour, not a spec sheet. The only documented point is that all four exist and can be personalised.
 
-A useful habit is to ask what your faction does when it is *behind*. Vanguard struggles, Support stabilizes, Heavy stalls, Swarm outlasts, and Recon finds a way around. If you cannot answer that question for your pick, you are gambling on an early lead.
+## Piloting Any Unit Changes How You Think
 
-## How to Choose a Faction Before You Drop
+Most mech games ask you to master one machine. Drop Command's advertised hook is that the machine is a decision. In practice, that reframes a lot of moment-to-moment choices. If you can jump into a tank when the ground fight stalls, or a VTOL when you need reach, your job is less "get good at one chassis" and more "read the battle and pick the tool."
 
-Choosing well is a pre-match decision, not a mid-match correction. Run through this sequence before you commit:
+This is where combined arms matters. A force of a single unit type tends to have one obvious weakness. Mixing Mechs, Tanks, VTOLs, and Battle Armour spreads that weakness across the field. Because the store page also advertises destructible debris and wreckage as an evolving battlefield, cover and terrain are likely to shift as a fight drags on — general reasoning from the "evolving battlefield" line, not measured data.
 
-1. **Read the team composition first.** Identify which archetypes are already covered.
-2. **Check the map type.** Open maps favor Recon and Vanguard; chokepoint maps favor Heavy and Support.
-3. **Decide your win condition.** Early pressure, sustained siege, and attrition all demand different rosters.
-4. **Confirm your resource curve.** Some factions need steady income to function; others peak on a single big drop.
-5. **Lock in and stop second-guessing.** Split attention between two faction plans usually produces worse drops than committing to one.
+## Command Scale: Alone, Squad, or Army
 
-| Question to ask | What to check | Signal to pick |
-|---|---|---|
-| Is my team missing a frontline? | Ally unit types | Heavy or Vanguard |
-| Are we dying to chip damage? | Recent fights | Support / Logistics |
-| Do we keep getting flanked? | Map layout and vision | Recon |
-| Is the enemy stacking elites? | Enemy roster | Swarm or Heavy |
-| Do we need to close fast? | Match timer and score | Vanguard |
+The advertised command options are alone, a squad, or an army. That is a wide range, and it suggests the game supports very different playstyles rather than one mandatory structure.
 
-If you are new to a game, the safest starting point is usually the faction with the simplest resource loop. Complexity in drop command factions almost always translates into more ways to make mistakes under pressure.
+- **Alone.** Fewer moving parts, more personal control. Best when you want to feel every input matter.
+- **Squad.** A middle ground where you can lead a handful of units without managing a full battle line.
+- **Army.** The largest scale, where positioning and unit mix matter more than any single engagement.
 
-## Unit Comparison Across Factions
+These are framings of the advertised options, not measured performance claims. How the game actually balances each scale is something only play will show.
 
-The same unit role can behave very differently depending on which faction is calling it in. The table below maps common roles to the factions that usually handle them best.
+## Veterans, Rookies, and Pilot Progression
 
-| Unit role | Typical cost band | Faction that usually excels | Ideal drop timing | Common pitfall |
-|---|---|---|---|---|
-| Line infantry | Low | Swarm | Continuous, staggered | Clumping into area damage |
-| Assault / breacher | Mid | Vanguard | Right after a pick | Dropping with no support |
-| Medic / engineer | Low to mid | Support | Behind the frontline | Exposed positioning |
-| Scout / sniper | Mid | Recon | Before a push, not during | Standing still too long |
-| Siege / artillery | High | Heavy | Once vision is secured | Firing without a screen |
-| Elite / hero unit | High | Any, but varies | When the enemy commits | Burning it on a lost fight |
+Two advertised systems sit close together: customisable and levelable pilots, and the choice between elite squads and disposable rookies. The implied tension is resource management. Veterans presumably carry accumulated experience you would rather not lose. Rookies are cheaper to field and easier to replace, but likely less capable.
 
-A practical takeaway: match the cost band of your drop to the value of the fight. Expensive units dropped into a skirmish you were already losing simply hand the enemy a bigger reward. Cheap units dropped into a decisive fight often accomplish nothing.
+The "rush opponents with rookies" line suggests a legitimate aggressive strategy exists in the design, not just a fallback. If you like attrition play, that is the advertised lane for it. If you prefer preserving a core of experienced pilots, the leveling system is the advertised lane for that. No experience curves, level caps, or stat growth values are documented, so verify those in game.
 
-Community reports often highlight the same mistake in reverse — players hoarding high-cost units until the match ends. Drop command factions reward throughput as much as raw power, so an unused roster is a wasted roster.
+## What Is Not Documented
 
-## Common Drop Command Mistakes and How to Fix Them
+Be careful with any guide that claims drop rates, build costs, weapon damage figures, a tech tree, faction lists, or a code system for Drop Command. The official page publishes none of that. If you need those details, the reliable places to check are the game itself after release and the official Steam store page and its patch notes. Community wikis and third-party guides can be useful, but they are secondary observations and may lag behind patches.
 
-Most failures with drop command factions come down to a small set of repeated errors rather than bad luck.
+## FAQ
 
-| Mistake | Why it hurts | Fix |
-|---|---|---|
-| Dropping on autopilot | Units arrive where the fight already ended | Wait one beat and confirm the target |
-| Ignoring cooldowns | You burn calls you cannot repeat | Track timers before committing |
-| Duplicating team roles | Nobody covers the gap | Fill the missing archetype instead |
-| Over-investing in one push | A single loss ends your tempo | Split resources across two waves |
-| Dropping without vision | Units land into ambushes | Scout first, drop second |
-| Never switching targets | Enemy adapts and hard-counters you | Rotate pressure between lanes |
+**What kind of game is Drop Command?**
+A large-scale mech combined-arms combat game by PillBugGames, released 28 September 2026 on Steam.
 
-The last row deserves emphasis. Even a well-chosen faction becomes predictable if you always drop in the same place. Rotating pressure forces the enemy to spread defenses, which makes every subsequent drop more efficient.
+**Can I really pilot any unit?**
+The store page advertises piloting any unit under your command, including Mechs, Tanks, VTOLs, and Battle Armour.
 
-If you want broader context on how unit deployment and strategy games structure these systems, [Steam's strategy game catalog](https://store.steampowered.com/tags/en/Strategy/) is a useful reference point for comparing how different titles handle rosters, resources, and timing.
+**Is there a code system?**
+No code system is documented on the official page. Treat any code lists as unverified.
 
-## Practical Tips for Better Drops
+**How do I check specific stats?**
+The official page does not publish them. Verify in game or through official patch notes rather than trusting third-party numbers.
 
-Beyond faction choice, small habits separate players who win consistently from players who win occasionally.
-
-- **Anchor your drops to objectives**, not to kills. Territory creates opportunities; kills are a side effect.
-- **Pre-plan the first two drops** before the match starts so you are not improvising under pressure.
-- **Watch your opponent's faction**, not just their units. Their roster tells you what they cannot counter.
-- **Keep one cheap unit ready** for emergencies. A small call that plugs a gap beats a big call that arrives late.
-- **Review your replays** specifically for drops you regret. Patterns show up fast.
-- **Communicate role coverage** with your team before the first engagement.
-- **Practice one faction deeply** before spreading across the whole roster.
-
-Depth beats breadth in almost every drop command factions system. A player who understands one archetype's resource curve, cooldowns, and counters will outperform a player who has shallow knowledge of five.
-
-It also helps to think in waves rather than moments. A drop is not a single event — it is the start of a sequence that either builds momentum or hands it away. Plan the follow-up before you send the first unit.
-
-## Frequently Asked Questions
-
-**Do drop command factions lock in for the whole match?**
-
-In most implementations, yes — the faction choice is made before deployment and stays fixed for the duration. A few games allow mid-match swaps at a resource penalty, but even then, switching mid-fight usually costs more tempo than it recovers. Treat your faction as a commitment.
-
-**Which faction is best for beginners?**
-
-Support and Vanguard are generally the most forgiving entry points. Support teaches positioning and timing because your units survive long enough to learn from mistakes, while Vanguard teaches tempo and aggression. Heavy and Recon demand more map awareness to pay off.
-
-**How many units should I drop at once?**
-
-Rather than a fixed number, match the size of the drop to the value of the objective. Contested, high-value fights justify a larger commitment; low-stakes skirmishes rarely do. Community reports suggest that staggering drops in waves outperforms one giant commitment in most matches.
-
-**Why do my drops keep failing even with a good faction?**
-
-Faction choice is only one variable. Vision, timing, cooldown management, and target rotation usually matter more than the roster itself. If your drop command factions picks are solid but results are not, review *when* and *where* you dropped rather than *what* you dropped.
-
-Getting comfortable with drop command factions is really about building a repeatable decision process: read the team, read the map, pick a role, and commit. Do that consistently and your drops stop feeling like gambles and start feeling like pressure the other team has to answer.
+Drop Command's appeal is breadth: pick your unit, pick your scale, and pick how much you care about keeping your pilots alive. That is the advertised design. Everything beyond it is something you will need to confirm yourself.

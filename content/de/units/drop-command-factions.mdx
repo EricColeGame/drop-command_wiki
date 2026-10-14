@@ -1,130 +1,78 @@
 export const metadata = {
-  title: "Drop-Command-Fraktionen erklärt: Wie Unit-Drops, Fraktionswahl und Loadouts funktionieren",
-  description: "Erfahre, wie Drop-Command-Fraktionen den Einsatz von Einheiten, Loadouts und Match-Ergebnisse prägen – mit Vergleichstabellen, Fraktionsempfehlungen und praktischen Tipps.",
+  title: "Drop Command: Ein praktischer Leitfaden für kombinierte Mech-Kampfeinsätze",
+  description: "Drop Command ist ein groß angelegtes Mech-Combined-Arms-Spiel, in dem du jede Einheit steuern kannst, die du befehligst. So greifen die Systeme ineinander.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Was das Drop-Command-Fraktionen-System tatsächlich bewirkt
+**Drop Command** ist ein Mech-Kampfspiel, das auf einem einfachen, aber ehrgeizigen Versprechen aufbaut: Du kannst jede Einheit unter deinem Kommando steuern. Entwickelt von PillBugGames und veröffentlicht am 28. September 2026, erscheint es auf Steam als App 1944880. Wenn du Mech-Spiele gespielt hast, die dich für eine ganze Kampagne an ein einziges Chassis binden, ist der Ansatz hier anders. Der Maßstab reicht von kleinen Scharmützeln bis hin zu großen Schlachten, und die Einheit, die du steuerst, ist eine Entscheidung, die du triffst, nicht eine Klasse, die dir zugewiesen wird.
 
-Ein Drop-Command ist der Befehl, der Einheiten an einem von dir gewählten Ort auf das Spielfeld bringt. Fraktionen sind die Roster, die an diesen Befehl gekoppelt sind. Wenn du eine Fraktion festlegst, wählst du nicht nur ein Farbschema – du wählst einen Einheitenpool, eine Reihe passiver Boni und einen Einsatzrhythmus, der bestimmt, wie oft du handeln kannst.
+Dieser Artikel hält sich an das, was der Entwickler tatsächlich auf der [offiziellen Steam-Store-Seite](https://store.steampowered.com/app/1944880/) bewirbt, und trennt das von allgemeinen Überlegungen dazu, wie Combined-Arms-Spiele üblicherweise funktionieren. Wo etwas nicht dokumentiert ist, wird das gesagt.
 
-In der Praxis sind Drop-Command-Fraktionen ein dreiteiliges System: der Abruf selbst, der Roster dahinter und das Ressourcen- oder Cooldown-Gate, das ihn begrenzt. Wenn einer dieser Teile fehlt, wirken deine Drops zufällig, selbst wenn Zielen und Timing sitzen.
+## Was Drop Command tatsächlich bewirbt
 
-| Komponente | Was sie steuert | Warum sie wichtig ist |
-|---|---|---|
-| Drop-Command | Wo und wann Einheiten das Feld betreten | Legt dein Tempo und deine Kartenkontrolle fest |
-| Fraktions-Roster | Welche Einheiten du herbeirufen kannst | Definiert dein Maximum und deine Lücken |
-| Einsatzkosten | Wie viele Ressourcen jeder Abruf verbraucht | Begrenzt, wie oft du droppen kannst |
-| Cooldown-Timer | Wie schnell ein Abruf wiederholt werden kann | Formt anhaltenden Druck |
-| Fraktions-Passivs | Boni, die auf deinen gesamten Roster wirken | Belohnt Spezialisierung statt Rumprobieren |
+Die Store-Beschreibung ist hier maßgeblich. Sie besagt, dass Drop Command Mech-Kampf in großem Maßstab mit Combined-Arms-Kampf ist und dass du jede Einheit unter deinem Kommando steuerst. Sie listet diese beworbenen Features auf:
 
-Die zentrale Erkenntnis ist, dass der Befehl temporär ist, die Fraktion aber permanent. Du kannst in einem Match hundertmal droppen, aber du bekommst nur eine Fraktionssperre. Diese Asymmetrie ist der Grund, warum die Fraktionswahl mehr zählt als jeder einzelne gut platzierte Drop.
+- Kämpfe von kleinen Scharmützeln bis hin zu großen Schlachten.
+- Ein sich entwickelndes Schlachtfeld mit vollständig zerstörbaren Trümmern und Einheitenwracks.
+- Allein in den Kampf abspringen, einen Trupp anführen oder eine Armee befehligen.
+- Anpassbare und levelbare Piloten.
+- Trupps aus Elite-Veteranen aufbauen oder Gegner mit entbehrlichen Rekruten überrennen.
+- Personalisierbare Mechs, Panzer, VTOLs und Battle Armour.
 
-**Community-Berichte** von Spielern aus Squad-Deployment- und Teamstrategie-Spielen beschreiben immer wieder dasselbe Muster: Teams, die Fraktionsrollen koordinieren, gewinnen konstanter als Teams, die einfach die Einheiten mit dem höchsten Schaden stapeln. Spielerfahrung deutet darauf hin, dass Rollenabdeckung in den meisten längeren Matches rohe Statuswerte schlägt.
+Das ist der gesamte beworbene Funktionsumfang. Bemerkenswert ist, dass die Store-Seite keine Einheitenstatistiken, Schadenstabellen, Baukosten, Tech-Bäume, Fraktionslisten oder ein Code-System veröffentlicht. Wenn du einen Leitfaden siehst, der exakte Zahlen behauptet, behandle ihn als Drittbeobachtung und nicht als Entwicklerdokumentation.
 
-## Fraktions-Archetypen auf einen Blick
+## Die vier Einheitenfamilien
 
-Nicht jedes Spiel verwendet dieselben Namen, aber die meisten Drop-Command-Fraktionen fallen in eine Handvoll erkennbarer Archetypen. Wenn du die Archetypen lernst, kannst du einen Roster schnell lesen, selbst in einem Spiel, das du noch nie gespielt hast.
+Die beworbenen Einheitentypen sind Mechs, Panzer, VTOLs und Battle Armour. Jeder wird als personalisierbar beschrieben, was eine Anpassungsebene impliziert, aber die Seite führt nicht aus, welche Optionen existieren oder wie tief sie gehen.
 
-| Archetyp | Kernidentität | Stärken | Schwächen | Wähle ihn, wenn |
-|---|---|---|---|---|
-| Vorhut | Schnelle, aggressive Drops | Früher Druck, Lane-Schneeballeffekt | Fällt ohne Follow-up ab | Du jetzt Tempo brauchst |
-| Support / Logistik | Reparaturen, Buffs, Verstärkungen | Hält Vorstöße am Leben | Geringer direkter Schaden | Dein Team bereits Schadensausträger hat |
-| Aufklärung | Sicht und Störung | Informationen, Picks, Kartenbewusstsein | Zerbrechliche Einheiten | Die Karte groß oder nebelreich ist |
-| Schwer / Belagerung | Langsame Einheiten mit hoher Wirkung | Durchbrechen befestigter Stellungen | Anfällig für Flanken | Der Gegner sich einigelt |
-| Schwarm | Billige, zahlreiche Einheiten | Zermürbung, Flächensättigung | Einzeln schwach | Matches lang und zäh laufen |
+| Einheitenfamilie | Typische Combined-Arms-Rolle (allgemeine Überlegung) | Was dokumentiert ist |
+| --- | --- | --- |
+| Mech | Flexible Frontplattform | Personalisierbar, steuerbar |
+| Panzer | Bodenfeuerkraft und Durchhaltevermögen | Personalisierbar, steuerbar |
+| VTOL | Luftmobilität und Angriff | Personalisierbar, steuerbar |
+| Battle Armour | Infanterie-Action im kleinen Maßstab | Personalisierbar, steuerbar |
 
-Die meisten Spieler tendieren zur Vorhut, weil sie sich sofort belohnend anfühlt. Das Problem ist, dass Vorhut-Druck ohne Support- oder Schwer-Anker im Midgame verdampft, wenn die Verteidigung des Gegners reift und Einzel-Drops nicht mehr vorteilhaft traden.
+Die Rollenspalte ist eine Ableitung daraus, wie Combined-Arms-Spiele üblicherweise die Aufgaben aufteilen, kein Datenblatt. Der einzige dokumentierte Punkt ist, dass alle vier existieren und personalisiert werden können.
 
-Eine nützliche Angewohnheit ist zu fragen, was deine Fraktion macht, wenn sie *hinten liegt*. Vorhut tut sich schwer, Support stabilisiert, Schwer verzögert, Schwarm überdauert und Aufklärung findet einen Weg herum. Wenn du diese Frage für deine Wahl nicht beantworten kannst, setzt du auf einen frühen Vorsprung.
+## Jede Einheit zu steuern verändert dein Denken
 
-## Wie du eine Fraktion wählst, bevor du dropst
+Die meisten Mech-Spiele verlangen, dass du eine Maschine meisterst. Der beworbene Haken von Drop Command ist, dass die Maschine eine Entscheidung ist. In der Praxis formuliert das viele Entscheidungen von Moment zu Moment neu. Wenn du in einen Panzer springen kannst, wenn der Bodenkampf stockt, oder in ein VTOL, wenn du Reichweite brauchst, ist deine Aufgabe weniger „werde gut in einem Chassis" und mehr „lies die Schlacht und wähle das Werkzeug".
 
-Eine gute Wahl ist eine Entscheidung vor dem Match, nicht eine Korrektur während des Matches. Geh diese Reihenfolge durch, bevor du dich festlegst:
+Hier zählt Combined Arms. Eine Streitmacht aus einem einzigen Einheitentyp neigt dazu, eine offensichtliche Schwäche zu haben. Mechs, Panzer, VTOLs und Battle Armour zu mischen verteilt diese Schwäche über das Feld. Weil die Store-Seite außerdem zerstörbare Trümmer und Wracks als sich entwickelndes Schlachtfeld bewirbt, werden sich Deckung und Gelände wahrscheinlich verschieben, während ein Gefecht sich hinzieht — eine allgemeine Überlegung aus der Zeile „sich entwickelndes Schlachtfeld", keine gemessenen Daten.
 
-1. **Lies zuerst die Teamzusammensetzung.** Identifiziere, welche Archetypen bereits abgedeckt sind.
-2. **Prüfe den Kartentyp.** Offene Karten begünstigen Aufklärung und Vorhut; Engpass-Karten begünstigen Schwer und Support.
-3. **Entscheide deine Siegbedingung.** Früher Druck, anhaltende Belagerung und Zermürbung verlangen alle unterschiedliche Roster.
-4. **Bestätige deine Ressourcenkurve.** Manche Fraktionen brauchen stetige Einnahmen, um zu funktionieren; andere erreichen ihren Höhepunkt bei einem einzigen großen Drop.
-5. **Leg dich fest und höre auf, alles infrage zu stellen.** Geteilte Aufmerksamkeit zwischen zwei Fraktionsplänen führt meist zu schlechteren Drops, als sich auf einen festzulegen.
+## Befehlsumfang: Allein, Trupp oder Armee
 
-| Frage, die du stellen solltest | Was du prüfen solltest | Signal für die Wahl |
-|---|---|---|
-| Fehlt meinem Team eine Frontlinie? | Einheitentypen der Verbündeten | Schwer oder Vorhut |
-| Sterben wir an Chip-Schaden? | Letzte Kämpfe | Support / Logistik |
-| Werden wir immer wieder flankiert? | Kartenlayout und Sicht | Aufklärung |
-| Stapelt der Gegner Eliteeinheiten? | Gegnerischer Roster | Schwarm oder Schwer |
-| Müssen wir schnell abschließen? | Match-Timer und Punktestand | Vorhut |
+Die beworbenen Kommandooptionen sind allein, ein Trupp oder eine Armee. Das ist eine große Bandbreite, und es deutet darauf hin, dass das Spiel sehr unterschiedliche Spielstile unterstützt statt einer einzigen verpflichtenden Struktur.
 
-Wenn du neu in einem Spiel bist, ist der sicherste Einstieg meist die Fraktion mit der einfachsten Ressourcenschleife. Komplexität in Drop-Command-Fraktionen bedeutet fast immer mehr Möglichkeiten, unter Druck Fehler zu machen.
+- **Allein.** Weniger bewegliche Teile, mehr persönliche Kontrolle. Am besten, wenn du spüren willst, dass jede Eingabe zählt.
+- **Trupp.** Ein Mittelweg, bei dem du eine Handvoll Einheiten anführen kannst, ohne eine ganze Schlachtlinie zu verwalten.
+- **Armee.** Der größte Maßstab, bei dem Positionierung und Einheitenmix mehr zählen als jedes einzelne Gefecht.
 
-## Einheitenvergleich über Fraktionen hinweg
+Dies sind Einordnungen der beworbenen Optionen, keine gemessenen Leistungsaussagen. Wie das Spiel jeden Maßstab tatsächlich balanciert, wird erst das Spielen zeigen.
 
-Dieselbe Einheitenrolle kann sich sehr unterschiedlich verhalten, je nachdem, welche Fraktion sie herbeiruft. Die folgende Tabelle ordnet gängige Rollen den Fraktionen zu, die sie meist am besten handhaben.
+## Veteranen, Rekruten und Pilotenfortschritt
 
-| Einheitenrolle | Typische Kostenklasse | Fraktion, die meist heraussticht | Ideales Drop-Timing | Häufige Falle |
-|---|---|---|---|---|
-| Linieninfanterie | Niedrig | Schwarm | Kontinuierlich, gestaffelt | Klumpen in Flächenschaden |
-| Sturm / Durchbrecher | Mittel | Vorhut | Direkt nach einem Pick | Ohne Unterstützung droppen |
-| Sanitäter / Ingenieur | Niedrig bis mittel | Support | Hinter der Frontlinie | Ausgesetzte Positionierung |
-| Späher / Scharfschütze | Mittel | Aufklärung | Vor einem Vorstoß, nicht währenddessen | Zu lange stillstehen |
-| Belagerung / Artillerie | Hoch | Schwer | Sobald Sicht gesichert ist | Feuern ohne Deckung |
-| Elite- / Helden-Einheit | Hoch | Jede, aber unterschiedlich | Wenn der Gegner sich bindet | Sie in einem verlorenen Kampf verbrennen |
+Zwei beworbene Systeme liegen eng beieinander: anpassbare und levelbare Piloten sowie die Wahl zwischen Elite-Trupps und entbehrlichen Rekruten. Die implizite Spannung ist Ressourcenmanagement. Veteranen tragen vermutlich gesammelte Erfahrung, die du lieber nicht verlieren möchtest. Rekruten sind billiger einzusetzen und leichter zu ersetzen, aber wahrscheinlich weniger fähig.
 
-Eine praktische Erkenntnis: Passe die Kostenklasse deines Drops an den Wert des Kampfes an. Teure Einheiten, die in ein Scharmützel gedroppt werden, das du ohnehin verlierst, schenken dem Gegner nur eine größere Belohnung. Billige Einheiten, die in einen entscheidenden Kampf gedroppt werden, richten oft gar nichts aus.
+Die Zeile „Gegner mit Rekruten überrennen" deutet darauf hin, dass im Design eine legitime aggressive Strategie existiert, nicht nur ein Notbehelf. Wenn du Abnutzungsspiel magst, ist das der beworbene Weg dafür. Wenn du es bevorzugst, einen Kern erfahrener Piloten zu bewahren, ist das Levelsystem der beworbene Weg dafür. Es sind keine Erfahrungskurven, Level-Obergrenzen oder Statistik-Wachstumswerte dokumentiert, also überprüfe diese im Spiel.
 
-Community-Berichte heben oft denselben Fehler in umgekehrter Form hervor – Spieler horten teure Einheiten bis zum Match-Ende. Drop-Command-Fraktionen belohnen Durchsatz genauso wie rohe Stärke, daher ist ein ungenutzter Roster ein verschwendeter Roster.
+## Was nicht dokumentiert ist
 
-## Häufige Drop-Command-Fehler und wie du sie behebst
+Sei vorsichtig bei jedem Leitfaden, der Drop-Raten, Baukosten, Waffenschadenswerte, einen Tech-Baum, Fraktionslisten oder ein Code-System für Drop Command behauptet. Die offizielle Seite veröffentlicht nichts davon. Wenn du diese Details brauchst, sind die zuverlässigen Orte, die du prüfen solltest, das Spiel selbst nach der Veröffentlichung sowie die offizielle Steam-Store-Seite und ihre Patch-Notes. Community-Wikis und Drittanbieter-Leitfäden können nützlich sein, aber sie sind sekundäre Beobachtungen und können hinter Patches zurückliegen.
 
-Die meisten Fehlschläge mit Drop-Command-Fraktionen lassen sich auf eine kleine Gruppe wiederholter Fehler zurückführen, nicht auf Pech.
+## FAQ
 
-| Fehler | Warum er schadet | Lösung |
-|---|---|---|
-| Auf Autopilot droppen | Einheiten kommen an, wo der Kampf bereits vorbei ist | Warte einen Moment und bestätige das Ziel |
-| Cooldowns ignorieren | Du verbrennst Abrufe, die du nicht wiederholen kannst | Verfolge Timer, bevor du dich festlegst |
-| Teamrollen duplizieren | Niemand deckt die Lücke ab | Fülle stattdessen den fehlenden Archetyp |
-| In einen Vorstoß überinvestieren | Ein einzelner Verlust beendet dein Tempo | Teile Ressourcen auf zwei Wellen auf |
-| Ohne Sicht droppen | Einheiten landen in Hinterhalten | Erst aufklären, dann droppen |
-| Ziele nie wechseln | Gegner passt sich an und kontert dich hart | Rotiere den Druck zwischen den Lanes |
+**Was für ein Spiel ist Drop Command?**
+Ein groß angelegtes Mech-Combined-Arms-Kampfspiel von PillBugGames, veröffentlicht am 28. September 2026 auf Steam.
 
-Die letzte Zeile verdient Betonung. Selbst eine gut gewählte Fraktion wird vorhersehbar, wenn du immer am selben Ort dropst. Rotierender Druck zwingt den Gegner, seine Verteidigung zu verteilen, was jeden folgenden Drop effizienter macht.
+**Kann ich wirklich jede Einheit steuern?**
+Die Store-Seite bewirbt das Steuern jeder Einheit unter deinem Kommando, einschließlich Mechs, Panzer, VTOLs und Battle Armour.
 
-Wenn du mehr Kontext dazu möchtest, wie Einheiten-Deployment und Strategiespiele diese Systeme strukturieren, ist [Steams Strategie-Katalog](https://store.steampowered.com/tags/en/Strategy/) ein nützlicher Referenzpunkt, um zu vergleichen, wie verschiedene Titel Roster, Ressourcen und Timing handhaben.
+**Gibt es ein Code-System?**
+Auf der offiziellen Seite ist kein Code-System dokumentiert. Behandle alle Code-Listen als unbestätigt.
 
-## Praktische Tipps für bessere Drops
+**Wie überprüfe ich bestimmte Statistiken?**
+Die offizielle Seite veröffentlicht sie nicht. Überprüfe sie im Spiel oder über offizielle Patch-Notes, statt Drittanbieter-Zahlen zu vertrauen.
 
-Über die Fraktionswahl hinaus trennen kleine Gewohnheiten Spieler, die konstant gewinnen, von Spielern, die gelegentlich gewinnen.
-
-- **Verankere deine Drops an Zielen**, nicht an Kills. Territorium schafft Möglichkeiten; Kills sind ein Nebeneffekt.
-- **Plane die ersten zwei Drops im Voraus**, bevor das Match beginnt, damit du nicht unter Druck improvisierst.
-- **Beobachte die Fraktion deines Gegners**, nicht nur seine Einheiten. Sein Roster verrät dir, was er nicht kontern kann.
-- **Halte eine billige Einheit für Notfälle bereit**. Ein kleiner Abruf, der eine Lücke stopft, schlägt einen großen Abruf, der zu spät kommt.
-- **Analysiere deine Replays** gezielt auf Drops, die du bereust. Muster zeigen sich schnell.
-- **Kommuniziere die Rollenabdeckung** mit deinem Team vor dem ersten Gefecht.
-- **Übe eine Fraktion gründlich**, bevor du dich über den gesamten Roster verteilst.
-
-Tiefe schlägt Breite in fast jedem System mit Drop-Command-Fraktionen. Ein Spieler, der die Ressourcenkurve, Cooldowns und Konter eines Archetyps versteht, wird einen Spieler übertreffen, der oberflächliches Wissen über fünf Archetypen hat.
-
-Es hilft außerdem, in Wellen statt in Momenten zu denken. Ein Drop ist kein einzelnes Ereignis – er ist der Beginn einer Sequenz, die entweder Momentum aufbaut oder abgibt. Plane das Follow-up, bevor du die erste Einheit schickst.
-
-## Häufig gestellte Fragen
-
-**Sind Drop-Command-Fraktionen für das gesamte Match festgelegt?**
-
-In den meisten Umsetzungen ja – die Fraktionswahl wird vor dem Deployment getroffen und bleibt für die Dauer fest. Einige Spiele erlauben Wechsel während des Matches gegen eine Ressourcenstrafe, aber selbst dann kostet ein Wechsel mitten im Kampf meist mehr Tempo, als er zurückgewinnt. Behandle deine Fraktion als Verpflichtung.
-
-**Welche Fraktion ist am besten für Anfänger?**
-
-Support und Vorhut sind im Allgemeinen die verzeihendsten Einstiegspunkte. Support lehrt Positionierung und Timing, weil deine Einheiten lange genug überleben, um aus Fehlern zu lernen, während Vorhut Tempo und Aggression lehrt. Schwer und Aufklärung erfordern mehr Kartenbewusstsein, um sich auszuzahlen.
-
-**Wie viele Einheiten sollte ich auf einmal droppen?**
-
-Statt einer festen Zahl passe die Größe des Drops an den Wert des Ziels an. Umkämpfte, hochwertige Kämpfe rechtfertigen ein größeres Engagement; Scharmützel mit niedrigem Einsatz selten. Community-Berichte deuten darauf hin, dass gestaffelte Drops in Wellen in den meisten Matches besser funktionieren als ein einziges riesiges Engagement.
-
-**Warum scheitern meine Drops weiterhin, selbst mit einer guten Fraktion?**
-
-Die Fraktionswahl ist nur eine Variable. Sicht, Timing, Cooldown-Management und Zielrotation sind meist wichtiger als der Roster selbst. Wenn deine Fraktionswahlen für Drop-Commands solide sind, aber die Ergebnisse nicht, überprüfe, *wann* und *wo* du gedroppt hast, statt *was* du gedroppt hast.
-
-Sich mit Drop-Command-Fraktionen wohlzufühlen geht wirklich darum, einen wiederholbaren Entscheidungsprozess aufzubauen: Lies das Team, lies die Karte, wähle eine Rolle und committe dich. Wenn du das konsequent machst, fühlen sich deine Drops nicht mehr wie Glücksspiele an, sondern wie Druck, auf den das andere Team antworten muss.
+Der Reiz von Drop Command ist die Breite: Wähle deine Einheit, wähle deinen Maßstab und wähle, wie sehr es dir wichtig ist, deine Piloten am Leben zu halten. Das ist das beworbene Design. Alles darüber hinaus musst du selbst bestätigen.

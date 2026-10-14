@@ -1,124 +1,82 @@
 export const metadata = {
-  title: "Drop Command Dev Log: How Game Communities Track Item-Drop Updates",
-  description: "A community guide to the drop command dev log — how item-drop commands work, what dev logs track, and how to test and troubleshoot them safely.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Drop Command is PillBugGames' large-scale mech combined-arms game. Learn how its advertised systems fit together and how to approach play.",
   category: "community",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-A single mistyped line can dump an entire inventory onto the floor — or hand a player a stack of items they were never supposed to own. That is why the **drop command** gets so much attention in community dev logs, where small changes to permissions, cooldowns, and item tables ripple across whole servers. Whether you run a modded world, a Roblox experience, or a chat bot for your guild, understanding the **drop command** and the dev log entries that shape it is the fastest way to avoid a very loud bug report.
+Drop Command is a Steam game from developer PillBugGames, released on 28 September 2026. Its pitch is unusually broad for the mech genre: rather than locking you into a single war machine, it puts combined-arms combat at a grand scale in front of you and lets you pilot any unit under your command. You can read the official listing on the [Steam store page](https://store.steampowered.com/app/1944880/) to confirm the feature list for yourself before buying.
 
-## What Does a Drop Command Actually Do?
+This article stays close to what the developer and store page actually advertise. It separates the confirmed feature set from community impressions and from the many specifics that simply are not documented yet, so you know what is grounded and what is guesswork.
 
-A drop command is any command that removes an item, stack, currency, or entity from an inventory or container and places it into the world — or deletes it outright. It sounds simple, but the word "drop" hides several different behaviors, and that ambiguity is exactly why communities argue about it so much.
+## What Drop Command Actually Advertises
 
-In many games the same command name covers both "spawn this item on the ground" and "force this player to lose what they're holding." A moderator uses it to clean up a duplicated item; a troublemaker uses it to scatter someone's gear across the map. Same command, opposite intent.
+The official description is the authority here. Drop Command is described as mech combat at a grand scale, built around combined-arms combat where you pilot any unit under your command. The advertised scope runs from small skirmishes to epic battles. You drop into combat alone, lead a squad, or command an army.
 
-Because there is no universal standard, every project defines its own syntax. That is why the drop command dev log matters: it is the only reliable record of what changed, when, and for whom. Most engines document their command families in official references — for example, the [official Minecraft Wiki command reference](https://minecraft.wiki/w/Commands) is a good model for how clearly a command list can be written.
+The battlefield is described as evolving, with fully destructible debris and unit wreckage. Pilots are customisable and levelable. You can build squads of veterans or rush opponents with disposable rookies. Mechs, Tanks, VTOLs, and Battle Armour are all listed as personalisable.
 
-### The four behaviors hiding behind one word
+That is the full advertised picture. Notice what is *not* there: no unit statistics, no damage tables, no build costs, and no code system. Those omissions matter, and we return to them below.
 
-| Behavior | What happens | Who usually has access | Risk level |
-|---|---|---|---|
-| Spawn drop | An item appears in the world at a chosen spot | Builders, event staff | Low–Medium |
-| Inventory drop | The held or selected item leaves a player's inventory | Players, moderators | Medium |
-| Forced drop | Another player's items are removed or scattered | Admins only | High |
-| Delete drop | The item is destroyed with no entity spawned | Admins, cleanup scripts | High |
+## Combined Arms Is the Core Design Claim
 
-If your community's dev log does not say which of these four a change affects, that is your first question to ask.
+The phrase "combined arms" is doing a lot of work in this description. In military terms it means different unit types supporting each other rather than one dominant platform winning alone. Drop Command advertises Mechs, Tanks, VTOLs, and Battle Armour, which suggests four broad roles: heavy ground presence, mobile firepower, air, and infantry-scale support.
 
-## Why the Drop Command Dev Log Matters So Much
+Because the game lets you pilot *any* unit under your command, the design implies you are not permanently attached to one chassis. You could, in principle, swap roles mid-campaign as the situation demands. That is reasoning from the premise, not measured data. The developer has not published role breakdowns, so treat any specific "Mech beats Tank" claim you see elsewhere as unverified.
 
-Dev logs are the public diary of a project. For a command that touches player property, they are also a safety net. When someone loses a rare item, the first thing staff do is check whether a drop command change shipped recently.
+| Advertised element | What it implies for play |
+|---|---|
+| Pilot any unit under your command | Flexible role switching rather than a fixed class |
+| Small skirmishes to epic battles | Scale that changes as your force grows |
+| Drop alone, lead a squad, or command an army | Solo and command playstyles both supported |
+| Fully destructible debris and wreckage | Terrain and remains that change over a fight |
+| Customisable, levelable pilots | Progression tied to people, not just machines |
+| Veterans or disposable rookies | A trade-off between quality and quantity |
 
-Community reports consistently show the same pattern: most complaints about item loss are not caused by the command itself, but by a permission change that quietly widened who could run it. A dev log entry that says "adjusted permissions" without naming the affected roles is nearly useless.
+## Reading the Scale Claim Carefully
 
-A strong entry answers five questions: what changed, who is affected, what the old behavior was, what the new behavior is, and how to report problems. Anything less and players are left guessing.
+"Grand scale" and "epic battles" are marketing language, and it is worth being honest about that. The store page does not state unit counts, map sizes, or match lengths. Anyone quoting exact numbers is either pulling from a third-party guide or guessing.
 
-### Anatomy of a useful dev log entry
+What you can reasonably do is set expectations from the structure: if the game supports command of an army, it likely includes some form of force management between battles, because you cannot sustain army-scale combat without it. That is inference, not documentation. The safe move is to check the store page, the developer's announcements, and any official patch notes before assuming a specific systems depth.
 
-| Section | Purpose | What good looks like |
-|---|---|---|
-| Change summary | One-line description | "Drop command now respects container locks" |
-| Affected scope | Who or what is impacted | Roles, worlds, item categories |
-| Syntax delta | Old vs. new usage | Before-and-after examples |
-| Rollout status | Where it is live | Test branch, limited servers, full release |
-| Known issues | Honest limitations | Edge cases, pending fixes |
-| Feedback channel | Where to report | Forum thread, chat server, issue tracker |
+## Leadership, Veterans, and Rookies
 
-Notice that only one row is about the code. The rest is about people — which is why community dev logs that read like release notes tend to earn far more trust than ones that read like commit messages.
+The veteran-versus-rookie framing is one of the more interesting advertised features, because it describes a genuine strategic tension rather than a stat. Experienced squads suggest reliability and accumulated capability; disposable rookies suggest cheap, replaceable mass. The store page does not explain how either is earned or lost.
 
-## Drop Command Patterns Across Different Platforms
+Practical reasoning: if pilots are levelable and squads can be built from veterans, then preserving experienced units probably matters over a long campaign, while rookies likely suit early pressure or absorbing losses. That is a general combined-arms intuition, not a measured claim about this game specifically. Do not assume any particular attrition or veterancy mechanic until you see it in play.
 
-Every platform invents its own dialect. A prefix command in one game is a slash command in another, and a permission node in a plugin has no equivalent in a simple chat bot. The table below maps the general patterns you will run into, though exact syntax always depends on the specific project.
+## Customisation Across Four Platform Types
 
-| Platform type | Typical trigger | Permission model | Dev log habit |
-|---|---|---|---|
-| Game engine admin suite | Prefix plus keyword | Rank or level based | Frequent, per patch |
-| Server plugin | Slash command | Permission nodes | Changelog in repository |
-| Chat bot | Prefix command | Role or owner list | Announcement posts |
-| Custom game | Debug key or console | Developer only | Rare, often internal |
+The description lists Mech, Tank, VTOL, and Battle Armour as personalisable. It does not say how deep that customisation goes. There is no published list of hardpoints, weapon mounts, or upgrade paths, and there is no code system to unlock content.
 
-The practical takeaway: never assume syntax transfers. If you move from one community to another, read their drop command dev log before you type anything into a live server.
+If you want to know what customisation actually offers, the reliable method is simple: check the store page's screenshots and description, read official developer posts, and, once you own the game, explore the loadout or hangar interface directly. Avoid trusting any site that lists specific parts or numbers, because the developer has not published those.
 
-### Reading a command entry like a developer
+## How to Verify Claims Before You Buy
 
-- **Look for the scope line first.** It tells you whether the change affects everyone or just staff.
-- **Check for reversibility.** Can the drop be undone, or is the item gone permanently?
-- **Note the rollout stage.** Test-branch behavior is not final behavior.
-- **Screenshot the entry.** Dev logs get edited; your record does not.
-- **Ask before testing.** A five-second question in the community thread beats a wiped inventory.
+Drop Command is easy to misrepresent, partly because "drop" and "command" are common words that appear in unrelated products, mods, and dictionary entries. The only authoritative source for this game is its official Steam page and the developer's own communications.
 
-## How to Test a Drop Command Safely
+A short checklist:
 
-If you are a player helping with a test build, or a staff member verifying a change, run the same sequence every time. Consistency is what turns a vague "it feels broken" report into something a developer can actually fix.
+- Confirm the app ID and developer on the [official store page](https://store.steampowered.com/app/1944880/).
+- Treat third-party guides as secondary observations, not documentation.
+- Ignore any source claiming unit stats, damage values, build costs, faction lists, or codes unless the developer published them.
+- Watch for confusion with similarly named mods or unrelated games.
 
-| Step | Action | Why it matters |
-|---|---|---|
-| 1 | Use a private test server or sandbox world | Protects live inventories |
-| 2 | Create a disposable character or save | Prevents permanent loss |
-| 3 | Test with a low-value item first | Confirms syntax before risk |
-| 4 | Test the permission boundary | Verifies who can and cannot run it |
-| 5 | Test the failure case | Confirms the command refuses safely |
-| 6 | Record the exact input and output | Makes the bug reproducible |
+## FAQ
 
-Step five is the one most people skip. A drop command that fails gracefully — refusing to run and logging the attempt — is far better than one that half-executes and leaves items in limbo.
+**Is Drop Command the mental-omega mod unit?**
+No. The verified Steam game Drop Command by PillBugGames (app 1944880) is unrelated to any mod unit of a similar name.
 
-### Permission design at a glance
+**Does Drop Command have a code system?**
+The store page does not document one. Treat any code list you see as unverified.
 
-| Role | Spawn drop | Inventory drop | Forced drop | Delete drop |
-|---|---|---|---|---|
-| Regular player | No | Own items only | No | No |
-| Event staff | Yes | Own items only | No | No |
-| Moderator | Yes | Any player | With approval | No |
-| Admin | Yes | Any player | Yes | Yes |
+**Can I play solo?**
+Yes, the official description says you can drop into combat alone, lead a squad, or command an army.
 
-Community reports suggest that forced and delete drops should almost always be logged automatically, with the operator's name attached. Accountability is cheaper than restoration.
+**What units can I pilot?**
+The advertised platforms are Mechs, Tanks, VTOLs, and Battle Armour, and you can pilot any unit under your command.
 
-## Troubleshooting Common Drop Command Problems
+**Are there published unit stats or build costs?**
+No. The developer has not published stats, damage tables, or costs, so any exact figures elsewhere are not official.
 
-When something goes wrong, the symptom usually points at one of a handful of causes. Work down this list before opening a ticket.
-
-| Symptom | Likely cause | First fix to try |
-|---|---|---|
-| Command runs, nothing drops | World or region rules block spawning | Check area restrictions |
-| Only admins can use it | Role inheritance missing the permission | Re-check role hierarchy |
-| One item turns into two | Event fires twice on stacked items | Guard against double execution |
-| Dropped items vanish instantly | Despawn or cleanup timer too aggressive | Extend the pickup window |
-| No dev log entry exists | Change shipped without documentation | Ask in the community thread |
-| Item lands somewhere unexpected | Drop offset or spawn point unset | Verify the target coordinates |
-
-If you are the one writing the fix, resist the urge to patch silently. A two-line addition to the drop command dev log — "fixed double execution on stacked items, no permission changes" — prevents a dozen future questions.
-
-## Frequently Asked Questions
-
-**Is the drop command the same in every game?**
-No. The name is shared, but the behavior, syntax, and permission model are defined by each project. Always read the specific drop command dev log or command reference for the game you are playing before using it on a live server.
-
-**How often should a dev log be updated?**
-Whenever the command's behavior, permissions, or syntax changes. Small cosmetic tweaks can wait for a batch entry, but anything that affects who can drop what should be documented the same day it ships.
-
-**Can players abuse the drop command?**
-They can if permissions are too broad. Restrict forced and delete drops to trusted roles, log every use, and review the logs periodically. Most abuse reports trace back to a role that was given more access than it needed.
-
-**What should I do if a change breaks my setup?**
-Reproduce it on a test server, capture the exact input and output, then post that evidence in the community's feedback channel. Specific reports get fixed far faster than general complaints, and they give the developer something concrete to add to the next dev log entry.
+**When did it release?**
+28 September 2026, per the official Steam listing.

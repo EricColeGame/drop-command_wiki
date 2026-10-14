@@ -1,129 +1,78 @@
 export const metadata = {
-  title: "La commande de largage en combat en temps réel : timing, tactiques et guide d'exécution",
-  description: "Découvrez comment fonctionne la commande de largage en combat en temps réel : fenêtres de timing, positionnement des unités, erreurs courantes et exercices qui transforment les largages risqués en victoires.",
+  title: "Drop Command : ce que le jeu de combat interarmes de mechs promet réellement",
+  description: "Drop Command est le jeu de combat interarmes de mechs à grande échelle de PillBugGames sur Steam. Voici ce qui est documenté, ce que rapportent les joueurs et ce qui reste non vérifié.",
   category: "mechanics",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Une commande de largage bien chronométrée peut faire basculer un match plus vite que presque n'importe quelle autre action en combat en temps réel. C'est le moment où un ordre de transport, de largage aérien ou de renfort cesse d'être un simple détail logistique pour devenir une arme pointée vers le point le plus fragile de la configuration adverse. Que vous jouiez à un jeu de stratégie en temps réel classique ou à un titre d'escarmouche moderne en escouade, la commande de largage est la mécanique qui punit quiconque détourne le regard pendant cinq secondes.
+« Drop Command » n'est pas une commande que vous tapez. C'est le nom d'un jeu Steam développé par PillBugGames, sorti le 28 septembre 2026, et cette expression sert surtout de point de départ pour comprendre quel genre de jeu de mechs il cherche à être. La fiche Steam officielle de l'app 1944880 décrit des combats de mechs à grande échelle, des batailles interarmes où vous pilotez n'importe quelle unité sous votre commandement, et un champ de bataille qui évolue à mesure que les débris et les épaves s'accumulent. Voilà ce qui est documenté. Presque tout le reste de ce que les joueurs recherchent — statistiques des unités, coûts de construction, système de codes, tables de dégâts — n'est pas publié par le développeur, et tout guide prétendant le contraire doit être traité avec méfiance. Cet article distingue ce que la page du magasin confirme de ce que la communauté a observé, et signale clairement les lacunes.
 
-Comprendre la commande de largage est essentiel, car elle échange du risque contre du tempo. Vous engagez des unités coûteuses et fragiles derrière les lignes ennemies et pariez que la perturbation vaut plus que les unités que vous risquez de perdre. Réussissez et vous gagnez le contrôle de la carte, forcez une réaction et gagnez du temps pour prendre l'avantage technologique ou économique. Ratez et vous offrez une partie de votre armée à la défense adverse.
+## Ce que PillBugGames met en avant
 
-Ce guide détaille ce qu'est réellement une commande de largage, quand la donner, comment l'exécuter proprement, et les exercices qui la rendent automatique sous pression.
+La description Steam vérifiée fait ici autorité, et elle est étonnamment précise sur l'échelle et la liberté plutôt que sur les chiffres. Selon les appdetails officiels, Drop Command s'articule autour de :
 
-## Qu'est-ce qui compte comme une commande de largage en combat en temps réel ?
+- Piloter n'importe quelle unité sous votre commandement, et non un unique mech héros fixe
+- Des combats interarmes, des petites escarmouches jusqu'aux grandes batailles
+- Se déployer seul au combat, mener une escouade, ou commander une armée
+- Un champ de bataille qui évolue, avec des débris destructibles et des épaves d'unités
+- Des pilotes personnalisables et qui gagnent des niveaux
+- Un choix entre des escouades d'élite de vétérans et des recrues jetables
+- La personnalisation des Mechs, Chars, VTOL et Armures de combat
 
-Une commande de largage est tout ordre qui place des unités, du ravitaillement ou des effets à un endroit sans passer par un chemin terrestre conventionnel. Au lieu de faire traverser la carte à votre armée à pied, vous contournez le terrain, les défenses et le temps de trajet — c'est précisément pourquoi cet ordre est à la fois si puissant et si risqué.
+Remarquez ce qui est absent. La page du magasin ne publie ni statistiques d'unités, ni valeurs de dégâts des armes, ni coûts de construction, ni arbres technologiques, ni listes de factions, ni système de codes. Cette absence compte parce que « drop command » comme terme de recherche attire souvent des joueurs à la recherche de codes de triche ou de commandes cachées, et rien dans le matériel officiel ne prouve qu'un tel système existe. Si vous voulez le vérifier par vous-même, la page du magasin à https://store.steampowered.com/app/1944880/ est l'endroit à consulter, et les menus du jeu montreront si une console ou une interface de commandes est présente.
 
-La plupart des jeux de combat en temps réel partagent quatre familles d'ordres de largage. Ils sont différents à l'écran, mais la décision sous-jacente reste la même : qu'est-ce que je gagne à éviter le trajet ?
+## Pourquoi « n'importe quelle unité sous votre commandement » change votre façon de jouer
 
-| Type de largage | Ce que fait l'ordre | Utilisation typique | Niveau de risque |
-|---|---|---|---|
-| Insertion aérienne | Décharge des unités d'un transport directement sur une cible | Harceler les ouvriers, sniper des structures clés | Élevé — le transport est lent et vulnérable |
-| Largage de renfort | Livre de nouvelles unités à une position avancée | Soutenir une poussée sans revenir à pied | Moyen — la zone d'atterrissage est prévisible |
-| Largage de ravitaillement / objets | Place des consommables, munitions ou ressources sur le terrain | Garder une escouade en vie en plein combat | Faible — généralement aucune perte d'unité |
-| Largage d'aggro / de cible | Annule une cible verrouillée, un débuff ou un effet de statut | Se remettre d'un engagement raté | Faible, mais sensible au timing |
+La plupart des jeux de mechs vous enferment dans un châssis. La prémisse annoncée de Drop Command est l'inverse : l'unité que vous pilotez est l'une parmi tant d'autres que vous contrôlez, ce qui transforme le jeu en une question de perspective plutôt que de puissance brute. C'est là qu'un raisonnement général à partir de la prémisse interarmes devient utile, et il doit être lu comme un raisonnement, pas comme des données mesurées.
 
-Les deux premières sont celles qui décident des parties. Les deux dernières relèvent de l'intendance — importantes, mais rarement la raison pour laquelle vous gagnez ou perdez.
+Si vous pouvez prendre les commandes de n'importe quoi, votre vraie décision à chaque bataille est de savoir quel siège vous donne le plus de levier. Piloter un VTOL rapide vous permet de voir tout l'engagement et de réagir aux contournements, mais cela vous retire du combat au sol que vous cherchez peut-être à gagner. Grimper dans un Mech lourd concentre votre attention sur une partie de la ligne pendant que le reste de votre force continue de son côté. L'Armure de combat vous place au plus près de l'action à l'échelle de l'infanterie. Aucune de ces affirmations n'est un constat d'équilibrage documenté — elles découlent du simple fait qu'un joueur ne peut être qu'à un seul endroit à la fois.
 
-## Pourquoi le timing décide de la réussite d'un largage
+À retenir en pratique : décidez avant chaque déploiement si vous jouez un commandant qui tire occasionnellement, ou un tireur qui commande occasionnellement. La structure du jeu semble soutenir les deux, et changer en cours de bataille est vraisemblablement possible puisque vous contrôlez des unités plutôt qu'un seul avatar.
 
-Une commande de largage donnée au mauvais moment n'est qu'un service de livraison coûteux. L'ordre lui-même n'est presque jamais le problème ; c'est la fenêtre de timing qui l'est.
+## Vétérans, recrues et l'économie des escouades
 
-Le déclencheur classique est positionnel. Si l'armée ennemie se trouve à plus d'un écran de la cible, un largage impose un choix impossible : continuer la poussée et perdre la base, ou faire demi-tour et perdre la poussée. Les retours de la communauté et l'expérience des joueurs convergent vers la même règle : larguez quand l'ennemi est engagé ailleurs, pas quand votre transport se trouve être prêt.
+La description officielle propose un choix réellement intéressant : constituer des escouades de vétérans ou submerger l'adversaire avec des recrues. C'est le genre de design où l'intérêt réside dans le compromis, et ce compromis est lisible même sans chiffres publiés.
 
-| Phase de la partie | Objectif du largage | Signal de réussite | Signal d'échec |
-|---|---|---|---|
-| Début de partie | Forcer des dépenses défensives, tuer des unités économiques | L'adversaire rappelle son armée à la base | L'éclaireur le repère et la défense est prépositionnée |
-| Milieu de partie | Diviser l'attention, briser une ligne de siège | La formation ennemie se disloque | L'antiaérien ou la détection couvre déjà la base |
-| Fin de partie | Échanger efficacement, sniper la production | La production s'arrête pendant un cycle complet | Vous perdez le transport *et* le chargement |
-
-Trois indices de timing méritent d'être suivis à chaque partie :
-
-- **Les angles morts de vision.** Si vous ne voyez pas leurs défenses, vous ne pouvez pas savoir si le largage est sûr.
-- **Les temps de recharge.** Les capacités défensives à longue portée et les outils de détection ont des fenêtres. Larguez à l'intérieur de celles-ci.
-- **La distance de l'armée.** Mesurez en temps de trajet, pas en distance sur la carte. Une armée lente est en pratique plus éloignée.
-
-### Le calcul de tempo derrière un largage
-
-Même un largage raté peut valoir le coup s'il coûte à l'adversaire plus d'attention qu'il ne vous coûte de ressources. C'est le véritable taux de change en combat en temps réel : de l'attention contre des dégâts. Un largage qui attire une armée à travers toute la carte s'est déjà rentabilisé, car vous avez acheté du temps libre pour votre propre expansion ou votre technologie.
-
-## Exécuter la commande de largage : une checklist étape par étape
-
-Une exécution propre sépare un fait d'armes digne d'un best-of d'un simple don. Suivez ces étapes dans l'ordre et considérez la commande de largage comme une séquence plutôt qu'un simple clic.
-
-1. **Confirmez que la cible en vaut la peine.** Économie, production ou structure défensive clé — pas un bâtiment au hasard.
-2. **Prépositionnez le transport hors de la vision ennemie.** Rassemblez-le derrière le terrain ou le brouillard, puis attendez.
-3. **Neutralisez ou supprimez la détection et l'antiaérien.** Envoyez d'abord un éclaireur en cas de doute.
-4. **Donnez la commande de largage au moment où le transport franchit l'approche finale.** Trop tôt et les défenseurs réagissent ; trop tard et vous perdez le transport avant le déchargement.
-5. **Déchargez en dispersant, pas en tas.** Un groupe serré est à un sort de zone du désastre.
-6. **Ayez un plan de sortie.** Soit le transport survit pour un second voyage, soit les unités larguées disposent d'une route pour s'échapper.
-
-| Étape | Action | Vérification avant de s'engager |
+| Approche | Avantage plausible | Risque plausible |
 |---|---|---|
-| 1 | Choisir la cible | Tuer ceci change-t-il les deux prochaines minutes ? |
-| 2 | Positionner le transport | Est-il caché de la vision de la base principale ? |
-| 3 | Éclairer la zone d'atterrissage | De l'antiaérien, de la détection ou une défense statique ? |
-| 4 | Donner l'ordre | L'armée ennemie est-elle réellement loin ? |
-| 5 | Décharger et disperser | Les unités forment-elles une ligne, pas un cercle ? |
-| 6 | Sortir ou renforcer | Le transport peut-il partir, ou est-ce un aller simple ? |
+| Escouades de vétérans | Les unités survivent plus longtemps, accumulent de l'expérience, tiennent le terrain | Plus lentes à rassembler, douloureuses à perdre, moins de couverture de carte |
+| Ruées de recrues | Rapides à déployer, bon marché à remplacer, large présence | Fragiles, susceptibles de mal s'échanger dans les combats prolongés |
 
-### Le positionnement prime sur la vitesse
+Ce tableau est une inférence à partir de la fonction annoncée « escouades d'élite ou recrues jetables », pas une fiche de données. Le développeur n'a publié ni courbes d'expérience, ni coûts de remplacement, ni bonus de vétéran. Ce que vous pouvez vérifier, c'est si les pilotes gagnent visiblement des niveaux, si les remplaçants arrivent plus vite que les vétérans ne récupèrent, et si le jeu récompense l'attrition ou la préservation. Testez-le lors d'une petite escarmouche avant de vous engager dans une stratégie à l'échelle d'une campagne.
 
-Les nouveaux joueurs sont obsédés par la vitesse à laquelle ils peuvent larguer. Les joueurs expérimentés sont obsédés par l'endroit. Un largage légèrement plus lent qui atterrit derrière la ligne de minerai, ou de l'autre côté d'un mur, accomplit plus qu'un largage éclair au milieu d'une base défendue.
+La fonction de débris destructibles et d'épaves d'unités renforce la question de l'attrition. Si le champ de bataille se remplit des restes des unités détruites, alors des poussées répétées et bon marché peuvent encombrer le terrain autant qu'elles submergent un adversaire. Que les épaves bloquent le mouvement, offrent une couverture, ou soient purement cosmétiques n'est pas documenté sur la page du magasin. Les joueurs devraient le vérifier en jeu plutôt que de le supposer.
 
-## Commande de largage vs autres ordres : quand utiliser lequel
+## Ce qui n'est pas documenté
 
-Toutes les situations n'appellent pas un largage. Parfois un simple attaque-déplacement fait l'affaire avec bien moins de risque. La comparaison ci-dessous est un bon test avant de vous engager.
+Il vaut la peine d'être franc sur les lacunes, car les recherches sur Drop Command dérivent souvent vers des choses que le jeu ne met pas en avant :
 
-| Ordre | À quoi il sert | Engagement | Récupération en cas d'échec |
-|---|---|---|---|
-| Ordre de déplacement | Se repositionner sans engager le combat | Minimal | Complète — les unités conservent leurs PV |
-| Attaque-déplacement | Avancer en engageant automatiquement | Moyen | Partielle — vous pouvez battre en retraite, mais vous subissez des pertes |
-| Commande de largage | Contourner les défenses pour frapper l'arrière | Élevé | Faible — les unités sont souvent isolées |
-| Tenir / patrouiller | Verrouiller un point de passage ou une expansion | Faible | Complète — aucune ressource engagée |
+- Aucune statistique d'unité, valeur de dégâts ou table d'armure n'est publiée
+- Aucun coût de construction ni taux de ressources n'est publié
+- Aucun arbre technologique, liste de factions ou parcours de progression n'est publié
+- Aucun système de codes, commandes de console ou liste de raccourcis clavier n'est publié
+- Aucune note de patch ni feuille de route post-lancement n'apparaît dans la description officielle
 
-Une règle simple : utilisez une commande de largage quand le chemin est bloqué, que la cible n'est pas défendue et que vous pouvez vous permettre de perdre tout ce que contient le transport. Si l'une de ces conditions est fausse, faites plutôt avancer votre armée à pied.
+Si un guide tiers prétend avoir des chiffres de dégâts exacts ou une liste de codes fonctionnels, traitez-le au mieux comme une observation de la communauté, au pire comme non vérifié. Les guides tiers sont des sources secondaires, pas de la documentation de développeur. La méthode fiable consiste à ouvrir le jeu, consulter les écrans d'unités ou de personnalisation en jeu, et comparer avec la page Steam officielle.
 
-## Erreurs courantes avec la commande de largage (et comment les corriger)
+## Comment évaluer le jeu vous-même
 
-La plupart des largages ratés relèvent de quelques schémas récurrents. Les corriger est généralement une question de discipline plutôt que de mécanique.
+Parce que la page du magasin décrit des systèmes plutôt que des chiffres, la chose la plus utile que vous puissiez faire est de vérifier directement les fonctionnalités annoncées. Confirmez que vous pouvez réellement piloter plusieurs types d'unités en changeant de siège. Confirmez que les pilotes gagnent des niveaux et que cette progression est visible. Confirmez que les débris s'accumulent et qu'ils font quelque chose. Confirmez que la composition des escouades change réellement les résultats plutôt que d'être cosmétique.
 
-| Erreur | Pourquoi elle vous coûte cher | Correction |
-|---|---|---|
-| Larguer dans la vision | Les défenseurs ont le temps de se repositionner gratuitement | Approchez sous un angle non éclairé ou attendez le brouillard |
-| S'entasser au point d'atterrissage | Une attaque de zone efface le chargement | Dispersez le déchargement sur une courte ligne |
-| Aucun suivi | Les dégâts sont réparés, rien ne change | Enchaînez la cible suivante avant que le premier largage n'atterrisse |
-| Réutiliser le même angle | Les adversaires y construisent des défenses à l'avance | Alternez deux ou trois routes de largage par partie |
-| Ignorer le transport | Un transport mort tue aussi le prochain largage | Récupérez-le tôt, ou acceptez-le comme sacrifiable |
-
-Deux habitudes supplémentaires valent la peine d'être cultivées. Premièrement, comptez toujours ce que vous envoyez — un largage qui ne peut pas tuer sa cible n'est qu'une diversion. Deuxièmement, surveillez la minicarte pendant le largage, pas le largage lui-même. L'information dont vous avez besoin se produit généralement ailleurs sur la carte.
-
-## Exercices pour rendre la commande de largage automatique
-
-Les mécaniques ne deviennent fiables que par la répétition. Ces exercices prennent dix à quinze minutes et ciblent les compétences spécifiques qu'exige une commande de largage.
-
-| Exercice | Mise en place | Objectif |
-|---|---|---|
-| Largage à l'aveugle | Escarmouche contre un adversaire facile, éclairage interdit | Apprendre les routes de largage par défaut sur chaque carte |
-| Exercice de raccourcis clavier | Assignez le transport et le chargement à des groupes de contrôle séparés | Donner l'ordre sans regarder le clavier |
-| Déchargement éclaté | S'entraîner à décharger en ligne contre une cible immobile | Réduire l'entassement en trois tentatives ou moins |
-| Réaction au contre-largage | Demandez à un partenaire de larguer sur vous de façon répétée | Reconnaître instantanément le son et l'indice visuel |
-
-Si vous cherchez une référence sur la façon dont les titres de stratégie en temps réel aboutis règlent le comportement du transport, des renforts et des largages, le [site officiel d'Age of Empires](https://www.ageofempires.com/) est un bon point de départ pour étudier la conception des ordres et les rôles des unités.
-
-Un dernier conseil : revoyez vos propres replays et comptez combien de largages se sont réellement transformés en dégâts. Si le nombre est faible, le problème vient généralement du timing, pas de l'exécution. Ralentissez, choisissez de meilleures fenêtres, et la commande de largage deviendra l'un des outils les plus fiables de votre arsenal.
+Si tout cela tient la route, Drop Command honore son argument central : un jeu de mechs interarmes où la décision intéressante n'est pas quel mech débloquer, mais où vous vous tenez personnellement sur un champ de bataille en évolution. Si certaines de ces promesses s'avèrent superficielles, aucun guide externe n'y remédiera, car aucun guide externe ne dispose des données.
 
 ## FAQ
 
-**Qu'est-ce qu'une commande de largage en combat en temps réel ?**
-Une commande de largage est un ordre qui livre des unités, du ravitaillement ou des effets à un endroit sans itinéraire terrestre — généralement par transport ou largage aérien. En combat en temps réel, elle sert à contourner les défenses, harceler une économie ou renforcer rapidement une poussée.
+**« drop command » est-il un code de triche pour le jeu ?**
+Il n'existe aucun système de codes documenté. La description Steam officielle de l'app 1944880 ne mentionne ni codes, ni consoles, ni commandes. Vérifiez en jeu si vous êtes curieux.
 
-**Quand dois-je donner une commande de largage ?**
-Donnez la commande de largage quand l'armée ennemie est engagée ailleurs, quand la zone d'atterrissage n'est pas éclairée ou est légèrement défendue, et quand vous pouvez vous permettre de perdre les unités impliquées. Si l'une de ces conditions manque, une attaque conventionnelle est généralement plus sûre.
+**Quand Drop Command est-il sorti ?**
+Les appdetails officiels de Steam indiquent le 28 septembre 2026, développé par PillBugGames.
 
-**Pourquoi mes largages échouent-ils sans cesse ?**
-Les causes les plus courantes sont de larguer dans la vision ennemie, d'entasser les unités au point d'atterrissage et de ne pas avoir de plan de suivi. Corriger la seule fenêtre de timing améliore généralement le taux de réussite des largages plus que n'importe quel ajustement de micro.
+**Peut-on aussi piloter des chars, des VTOL et des Armures de combat ?**
+Oui, la page du magasin annonce la personnalisation et le contrôle des Mechs, Chars, VTOL et Armures de combat.
 
-**La commande de largage vaut-elle la peine d'être apprise en tant que débutant ?**
-Oui, mais apprenez-la après avoir acquis l'aisance avec l'économie de base et le contrôle d'armée. La commande de largage récompense les joueurs qui comprennent déjà la vision de la carte et le tempo ; sans ces fondations, elle tend à échanger des unités contre très peu de chose.
+**Existe-t-il des statistiques d'unités ou des coûts de construction publiés ?**
+Non. La page du magasin ne publie ni statistiques d'unités, ni tables de dégâts, ni coûts de construction, ni arbres technologiques, ni listes de factions.
+
+**Où dois-je vérifier pour obtenir des informations exactes ?**
+La page Steam officielle à https://store.steampowered.com/app/1944880/ et l'interface en jeu sont les sources faisant autorité.

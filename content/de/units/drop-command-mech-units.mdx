@@ -1,120 +1,85 @@
 export const metadata = {
-  title: "Drop-Command-Mech-Einheiten: Ein vollständiger Leitfaden zum Orbital-Einsatz in Mech-Strategiespielen",
-  description: "Erfahre, wie Drop-Command-Mech-Einheiten in Mech-Strategiespielen funktionieren: Einsatz-Timing, Einheitenrollen, Drop-Pod-Taktiken und Tipps, um die ersten Minuten zu gewinnen.",
+  title: "Drop Command: Ein praktischer Leitfaden für den kombinierten Mech-Kampf",
+  description: "Drop Command ist das groß angelegte Mech-Combined-Arms-Spiel von PillBugGames. So funktionieren die beworbenen Systeme und so geht man sie an.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Was „Drop Command" eigentlich bedeutet
+Drop Command ist ein Mech-Combined-Arms-Kampfspiel des Entwicklers PillBugGames, das am 28. September 2026 auf Steam veröffentlicht wurde. Wenn du den Namen im Zusammenhang mit anderen Projekten oder Mods gesehen hast, beachte, dass dieser Artikel nur das eigenständige Steam-Spiel unter der App 1944880 behandelt. Die offizielle Auflistung findest du hier: https://store.steampowered.com/app/1944880/.
 
-In Mech-Strategiespielen entscheiden die ersten neunzig Sekunden oft das gesamte Match. Wer seine schwersten Frames zuerst landet, kontrolliert meist die Karte, und der schnellste Weg dorthin ist die Beherrschung von **Drop-Command-Mech-Einheiten** – der Einsatzmechanik, die deine Armee aus dem Orbit, von einem Dropship oder von einem vorgeschobenen Träger auf das Feld bringt. Erwischst du das Timing falsch, fütterst du den Gegner mit Gratis-Kills; machst du es richtig, diktierst du, wo jeder Kampf stattfindet. Dieser Leitfaden erklärt, wie **Drop-Command-Mech-Einheiten** tatsächlich funktionieren, welche Frames in ein Drop-Roster gehören und wie du einen Einsatz so sequenzierst, dass dein Eröffnungsvorstoß nie ins Stocken gerät.
+Was das Spiel einen genaueren Blick wert macht, ist nicht eine einzelne Schlagzeilen-Mechanik, sondern die Bandbreite, die es bewirbt: Du steuerst jede Einheit unter deinem Kommando, kämpfst von kleinen Scharmützeln bis hin zu großen Schlachten, springst allein in den Kampf, führst einen Trupp oder befehligst eine Armee. Diese Flexibilität prägt nahezu jede Entscheidung, vor der ein neuer Spieler steht, daher hilft es zu verstehen, was die Store-Seite tatsächlich verspricht, bevor du Erwartungen bildest.
 
-Das Wort „Command" ist wichtiger als das Wort „Drop". Ein Drop-Command ist kein Spawn-Knopf, den du spammen kannst. Er bringt normalerweise Ressourcenkosten, eine Abklingzeit, eine maximale Nutzlast und eine Landezone mit, die der Gegner ausspähen, blockieren oder bestrafen kann. Diese vier Einschränkungen machen aus dem Einsatz eine Entscheidung statt einer Formalität. Spieler, die den Drop-Command als Präzisionswerkzeug behandeln, gewinnen Tempo; Spieler, die ihn als Panikknopf behandeln, verlieren meist die Karte, bevor ihre besten Einheiten überhaupt einen Schuss abgegeben haben.
+## Was die offizielle Store-Seite bewirbt
 
-Ein nützliches mentales Modell: Jeder Drop tauscht Wirtschaft gegen Position. Du zahlst doppelt – einmal in Ressourcen, einmal im Risiko, an einem gefährlichen Ort anzukommen. Der Gewinn besteht darin, dass du das Gelände vollständig umgehst. Mauern, Engpässe und lange Anmarschwege stoppen Bodenarmeen, aber sie tun einem Trupp nichts, der dahinter landet.
+Laut der offiziellen Steam-appdetails-Seite bietet Drop Command Mech-Kampf in großem Maßstab und kombinierten Waffenkampf, bei dem du jede Einheit unter deinem Kommando steuerst. Der beworbene Umfang reicht von kleinen Scharmützeln bis zu epischen Schlachten, mit dem Ziel, ein Sternenimperium aufzubauen.
 
-### Die Variablen, die jeden Drop-Command definieren
+Weitere auf der Store-Seite aufgeführte Features sind:
 
-| Variable | Was sie kontrolliert | Warum sie wichtig ist |
-|---|---|---|
-| Ressourcenkosten | Vorabpreis pro Ruf | Legt fest, wie viele Drops du dir vor dem Mid-Game leisten kannst |
-| Abklingzeit | Zeit bis zum nächsten Ruf | Bestraft verschwendete Drops härter als verschwendete Ressourcen |
-| Nutzlastgrenze | Einheiten pro Einsatz | Erzwingt eine Entscheidung zwischen Qualität und Quantität |
-| Landezone | Wo Einheiten erscheinen | Eine nachlässige Zone macht aus einem Elite-Trupp Gratis-Kills |
-| Streuradius | Wie weit Einheiten verteilt werden | Enge Drops stapeln Schaden; weite Drops decken Gelände ab |
-| Ankunftsverzögerung | Zeit vom Befehl bis zur Landung | Lange Verzögerungen verlangen Vorhersage, nicht Reaktion |
+- Allein in den Kampf springen, einen Trupp führen oder eine Armee befehligen.
+- Ein sich entwickelndes Schlachtfeld mit vollständig zerstörbaren Trümmern und Einheitenwracks.
+- Anpassbare und levelbare Piloten.
+- Die Wahl zwischen Elite-Trupps und entbehrlichen Rekruten.
+- Personalisierbare Mech-, Panzer-, VTOL- oder Battle-Armour-Einheiten.
 
-## Warum Drop-Command-Mech-Einheiten das Early Game entscheiden
+Das ist der vollständige Satz der beworbenen, für das Gameplay relevanten Features. Alles Folgende baut auf diesen Punkten als allgemeine Überlegung auf, nicht als gemessene Daten aus dem Spiel.
 
-Drop-Mechaniken existieren, um ein bestimmtes Problem zu lösen: große Karten und langsame Einheiten. Wenn deine schwersten Frames zwei Minuten brauchen, um an die Front zu laufen, bekommt der Gegner zwei Minuten freie Expansion. Ein Drop-Command komprimiert diese Reisezeit auf ein paar Sekunden, was bedeutet, dass der erste bedeutende Kampf zu deinen Bedingungen stattfindet, nicht zu seinen.
+## Das Combined-Arms-Prinzip verstehen
 
-Es gibt einen zweiten, subtileren Vorteil. Weil ein Drop-Command fast überall landen kann, fungiert er als Bedrohung, selbst wenn du ihn nie einsetzt. Ein Gegner, der nicht weiß, woher deine Verstärkung kommt, muss seine Verteidigung verteilen – und verteilte Verteidigung verliert gegen konzentrierte Angriffe. Berichte aus der Community kompetitiver Mech-Leitern beschreiben durchweg dasselbe Muster: Der Spieler, der einen Drop verfügbar hält, erzwingt vorsichtigeres Spiel als der Spieler, der ihn sofort ausgibt.
+Combined Arms bedeutet traditionell, dass verschiedene Einheitentypen die Schwächen der jeweils anderen ausgleichen. Die Store-Seite nennt vier Chassis-Familien: Mech, Panzer, VTOL und Battle Armour. Sie veröffentlicht keine Einheitenwerte, Schadens-Tabellen oder Baukosten, daher wäre jede Aussage darüber, welches Chassis das „beste" ist, reine Spekulation.
 
-Schließlich belohnen Drops Informationen. Eine Landezone innerhalb deiner eigenen Sicht ist sicher; dieselbe Zone ohne Sicht ist ein Glücksspiel. Deshalb werden Aufklärung und Drop-Mechaniken üblicherweise als Partner und nicht als Rivalen konzipiert – der eine kauft das Bild, der andere nutzt es aus.
+Was die verifizierte Beschreibung jedoch stützt, ist, dass du jede Einheit unter deinem Kommando steuern kannst. Dieser eine Satz hat eine große praktische Konsequenz: Du bist nicht für eine ganze Schlacht auf eine Rolle festgelegt. Ein sinnvoller allgemeiner Ansatz ist, deine Steuerungswahl als Reaktion auf die Situation zu behandeln statt als permanente Identität. Wenn ein Gefecht in einer Dimension ins Stocken gerät, kann der Wechsel der Einheit, die du persönlich kontrollierst, verändern, worauf du Einfluss nehmen kannst.
 
-## Ein Drop-Roster aufbauen: Einheitenrollen
+| Beworbenes Feature | Praktische Implikation (allgemeine Überlegung) |
+|---|---|
+| Jede Einheit unter deinem Kommando steuern | Deine Rolle kann mitten in der Schlacht wechseln; überinvestiere nicht in eine Gewohnheit |
+| Kleine Scharmützel bis epische Schlachten | Der Maßstab verändert, wie viel du persönlich bewältigen kannst |
+| Solo-, Trupp- oder Armee-Kommando | Die Führungslast variiert; Delegation zählt im großen Maßstab |
+| Zerstörbare Trümmer und Wracks | Das Schlachtfeld selbst kann sich im Verlauf eines Gefechts verändern |
 
-Nicht jeder Mech gehört in eine Drop-Nutzlast. Ein Drop-Slot ist eine knappe Ressource, also sollte jede Einheit ihren Platz rechtfertigen, indem sie etwas tut, was der Rest deiner Armee nicht schnell tun kann.
+## Solo-Drops, Trupps und Armee-Kommando
 
-| Rolle | Typisches Gewicht | Drop-Priorität | Passt gut zu | Häufiger Fehler |
-|---|---|---|---|---|
-| Vorhut-Nahkämpfer | Schwer / Sturm | Zuerst | Feuerunterstützung | Im Offenen ohne Deckung landen |
-| Plänkler | Leicht / Mittel | Zweitens | Aufklärung | Kills weit von der Landezone jagen |
-| Feuerunterstützung | Schwer | Zweitens oder drittens | Nahkämpfer | Abwerfen, bevor eine Frontlinie existiert |
-| Aufklärung / Spotter | Leicht | Zuerst, günstig | Alles mit Reichweite | Eine volle Nutzlast nur für Sicht ausgeben |
-| Kommando- / Aura-Einheit | Mittel / Schwer | Spät, geschützt | Die gesamte Formation | Sie an der Frontlinie exponieren |
-| Belagerung / Artillerie | Schwer | Zuletzt | Aufklärungs-Locks | Abwerfen, bevor Ziele gesichtet sind |
+Die Store-Seite präsentiert drei grobe Arten des Engagements: allein springen, einen Trupp führen oder eine Armee befehligen. Das sind nicht nur Schwierigkeitsstufen; sie verändern, worauf deine Aufmerksamkeit gerichtet ist.
 
-- **Vorhut-Nahkämpfer** absorbieren das Ankunftsfenster. Sie landen zuerst, nehmen das erste Abwehrfeuer auf und schaffen die Tasche aus Raum, die alle anderen brauchen.
-- **Plänkler** nutzen diesen Raum aus. Sie sind schnell genug, um einen umpositionierenden Gegner zu bestrafen, aber zerbrechlich genug, dass eine schlechte Landung tödlich ist.
-- **Feuerunterstützung** verwandelt Sicht in Schaden. Ohne Spotter verbringen Langstrecken-Frames ihre ersten Sekunden damit, auf Gelände zu schießen.
-- **Aufklärungseinheiten** sind der günstigste Weg, jeden späteren Drop sicherer zu machen. Ihr Wert wird in den Drops gemessen, die sie ermöglichen, nicht im Schaden, den sie austeilen.
-- **Kommando- und Aura-Einheiten** vervielfachen den Rest des Rosters. Schütze sie, indem du sie hinter den Nahkämpfern landest, niemals davor.
-- **Belagerungs-Frames** sind der Finisher. Sie treffen ein, nachdem der Gegner sich auf eine Position festgelegt hat, die er nicht leicht verlassen kann.
+Wenn du allein springst, sind alle Entscheidungen deine, und niemand sonst fängt Fehler auf. Wenn du einen Trupp führst, gewinnst du die Fähigkeit, an einem Ort zu sein, während dein Trupp anderswo etwas tut. Wenn du eine Armee befehligst, übersteigt die Menge gleichzeitiger Ereignisse wahrscheinlich das, was eine Person beobachten kann, was Priorisierung zur Kernfähigkeit macht.
 
-## Einsatzmethoden im Vergleich
+Die verifizierte Beschreibung erklärt nicht die konkrete Kommando-Schnittstelle, daher ist die Art der Befehlsvergabe etwas, das du im Spiel lernen musst. Ein vernünftiger Weg, die Details zu überprüfen, ist, die Medien der offiziellen Store-Seite und etwaige Entwickler-Beiträge anzusehen und es dann im Spiel zu bestätigen.
 
-Verschiedene Spiele implementieren den Drop-Command unterschiedlich, aber die Trade-offs fallen üblicherweise in vier erkennbare Muster.
+## Veteranen, Rekruten und Piloten-Progression
 
-| Methode | Ankunftsgeschwindigkeit | Genauigkeit | Kostenprofil | Am besten für |
-|---|---|---|---|---|
-| Orbital-Drop-Pod | Schnell | Weite Streuung | Hoch pro Einheit | Notfallverteidigung und Überraschungsflanken |
-| Dropship-Einsatz | Mittel | Eng, gruppiert | Hoch pro Ruf | Koordinierte Vorstöße mit einem vollen Trupp |
-| Träger-Bodenabsetzung | Langsam | Exakt | Niedrig pro Einheit | Sichere Verstärkung hinter der eigenen Linie |
-| Bake / Teleportplattform | Sofort nach Aufbau | Exakt | Günstig nach Investition | Anhaltender Druck und Kartenkontrolle |
+Hier arbeiten zwei beworbene Systeme zusammen: anpassbare und levelbare Piloten sowie die Wahl zwischen Elite-Trupps und entbehrlichen Rekruten. Die Formulierung impliziert einen Kompromiss zwischen Qualität und Quantität oder Ersetzbarkeit, aber die Store-Seite veröffentlicht keine Erfahrungskurven, Level-Obergrenzen oder Wertewachstum.
 
-Das Muster ist bei allen vier konsistent: Geschwindigkeit kostet Genauigkeit, und Genauigkeit kostet Zeit oder Geld. Orbital-Drop-Pods sind das Werkzeug, zu dem du greifst, wenn etwas sofort beantwortet werden muss. Dropships sind das Werkzeug, zu dem du greifst, wenn du willst, dass eine Formation intakt ankommt und als Einheit kämpft.
+Da Piloten angepasst und gelevelt werden können, ist es vernünftig anzunehmen, dass sich die Investition in einen Piloten mit der Zeit akkumuliert. Ausgehend von dieser Prämisse ist ein verbreitetes Muster in Spielen mit dieser Struktur, erfahrene Piloten zu schützen und weniger investierte Einheiten für riskantere Aufgaben zu verwenden. Behandle das als Überlegung, nicht als dokumentierte Regel.
 
-Wenn du sehen möchtest, wie unterschiedlich diese Systeme in der Praxis sind, kannst du [Mech-Strategietitel auf Steam durchstöbern](https://store.steampowered.com/tags/en/Mechs/) und vergleichen, wie jedes einzelne Verstärkungs-Timing, Nutzlastgrenzen und Landungsrisiko handhabt.
+## Ein sich entwickelndes Schlachtfeld
 
-## Den Drop timen: Ein Phasenplan
+Vollständig zerstörbare Trümmer und Einheitenwracks werden ausdrücklich beworben. Das interessante Wort ist „sich entwickelnd". Wenn Wracks bestehen bleiben, dann ist die Karte, auf der du spät in einer Schlacht kämpfst, nicht die Karte, mit der du begonnen hast. Praktisch legt das zwei Gewohnheiten nahe, die es sich zu bilden lohnt:
 
-Die meisten Early-Game-Fehler entstehen daraus, dass nur um ein paar Sekunden zu früh oder zu spät abgeworfen wird. Die folgende Sequenz ist ein allgemeiner Rahmen, der sich an die meisten Echtzeit-Mech-Strategiespiele anpasst.
+1. Lies das Gelände neu, bevor du dich auf eine Route festlegst, statt einen Eröffnungsplan auswendig zu lernen.
+2. Behandle zerstörte Einheiten als Information darüber, wo sich der Kampf konzentriert hat.
 
-| Phase | Ziel | Was abwerfen | Was zurückhalten |
-|---|---|---|---|
-| Eröffnung (0:00–0:20) | Sicht und eine Landetasche sichern | Günstige Aufklärung oder ein einzelner leichter Frame | Alle schweren Einheiten |
-| Kontakt (0:20–0:45) | Gegnerische Zusammensetzung bestätigen | Nichts, außer zur Verteidigung | Die volle Nutzlast |
-| Festlegung (0:45–1:30) | Den ersten echten Kampf gewinnen | Nahkämpfer plus Unterstützung | Belagerung und Kommandoeinheiten |
-| Konsolidierung (1:30+) | Den Sieg in Kartenkontrolle umwandeln | Verstärkungen an der neuen Front | Nichts – halte die Abklingzeit in Bewegung |
+Wie viel Wrack tatsächlich bestehen bleibt und ob es Bewegung oder Sichtlinie bedeutsam blockiert, ist auf der Store-Seite nicht dokumentiert. Du kannst es direkt überprüfen, indem du eine längere Schlacht spielst und beobachtest, ob sich das Layout des Schlachtfelds verändert.
 
-Drei Gewohnheiten lassen diesen Plan in der Praxis funktionieren:
+## Personalisierung und Build-Entscheidungen
 
-1. **Wirf für eine Entscheidung ab, nicht für ein Gefühl.** Wenn du nicht benennen kannst, was der Drop in den nächsten zwanzig Sekunden erreicht, warte, bis die Abklingzeit weiterläuft.
-2. **Lande dahinter, nicht darauf.** Direkt auf einer gegnerischen Formation zu landen bedeutet meist, innerhalb ihrer Feuerwinkel anzukommen. Hinter ihnen zu landen erzwingt eine Drehung, und eine sich drehende Armee ist eine verletzliche Armee.
-3. **Halte im Mid-Game einen Drop in Reserve.** Ein nicht ausgegebener Drop-Command ist eine Bedrohung; ein ausgegebener ist nur eine Erinnerung.
+Die Store-Seite besagt, dass Mech-, Panzer-, VTOL- und Battle-Armour-Einheiten personalisierbar sind. Sie listet keine Teile, Waffen oder Kosten auf und beschreibt kein Code-System, daher sollten Build-Guides, die konkrete Zahlen behaupten, mit Vorsicht behandelt werden. Guides von Drittanbietern können zur Orientierung nützlich sein, aber sie sind Beobachtungen statt Entwickler-Dokumentation.
 
-## Taktiken, Konter und häufige Fehler
-
-### Taktiken, die konsequent funktionieren
-
-- **Locke zuerst die Reaktion.** Stoße mit Bodeneinheiten vor, lass den Gegner sich festlegen und lande deinen Drop dann hinter dem Gefecht.
-- **Staple Ankunftsschaden.** Einheiten, die mit Aufprallschaden landen, wollen enge Cluster; ein enger Drop auf eine Unterstützungslinie kann sie löschen, bevor sie feuert.
-- **Kette Drops mit Fähigkeiten.** Stuns, Rauch und Flächenverweigerung, die mit einer Einheit erkauft werden, machen den nächsten Drop weit sicherer.
-- **Passe die Nutzlast an die Kartengeometrie an.** Offene Karten begünstigen schnelle Plänkler; Korridorkarten begünstigen Nahkämpfer, die eine Tür halten können.
-
-### Fehler, die Spiele verlieren
-
-- Schwere Einheiten in unausgekundschaftetes Gebiet abwerfen.
-- Die gesamte Nutzlast bei einem Ruf ausgeben, statt einen Rhythmus aufzubauen.
-- Den Abklingzeit-Timer ignorieren und zu spät zu einem Kampf kommen, der bereits vorbei ist.
-- Unterstützungs-Frames vor den Einheiten landen, die sie unterstützen sollen.
-- Den Drop-Command als Ersatz für Bodenpositionierung behandeln statt als Ergänzung dazu.
-
-### Wie man den Drop eines Gegners kontert
-
-Das Kontern von Drop-Command-Mech-Einheiten dreht sich hauptsächlich um Verweigerung. Halte Sicht auf wahrscheinlichen Landezonen, halte einen schnellen Reaktionstrupp in der Nähe deiner wertvollsten Strukturen und zwinge den Gegner, weiter weg zu landen, als er will. Anti-Luft- und Flächenverweigerungswerkzeuge existieren in den meisten Spielen genau aus diesem Grund. Das Ziel ist nicht, jeden Drop zu verhindern – es ist, jeden einzelnen mehr kosten zu lassen, als er einbringt.
+Angesichts des Combined-Arms-Rahmens ist das sicherste allgemeine Prinzip, Einheiten so zu bauen, dass sie einander ergänzen, statt ein starkes Muster zu duplizieren. Wenn deine Streitmacht Luft-, Boden- und infanteriebezogene Rollen abdeckt, sollten weniger Situationen dich ohne Antwort lassen.
 
 ## FAQ
 
-**Was sind Drop-Command-Mech-Einheiten?**
-Es sind Mech-Einheiten, die über einen speziellen Befehl eingesetzt werden, statt auf das Feld zu laufen – typischerweise per Orbital-Pod, Dropship oder Träger. Der Befehl hat üblicherweise Kosten, eine Abklingzeit und ein Nutzlastlimit, was Timing wichtiger macht als rohe Einheitenstärke.
+**Ist Drop Command dasselbe wie die mental-omega-Mod-Einheit?**
+Nein. Dieser Artikel behandelt nur das eigenständige Steam-Spiel von PillBugGames, App 1944880.
 
-**Wie viele Drop-Command-Mech-Einheiten sollte ich auf einmal einsetzen?**
-Die meisten Spieler fahren am besten mit einer kleinen, zielgerichteten Nutzlast: eine Einheit, die Raum hält, eine, die Schaden austeilt, und eine, die unterstützt. Große einzelne Drops sind leicht zu bestrafen, weil die ganze Formation dasselbe Ankunftsfenster und dieselben Fehler teilt.
+**Wie viele Einheiten oder Fraktionen gibt es im Spiel?**
+Die offizielle Store-Seite veröffentlicht keine Fraktionslisten oder Einheitenzahlen. Prüfe die Steam-Seite und Entwickler-Updates auf alles Bestätigte.
 
-**Können Drop-Command-Mech-Einheiten gekontert werden?**
-Ja. Sichtkontrolle, schnelle Reaktionstrupps und Anti-Luft- oder Flächenverweigerungswerkzeuge reduzieren alle den Wert eines Drops. Der effektivste Konter sind Informationen: Ein Gegner, der weiß, wo du landen wirst, kann dich dort mit den richtigen Einheiten treffen.
+**Gibt es veröffentlichte Werte oder Baukosten?**
+Nicht auf der Store-Seite. Die appdetails-Auflistung enthält keine Einheitenwerte, Schadens-Tabellen oder Baukosten, daher behandle alle solchen Zahlen, die du anderswo siehst, als unbestätigt.
 
-**Funktionieren Drop-Commands auch in rundenbasierten Mech-Spielen?**
-Ja, obwohl sich die Trade-offs verschieben. In rundenbasierten Systemen wird die Ankunftsverzögerung in Runden statt in Sekunden gemessen, also ist ein Drop eine Festlegung, die du mehrere Runden im Voraus planst, statt eine Reaktion. Das Kernprinzip bleibt: Lande dort, wo der Gegner nicht ist, und komm mit einem Ziel an.
+**Wann wurde es veröffentlicht?**
+Die offizielle Auflistung gibt den 28. September 2026 an.
+
+**Kann ich solo spielen?**
+Die beworbene Beschreibung besagt, dass du allein in den Kampf springen und auch einen Trupp oder eine Armee führen kannst. Die genaue Modus-Struktur ist auf der Store-Seite nicht detailliert.
+
+Der zuverlässigste nächste Schritt ist die offizielle Steam-Seite für Drop Command, wo die eigene Beschreibung und die Medien des Entwicklers die Autorität dafür bleiben, was das Spiel enthält und was nicht.

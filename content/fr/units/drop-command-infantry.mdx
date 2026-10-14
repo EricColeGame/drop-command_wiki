@@ -1,124 +1,75 @@
 export const metadata = {
-  title: "Guide de l'infanterie de largage : comment déployer, synchroniser et gagner avec les troupes aéroportées",
-  description: "Apprenez comment fonctionne l'infanterie de largage : timing de déploiement, rôles des unités, contres, et astuces pour transformer les insertions aéroportées en contrôle durable de la carte.",
+  title: "Drop Command : Guide pratique du combat interarmes en mech",
+  description: "Découvrez comment Drop Command mêle pilotage, constitution d'escouade et tactiques interarmes sur un champ de bataille destructible, et comment vérifier les détails par vous-même.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Qu'est-ce que la mécanique d'infanterie de largage ?
+Drop Command est un jeu de combat de mechs construit autour d'une promesse simple mais exigeante : vous combattez à grande échelle, et vous pouvez piloter n'importe quelle unité sous votre commandement. Développé par PillBugGames et sorti le 28 septembre 2026, il place la guerre interarmes et le contrôle personnel dans le même cadre. Cette combinaison façonne presque chaque décision que vous prenez, de la façon dont vous constituez une escouade au choix de larguer seul ou de mener une armée complète. Cet article explique ce que le jeu annonce réellement, ce que les joueurs en déduisent raisonnablement, et ce qui reste non documenté afin que vous puissiez le vérifier vous-même.
 
-Rien ne fait basculer un match plus vite qu'une escouade qui apparaît là où l'ennemi n'a pas de réponse prête. Un coup d'**infanterie de largage** transforme un coin vide de la carte en zone de rassemblement en quelques secondes, et une poussée bloquée en poussée décisive. Si vous avez déjà vu un transport décharger derrière vos lignes pendant que votre armée principale était engagée ailleurs, vous comprenez déjà pourquoi la mécanique d'**infanterie de largage** est l'un des outils les plus redoutés dans les jeux de stratégie et tactiques.
+## Ce qu'est réellement Drop Command
 
-À la base, la mécanique est une commande qui insère des unités d'infanterie directement sur le champ de bataille depuis une source hors carte — un vaisseau en orbite, un transporteur à haute altitude, un réseau de tunnels ou une porte de téléportation. Contrairement à la production normale, les unités ne marchent pas vers le combat. Elles arrivent à un point choisi, généralement après un court délai, et elles arrivent en tant qu'escouade complète plutôt qu'en un filet de remplacements.
+Selon la page officielle du magasin Steam, Drop Command est du combat de mechs à grande échelle. La description courte met en avant un combat interarmes où vous pilotez n'importe quelle unité sous votre commandement, allant de petites escarmouches à des batailles épiques. La même fiche décrit la construction d'un empire stellaire, le largage en combat seul ou à la tête d'une escouade ou d'une armée, et un champ de bataille évolutif avec des débris et des épaves d'unités entièrement destructibles.
 
-Ce seul choix de conception crée trois conséquences qui définissent tout bon largage :
+Les catégories d'unités prises en charge sont précises : Mechs, Tanks, VTOL et Battle Armour. La page du magasin annonce également des pilotes personnalisables et montables en niveau, le choix entre des escouades d'élite ou des recrues jetables, et la personnalisation à travers ces quatre types d'unités.
 
-- **La position devient une ressource.** Vous dépensez un temps de recharge ou une réserve de ressources pour acheter une position sur la carte, pas des dégâts bruts.
-- **Le largage est télégraphié.** Presque chaque implémentation a un marqueur visible, un son d'avertissement ou une minuterie de retard, ce qui donne au défenseur une fenêtre pour réagir.
-- **L'escouade larguée est seule.** Pas de renforts, pas de chemin de retraite, et souvent pas de réparation ou de soins jusqu'à ce que vous rejoigniez votre force principale.
+Voilà le périmètre vérifié. Notamment, la page officielle ne publie pas de statistiques d'unités, de tables de dégâts, de coûts de construction ni de système de codes. Si vous voyez un guide revendiquant des chiffres exacts, considérez-le comme une observation tierce plutôt qu'une documentation du développeur, et attendez-vous à ce qu'il ne corresponde pas à votre version.
 
-| Caractéristique | Ce que cela signifie en pratique | Pourquoi c'est important |
+## Piloter n'importe quelle unité sous votre commandement
+
+La fonctionnalité phare est le contrôle direct. Plutôt que de seulement donner des ordres à distance, vous pouvez prendre le cockpit ou le siège du conducteur de n'importe quelle unité que vous commandez. En pratique, cela reformule le combat interarmes comme un outil personnel : un Mech vous offre une présence durable en première ligne, les Tanks suggèrent des compromis entre puissance de feu au sol et mobilité, les VTOL impliquent une mobilité aérienne et un profil d'attaque différent, et le Battle Armour se lit comme un combat plus léger, à l'échelle de l'infanterie rapprochée.
+
+Ces suppositions de rôle proviennent des noms et des prémisses du combat interarmes, pas de données mesurées. Le développeur n'a pas publié de ventilation unité par unité sur la page du magasin. Si vous voulez savoir comment se comporte un châssis spécifique, la voie fiable est de l'essayer en match, de noter sa vitesse, sa durabilité et la sensation de ses armes, puis de le comparer vous-même aux autres.
+
+Une habitude utile est d'alterner entre chaque catégorie tôt. Parce que vous pouvez piloter n'importe quoi sous votre commandement, votre propre expérience devient la fiche technique. Ce n'est pas un raccourci contournant une documentation manquante ; c'est la manière prévue d'apprendre un jeu qui garde ses chiffres dans le client plutôt que sur la page du magasin.
+
+## Constitution d'escouade : vétérans ou recrues
+
+La description du magasin nomme deux approches contrastées : des escouades d'élite ou des recrues jetables. C'est une véritable bifurcation stratégique, et elle correspond à deux styles de jeu différents.
+
+| Approche | Forces probables | Risques probables |
 |---|---|---|
-| Arrivée hors carte | Les unités apparaissent à un point choisi plutôt qu'à un bâtiment de production | Contourne les points d'étranglement, les murs et la défense statique |
-| Fenêtre de télégraphie | Un marqueur ou une minuterie avertit le défenseur avant l'atterrissage | Les adversaires compétents peuvent se repositionner ou se disperser |
-| Escouade autonome | Le groupe atterrit avec un soutien limité et sans ligne d'approvisionnement | Les pertes sont permanentes et coûteuses |
-| Limité par temps de recharge | Généralement limité par une minuterie, un coût en ressources ou un nombre de charges | Vous force à choisir une cible de grande valeur |
-| Tempo élevé, faible endurance | Fort pour une poussée de pression, faible dans une guerre d'usure | Récompense les joueurs qui convertissent le largage en autre chose |
+| Escouades d'élite | L'expérience s'accumule au fil d'une campagne | Perdre des pilotes entraînés fait plus mal |
+| Ruées de recrues | Nombre bon marché et remplaçable | Moins fiables dans les combats prolongés |
 
-## Comment fonctionne une insertion d'infanterie de largage
+Ce sont des attentes raisonnées à partir du contraste annoncé, pas des mécaniques vérifiées. La page officielle n'indique pas comment fonctionne la montée en niveau des pilotes, à quel point les vétérans s'améliorent, ni comment le remplacement des recrues est géré. Elle affirme bien que les pilotes sont personnalisables et montables en niveau, donc construire et préserver l'expérience semble compter. Une expérience précoce raisonnable est de faire tourner une escouade à forte dominante de vétérans et une escouade à forte dominante de recrues dans des situations similaires, et de voir laquelle correspond à votre style de commandement.
 
-La plupart des jeux suivent la même boucle en quatre étapes, même lorsque la présentation diffère. Comprendre la boucle vous permet de planifier autour du délai au lieu d'être surpris par celui-ci.
+## Le champ de bataille évolutif et destructible
 
-| Étape | Action | Point d'échec courant |
-|---|---|---|
-| 1. Sélectionner la cible | Choisir une zone d'atterrissage près de l'objectif que vous voulez menacer | Choisir un endroit dans la vision ennemie ou dans des défenses qui se chevauchent |
-| 2. Confirmer le largage | Dépenser la ressource, la charge ou le temps de recharge pour verrouiller la commande | Lancer le largage « juste parce qu'il est disponible » |
-| 3. Attendre la fin de la télégraphie | Le marqueur apparaît et le défenseur obtient une courte fenêtre de réaction | Rester immobile au lieu de pré-positionner la force de suivi |
-| 4. Convertir l'atterrissage | Utiliser l'escouade larguée pour prendre un nœud de ressources, sniper une unité clé ou forcer une rotation | Laisser l'escouade inactive jusqu'à ce qu'elle soit encerclée et tuée |
+Drop Command annonce des débris et des épaves d'unités entièrement destructibles sur un champ de bataille évolutif. Cela compte tactiquement, même sans statistiques publiées. Si les débris et les épaves persistent, la carte change à mesure qu'un combat s'éternise : des couverts peuvent apparaître, des couloirs peuvent se fermer, et le terrain que vous avez repéré au début peut ne plus exister plus tard.
 
-La partie la plus importante de ce tableau est l'étape quatre. Un largage qui atterrit et ne fait rien est pire que pas de largage du tout, car vous avez échangé un long temps de recharge contre une escouade maintenant piégée derrière les lignes ennemies. La valeur de la commande d'**infanterie de largage** n'est pas l'atterrissage — c'est ce que l'atterrissage force votre adversaire à faire ensuite.
+Considérez cela comme une invitation à relire le champ de bataille plutôt que de vous engager sur un seul plan. Le jeu interarmes récompense déjà l'association de la bonne unité au bon poste ; un terrain changeant ajoute le timing à cette décision. Un Mech qui ancrait une position tôt peut devoir se repositionner une fois son couvert disparu. Là encore, le comportement exact n'est pas documenté, donc le conseil honnête est d'observer comment les débris et les épaves interagissent avec le mouvement et les lignes de tir dans vos propres matchs.
 
-Avant de vous engager, vérifiez trois choses :
+## Raisonnement interarmes sans chiffres inventés
 
-- **Vision.** Savez-vous réellement ce qui se trouve dans la zone d'atterrissage, ou devinez-vous ?
-- **Distance de renfort.** Combien de temps avant que votre armée principale puisse atteindre l'escouade larguée ?
-- **Mobilité ennemie.** Leurs unités les plus rapides peuvent-elles pivoter vers le largage plus vite que vous ne pouvez l'exploiter ?
+Parce que la page officielle retient les statistiques d'unités, les valeurs de dégâts et les coûts de construction, tout conseil tactique ici relève d'un raisonnement général à partir des prémisses du combat interarmes. Cela reste utile si vous l'appliquez avec prudence.
 
-## Rôles des unités d'infanterie de largage : quoi charger dans la soute
+Commencez par les rôles plutôt que par la puissance brute. Une force équilibrée veut généralement quelque chose de durable pour tenir le terrain, quelque chose de mobile pour presser les flancs, et quelque chose capable d'atteindre des cibles que les autres ne peuvent pas toucher. Les quatre catégories annoncées vous donnent des candidats naturels pour ces postes. Ensuite, laissez le contrôle direct combler les lacunes : si un combat s'enlise, piloter l'unité la mieux adaptée au moment est souvent plus décisif que d'ajouter plus de ce que vous avez déjà.
 
-La composition de l'escouade larguée compte autant que l'emplacement. Comme vous ne pouvez pas renforcer en plein combat, chaque emplacement doit avoir un rôle clair. Les rapports de la communauté des joueurs de stratégie et tactiques favorisent systématiquement les petites escouades spécialisées plutôt que les grandes escouades polyvalentes.
+Évitez le piège de traiter une seule catégorie comme strictement la meilleure. Dans les jeux interarmes, la domination vient généralement de la composition et du timing, pas d'une unité imbattable. Comme aucune liste de factions ni arbre technologique n'est publié, attendez-vous aussi à découvrir le roster par le jeu plutôt que via une base de données de type wiki.
 
-| Rôle de l'unité | Idéal contre | Faiblesse principale | Taille de largage idéale |
-|---|---|---|---|
-| Spécialistes anti-structures | Bâtiments de production et nœuds de ressources non défendus | Lents contre les défenseurs mobiles | Petite, 1–2 escouades |
-| Infanterie de ligne à distance | Défenses statiques et unités légères regroupées | Vulnérables une fois que le corps à corps se rapproche | Moyenne, 2–3 escouades |
-| Troupes de mêlée ou d'assaut | Unités à distance isolées et équipes de soutien | Abattues en terrain découvert par un tir concentré | Petite, 1–2 escouades |
-| Ingénieurs ou soutien | Réparer les structures capturées, poser des charges, construire un abri avancé | Presque aucune valeur au combat seuls | Minimale, 1 escouade |
-| Armes mixtes | Harcèlement général et interdiction de zone | Coûteux ; une perte partielle fait très mal | Moyenne, 2–4 escouades |
+## Comment vérifier les détails vous-même
 
-Une règle empirique utile : si l'escouade larguée ne peut pas accomplir sa tâche en environ trente secondes sans aide, elle est trop grande. Les grands largages sont visibles, lents à manœuvrer et faciles à encercler. Les petits largages qui forcent une réaction sont presque toujours meilleurs que les gros largages qui tentent de gagner le combat seuls.
-
-## Fenêtres de timing : quand un coup d'infanterie de largage porte ses fruits
-
-Le timing est l'endroit où la plupart des joueurs gagnent ou perdent de la valeur. La même escouade larguée au mauvais moment est un temps de recharge gaspillé ; larguée au bon moment, elle met fin à la partie.
-
-| Fenêtre de timing | Pourquoi ça marche | Niveau de risque |
-|---|---|---|
-| Pendant que l'armée ennemie est engagée dans un combat ailleurs | Les défenseurs ne peuvent pas pivoter sans perdre l'engagement principal | Faible |
-| Au moment où une structure défensive clé se termine ou est sur le point de se terminer | Vous annulez un investissement avant qu'il ne porte ses fruits | Moyen |
-| Juste après que l'ennemi a dépensé son temps de recharge de détection ou anti-aérien | Leur meilleure réponse est indisponible | Faible |
-| Pendant une poussée d'expansion de ressources | Vous forcez une réponse divisée et ralentissez leur économie | Moyen |
-| En fin de partie, lorsque leur armée principale est entièrement améliorée | L'infanterie larguée fond face aux unités améliorées | Élevé |
-| Immédiatement au début du match sans suivi prévu | Vous gagnez une petite distraction et perdez du tempo | Élevé |
-
-Remarquez le schéma : les largages sont plus forts lorsqu'ils créent un dilemme plutôt qu'un combat. Si votre adversaire peut répondre au largage sans rien abandonner, le coup était neutre au mieux. Si répondre au largage signifie abandonner un siège, perdre un nœud de ressources ou faire demi-tour à son armée, vous avez déjà gagné quelque chose, que l'escouade survive ou non.
-
-## Contre-jeu : défendre contre une ruée d'infanterie de largage
-
-Savoir comment défendre vous rend meilleur en attaque, car vous apprenez quelles cibles ne valent pas la peine d'être frappées. Chaque largage a une réponse bon marché si vous le voyez venir.
-
-| Menace | Contre pratique | Notes |
-|---|---|---|
-| Marqueur de télégraphie repéré tôt | Dispersez les ouvriers et retirez les unités de la zone d'explosion ou d'atterrissage | Prive le largage de sa cible entièrement |
-| Largage visant un nœud de ressources non défendu | Pré-placez une petite garnison ou une défense statique à proximité | Assurance bon marché qui rapporte toute la partie |
-| Largage sur votre production principale | Gardez une escouade à réponse rapide en attente | La mobilité bat la défense statique ici |
-| Largages répétés sur le même flanc | Établissez une couverture de détection et de vision de ce côté | Supprime l'avantage informationnel de l'attaquant |
-| Largage synchronisé avec une poussée frontale | Ne poursuivez pas le largage ; tenez d'abord la ligne de front | Diviser votre armée est exactement ce qu'ils veulent |
-
-L'erreur défensive la plus courante est de surréagir. Ramener toute votre armée pour tuer une escouade larguée donne la carte à votre adversaire. Envoyez la force minimale requise pour contenir l'atterrissage, et gardez votre corps principal concentré sur le combat qui compte vraiment.
-
-## Erreurs courantes et conseils pratiques
-
-Même les joueurs expérimentés perdent de la valeur avec cette mécanique. Voici quoi corriger en premier.
-
-- **Ne larguez pas sans suivi.** Planifiez votre prochain mouvement avant que l'escouade n'atterrisse.
-- **Ne larguez pas dans le brouillard de guerre.** Les défenses invisibles et les unités cachées transforment une insertion propre en anéantissement.
-- **Ne larguez pas la même cible deux fois de suite.** Les largages prévisibles sont contrés à l'avance.
-- **Utilisez le largage pour gagner du temps, pas seulement pour infliger des dégâts.** Forcer une rotation est une victoire même si l'escouade meurt.
-- **Associez l'atterrissage à de la vision.** Une unité de reconnaissance bon marché à proximité rend le largage deux fois plus efficace.
-- **Revoyez le replay.** Vérifiez si le temps de recharge que vous avez dépensé valait ce que vous avez récupéré.
-
-| Niveau de compétence | Erreur typique | Meilleure habitude |
-|---|---|---|
-| Débutant | Larguer sur le bâtiment ennemi le plus proche | Larguer sur l'objectif qui compte le plus |
-| Intermédiaire | Larguer sans deuxième vague prête | Pré-positionner les renforts avant que le marqueur n'apparaisse |
-| Avancé | Abuser d'un seul schéma de largage | Alterner les zones d'atterrissage pour rester imprévisible |
-
-Pour un contexte plus large sur la façon dont ces mécaniques s'intègrent au genre stratégie dans son ensemble, [le hub de catégorie stratégie de Steam](https://store.steampowered.com/tags/en/Strategy/) est un endroit utile pour comparer comment différents titres gèrent le déploiement hors carte et le renfort des unités.
+Quand une affirmation sur Drop Command ne figure pas sur la page officielle, la vérification est simple. Consultez la fiche Steam à https://store.steampowered.com/app/1944880/ pour les termes mêmes du développeur. Puis confirmez directement le comportement en jeu : pilotez chaque type d'unité, testez la montée en niveau des pilotes, et observez comment les débris et les épaves destructibles affectent une bataille. Si un guide tiers contredit ce que vous observez, faites confiance à vos propres tests et attribuez au guide un statut secondaire.
 
 ## FAQ
 
-**L'infanterie de largage vaut-elle la peine d'être utilisée dans chaque match ?**
-Non. C'est un outil de tempo, pas une réponse universelle. Si votre adversaire a une forte défense anti-aérienne, une large couverture de vision et des unités à rotation rapide, le temps de recharge est souvent mieux dépensé en production conventionnelle. Utilisez-la lorsque l'ennemi est étiré.
+**Qui développe Drop Command ?**
+PillBugGames, selon la page Steam officielle.
 
-**Combien d'escouades un seul coup d'infanterie de largage devrait-il inclure ?**
-Généralement une à trois. Les petites escouades sont plus difficiles à repérer, plus faciles à repositionner et moins coûteuses à perdre. Les grands largages n'ont de sens que lorsque vous êtes confiant que la zone d'atterrissage est sûre et que vous avez des renforts en route.
+**Quand est-il sorti ?**
+Le 28 septembre 2026, d'après les appdetails Steam.
 
-**Quelle est la meilleure cible pour un largage ?**
-La cible qui force la plus grande réaction : un nœud de ressources non défendu, un bâtiment de production clé ou une ligne de siège qui ne peut pas faire demi-tour à temps. Les dégâts sont secondaires par rapport à la décision que vous forcez.
+**Puis-je piloter n'importe quelle unité ?**
+La page du magasin indique que vous pouvez piloter n'importe quelle unité sous votre commandement, parmi les Mechs, Tanks, VTOL et Battle Armour.
 
-**Une poussée d'infanterie de largage peut-elle gagner une partie à elle seule ?**
-Rarement. Elle crée une ouverture, et les ouvertures doivent être converties. Associez le largage à une poussée frontale, une expansion ou un timing technologique pour que la pression s'accumule au lieu de s'estomper.
+**Les statistiques d'unités ou les coûts de construction sont-ils publiés ?**
+Non. La page officielle ne liste pas de statistiques, de tables de dégâts, de coûts de construction ni de système de codes.
 
-**Comment arrêter de perdre des escouades à cause des largages ?**
-Gardez de la vision sur vos flancs, garnissez légèrement vos expansions et gardez toujours une unité à réponse rapide en réserve. La plupart des largages échouent dès que le défenseur les voit venir et refuse simplement de mordre à l'hameçon.
+**Y a-t-il un système de codes ?**
+Non documenté. Ne vous fiez à aucune liste de codes que vous trouvez tant que le développeur n'en publie pas une.
+
+**Dois-je utiliser des vétérans ou des recrues ?**
+Les deux sont annoncés comme viables. Testez chacun et décidez selon la valeur que vous accordez à l'expérience par rapport à des effectifs remplaçables.
+
+Drop Command récompense les joueurs qui apprennent en faisant. Utilisez la page officielle comme source de vérité, traitez les guides comme secondaires, et laissez votre propre temps de cockpit combler les chiffres que le développeur n'a pas publiés.

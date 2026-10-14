@@ -1,134 +1,84 @@
 export const metadata = {
-  title: "Améliorations de la commande de drop : le guide complet de progression pour les administrateurs de serveur et les joueurs",
-  description: "Découvrez comment fonctionnent les améliorations de la commande de drop dans les jeux : paliers de permissions, temps de recharge, tables de butin et parcours de progression qui gardent l'apparition d'objets équitable et amusante.",
+  title: "Drop Command : un guide pratique du combat interarmes en mech",
+  description: "Drop Command est le jeu de combat interarmes à grande échelle de PillBugGames. Voici comment fonctionnent ses systèmes annoncés et comment raisonner le jeu.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Ce que fait réellement une commande de drop
+Drop Command est un jeu Steam du développeur PillBugGames, sorti le 28 septembre 2026. Son argument est inhabituellement large pour le genre mech : au lieu de vous enfermer dans une seule machine, il vous permet de piloter n'importe quelle unité sous votre commandement, de livrer des combats allant de petites escarmouches à de grandes batailles, et de vous déployer seul ou de mener une escouade ou une armée. Cette combinaison d'échelle et de flexibilité constitue toute l'identité du jeu, et elle façonne la façon dont vous devriez envisager d'y jouer.
 
-Une commande de drop est ce petit bout de texte qui décide si un objet tombe au sol, apparaît dans un coffre ou glisse directement dans l'inventaire d'un joueur — et dès qu'un serveur dépasse une poignée de personnes, cette minuscule commande devient l'un des outils les plus détournés du jeu. Si vous gérez une communauté ou que vous farmez dans un long monde de survie, comprendre les améliorations de la commande de drop fait la différence entre une économie saine et un pillage généralisé. Bien maîtriser la progression compte, car l'apparition d'objets se situe à l'intersection de la récompense du joueur, des performances du serveur et de la confiance.
+Vous trouverez la page officielle du magasin ici : [Drop Command sur Steam](https://store.steampowered.com/app/1944880/). Tout ce qui suit distingue ce que le développeur annonce réellement de ce qui n'est tout simplement pas publié, afin que vous sachiez où s'arrêtent les faits et où commence une inférence raisonnable.
 
-La commande elle-même est rarement compliquée. Vous tapez un mot-clé, vous la pointez vers un objet ou un pool de butin, et le jeu place l'objet dans le monde ou le remet à un joueur ciblé. La vraie complexité réside dans les règles qui l'entourent : qui peut l'exécuter, à quelle fréquence, ce qu'il reçoit, et ce qui se passe quand quelqu'un tente de l'exploiter.
+## Ce qu'est réellement Drop Command
 
-La plupart des implémentations prennent l'une de ces quelques formes reconnaissables :
+La description vérifiée du magasin est précise sur le principe. Drop Command est « du combat de mechs à grande échelle », construit autour d'un combat interarmes où vous pilotez n'importe quelle unité sous votre commandement. Les batailles vont de petites escarmouches à des batailles épiques. Vous pouvez vous déployer au combat seul, mener une escouade ou commander une armée.
 
-- **Injection dans l'inventaire** — l'objet va directement dans l'inventaire d'un joueur, sans entité dans le monde.
-- **Apparition dans le monde** — l'objet apparaît à des coordonnées, au sol ou dans un conteneur.
-- **Tirages de butin** — la commande consulte une table pondérée au lieu d'un ID d'objet fixe.
-- **Drops par bot de chat** — un bot publie une récompense réclamable que les membres de la communauté se précipitent pour récupérer.
+Il annonce également un champ de bataille évolutif avec des débris et des épaves d'unités entièrement destructibles, des pilotes personnalisables et améliorables, le choix entre des escouades d'élite et des recrues jetables, et la personnalisation des Mechs, Tanks, VTOL et Armures de combat.
 
-| Forme | Déclencheur typique | Idéal pour | Risque principal |
-|---|---|---|---|
-| Injection dans l'inventaire | Commande du staff ou en libre-service | Restaurer des objets perdus, récompenses | Duplication silencieuse |
-| Apparition dans le monde | Coordonnées ou position du joueur | Événements, arènes, tests | Piles d'objets et lag |
-| Tirage de butin | Consultation d'une table pondérée | Coffres, boss, récompenses quotidiennes | Probabilités déséquilibrées |
-| Drop par bot de chat | Message ou réaction | Concours communautaires | Snipe, comptes secondaires |
+C'est l'ensemble complet des fonctionnalités annoncées. Notamment, il vous indique les *catégories* d'unités (Mech, Tank, VTOL, Armure de combat) mais pas leurs statistiques, et il décrit la progression (des pilotes qui montent en niveau, des escouades que vous constituez) sans publier aucun chiffre. Si vous voulez savoir ce que fait un équipement spécifique, la page du magasin ne vous le dira pas — vous devez le tester en jeu.
 
-Savoir quelle forme vous utilisez, c'est l'étape zéro. On ne peut pas améliorer un système qu'on n'a pas identifié.
+## Le principe interarmes en pratique
 
-## Pourquoi les améliorations de la commande de drop stimulent la progression
+Les armes combinées sont un véritable concept militaire : différents types d'unités couvrent mutuellement leurs faiblesses. Comme Drop Command nomme explicitement quatre catégories d'unités et vous laisse commander n'importe laquelle d'entre elles, la lecture naturelle est qu'aucun châssis unique ne domine toutes les situations.
 
-La progression fonctionne ici dans deux directions. Pour les joueurs, les améliorations sont un accès mérité — une échelle de confiance qui transforme un simple interrupteur « tu peux faire apparaître des objets » en un ensemble de privilèges avec des noms, des conditions et des limites. Pour les admins, les améliorations sont des dispositifs de sécurité débloqués au fil du temps : journalisation, limites de fréquence, restauration et pistes d'audit.
+C'est un raisonnement général à partir du principe, pas des données mesurées. Mais cela vous donne une manière sensée d'aborder les combats :
 
-L'astuce consiste à traiter les deux échelles comme un seul système. Quand un joueur atteint un palier supérieur, il doit ressentir un vrai gain de confort. Quand un admin débloque un nouveau contrôle, il doit combler un trou laissé ouvert par le palier précédent. Une amélioration de commande de drop qui ne fait ni l'un ni l'autre n'est que de la décoration.
+- **Les Mechs** sont les traditionnels polyvalents du genre, échangeant généralement la vitesse contre la durabilité et la puissance de feu.
+- **Les Tanks** privilégient habituellement le blindage terrestre et le tir direct.
+- **Les VTOL** impliquent une mobilité aérienne, ce qui tend à signifier vitesse et angles verticaux au prix de l'endurance.
+- **Les Armures de combat** suggèrent de petites unités à l'échelle de l'infanterie — bon marché, nombreuses ou spécialisées.
 
-| Palier | Ce qui se débloque | Condition typique | Qui ressent la différence |
-|---|---|---|---|
-| Palier 0 — Base | Drop personnel ou usage réservé au staff | Accès par défaut | Tout le monde |
-| Palier 1 — De confiance | Petit pool d'objets, temps de recharge long | Temps de jeu ou rang d'entrée | Joueurs réguliers |
-| Palier 2 — Vérifié | Pool plus large, temps de recharge plus court | Activité plus vérification | Membres actifs |
-| Palier 3 — Staff | Drops en masse et drops ciblant autrui | Nomination manuelle | Modérateurs |
-| Palier 4 — Automatisé | Drops planifiés, hooks API ou scripts | Configuration côté serveur | Organisateurs d'événements |
+Aucun de ces traits n'est confirmé spécifiquement pour Drop Command. Le point est que si le jeu tient ce que « armes combinées » signifie, mélanger les catégories devrait combler les lacunes qu'une force d'un seul type laisse ouvertes. La meilleure façon de le confirmer est de dérouler le même scénario deux fois avec des compositions différentes et d'observer ce qui craque.
 
-Les noms de paliers varient énormément d'une communauté à l'autre : considérez ce tableau comme un modèle, pas comme une norme. L'important est que chaque échelon ait une condition de déblocage claire et un plafond clair.
+## Pilotes, vétérans et recrues
 
-## Les catégories d'améliorations qui comptent le plus
+Deux systèmes annoncés interagissent ici : les pilotes sont « personnalisables et améliorables », et vous choisissez entre « escouades d'élite ou recrues jetables ».
 
-### Permissions et paliers d'accès
+Lus ensemble, cela suggère un compromis risque-récompense. Les vétérans sont vraisemblablement plus capables mais représentent du temps investi ; les recrues sont vraisemblablement sacrifiables mais moins efficaces. C'est une inférence à partir du libellé, pas une mécanique documentée.
 
-Les nœuds de permission sont la colonne vertébrale de toute amélioration de la commande de drop. Plutôt que d'accorder une permission globale, vous divisez l'accès en un nœud de base plus des nœuds de palier qui se cumulent les uns sur les autres. Cela permet de révoquer un seul palier sans retirer à quelqu'un l'accès complet à la commande.
+Une approche pratique que de nombreux joueurs adoptent dans les jeux à cette structure : utiliser les recrues là où des pertes sont attendues et les vétérans là où un combat est gagnable mais coûteux à perdre. Comme la page du magasin n'indique pas comment fonctionne la montée en niveau des pilotes ni ce qui se passe quand un pilote amélioré meurt, considérez toute affirmation spécifique sur les courbes d'XP ou les pénalités de mort comme non vérifiée. Vous pouvez consulter directement l'écran des pilotes en jeu.
 
-| Modèle | Objectif | Nœud illustratif | Remarques |
-|---|---|---|---|
-| Nœud de base | Accorde la commande de base | `drop.use` | À garder hors des groupes par défaut |
-| Nœud de palier | Débloque un pool plus large | `drop.tier.2` | Se cumule avec le nœud de base |
-| Nœud de temps de recharge | Remplace le minuteur par défaut | `drop.cooldown.short` | Hérite des paliers inférieurs |
-| Nœud admin | Drops en masse et ciblant autrui | `drop.admin` | Journaliser chaque utilisation |
-| Nœud de contournement | Ignore complètement les limites de fréquence | `drop.bypass` | À réserver à un ou deux comptes |
-
-Les noms de nœuds ci-dessus sont des exemples — la syntaxe réelle de votre plateforme sera différente. C'est la structure qui se transpose.
-
-### Temps de recharge et limites de fréquence
-
-Une commande de drop sans temps de recharge est un moteur de duplication qui ne demande qu'à se déclencher. La conception du temps de recharge est un véritable compromis entre la générosité ressentie du système et la charge de modération qu'il génère.
-
-| Style de temps de recharge | Ressenti du joueur | Charge admin | Idéal pour |
-|---|---|---|---|
-| Minuteur fixe | Prévisible | Faible | Petits serveurs |
-| Minuteur progressif | Équitable, pénalise le spam | Faible | Communautés de taille moyenne |
-| Système de charges ou jetons | Gratifiant | Moyenne | Serveurs axés sur la progression |
-| Fenêtres réservées aux événements | Excitant et rare | Élevée | Événements saisonniers |
-
-### Tables de butin et pools d'objets
-
-Dès que votre commande peut puiser dans une table, la rareté devient un choix de design plutôt qu'un accident. Les entrées pondérées, les paliers croissants et les systèmes de pitié vivent tous ici. La plainte la plus fréquente des communautés n'est pas que les objets rares sont trop rares — c'est que personne n'a publié les probabilités. Documentez-les.
-
-### Journalisation, restauration et anti-duplication
-
-Chaque amélioration de la commande de drop devrait s'accompagner d'une entrée de journal : qui l'a exécutée, quand, sur quelle cible et avec quel résultat. Les journaux transforment les litiges en preuves et rendent la restauration possible. Si votre plateforme prend en charge les identifiants de transaction, enregistrez-les — ils rendent l'analyse des duplications nettement plus facile.
-
-## Construire votre parcours d'amélioration de la commande de drop
-
-Déployez les améliorations dans l'ordre. Sauter des étapes signifie généralement devoir tout reconstruire plus tard.
-
-| Étape | Action | Pourquoi c'est important | Terminé quand |
-|---|---|---|---|
-| 1 | Auditer les accès actuels | On ne peut pas sécuriser ce qu'on ne voit pas | Vous avez la liste de tous les groupes ayant accès |
-| 2 | Diviser les permissions en paliers | Transforme un interrupteur en échelle | Chaque rang a son propre nœud |
-| 3 | Définir un temps de recharge par défaut | Stoppe le spam avant qu'il ne commence | Les minuteurs apparaissent dans la sortie de commande |
-| 4 | Passer à des tables de butin pondérées | Ajoute de la rareté sans nouvelles commandes | Les probabilités sont documentées publiquement |
-| 5 | Activer la journalisation | Crée de la responsabilité | Chaque drop a un horodatage et un acteur |
-| 6 | Revoir et rééquilibrer | Garde le système honnête | Un court changelog daté existe |
-
-Quelques conseils pratiques qui font gagner du temps :
-
-- Testez chaque nouveau palier sur une copie de préproduction avant de toucher au serveur en production.
-- Annoncez les améliorations publiquement — les joueurs qui savent que l'échelle existe la graviront.
-- Limitez le nœud de contournement au plus petit nombre de comptes possible.
-- Revérifiez vos temps de recharge après chaque mise à jour de contenu majeure, car les nouveaux objets changent les calculs.
-
-Si vous travaillez spécifiquement dans Minecraft, la documentation des commandes du Wiki Minecraft est la référence à consulter avant d'écrire une syntaxe personnalisée, car le comportement peut varier d'une édition à l'autre.
-
-## Erreurs courantes et retours de la communauté
-
-La plupart des échecs remontent à la même poignée de causes. Les retours de communautés de survie, de roleplay et de factions tournent toujours autour de la même liste.
-
-| Erreur | Ce qui se passe | La solution |
+| Fonctionnalité annoncée | Ce que cela signifie pour la planification | Détail documenté |
 |---|---|---|
-| Une permission globale | Toute personne de confiance peut faire apparaître n'importe quoi | Diviser en nœuds de base plus paliers |
-| Aucun temps de recharge au palier un | Le spam précoce inonde l'économie | Appliquer un minuteur fixe dès le premier jour |
-| Probabilités de butin non documentées | Les joueurs imaginent le pire | Publier les pondérations et les règles de pitié |
-| Journalisation ajoutée en dernier | Les exploits restent invisibles pendant des mois | Activer la journalisation avant les améliorations |
-| Ignorer la dérive de la valeur des objets | Les anciens drops deviennent sans valeur | Rééquilibrer après les mises à jour de contenu |
+| Piloter n'importe quelle unité sous votre commandement | Vous n'êtes pas enfermé dans un seul châssis | Quelles unités, et quand, n'est pas publié |
+| Pilotes personnalisables et améliorables | Investissement à long terme dans des individus | Les règles de montée en niveau ne sont pas publiées |
+| Escouades d'élite ou recrues jetables | Un choix délibéré qualité-contre-quantité | Coûts et efficacité ne sont pas publiés |
+| Débris et épaves destructibles | Le champ de bataille change au fil du combat | Aucune mécanique ni chiffre publié |
 
-**Note sur l'expérience joueur** : dans de nombreuses communautés, la seule amélioration que les joueurs remarquent le plus est un temps de recharge plus court — pas un pool d'objets plus grand. La rapidité fait plus d'effet que le volume. Cela vaut la peine de s'en souvenir quand vous décidez où investir votre prochaine heure de développement.
+## Lire le champ de bataille évolutif
 
-Il y a aussi une dimension sociale. Une commande de drop que seul le staff peut exécuter crée un écart de pouvoir visible. Même un palier en libre-service modeste, strictement limité, tend à réduire les accusations de favoritisme et à diminuer les tickets de support demandant un coup de pouce.
+« Champ de bataille évolutif avec des débris et des épaves d'unités entièrement destructibles » est l'une des affirmations les plus concrètes de la description, et elle a des conséquences tactiques même sans chiffres. Si les débris et les épaves persistent, la couverture n'est pas statique. Une position qui était dégagée au début d'un engagement peut être encombrée plus tard — ou une unité détruite peut elle-même devenir un obstacle.
+
+La réserve honnête : PillBugGames n'a pas précisé si les épaves bloquent le mouvement, bloquent la ligne de vue, peuvent être dégagées, ou n'affectent que le visuel. Ce sont exactement les questions à tester dans une escarmouche à faible enjeu avant d'engager une armée. Lancez un petit combat, détruisez quelque chose de gros, et observez si vos unités le contournent.
+
+## Construire autour de l'incertitude
+
+Parce qu'aucune statistique d'unité, table de dégâts, coût de construction, arbre technologique, liste de factions ou système de code n'est publié, quiconque prétend détenir des chiffres exacts travaille à partir de suppositions de tiers ou les invente. Les guides tiers peuvent être utiles comme observation secondaire, mais ils ne constituent pas de la documentation de développeur et peuvent refléter une version précoce.
+
+La méthode sûre consiste à traiter le jeu comme un exercice de test d'hypothèses au début :
+
+1. Commencez par de petites escarmouches, ce que la description soutient explicitement.
+2. Changez une variable à la fois — une catégorie d'unité ou une qualité d'escouade.
+3. Observez ce que fait l'environnement destructible au cours d'un long combat.
+4. Passez à des batailles plus grandes seulement une fois que vous comprenez les pièces.
+
+C'est un raisonnement général à partir d'un principe interarmes. Ce n'est pas une garantie de succès, et ce n'est pas un substitut aux infobulles et tutoriels du jeu lui-même.
 
 ## FAQ
 
-**Qu'est-ce qu'une amélioration de commande de drop, exactement ?**
-Une amélioration de commande de drop est tout changement qui élargit ou restreint ce que la commande peut faire — un nouveau palier de permission, un temps de recharge plus court, une table de butin pondérée ou une journalisation ajoutée. Les améliorations peuvent être obtenues par les joueurs via la progression ou débloquées par les admins à mesure que le serveur mûrit.
+**Qui a développé Drop Command et quand est-il sorti ?**
+PillBugGames, sorti le 28 septembre 2026 sur Steam. L'ID de l'application est 1944880.
 
-**Ai-je besoin d'améliorations de commande de drop si mon serveur est minuscule ?**
-Oui, même si vous pouvez commencer petit. Même une configuration modeste — une permission de base, un temps de recharge fixe et une journalisation de base — évite les erreurs précoces qu'il est pénible de défaire une fois votre base de joueurs développée. Rajouter de la sécurité après coup sur une économie établie est bien plus difficile que de l'intégrer dès le départ.
+**Puis-je piloter n'importe quelle unité ?**
+La description indique que vous pouvez piloter n'importe quelle unité sous votre commandement, y compris les Mechs, Tanks, VTOL et Armures de combat. Les règles exactes de changement ne sont pas publiées.
 
-**À quelle fréquence dois-je rééquilibrer les probabilités de butin ?**
-Revoyez-les après chaque mise à jour de contenu importante, et environ une fois par saison le reste du temps. Les nouveaux objets changent vite la valeur relative, et des probabilités qui semblaient généreuses il y a six mois peuvent paraître mesquines — ou exploitables — aujourd'hui.
+**Existe-t-il des statistiques d'unité ou des coûts de construction publiés ?**
+Non. La page officielle du magasin ne publie pas de statistiques d'unité, de tables de dégâts, de coûts de construction, d'arbres technologiques ni de système de code. Vérifiez tout chiffre en jeu.
 
-**Les améliorations de commande de drop peuvent-elles casser des sauvegardes ou des inventaires existants ?**
-Modifier les permissions et les temps de recharge est généralement sans risque. Modifier les pools d'objets ou les pondérations des tables peut changer ce que produiront les futurs drops, mais cela n'altère normalement pas les objets déjà présents dans le monde. Testez toujours sur une copie d'abord, et gardez une sauvegarde avant de déployer.
+**Est-ce la même chose que l'unité de mod mental-omega ?**
+Non. Drop Command de PillBugGames est un jeu Steam autonome et n'est pas cette unité de mod.
 
-**Qui devrait obtenir la permission de contournement ?**
-Le moins de comptes possible — idéalement un ou deux, liés à un rôle nommé plutôt qu'à un individu. Chaque contournement que vous accordez est un trou dans votre limitation de fréquence, et les trous sont exactement ce que l'échelle d'amélioration de la commande de drop existe pour fermer.
+**Puis-je jouer en solo ?**
+La description indique explicitement que vous pouvez vous déployer au combat seul, donc le jeu en solo est annoncé.
+
+Pour des détails faisant autorité, consultez toujours d'abord la [page Steam officielle](https://store.steampowered.com/app/1944880/).

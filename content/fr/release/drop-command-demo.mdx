@@ -1,125 +1,87 @@
 export const metadata = {
-  title: "Démo de la commande DROP : comment fonctionne l'instruction SQL DROP et comment l'utiliser en toute sécurité",
-  description: "Une démo pratique de la commande drop couvrant SQL DROP TABLE, DROP DATABASE, MongoDB et Redis, ainsi que les vérifications de sécurité qui vous évitent de supprimer le mauvais objet.",
+  title: "Drop Command : un guide pratique du combat interarmes de mechs",
+  description: "Comment Drop Command gère la guerre de mechs à grande échelle, du pilotage de n'importe quelle unité à la constitution d'escouades de vétérans, et ce que la page officielle documente ou non.",
   category: "release",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Peu d'outils dans la boîte à outils d'un ingénieur de base de données sont aussi décisifs que la commande DROP. Elle supprime un objet — une table, une vue, un index, une base de données entière — en une fraction de seconde, et elle demande rarement confirmation deux fois. Exécuter une démo de la commande drop dans un environnement jetable est la façon la moins coûteuse d'apprendre cette leçon avant de l'apprendre à vos dépens en production.
+Drop Command est un jeu Steam du développeur PillBugGames, sorti le 28 septembre 2026 sous l'ID d'application 1944880. Son argument est simple mais ambitieux : du combat de mechs à grande échelle, avec des batailles interarmes où vous pouvez piloter n'importe quelle unité sous votre commandement. Cette seule phrase change la façon dont vous devriez aborder le jeu, car elle signifie que l'état d'esprit traditionnel du « vous êtes un seul soldat » ne s'applique pas entièrement ici. Vous n'êtes pas enfermé dans un seul châssis pour toute une campagne, et vous ne combattez pas nécessairement seul.
 
-Une bonne démo de la commande drop montre deux choses à la fois : la syntaxe exacte qui supprime un objet, et les conséquences qui s'ensuivent. L'objet a disparu, le code dépendant commence à lever des erreurs, et l'espace disque peut ou non être récupéré. Ce guide parcourt l'ensemble du tableau pour que vous puissiez exécuter la commande avec confiance plutôt qu'avec les doigts croisés.
+Ce qui suit s'appuie sur la description officielle vérifiée de la [page Steam de Drop Command](https://store.steampowered.com/app/1944880/) ainsi que sur un raisonnement général quant à la manière dont les jeux interarmes ont tendance à fonctionner. Tout ce que la page du magasin ne publie pas — statistiques des unités, tables de dégâts, coûts de construction, arbres technologiques, raccourcis clavier ou quel que soit le système de codes — est signalé comme non documenté plutôt que deviné.
 
-## Ce que fait réellement la commande DROP
+## Ce qu'est réellement Drop Command
 
-La commande DROP appartient à la famille DDL (Data Definition Language), aux côtés de CREATE et ALTER. Cela compte plus qu'il n'y paraît. Les instructions DDL modifient la structure d'une base de données plutôt que les lignes qu'elle contient, et la plupart des moteurs les traitent comme des opérations à validation automatique. En clair : une fois l'instruction terminée, la définition de l'objet et ses données sont supprimées ensemble.
+La description officielle présente Drop Command comme du combat de mechs à grande échelle, avec du combat interarmes où vous pilotez n'importe quelle unité sous votre commandement. Les batailles vont de petites escarmouches à des batailles épiques. Vous êtes largué au combat seul, vous dirigez une escouade, ou vous commandez une armée. Le champ de bataille évolue, avec des débris et des épaves d'unités entièrement destructibles. Les pilotes sont personnalisables et peuvent gagner des niveaux. Vous pouvez constituer des escouades de vétérans d'élite ou submerger vos adversaires avec des recrues jetables. Les mechs, chars, VTOL et armures de combat sont tous modifiables personnellement.
 
-Dans de nombreux systèmes, DROP est également en cascade sur demande. Si d'autres objets dépendent de celui que vous supprimez — une vue qui lit depuis une table, une clé étrangère qui pointe vers elle — le moteur refusera la suppression à moins que vous ne lui demandiez explicitement de cascader. Ce refus est une fonctionnalité, pas un obstacle. C'est la base de données qui vous demande si vous vouliez vraiment faire tomber tout le quartier avec la maison.
+Deux choses ressortent. Premièrement, « pilotez n'importe quelle unité sous votre commandement » est une promesse de flexibilité, pas un système de classes — la page du magasin ne décrit ni rôles fixes ni équipements verrouillés. Deuxièmement, « interarmes » vous indique que le roster couvre des plateformes terrestres, aériennes et d'échelle fantassin, ce que confirme exactement la liste Mech/Char/VTOL/Armure de combat.
 
-| Commande | Ce qu'elle supprime | Environnement typique | Facile à annuler ? |
-|---|---|---|---|
-| DROP TABLE | La structure de la table et toutes les lignes | Bases de données SQL | Uniquement via sauvegarde ou PITR |
-| DROP DATABASE / SCHEMA | Tous les objets à l'intérieur de la base de données | Bases de données SQL | Uniquement via sauvegarde ou PITR |
-| DROP INDEX | Une seule définition d'index | Bases de données SQL | Oui — recréer l'index |
-| DROP VIEW | Une définition de requête enregistrée | Bases de données SQL | Oui — recréer la vue |
-| ALTER TABLE ... DROP COLUMN | Une colonne et ses données | Bases de données SQL | Uniquement via sauvegarde |
-| DROP FUNCTION / PROCEDURE | Une routine stockée | Bases de données SQL | Oui — redéployer le code |
-| db.collection.drop() | Une collection et ses documents | MongoDB | Uniquement via sauvegarde |
-| DEL / UNLINK | Une ou plusieurs clés | Redis | Non |
+Ce que la page officielle ne dit *pas* est tout aussi important. Elle ne publie ni statistiques d'unités, ni valeurs de dégâts des armes, ni coûts de construction, ni arbre technologique, ni liste de factions, ni système de codes. Si vous voyez une liste de « codes Drop Command » ou un tableau de statistiques sur un site tiers, considérez-le comme non vérifié. La vérification la plus fiable reste l'interface en jeu et la page officielle du magasin.
 
-Le schéma est cohérent d'une plateforme à l'autre : supprimer une structure est rapide, permanent, et réversible uniquement à hauteur de votre dernière sauvegarde.
+## Pourquoi « pilotez n'importe quelle unité » change votre prise de décision
 
-## Une démo de la commande drop sûre, étape par étape
+Dans la plupart des jeux de mechs, votre équipement est votre identité. Dans Drop Command, la flexibilité annoncée signifie que votre identité est votre *jugement* — quelle unité prendre et quand, plutôt que quel mech vous jouez principalement.
 
-Le but d'une démo de la commande drop n'est pas de prouver que vous savez taper l'instruction. C'est de prouver que vous comprenez le rayon d'impact. Exécutez la vôtre contre une base de données jetable ou un conteneur local, jamais contre quelque chose dont un client dépend.
+Cela a des conséquences pratiques :
 
-Une séquence fiable ressemble à ceci :
+- **Vous pouvez répondre au champ de bataille au lieu de vous y préparer.** Si la description du magasin se vérifie en jeu, changer de plateforme en pleine bataille vous permet de répondre aux menaces aériennes, aux poussées de blindés ou aux combats à l'échelle fantassin sans redémarrer.
+- **Votre progression de pilote compte sur toutes les plateformes.** Les pilotes sont décrits comme personnalisables et capables de gagner des niveaux, donc l'investissement porte sur la personne, pas seulement sur la machine.
+- **Le commandement est une compétence distincte du pilotage.** Diriger une armée implique de donner des ordres à des unités que vous ne contrôlez pas personnellement, ce qui représente une charge mentale différente du fait de viser une seule arme.
 
-| Étape | Action | Pourquoi c'est important |
+Rien de tout cela n'est une donnée mesurée. C'est un raisonnement à partir de la prémisse. Confirmez comment le changement fonctionne réellement en match avant de bâtir un plan autour de cela.
+
+## Lire le champ de bataille : débris et épaves
+
+La description officielle annonce spécifiquement « un champ de bataille évolutif avec des débris et des épaves d'unités entièrement destructibles ». C'est l'une des rares affirmations mécaniques concrètes de la page, et elle mérite attention.
+
+Dans les jeux avec des épaves persistantes, un terrain dégagé au départ peut devenir encombré plus tard. Concrètement, cela signifie :
+
+- **Les lignes de vue se ferment au fil du combat.** Des portées qui fonctionnaient dans les premières minutes peuvent ne plus fonctionner en fin de partie.
+- **Les couloirs de mouvement se rétrécissent.** Les épaves peuvent créer des points de passage obligés, ce qui favorise le jeu défensif ou le déni de zone si vos unités le permettent.
+- **Des couverts apparaissent là où il n'y en avait pas.** Les débris sont souvent utilisables, donc une position perdante peut devenir tenable.
+
+Que les épaves bloquent le mouvement, bloquent la ligne de vue, fournissent un couvert, ou les trois à la fois, n'est pas documenté sur la page du magasin. Testez-le dans un match à faible enjeu plutôt que de le supposer.
+
+## Vétérans ou recrues : un compromis de construction d'escouade
+
+La page propose deux philosophies explicites : constituer des escouades de vétérans d'élite, ou submerger vos adversaires avec des recrues jetables. C'est un choix de timing des ressources, pas un choix moral.
+
+| Approche | Force probable | Faiblesse probable |
 |---|---|---|
-| 1 | Confirmer l'environnement et la chaîne de connexion | La plupart des suppressions accidentelles se produisent sur le mauvais hôte |
-| 2 | Identifier chaque objet qui dépend de la cible | Évite les vues cassées, les clés étrangères et le code applicatif défaillant |
-| 3 | Prendre une sauvegarde ou un snapshot récent | Votre seul véritable bouton d'annulation |
-| 4 | Annoncer le changement et obtenir un second regard | Une revue de deux minutes vaut mieux qu'une restauration de deux jours |
-| 5 | Exécuter la suppression avec un garde-fou IF EXISTS | Évite les erreurs déroutantes lors des réexécutions |
-| 6 | Vérifier que l'objet a disparu et que l'application fonctionne toujours | Confirme le succès et détecte les dépendances cachées |
-| 7 | Consigner ce qui a été supprimé, quand et par qui | Rend possible toute analyse ultérieure |
+| Escouades de vétérans | Survivent plus longtemps, bénéficient du nivellement des pilotes | Plus lentes à assembler, coûteuses à perdre |
+| Ruées de recrues | Rapides à déployer, pression sacrifiable | Fragiles, faible valeur à long terme |
 
-Une instruction typique ressemble à `DROP TABLE IF EXISTS staging_orders;` pour une table, ou `DROP DATABASE analytics_sandbox;` pour une base de données entière. La clause `IF EXISTS` est une petite habitude au grand bénéfice : elle rend les scripts idempotents, de sorte qu'un déploiement échoué qui se relance ne s'arrêtera pas sur un objet déjà supprimé.
+Ce tableau relève du raisonnement général, pas de chiffres testés. La page du magasin ne publie ni coûts de recrutement, ni courbes d'expérience, ni tailles d'escouade, donc traitez ce compromis comme une direction de conception à vérifier dans vos propres matchs. Les guides tiers peuvent offrir des opinions, mais ce sont des observations secondaires, pas de la documentation de développeur.
 
-Pour la syntaxe exacte et toutes les options disponibles, [la documentation officielle DROP TABLE de PostgreSQL](https://www.postgresql.org/docs/current/sql-droptable.html) est une excellente référence, et les autres moteurs suivent une grammaire très similaire.
+## Personnalisation sans méta publiée
 
-## DROP vs. DELETE vs. TRUNCATE
+Drop Command annonce des mechs, chars, VTOL et armures de combat modifiables personnellement, ainsi que des pilotes personnalisables et capables de gagner des niveaux. Il n'annonce ni liste de mods spécifique, ni nombre d'emplacements, ni économie d'amélioration.
 
-C'est la comparaison qui piège le plus souvent les gens, et elle mérite une place dans chaque démo de la commande drop. Les trois suppriment des données, mais elles opèrent à des niveaux différents et entraînent des conséquences différentes.
+Cette absence est en fait utile. Elle signifie que vous ne devez pas importer un ordre de construction d'un autre jeu en espérant qu'il tienne. À la place :
 
-| Caractéristique | DROP | TRUNCATE | DELETE |
-|---|---|---|---|
-| Type | DDL | DDL (généralement) | DML |
-| Supprime la structure de la table | Oui | Non | Non |
-| Prend en charge une clause WHERE | Non | Non | Oui |
-| Peut être annulée | Dépend du moteur | Dépend du moteur | Oui, au sein d'une transaction |
-| Déclenche les triggers au niveau des lignes | Non | Non | Oui |
-| Réinitialise les compteurs auto-incrémentés | L'objet a disparu | Généralement oui | Non |
-| Vitesse relative | Instantanée | Très rapide | Plus lente sur les grandes tables |
+1. Apprenez à quoi sert chaque catégorie de plateforme dans un match.
+2. Apprenez comment le nivellement des pilotes affecte ce que vous pouvez déployer.
+3. Apprenez comment les épaves modifient la carte au fil du temps.
+4. Alors, et seulement alors, engagez-vous sur une configuration préférée.
 
-Le point pratique à retenir : utilisez DELETE lorsque vous devez supprimer des lignes spécifiques, TRUNCATE lorsque vous voulez une table vide qui existe toujours, et DROP lorsque l'objet lui-même ne doit plus exister. Choisir la mauvaise est la cause la plus fréquente d'un incident qui commence par « Je pensais que ça allait juste effacer les données. »
+Si le jeu publie plus tard des statistiques détaillées ou un wiki, la page officielle est l'endroit pour le confirmer. D'ici là, l'observation en jeu est votre meilleure source.
 
-## Exécuter une démo de la commande drop au-delà de SQL
+## Ce qui n'est pas documenté
 
-Les bases de données relationnelles ne sont pas le seul endroit où vit une commande de type drop. La plupart des plateformes de données et des outils de développement ont leur propre verbe destructeur, et la nomenclature varie suffisamment pour qu'un petit tour d'horizon soit utile.
+Pour être franc sur les limites de l'information publique : il n'existe aucun système de codes publié, aucune table de dégâts, aucune liste de coûts de construction, aucun arbre technologique, aucun roster de factions et aucun schéma de raccourcis clavier confirmé pour Drop Command. La page du magasin décrit une direction et des fonctionnalités, pas des chiffres. Quiconque présente des chiffres exacts comme confirmés par le développeur doit être traité avec prudence. Vous pouvez vérifier les affirmations vous-même en consultant la [page Steam officielle](https://store.steampowered.com/app/1944880/) et en testant le comportement à l'intérieur du jeu.
 
-| Plateforme | Commande | Remarques |
-|---|---|---|
-| MongoDB | `db.collection.drop()` | Supprime la collection et tous les documents |
-| Redis | `DEL key` / `UNLINK key` | UNLINK libère la mémoire de façon asynchrone dans un thread d'arrière-plan |
-| Elasticsearch | `DELETE /index_name` | Supprime l'index et ses mappings |
-| Docker | `docker rm` / `docker rmi` | Supprime les conteneurs et les images |
-| Kubernetes | `kubectl delete` | Supprime les ressources d'un namespace |
-| Consoles d'administration de jeu | `drop item_id` | Supprime un objet d'un inventaire ou d'un monde |
+## FAQ
 
-Les retours de la communauté des utilisateurs de Redis notent systématiquement qu'UNLINK retourne immédiatement tandis que la mémoire est récupérée en arrière-plan, ce qui en fait un choix plus sûr sur les instances chargées qu'un DEL bloquant sur une grande clé. Le principe sous-jacent est le même partout : la commande supprime une référence, et les données deviennent inaccessibles.
+**Drop Command est-il identique à l'unité de mod mental-omega ?**
+Non. Drop Command ici désigne le jeu Steam de PillBugGames, application 1944880, sorti le 28 septembre 2026. C'est un produit distinct de toute unité de mod partageant ce nom.
 
-## Règles de sécurité, récupération et annulation
+**Puis-je vraiment piloter n'importe quelle unité ?**
+La description officielle indique que vous pouvez piloter n'importe quelle unité sous votre commandement, couvrant les mechs, chars, VTOL et armures de combat. Les règles exactes de changement ne sont pas documentées publiquement.
 
-La plupart des équipes ne perdent pas de données parce qu'elles ont exécuté la mauvaise commande. Elles perdent des données parce qu'elles n'avaient aucun plan pour ce qui se passe après. Une démo de la commande drop est un bon endroit pour répéter le chemin de récupération, pas seulement le chemin destructeur.
+**Y a-t-il un système de codes ?**
+Aucun système de codes n'est publié sur la page du magasin. S'il en existe un, il n'a pas été officiellement documenté.
 
-| Risque | Mesure d'atténuation |
-|---|---|
-| Supprimer le mauvais objet | Imposer des conventions de nommage et exiger un préfixe de schéma |
-| Supprimer sur le mauvais serveur | Des identifiants distincts par environnement ; production en lecture seule par défaut |
-| Perdre des données sans point de restauration | Des snapshots automatisés plus la récupération à un instant précis |
-| Casser le code dépendant | Rechercher dans la base de code et le graphe de dépendances avant de supprimer |
-| Échecs silencieux dans les scripts de déploiement | Utiliser IF EXISTS et journaliser chaque instruction destructive |
-| Comptes applicatifs sur-privilégiés | N'accorder les droits DROP qu'aux rôles de migration |
+**Puis-je jouer en solo ?**
+Oui — la description indique que vous pouvez être largué au combat seul, diriger une escouade ou commander une armée.
 
-La prise en charge de l'annulation varie selon le moteur, et c'est là que la connaissance de la plateforme paie. PostgreSQL prend en charge le DDL transactionnel, de sorte qu'un DROP au sein d'une transaction peut être annulé si quelque chose se passe mal avant que vous ne validiez. MySQL, en revanche, effectue un commit implicite sur les instructions DDL, ce qui signifie que la suppression est effectivement définitive au moment même où elle s'exécute. Si vous n'êtes pas certain du comportement qui s'applique à votre moteur, présumez le cas le plus strict et fiez-vous aux sauvegardes.
-
-Quelques habitudes séparent les équipes qui dorment bien de celles qui ne dorment pas :
-
-- Préférez un schéma renommer-puis-supprimer : renommez l'objet, attendez une semaine, puis supprimez-le.
-- Conservez une table de suppression douce ou d'archivage pour tout ce qui a une valeur métier.
-- Restreignez les privilèges DROP aux rôles de migration, jamais aux rôles applicatifs.
-- Journalisez chaque instruction destructive avec un horodatage et une identité d'opérateur.
-- Répétez régulièrement les restaurations — une sauvegarde non testée est un espoir, pas un plan.
-
-Aucune de ces étapes n'est glamour, mais chacune transforme une panne potentielle en une tâche de maintenance routinière.
-
-## Questions fréquentes
-
-**Puis-je exécuter une démo de la commande drop en production ?**
-
-Non. Exécutez-la sur une copie jetable, un conteneur local ou un bac à sable dédié. Le but d'une démo de la commande drop est de s'entraîner au flux de travail et aux étapes de vérification, et vous pouvez faire tout cela sans toucher aux données en production. Si vous devez absolument exécuter une suppression en production, suivez un processus de gestion des changements avec une sauvegarde, une revue et un plan d'annulation.
-
-**La commande DROP est-elle réversible ?**
-
-Parfois, et seulement dans des conditions spécifiques. Dans les moteurs qui prennent en charge le DDL transactionnel, une suppression peut être annulée avant que la transaction ne soit validée. Dans les moteurs qui valident automatiquement le DDL, l'opération est définitive au moment même où elle se termine. Sur toutes les plateformes, la méthode de récupération fiable consiste à restaurer à partir d'une sauvegarde ou à utiliser la récupération à un instant précis.
-
-**Quelle est la différence entre DROP TABLE et DELETE FROM ?**
-
-DELETE FROM supprime des lignes tout en gardant la table et sa structure intactes, et elle prend en charge une clause WHERE pour cibler des enregistrements spécifiques. DROP TABLE supprime la table elle-même, avec toutes ses lignes et sa définition. Après un DROP, toute requête qui référence la table échouera jusqu'à ce que vous la recréiez.
-
-**Pourquoi ma commande drop échoue-t-elle avec une erreur de dépendance ?**
-
-La base de données vous protège. Des objets tels que des vues, des clés étrangères ou des routines stockées référencent encore la cible, de sorte que le moteur refuse de la supprimer. Résolvez chaque dépendance d'abord, ou utilisez l'option cascade si votre plateforme la prend en charge — mais seulement après avoir confirmé que la cascade ne supprimera pas quelque chose dont vous avez encore besoin.
-
-Exécutez la démo, étudiez les conséquences, et traitez chaque instruction destructive comme si elle allait être examinée plus tard. Parce qu'elle le sera probablement.
+**Existe-t-il des stratégies de victoire garanties ?**
+Non. Les informations disponibles décrivent des fonctionnalités, pas des statistiques calibrées. Toute tactique décrite ici relève d'un raisonnement à partir de la prémisse interarmes et devrait être testée dans vos propres matchs.

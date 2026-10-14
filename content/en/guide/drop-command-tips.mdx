@@ -1,128 +1,90 @@
 export const metadata = {
-  title: "Drop Command Tips: A Safe, Step-by-Step Guide to Deleting Data Without Regret",
-  description: "Learn essential drop command tips for SQL, MongoDB, Redis, Linux, and game servers — backups, IF EXISTS, dependencies, permissions, and safe rollback.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command actually advertises, how combined-arms play works in practice, and how to verify undocumented details yourself.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What a Drop Command Really Does
+Drop Command is a mech combat game built around a single idea: you are not locked into one machine. You drop into a battle, and any unit under your command can become the unit you are personally piloting. That premise shapes everything else — how you build a force, how you react when a push stalls, and why the battlefield keeps changing under your feet.
 
-A drop command removes something completely — a table, a collection, a cached page, a network packet, or an item sitting in your inventory. Unlike a delete that sends data to a recycle bin, most drop commands take effect immediately and leave nothing behind. That single difference is why the drop command deserves more caution than almost any other instruction you will ever type.
+This article sticks to what the developer has actually published and separates that from general reasoning about how combined-arms games tend to work. Where a detail is not documented, it says so instead of guessing.
 
-The word "drop" shows up in wildly different places: relational databases, document stores, key-value caches, the Linux kernel, firewall rule sets, and game inventories. The syntax changes, but the risk profile stays the same. Once the object is gone, your only recovery path is a backup, a snapshot, or a support ticket.
+## What the Store Page Actually Confirms
 
-| Context | Typical drop command | What it removes | Built-in undo? |
-|---|---|---|---|
-| Relational databases | DROP TABLE / DROP DATABASE | Structure, rows, indexes, constraints | No — restore from backup |
-| Document databases | db.collection.drop() | Collection, documents, indexes | No |
-| Key-value stores | DEL / UNLINK / FLUSHDB | Keys or an entire logical database | No |
-| Linux kernel | drop_caches | Cached file data held in RAM | Not needed — cache rebuilds |
-| Firewalls | rule action "drop" | Silently discards matching packets | Remove the rule |
-| Games | /drop or a discard key | Item leaves inventory | Rarely, and often never |
+The official Steam listing for [Drop Command](https://store.steampowered.com/app/1944880/) (app 1944880) is the authority here. It confirms:
 
-## Drop Command Tips: The Pre-Flight Checklist
+- Developer: PillBugGames
+- Release date: 28 September 2026
+- Scale: mech combat "at a grand scale," with combined-arms battles ranging from small skirmishes to epic engagements
+- Control: pilot any unit under your command
+- Deployment: drop in alone, lead a squad, or command an army
+- Battlefield: fully destructible debris and unit wreckage that evolve as the fight goes on
+- Pilots: customisable and levellable, from elite squads to disposable rookies
+- Units: personalisable Mechs, Tanks, VTOLs, and Battle Armour
 
-Before you execute any drop command, run through a short checklist. It takes under a minute and prevents the kind of mistake that costs a weekend.
+That is the whole verified feature set. Notably absent from the store page: unit statistics, weapon damage tables, build costs, tech trees, faction lists, hotkeys, and any code or cheat system. If you see those numbers quoted elsewhere, they did not come from the developer.
 
-| Check | Why it matters | How to verify |
+## Why "Pilot Any Unit" Changes How You Play
+
+Most mech games ask you to pick a chassis and live with it. Drop Command flips that. If the verified description is accurate, your command role and your piloting role are separate things, and you can move between them.
+
+The practical consequence is that you are never fully committed to one plan. A few ways that plays out, framed as reasoning from the combined-arms premise rather than measured data:
+
+- **Reinforce a failing flank without rebuilding anything.** If your left side collapses, you can take direct control of a unit already there instead of waiting on new production.
+- **Exploit a local advantage immediately.** When a push opens a gap, being able to step into the unit best positioned to use it matters more than having the "best" unit overall.
+- **Trade attention for tempo.** Every second you spend piloting is a second you are not issuing orders. Whether that trade is worth it depends on how the game handles delegation — something the store page does not describe.
+
+Because unit stats are not published, treat any claim about which chassis "wins" a matchup as unverified. The right answer depends on systems the developer has not detailed publicly.
+
+## Building a Force: Veterans, Rookies, and the Trade-Off
+
+The store page explicitly mentions "elite squads or disposable rookies," which frames a real decision: invest in a small number of experienced pilots, or field a larger number of cheap ones.
+
+Neither approach is documented as superior, and the developer publishes no cost or experience figures. But the framing itself is useful:
+
+| Approach | What you are buying | What you are risking |
 |---|---|---|
-| Confirm the target object | A one-character typo can hit the wrong table | List objects, then copy the exact name |
-| Confirm the environment | The same command means different stakes on prod | Print your current connection string or host |
-| Confirm a backup exists | Drops are usually irreversible | Perform a test restore on a copy |
-| Confirm dependencies | Views, foreign keys, and apps can break | Query the system catalog for dependents |
-| Confirm your permissions | Least privilege limits the blast radius | Review role grants before you need them |
-| Confirm the time window | Off-peak execution reduces user impact | Check traffic and job-schedule dashboards |
+| Veteran squads | Presumably better performance per unit, plus attachment to pilots you have levelled | Losing one hurts more |
+| Rookie rushes | Numbers and willingness to absorb losses | Less capable individually, per the "disposable" framing |
 
-A few habits make the checklist easier to follow:
+A reasonable default, absent documentation: keep a core of pilots you have levelled and treat the rest as replaceable. That hedges against both failure modes. It is general reasoning, not a tested build.
 
-- Use a naming convention that puts the environment in the object name, so a staging table never looks like a production one.
-- Run `SELECT` or a count first. If the row count looks wrong, stop.
-- Log every destructive statement with a timestamp and the operator's name.
-- Keep a read-only replica or a delayed replica where possible.
+## Reading an Evolving Battlefield
 
-## How the Drop Command Looks Across Common Systems
+"Fully destructible debris and unit wreckage" is one of the more interesting confirmed features. A battlefield that accumulates wreckage is not just cosmetic — in combined-arms games it usually affects movement, sightlines, or cover.
 
-The same idea wears different syntax depending on the platform. The table below summarizes the general shape of each; always confirm details in the current documentation for your version.
+The store page does not say whether wreckage blocks movement, provides cover, damages units, or is purely visual. That is worth verifying yourself early, because it changes how you route VTOLs and Battle Armour in particular. Watch for it in your first few matches: drive a unit into fresh debris and see what happens.
 
-| System | Example form | Key behavior |
-|---|---|---|
-| PostgreSQL | `DROP TABLE IF EXISTS orders CASCADE;` | Runs inside a transaction, so it can be rolled back before commit |
-| MySQL | `DROP TABLE IF EXISTS orders;` | DDL triggers an implicit commit and cannot be rolled back |
-| SQL Server | `DROP TABLE IF EXISTS dbo.orders;` | Modern versions support `IF EXISTS`; no `CASCADE` for tables |
-| SQLite | `DROP TABLE IF EXISTS orders;` | File-based — copy the database file first |
-| MongoDB | `db.orders.drop()` | Returns a boolean and removes the collection's indexes with it |
-| Redis | `DEL key` / `FLUSHDB` | `DEL` blocks; `UNLINK` frees memory asynchronously |
-| Linux | `echo 3 > /proc/sys/vm/drop_caches` | Frees page cache; requires root and hurts performance briefly |
-| Packet filtering | `-j DROP` | Silently discards traffic, unlike `REJECT`, which answers |
+## Customisation and Levelling Without Numbers
 
-If you work primarily with relational engines, the [official PostgreSQL DROP TABLE documentation](https://www.postgresql.org/docs/current/sql-droptable.html) is a useful reference for how transactional drops, `CASCADE`, and `RESTRICT` interact.
+Pilots are described as customisable and levellable, and Mechs, Tanks, VTOLs, and Battle Armour as personalisable. The store page does not describe the scope of that customisation — whether it is cosmetic, functional, or both.
 
-## Safety Clauses That Change Everything
+That ambiguity matters a lot for planning. If customisation affects combat values, then the "best" loadout is a moving target that changes with patches. If it does not, then levelling pilots is the main progression lever. Since neither is documented, the safe approach is to treat customisation as something to explore in-game rather than to optimise from a guide.
 
-Most engines give you optional clauses that turn a blunt instrument into a controllable one. Understanding them is one of the highest-value drop command tips you can internalize.
+## Undocumented: What You Should Not Assume
 
-| Clause | What it does | Best used for | Main risk |
-|---|---|---|---|
-| `IF EXISTS` | Suppresses the error when the object is missing | Idempotent scripts and migrations | Masks a misspelled name |
-| `CASCADE` | Drops dependent objects automatically | Known, mapped dependency chains | Very wide blast radius |
-| `RESTRICT` | Refuses the drop if dependents exist | Default safe choice | Can block automated pipelines |
-| Transaction wrapper | Defers the drop until commit | Databases that support transactional DDL | Not available everywhere |
-| Rename first | Renames the object, drops later | Creating a rollback window | Orphaned objects if forgotten |
+Be sceptical of any guide that offers Drop Command damage values, build costs, tech trees, faction rosters, hotkeys, or codes. The verified sources do not include them. Specifically:
 
-The rename technique is underused. Rename the table to something like `orders_retired_20261004`, wait a few days, and drop it only after nothing breaks. You get a genuine undo window without a full restore.
+- **No published unit stats or damage tables.**
+- **No published build costs or economy figures.**
+- **No published tech tree or faction list.**
+- **No code or cheat system mentioned by the developer.**
 
-## Drop Command Tips for Production, Staging, and Shared Environments
-
-The environment changes the rules far more than the syntax does. A drop command that is routine on a laptop can be a career event in production.
-
-| Environment | Recommended approach | Avoid |
-|---|---|---|
-| Local dev | Drop freely, then reseed from fixtures | Assuming dev data matches production shape |
-| Staging | Rehearse the exact production statement | Skipping the backup because "it's only staging" |
-| Production | Snapshot, review, execute in a window, monitor | Ad hoc sessions run by hand |
-| Multi-tenant | Drop by partition or tenant scope | Dropping a shared table outright |
-| Analytics | Drop after the retention policy expires | Dropping raw data still feeding reports |
-
-Additional guardrails worth adopting:
-
-- Separate the `DROP` privilege from the `DELETE` privilege so fewer accounts can do permanent damage.
-- Require a second reviewer for any destructive migration.
-- Add a post-drop monitoring alert for errors and missing-object warnings.
-- Prefer partition drops over row-by-row deletes when you are clearing large historical ranges — they are faster and easier to reason about.
-
-## Drop Command Tips for Games and Application Inventories
-
-Not every drop command lives in a terminal. Plenty of games and apps bind a discard action to a key or a slash command, and the consequences are just as final. Community reports from long-time players consistently flag the same problem: the confirm dialog is either missing or muscle-memory fast.
-
-| Safeguard | How it helps |
-|---|---|
-| Check the confirmation setting | Some titles let you disable "drop without asking" |
-| Use a trade or storage window | Moves an item without destroying it |
-| Lock or favorite valuable items | Prevents accidental discard from the inventory grid |
-| Learn the despawn timer | Dropped items often vanish after a short period |
-| Read bound-item rules | Bound gear frequently cannot be recovered at all |
-
-Player experience suggests one more habit: before you type any drop command in a game, empty your cursor, stand still, and read the prompt. Most accidental losses happen during combat or while sorting a full bag.
-
-## Practice, Recovery, and Verification
-
-A drop command is only as safe as the recovery plan behind it. Practice the recovery path before you need it.
-
-- Rehearse the exact statement on a restored copy of production data.
-- Time your restore so you know the real recovery objective, not the one in a slide deck.
-- Keep backups immutable for a defined retention period so a bad script cannot delete them too.
-- Verify after execution: confirm the object is gone, then watch application logs for missing-object errors.
+To check any specific claim, open the game's Steam page, read the store description and any developer posts or patch notes there, and confirm in-game through tooltips, the unit roster, or a test match. The Steam page and the game itself are the two places that can settle a dispute about what a feature does.
 
 ## FAQ
 
-**Is a drop command reversible?**
-Usually not by itself. Some engines let you roll back a drop inside an open transaction, and file-based systems can sometimes be recovered from a copy. Outside those cases, recovery means restoring a backup, so treat every drop as permanent.
+**Is Drop Command the same as the "drop command" unit in some other mod?**
+No. The verified subject is the Steam game by PillBugGames (app 1944880, released 28 September 2026). Similar wording in other contexts is unrelated.
 
-**What is the safest way to run a drop command in production?**
-Take a snapshot, confirm the object name and environment, wrap the statement in a reviewed migration, execute during a low-traffic window, and monitor afterward. Never run it from an ad hoc session where nobody else can see what you typed.
+**Can I play alone?**
+The store page says you can drop into combat alone, lead a squad, or command an army. It does not specify whether "alone" means solo versus AI, single-unit deployment, or something else.
 
-**What is the difference between DROP TABLE and DELETE?**
-`DELETE` removes rows and can be filtered, logged, and often rolled back. `DROP TABLE` removes the entire structure along with the data, indexes, and constraints. In many databases, `DROP` also commits implicitly, which removes your rollback option.
+**Are there published unit statistics?**
+No. The official store page does not publish unit stats, damage values, or build costs.
 
-**Can I undo a drop command in a game?**
-Rarely. Most titles treat a discarded item as gone, and bound items are almost never recoverable. Use storage or trading instead of dropping when the item still has value, and check whether your game offers an item lock or favorite feature.
+**Which units can I pilot?**
+The description names Mechs, Tanks, VTOLs, and Battle Armour, and says you can pilot any unit under your command.
+
+**Does following this article guarantee I win?**
+No. It is a summary of the verified feature set plus general reasoning about combined-arms play. Actual results depend on systems the developer has not documented.

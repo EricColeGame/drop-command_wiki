@@ -1,111 +1,99 @@
 export const metadata = {
-  title: "Guide pas à pas des commandes drop : comment utiliser les commandes drop en toute sécurité dans les jeux, les bots et les bases de données",
-  description: "Un guide pas à pas complet des commandes drop couvrant les drops dans le chat de jeu, les drops des bots Discord, les instructions SQL DROP et les règles de pare-feu, avec des conseils de sécurité et un dépannage.",
+  title: "Drop Command : Guide pratique du combat interarmes en mécha",
+  description: "Ce que Drop Command de PillBugGames propose réellement, comment la pensée interarmes fonctionne en pratique, et ce que la page du store laisse non documenté.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Qu'est-ce qu'une commande drop et pourquoi c'est important
+Drop Command est un jeu de combat interarmes en mécha du développeur PillBugGames, sorti sur Steam le 28 septembre 2026. Son accroche repose sur l'échelle et le contrôle direct : vous pilotez n'importe quelle unité sous votre commandement, et le combat peut être une petite escarmouche ou une bataille complète. Vous pouvez vous lancer seul dans la mêlée, mener une escouade ou commander une armée, sur un champ de bataille qui évolue au fur et à mesure que les débris et les épaves s'accumulent.
 
-Une **commande drop** est une instruction courte — saisie dans une zone de chat, une console de jeu, une fenêtre de requête de base de données ou un terminal — qui indique à un programme de libérer, supprimer ou céder quelque chose. Si vous avez déjà tapé `/drop` dans un jeu de survie, `!drop` sur un serveur Discord ou `DROP TABLE` dans un client SQL, vous en avez déjà utilisé une. Ce guide pas à pas des commandes drop détaille chaque variante, montre comment les exécuter en toute sécurité et explique comment récupérer la situation lorsqu'une commande fait exactement ce que vous lui avez demandé.
+C'est la forme du jeu telle que décrite sur sa [page officielle du store Steam](https://store.steampowered.com/app/1944880/). Ce guide s'en tient à ce que le développeur annonce, distingue cela des impressions de la communauté et reste honnête sur ce qui n'est pas documenté. Là où il propose des conseils tactiques, ces conseils relèvent d'un raisonnement à partir du postulat interarmes, et non de données mesurées.
 
-Pourquoi est-ce important ? Parce que les commandes drop sont destructrices ou semi-destructrices par nature. Un nom d'objet mal orthographié gaspille une ressource. Un nom de table mal orthographié peut effacer un schéma. Connaître la syntaxe, les règles d'autorisation et les invites de confirmation propres à votre environnement fait toute la différence entre une action propre et un après-midi gâché.
+## Ce que PillBugGames annonce réellement
 
-Au fond, une commande drop fait l'une de trois choses : elle **libère** un objet dans un espace partagé, elle **supprime** entièrement un objet d'un système, ou elle **transfère** la propriété d'un détenteur à un autre. La plupart des confusions viennent du fait de mélanger ces trois fonctions, surtout dans les jeux où « drop » et « give » sont des commandes distinctes avec des règles distinctes.
+Selon la description officielle du jeu, Drop Command est construit autour de plusieurs piliers :
 
-## Guide pas à pas des commandes drop dans quatre environnements
+- **Combat de méchas à grande échelle avec armes combinées.** Vous n'êtes pas limité à un seul type de châssis. Les méchas, chars, VTOL et armures de combat sont tous listés comme unités personnalisables.
+- **Pilotez n'importe quelle unité sous votre commandement.** Vous pouvez prendre directement le contrôle d'une unité plutôt que de seulement donner des ordres d'en haut.
+- **De l'escarmouche à la bataille épique.** Le même jeu permet de se lancer seul, de mener une escouade ou de commander une armée.
+- **Un champ de bataille évolutif.** Les débris entièrement destructibles et les épaves d'unités modifient l'environnement au fil du combat.
+- **Des pilotes personnalisables et montant en niveau.** Les pilotes peuvent être développés au fil du temps.
+- **Escouades d'élite ou recrues sacrifiables.** Vous pouvez constituer des escouades de vétérans ou submerger vos adversaires avec des recrues.
+- **Personnalisation des unités.** Les méchas, chars, VTOL et armures de combat peuvent être modifiés.
 
-La même expression de deux mots signifie des choses très différentes selon l'endroit où vous la tapez. Le tableau ci-dessous est le moyen le plus rapide de déterminer à quelle version vous avez affaire.
+Ce que la description n'inclut pas compte tout autant. La page du store ne publie ni statistiques d'unités, ni tables de dégâts, ni coûts de construction, ni arbres technologiques, ni listes de factions, ni système de code. Quiconque présente des chiffres exacts comme officiels va au-delà de la source.
 
-| Environnement | Forme typique | Qui peut l'exécuter | Niveau de risque |
-|---|---|---|---|
-| Chat ou console de jeu | `/drop <item> <amount>` | Tout joueur, parfois les administrateurs uniquement | Faible à moyen |
-| Bot de chat (Discord, etc.) | `!drop`, `/drop` ou une invite à bouton | Membres disposant de la permission drop du bot | Faible |
-| Client de base de données SQL | `DROP TABLE`, `DROP DATABASE`, `DROP INDEX` | Utilisateurs disposant des privilèges DDL | Très élevé |
-| Règles de pare-feu ou de réseau | `DROP` comme cible de règle | Administrateurs disposant d'un accès root | Élevé (échecs silencieux) |
+## Les armes combinées comme cadre de décision
 
-### Commandes drop dans le chat de jeu
+Les armes combinées ne sont pas ici un mot à la mode ; c'est la boucle de décision centrale. Le roster annoncé couvre des options terrestres, aériennes et à l'échelle de l'infanterie, et chacune a des forces et faiblesses naturelles. Le raisonnement général suggère ce qui suit, et vous devriez le traiter comme une hypothèse de départ plutôt qu'un manuel de règles :
 
-Dans la plupart des jeux sandbox, de survie et de rôle, une commande drop déplace un objet de votre inventaire vers le monde afin qu'un autre joueur puisse le ramasser. L'expérience des joueurs sur de nombreux titres suggère que le schéma est presque universel : un préfixe slash, un identifiant d'objet et une quantité facultative. Certains jeux exigent que vous soyez face à un point de dépôt valide ; d'autres vous laissent déposer n'importe où.
-
-### Commandes drop des bots de chat
-
-Les bots d'économie et de collection gérés par la communauté exposent souvent une commande drop qui fait apparaître une récompense dans un salon pour la première personne qui la réclame. Les retours de la communauté mentionnent systématiquement deux choses : ces commandes sont généralement limitées en débit et elles exigent presque toujours un rôle ou un nœud de permission spécifique avant de vous répondre.
-
-### Instructions SQL DROP
-
-C'est ici que la commande drop forge sa réputation. En SQL, `DROP` est une instruction du langage de définition de données (DDL) qui supprime un objet — une table, une vue, un index ou une base de données entière — et non simplement les lignes qu'il contient. La documentation officielle DROP TABLE de Microsoft mérite d'être lue avant de toucher à un schéma de production, car l'instruction n'est pas réversible sans sauvegarde.
-
-### Règles DROP de pare-feu
-
-En réseau, `DROP` est une cible de règle qui écarte silencieusement les paquets correspondants au lieu de les refuser avec une erreur. Une règle drop est plus discrète qu'une règle reject, ce qui explique précisément pourquoi les administrateurs l'utilisent — et précisément pourquoi elle est difficile à déboguer quand on oublie l'avoir ajoutée.
-
-## Étape par étape : exécuter votre première commande drop
-
-Cette procédure de guide pas à pas des commandes drop fonctionne que vous soyez dans un jeu, un bot ou une console de requête. Suivez l'ordre ; sauter l'étape trois est la cause la plus fréquente de perte accidentelle de données.
-
-| Étape | Action | Pourquoi c'est important |
+| Type d'unité | Rôle probable dans une force interarmes | Raisonnement |
 |---|---|---|
-| 1 | Identifiez votre environnement | Les règles de syntaxe diffèrent totalement entre le chat et SQL |
-| 2 | Vérifiez que vous avez la permission | La plupart des échecs sont des échecs de permission, pas de syntaxe |
-| 3 | Vérifiez le nom exact de la cible | Un caractère d'écart peut désigner un autre objet ou une autre table |
-| 4 | Prévisualisez ou faites un essai à blanc si possible | Certains outils proposent un `--dry-run` ou une invite de confirmation |
-| 5 | Exécutez la commande | Tapez-la manuellement plutôt que de la coller depuis une vieille note |
-| 6 | Vérifiez le résultat | Contrôlez l'inventaire, interrogez le schéma ou testez la connexion |
-| 7 | Consignez ce que vous avez fait | Vous ne vous souviendrez pas de la règle que vous avez ajoutée |
+| Mécha | Ancre de front flexible | Les unités pilotées dans les jeux de méchas échangent généralement la vitesse contre la durabilité et la puissance de feu |
+| Char | Pression au sol et tir direct | Les véhicules chenillés favorisent généralement la stabilité et le combat terrestre soutenu |
+| VTOL | Mobilité, débordement, présence aérienne | Les aéronefs exploitent souvent l'espace vertical et se repositionnent rapidement |
+| Armure de combat | Soutien à l'échelle de l'infanterie | Les unités plus petites comblent souvent les brèches, couvrent ou opèrent dans des espaces restreints |
 
-Un mot rapide sur l'étape quatre. De nombreux outils en ligne de commande prennent en charge un indicateur d'essai à blanc, et beaucoup de clients de base de données encapsulent les instructions destructrices dans une boîte de dialogue de confirmation. Ces garde-fous existent parce que même les utilisateurs expérimentés commettent des erreurs. Si votre outil n'en propose pas, exécutez d'abord la commande en lecture seule équivalente — un `SELECT` avant un `DROP`, ou une vérification d'inventaire avant un drop dans le chat.
+Le tableau est une inférence à partir du genre et de la liste d'unités annoncée, et non de statistiques publiées. L'enseignement pratique est d'éviter les forces mono-type. Si vous n'engagez que des méchas, vous risquez de manquer de la vitesse ou de la portée qu'apporte un autre type d'unité. Si vous n'engagez que des VTOL, vous pourriez avoir du mal à tenir le terrain.
 
-Pour les drops dans le chat, le conseil pratique est plus simple : tapez la commande dans un salon privé ou sur un serveur de test la première fois. L'expérience des joueurs suggère que les commandes drop publiques dans des salons très fréquentés se font rafler en quelques secondes, ce qui rend la vérification de votre syntaxe inutilement stressante.
+## Se lancer seul, mener une escouade ou commander une armée
 
-## Paramètres, syntaxe et variantes courantes
+La description soutient explicitement les trois échelles de commandement. Chacune change ce à quoi vous devez prêter attention :
 
-Une fois que vous connaissez votre environnement, la question suivante est ce qui vient après la commande. La syntaxe à paramètres fictifs ci-dessous est volontairement générique — vérifiez toujours la documentation spécifique du jeu, du bot ou du moteur de base de données que vous utilisez, car l'orthographe exacte des arguments varie énormément.
+- **Seul.** Vous êtes toute la force. Le positionnement, le timing et le fait de savoir quand décrocher comptent plus que la puissance brute.
+- **Escouade.** Vous avez une poignée d'unités à coordonner. La valeur d'une escouade réside dans la couverture mutuelle des faiblesses, donc la composition et l'espacement deviennent la priorité.
+- **Armée.** À cette échelle, vous ne pouvez pas contrôler personnellement chaque engagement. Vous vous appuierez sur le regroupement d'unités et des ordres globaux, et vous devriez vous attendre à choisir les combats qui décident de la bataille plutôt qu'à gagner chacun d'eux.
 
-| Paramètre | Signification | Emplacement habituel |
-|---|---|---|
-| Cible | Nom d'objet, nom de table ou cible de règle | Immédiatement après la commande |
-| Quantité ou montant | Combien d'unités déposer | Deuxième argument, souvent facultatif |
-| Destinataire | Joueur ou compte recevant l'objet | Troisième argument dans les drops de type « give » |
-| Filtre ou condition | Limite les objets concernés | Généralement une clause `WHERE` ou un indicateur |
-| Indicateur de confirmation | Ignore ou force une invite | À la fin de l'instruction |
+Comme le jeu vous permet de piloter n'importe quelle unité sous votre commandement, une habitude utile consiste à basculer vers l'unité qui compte le plus sur le moment : celle qui tient une position clé, celle qui peut briser un statu quo, ou celle qui est sur le point d'être perdue. C'est un raisonnement interarmes général, pas une mécanique documentée.
 
-Deux habitudes sont payantes ici. Premièrement, utilisez la sortie d'aide de l'outil lui-même — la plupart des bots de chat répondent à une commande d'aide qui liste chaque argument, et la plupart des moteurs de base de données fournissent une page de manuel. Deuxièmement, préférez les noms explicites aux caractères génériques. Un caractère générique dans une commande drop est un raccourci vers la suppression de quelque chose que vous ne vouliez pas supprimer.
+## Vétérans ou recrues : un compromis, pas une règle
 
-### Variantes courantes à connaître
+PillBugGames annonce deux voies : constituer des escouades de vétérans, ou submerger les adversaires avec des recrues. Celles-ci impliquent des courbes différentes.
 
-- **Give ou drop.** Un drop pose un objet au sol ; un give le place directement dans l'inventaire d'un autre joueur. Ils ne sont pas interchangeables.
-- **Déposer un ou déposer tout.** De nombreux systèmes utilisent une seule unité par défaut. Déposer une pile complète nécessite généralement une quantité explicite.
-- **Drops en cascade.** Dans les bases de données, la suppression d'un objet parent peut supprimer avec lui les objets dépendants, selon le comportement de cascade du moteur.
-- **Silencieux ou détaillé.** Les drops de pare-feu sont silencieux par conception ; les drops SQL renvoient généralement un message de confirmation.
+Les escouades de vétérans demandent vraisemblablement du temps et de l'investissement pour être assemblées, mais devraient être plus fiables dans les combats prolongés. Les ruées de recrues échangent vraisemblablement la qualité à long terme contre des effectifs ou un tempo immédiats. Aucune n'est déclarée plus forte. La position honnête est que l'équilibre dépend d'un réglage que le développeur n'a pas publié, donc vous devriez tester les deux en jeu plutôt que de faire confiance à un tier list.
 
-## Dépannage et règles de sécurité
+Si vous voulez savoir comment la montée en niveau des pilotes affecte les performances, la seule méthode fiable est de monter vous-même un pilote en niveau et de comparer son comportement dans la même situation. La page du store ne le quantifie pas.
 
-Quand une commande drop ne se comporte pas comme prévu, la cause est généralement l'un d'un petit nombre de problèmes prévisibles. Parcourez le tableau avant de commencer à modifier les choses au hasard.
+## Le champ de bataille évolutif
 
-| Symptôme | Cause probable | Correction |
-|---|---|---|
-| Aucune réponse du tout | Mauvais préfixe ou mauvais salon | Vérifiez le préfixe de commande du bot ou du jeu |
-| « Permission denied » | Rôle ou privilège manquant | Demandez à un administrateur d'accorder le nœud requis |
-| « Unknown item » | Nom de cible mal orthographié | Copiez le nom exact depuis la liste d'aide |
-| La commande fonctionne, rien n'est déposé | Limite d'inventaire ou de sol atteinte | Libérez de l'espace et réessayez |
-| Erreur SQL liée aux dépendances | D'autres objets référencent la cible | Supprimez d'abord les objets dépendants, ou utilisez la cascade si c'est voulu |
-| La règle réseau semble ignorée | Ordre ou priorité des règles | Placez la règle drop au-dessus de la règle en conflit |
+Les débris destructibles et les épaves d'unités sont annoncés comme faisant partie de l'évolution du champ de bataille. En pratique, cela signifie probablement que le terrain sur lequel vous combattez change au fil de la bataille : des couverts peuvent être créés ou supprimés, et les épaves peuvent façonner les voies de circulation.
 
-La sécurité se résume à trois règles. **Sauvegardez avant tout drop destructeur.** Un export de schéma prend quelques secondes et en fait gagner des jours. **Testez dans un environnement de préproduction.** Si vous ne l'exécuteriez pas sur un système en production, ne l'exécutez pas sur un système en production. **Tenez un journal des modifications.** Une note d'une ligne indiquant quelle règle drop vous avez ajoutée, et quand, évite des heures de débogage confus plus tard.
+Implications pratiques, formulées comme raisonnement plutôt que comme règles confirmées :
 
-Il est également utile de savoir qui d'autre partage l'environnement. Sur un serveur multijoueur, une commande drop de niveau administrateur peut supprimer des objets que d'autres joueurs ont gagnés. Sur une base de données partagée, une instruction DDL peut casser une application qui dépend de l'objet que vous venez de supprimer. Limitez strictement vos permissions et n'accordez les capacités destructrices qu'aux personnes qui comprennent l'étendue des dégâts possibles.
+- Ne supposez pas qu'une position de tir reste viable pendant toute la partie.
+- Traitez les épaves fraîches comme une inconnue : elles peuvent bloquer, canaliser ou abriter les déplacements.
+- Revérifiez les lignes de vue après les engagements majeurs plutôt que de vous fier à une première lecture.
+
+Comme la page ne documente pas le comportement des collisions ni les valeurs de couvert, vérifiez-les dans une escarmouche contrôlée avant de vous y fier dans une grande bataille.
+
+## Personnalisation et ce qui n'est pas documenté
+
+Les méchas, chars, VTOL et armures de combat sont tous décrits comme personnalisables, et les pilotes comme personnalisables et pouvant monter en niveau. Ce que cela signifie en nombre d'emplacements, en chemins d'amélioration ou en coûts n'est pas publié.
+
+Si vous voulez des détails, les sources fiables sont :
+
+1. La [page officielle Steam](https://store.steampowered.com/app/1944880/) pour les déclarations et mises à jour du développeur.
+2. L'interface en jeu elle-même, qui montre quelles options existent réellement.
+3. Les notes de patch ou publications du développeur, si et quand elles apparaissent.
+
+Les guides tiers peuvent être utiles, mais ce sont des observations secondaires. Attribuez-les comme telles et attendez-vous à ce qu'ils vieillissent au fil des mises à jour du jeu.
 
 ## FAQ
 
-**Qu'est-ce qu'une commande drop exactement ?**
-Une commande drop est toute instruction qui libère, supprime ou transfère un objet. Elle apparaît dans les chats de jeu, les bots de chat, les clients SQL et les ensembles de règles de pare-feu, et la syntaxe correcte dépend entièrement de celui que vous utilisez.
+**Drop Command est-il la même chose qu'une unité de mod mental-omega ?**
+Non. Drop Command est le jeu Steam de PillBugGames (app 1944880). Toute association avec une unité de mod sans rapport est une coïncidence de nom, pas le même produit.
 
-**Une commande drop est-elle réversible ?**
-Parfois. Dans les jeux, les objets déposés peuvent généralement être ramassés à nouveau. Dans les bases de données, une instruction `DROP` n'est pas réversible sans sauvegarde, c'est pourquoi un plan de restauration doit exister avant d'en exécuter une.
+**Quand est-il sorti ?**
+La page officielle du store indique le 28 septembre 2026.
 
-**Pourquoi ma commande drop ne renvoie-t-elle rien ?**
-Le silence signifie généralement l'une de trois choses : le préfixe de commande est erroné, vous n'avez pas la permission requise ou — dans le cas des règles de pare-feu — le drop fonctionne exactement comme prévu et écarte silencieusement le trafic.
+**Puis-je jouer en tant qu'infanterie ?**
+L'armure de combat est listée comme un type d'unité personnalisable et se situe à l'extrémité inférieure de l'échelle, mais la page ne la décrit pas en détail.
 
-**Où puis-je trouver la syntaxe correcte pour ma configuration ?**
-Commencez par la sortie d'aide intégrée. Les bots de chat listent leurs arguments, les jeux publient des références de commandes et les moteurs de base de données maintiennent une documentation officielle pour chaque instruction DDL qu'ils prennent en charge. Suivre un guide pas à pas des commandes drop propre à votre plateforme vaut mieux que de deviner à chaque fois.
+**Le jeu a-t-il des statistiques d'unités ou des coûts de construction publiés ?**
+Non. La page du store ne publie ni statistiques d'unités, ni tables de dégâts, ni coûts de construction, ni arbres technologiques, ni listes de factions, ni système de code. Quiconque affirme le contraire spécule ou se réfère à des données tierces.
+
+**Puis-je commander une armée ?**
+Oui, la description officielle indique que vous pouvez vous lancer seul dans la mêlée, mener une escouade ou commander une armée.
+
+**Suivre ce guide garantit-il le succès ?**
+Non. Il s'agit d'un raisonnement à partir du postulat interarmes annoncé. L'équilibre réel dépend d'un réglage qui n'a pas été documenté, donc testez en jeu.

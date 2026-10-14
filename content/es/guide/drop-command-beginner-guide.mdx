@@ -1,134 +1,80 @@
 export const metadata = {
-  title: "Guía para principiantes del comando drop: cómo usar comandos drop en juegos y bots",
-  description: "Una guía práctica para principiantes del comando drop que cubre sintaxis, ejemplos paso a paso, errores comunes y consejos de seguridad para juegos, bots de chat y shells.",
+  title: "Drop Command: Una guía práctica para el combate de armas combinadas con mechs",
+  description: "Drop Command es un juego de mechs de armas combinadas a gran escala. Esto es lo que confirma la página de Steam, lo que deja abierto y cómo abordarlo.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## ¿Qué es un comando drop?
+Drop Command es un juego de Steam del desarrollador PillBugGames, lanzado el 28 de septiembre de 2026 con el ID de aplicación 1944880. Su propuesta es inusualmente amplia para el género: combate con mechs a gran escala, donde la guerra de armas combinadas se une a la libertad de pilotar cualquier unidad bajo tu mando. Puedes lanzarte al combate en solitario, liderar un escuadrón o comandar un ejército. Este artículo se ciñe estrictamente a lo que realmente anuncia la ficha oficial de la tienda en https://store.steampowered.com/app/1944880/, señala dónde las impresiones de la comunidad difieren de la documentación y explica cómo abordar el juego sin inventar cifras que no existen.
 
-Un comando drop es una única instrucción que escribes para liberar un objeto, recurso o elemento de tu inventario, mano o cuenta. En un juego puede empujar una pila de mineral al suelo para que un compañero de equipo la recoja. En un bot de chat puede entregar una recompensa a un espectador. En un shell de base de datos, un comando de sonido similar elimina una estructura completa de una sola vez. La palabra "drop" hace el mismo trabajo en todos los casos: algo sale del lugar donde vive actualmente.
+## Qué anuncia realmente la página oficial
 
-Si estás siguiendo una guía para principiantes del comando drop, el objetivo no es memorizar cien instrucciones diferentes. Es aprender el patrón. Una vez que puedes leer el patrón — acción, objetivo, cantidad, opciones — puedes descifrar la mayoría de los sistemas de comandos en uno o dos minutos. Esa es la habilidad que construye esta guía.
+La ficha de Steam es la autoridad aquí, y merece la pena leer la descripción de forma literal en lugar de proyectar en ella las expectativas del género. Según la página oficial de la tienda, Drop Command ofrece:
 
-### Por qué el patrón importa más que las palabras exactas
+- Combate con mechs a gran escala, enmarcado como combate de armas combinadas.
+- La capacidad de pilotar cualquier unidad bajo tu mando.
+- Una progresión desde pequeñas escaramuzas hasta batallas épicas.
+- Lanzarte al combate en solitario, liderar un escuadrón o comandar un ejército.
+- Un campo de batalla en evolución con escombros y restos de unidades totalmente destructibles.
+- Pilotos personalizables y mejorables.
+- Una elección entre escuadrones de élite de veteranos y novatos desechables.
+- Mechs, Tanques, VTOLs y Armaduras de Combate personalizables.
 
-Cada juego, bot y herramienta escribe su propia versión del comando. Las palabras cambian, la puntuación cambia y, a veces, todo queda oculto detrás de un menú en lugar de un cuadro de texto. Lo que rara vez cambia es la lógica subyacente:
+Ese es todo el alcance anunciado. Cabe destacar que la página no publica estadísticas de unidades, tablas de daño, costes de construcción, árboles tecnológicos, listas de facciones ni ningún tipo de sistema de códigos. Si has visto una página de wiki de fans que afirme lo contrario, trátala como no verificada hasta que puedas comprobarla con el propio juego.
 
-- **El verbo va primero.** "Drop" le dice al sistema qué hacer.
-- **El objetivo va segundo.** Qué objeto, qué pila, qué tabla.
-- **La cantidad y las opciones van al final.** Cuántos, y bajo qué condiciones.
-- **Un prefijo lo marca como comando.** Una barra inclinada, un punto o un signo de exclamación separa un comando del chat normal.
+| Característica anunciada | Lo que implica para el juego |
+|---|---|
+| Pilotar cualquier unidad bajo tu mando | Sin "bloqueo de clase" permanente en el avatar del jugador |
+| Armas combinadas | Los tipos de unidad están pensados para usarse juntos, no de forma aislada |
+| Escombros y restos destructibles | El terreno y los restos cambian a lo largo de una partida |
+| Pilotos mejorables | Existe una progresión individual del piloto junto a la elección de unidad |
+| Veteranos vs. novatos | Un intercambio deliberado entre calidad y reemplazabilidad |
 
-Aprende ese esqueleto y pasarás mucho menos tiempo buscando documentación.
+## Pilotar cualquier unidad: por qué importa
 
-## Dónde usarás un comando drop
+La mayoría de los juegos de mechs te piden que elijas un chasis antes de la partida y que vivas con él. La descripción oficial de Drop Command dice en cambio que puedes pilotar cualquier unidad bajo tu mando. Léelo sin añadir cifras: describe flexibilidad de control, no una garantía de que cada unidad sea igual de fuerte o esté igual de disponible en todo momento.
 
-Los comandos drop aparecen en más lugares de los que la mayoría de los principiantes esperan. La siguiente tabla mapea los entornos comunes y lo que el comando realmente hace en cada uno.
+La consecuencia práctica es que tu atención se convierte en el recurso real. En pequeñas escaramuzas puede que solo tengas un puñado de unidades, así que pilotar una directamente es sencillo. A medida que las batallas escalan hacia el extremo "épico" que menciona la página, la pregunta pasa de "qué piloto" a "qué piloto ahora mismo, y qué dejo que gestione el resto de mi fuerza".
 
-| Entorno | Qué hace "drop" | Cómo lo introduces |
-|---|---|---|
-| Consola de juego sandbox / creativo | Elimina un objeto del inventario y lo coloca en el mundo | Línea de chat que empieza con una barra inclinada |
-| MMO o RPG cooperativo | Mueve el botín de tu bolsa al suelo o a una ventana de intercambio | Línea de chat, atajo de teclado o arrastrar y soltar |
-| Bot de Discord o de chat de streaming | Otorga una recompensa u objeto aleatorio a un espectador | Prefijo del bot más el nombre del comando |
-| Consola de administración del servidor | Obliga a un jugador a soltar un objeto sostenido | Línea de consola escrita como operador |
-| Shell de base de datos o consultas | Elimina una tabla, columna u objeto de forma permanente | Sentencia escrita en una ventana de consultas |
-| Automatización o scripting | Envía una acción drop a un dispositivo o proceso | Llamada a función dentro de un script |
+Este es un razonamiento general a partir de la premisa de las armas combinadas, no datos medidos. Nadie fuera del desarrollador puede decirte qué unidad gana un enfrentamiento concreto, porque la página de la tienda no publica tales tablas.
 
-La mayoría de los lectores llegan a esta página por las dos primeras filas — inventarios de juegos y botín. Pero vale la pena saber que la versión de base de datos de "drop" es la más destructiva del grupo. Si alguna vez buscas un comando drop y encuentras resultados sobre tablas y esquemas, estás ante una herramienta completamente diferente con un nombre compartido.
+## Armas combinadas y el campo de batalla en evolución
 
-Un hábito útil es identificar en qué entorno estás antes de escribir nada. Hazte tres preguntas: ¿Este sistema tiene un cuadro de chat o una consola? ¿Existe un rol de operador o administrador? ¿Se puede deshacer la acción? Las respuestas te dicen cuánto cuidado necesitas tener.
+Las armas combinadas son un concepto militar real: distintas armas cubren las debilidades de las demás. La descripción de Steam nombra Mechs, Tanques, VTOLs y Armaduras de Combate como cuatro categorías personalizables. Esa es la pista estructural más clara que da la página.
 
-Para una referencia del mundo real sobre cómo un gran juego sandbox documenta la estructura de comandos, la [referencia de comandos de Minecraft Wiki](https://minecraft.wiki/w/Commands) mantenida por la comunidad es un ejemplo sólido de sintaxis con el verbo primero en la práctica.
+El detalle del campo de batalla en evolución es igual de importante. Los escombros y restos de unidades totalmente destructibles significan que el mapa con el que empezaste no es el mapa con el que terminas. Los escombros pueden bloquear rutas; los restos pueden marcar dónde ya hubo lucha. Como la página no documenta si los escombros bloquean la línea de visión, ralentizan el movimiento o pueden despejarse, la respuesta honesta es que deberías estar atento a ello durante tus primeras partidas y formar tu propia opinión.
 
-## Sintaxis del comando drop y tu primer comando
+Tácticamente, la suposición segura arraigada en la premisa —no en ninguna cifra publicada— es que una fuerza con una sola arma es más predecible que una mixta, y que un campo de batalla que has alterado es uno que deberías releer en lugar de dar por sentado.
 
-### Anatomía del comando
+## Veteranos, novatos y la progresión del piloto
 
-Casi todos los comandos drop se dividen en las mismas cuatro o cinco piezas. Una vez que puedes etiquetar cada pieza, leer los mensajes de error se vuelve mucho más fácil.
+La página de la tienda ofrece dos enfoques con nombre: construir escuadrones de veteranos, o lanzarse contra los oponentes con novatos. También confirma que los pilotos son personalizables y mejorables.
 
-| Parte | Qué hace | Ejemplo de marcador de posición |
-|---|---|---|
-| Prefijo | Marca la línea como un comando, no como chat | `/` o `!` |
-| Verbo | La acción en sí | `drop` |
-| Objetivo | El objeto, elemento o jugador afectado | `item_name` |
-| Cantidad | Cuántas unidades liberar | `1`, `32`, `all` |
-| Opciones | Condiciones adicionales, como un destinatario | `to player_name` |
+Lo que no dice es cuánta experiencia necesita un piloto por nivel, qué cambia un nivel, o si un piloto mejorado puede perderse de forma permanente. Eso no está documentado. Puedes verificarlo en el juego consultando tu pantalla de piloto tras unas cuantas misiones, o buscando un manual o notas del parche en la página oficial.
 
-La ortografía exacta del objetivo es el tropiezo más común para los principiantes. Muchos sistemas usan IDs internos en lugar del nombre visible que ves en pantalla, y esos IDs suelen distinguir entre mayúsculas y minúsculas. Una sola letra mayúscula en el lugar equivocado puede ser la diferencia entre un comando funcional y un mensaje de error.
+La tensión de diseño es familiar. Los veteranos probablemente representan tiempo invertido que preferirías no tirar por la borda; los novatos son, según las propias palabras de la página, desechables. Trata eso como una interpretación de la descripción, no como una regla. Dónde traza el juego la línea entre ambos es algo que solo jugar te mostrará.
 
-### Tu primer comando drop, paso a paso
+## Personalización sin especificaciones inventadas
 
-Usa esta secuencia la primera vez que pruebes un comando drop en cualquier sistema nuevo.
+"Personalizable" aparece una vez y cubre cuatro categorías de unidades. No promete un número concreto de ranuras, una lista de armas ni una moneda. Cualquiera que cite costes de construcción o valores de daño de Drop Command está citando algo que la ficha oficial no contiene.
 
-| Paso | Qué hacer | Por qué ayuda |
-|---|---|---|
-| 1 | Encuentra el indicador de comandos (cuadro de chat, consola o terminal) | Los comandos solo funcionan donde el sistema los escucha |
-| 2 | Confirma el prefijo revisando la ayuda del juego o la documentación del bot | El prefijo equivocado es la causa n.º 1 de "comando desconocido" |
-| 3 | Escribe el verbo solo y envíalo | Muchos sistemas responden con instrucciones de uso |
-| 4 | Añade el objetivo y envía de nuevo | Aísla los errores de objetivo de los errores de sintaxis |
-| 5 | Añade la cantidad, empezando con una sola unidad | Un drop de prueba de un objeto es fácil de deshacer |
-| 6 | Observa el resultado y anota qué cambió | Confirma a dónde fue realmente el objeto |
-| 7 | Anota la línea que funcionó | Te ahorra tener que deducirla de nuevo más tarde |
+Si quieres saber qué incluye realmente la personalización, abre el juego, inicia una partida o una pantalla de hangar y lee lo que se te presenta. Si el juego tiene un sistema de códigos —códigos de trucos, códigos para compartir, cualquier cosa de ese tipo—, la página oficial de la tienda no menciona ninguno, así que no esperes que exista una lista hasta que el desarrollador la publique.
 
-Empezar con una cantidad de uno no es solo precaución — es más rápido. Si algo sale mal, has perdido un objeto en lugar de una pila completa. La experiencia de los jugadores en los foros comunitarios señala consistentemente este único hábito como la diferencia entre una curva de aprendizaje rápida y una tarde entera recuperando equipo perdido.
+## Preguntas frecuentes
 
-## Errores del comando drop, seguridad y etiqueta
+**¿Es Drop Command lo mismo que la unidad del mod mental-omega del mismo nombre?**
+No. Drop Command es un juego independiente de Steam de PillBugGames. El nombre compartido es una coincidencia de redacción, no una conexión.
 
-### Leer los mensajes de error
+**¿Cuándo se lanzó?**
+El 28 de septiembre de 2026, según los appdetails oficiales de Steam, desarrollador PillBugGames.
 
-La mayoría de los fallos del comando drop caen en un puñado de categorías. La siguiente tabla relaciona el síntoma que ves con la causa y la solución.
+**¿Puedo encontrar estadísticas de unidades o costes de construcción en línea?**
+La página de la tienda no los publica, y las guías de terceros que sí lo hagan deberían tratarse como observaciones, no como documentación.
 
-| Síntoma | Causa probable | Solución |
-|---|---|---|
-| "Comando desconocido" | Prefijo equivocado, o comandos desactivados en el servidor | Revisa la lista de ayuda o pregunta a un operador |
-| "Objeto desconocido" | Nombre mal escrito o ID interno equivocado | Copia el nombre exacto del inventario o la documentación |
-| No pasa nada | El comando se ejecutó pero no se seleccionó ningún objetivo | Selecciona o haz clic en el objeto primero |
-| El objeto desaparece sin dejar rastro | Se soltó en un lugar inseguro, o expiró un temporizador de desaparición | Usa una zona segura; revisa las reglas de desaparición |
-| "Permiso denegado" | Tu cuenta carece de derechos de operador o administrador | Solicita el rol a un moderador |
-| Una estructura completa ha desaparecido | Ejecutaste un comando destructivo de base de datos en su lugar | Restaura desde una copia de seguridad reciente de inmediato |
+**¿Tengo que comandar un ejército?**
+No. La descripción abarca lanzarte en solitario, liderar un escuadrón o comandar un ejército.
 
-Esa última fila es la que hay que recordar. En los shells de consultas, un comando drop es permanente e irreversible. Nunca ejecutes uno contra una base de datos en producción sin una copia de seguridad verificada, y nunca ejecutes uno en un sistema que no sea tuyo.
+**¿Existe una forma garantizada de jugar mejor?**
+No. Nada aquí promete el éxito. El enfoque honesto es leer la página oficial, jugar y verificar tú mismo los detalles no documentados.
 
-### Lista de verificación de seguridad y etiqueta
-
-- **Prueba primero en un mundo privado o servidor sandbox.** Los errores ahí no cuestan nada.
-- **Suelta objetos en zonas seguras.** Muchos juegos permiten que los objetos soltados desaparezcan, y algunos dejan que otros jugadores los tomen.
-- **Anuncia tus drops en multijugador.** Un mensaje rápido evita que un compañero de equipo pise tu botín.
-- **Conoce el temporizador de desaparición.** Los objetos que se quedan demasiado tiempo pueden desaparecer por sí solos.
-- **Verifica dos veces el objetivo antes de pulsar enter.** Leer la línea una vez más toma un segundo.
-- **Mantén los objetos valiosos fuera del flujo de drops.** Usa un sistema de intercambio o correo para cualquier cosa que no puedas reemplazar.
-
-La etiqueta importa tanto como la mecánica. En mundos compartidos, soltar objetos en una puerta, en un punto de aparición o encima de un cofre es una queja común. Suelta hacia un lado, en un área designada, y limpia cualquier cosa que decidas no conservar.
-
-## Comando drop vs. comandos relacionados
-
-Los principiantes a menudo usan "drop" cuando otro comando les serviría mejor. Esta tabla comparativa muestra cuándo cada opción es la elección correcta.
-
-| Comando | Qué hace | Mejor uso |
-|---|---|---|
-| drop | Libera un objeto en el mundo o a un objetivo | Entregar algo a un jugador cercano |
-| give | Transfiere o crea un objeto directamente | Recompensas sin desorden en el suelo |
-| take / remove | Elimina un objeto sin crear ningún elemento en el mundo | Limpiar basura |
-| destroy / delete | Elimina de forma permanente, sin recuperación | Limpieza de administrador (alto riesgo) |
-| trade / mail | Mueve objetos a través de un sistema protegido | Cualquier cosa valiosa o entre mapas |
-
-La regla práctica: si el objeto es reemplazable y el destinatario está parado junto a ti, suéltalo. Si el objeto es valioso, remoto o único, usa un sistema de intercambio o correo en su lugar. Si solo quieres deshacerte de él, elimínalo en lugar de soltarlo en el suelo para que otro se ocupe de él.
-
-## Preguntas frecuentes sobre el comando drop
-
-### ¿Todos los juegos y bots usan el mismo comando drop?
-
-No. El verbo "drop" es común, pero el prefijo, el formato del objetivo y las opciones disponibles difieren de un sistema a otro. Lo que se mantiene es la estructura: prefijo, verbo, objetivo, cantidad, opciones. Aprende ese orden y podrás adaptarte a un nuevo comando drop en unos minutos en lugar de unas horas.
-
-### ¿Por qué mi comando drop dice "objeto desconocido"?
-
-En casi todos los casos, el nombre del objetivo no coincide con lo que el sistema espera. Los nombres visibles y los IDs internos a menudo son diferentes, y los IDs con frecuencia distinguen entre mayúsculas y minúsculas. Copia la cadena exacta de tu pantalla de inventario o de la documentación oficial en lugar de escribirla de memoria.
-
-### ¿Es peligroso un comando drop?
-
-En los juegos, normalmente es de bajo riesgo — el peor resultado es perder un objeto por un temporizador de desaparición o por otro jugador. En los shells de base de datos, un comando drop es destructivo y permanente, por lo que las copias de seguridad son obligatorias antes de ejecutar uno. Confirma siempre en qué entorno estás antes de escribir.
-
-### ¿Cómo debería practicar un principiante un comando drop?
-
-Abre un mundo privado, un servidor de pruebas o una base de datos de práctica y ejecuta el comando con una cantidad de uno. Repítelo hasta que la sintaxis se sienta automática, luego aumenta la cantidad. Practicar en un entorno donde el fallo no cuesta nada es la forma más rápida de ganar confianza antes de usar el comando en una sesión en vivo.
+Para la fuente autoritativa sobre características, requisitos y cualquier actualización futura, consulta la página oficial de Steam: https://store.steampowered.com/app/1944880/.

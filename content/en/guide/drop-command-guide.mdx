@@ -1,125 +1,76 @@
 export const metadata = {
-  title: "Drop Command Guide: How to Safely Delete Tables, Databases, and Objects",
-  description: "Learn how the DROP command works in SQL, MongoDB, and firewalls — plus syntax, CASCADE and IF EXISTS options, and a safe pre-drop checklist.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command actually promises, how to think about combined-arms play, and what the Steam page does and does not document.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-A single mistyped DROP command can wipe out months of work in under a second. That is why anyone who touches a database — developers, analysts, DevOps engineers, and data scientists — eventually needs a trustworthy drop command guide that covers syntax, safety options, and the habits that prevent disasters. The command itself is short, but the consequences of running it in the wrong environment are permanent. This guide explains how DROP works, how it differs from DELETE and TRUNCATE, and how to build a workflow that makes destructive operations predictable instead of terrifying.
+Drop Command is a large-scale mech combat game from developer PillBugGames, released on Steam on 28 September 2026. Its pitch is unusually broad: you do not lock into a single chassis or a single role. You pilot any unit under your command, and the scale of the fight can swing from a small skirmish to a full battle line. That flexibility is the whole appeal, and it is also the thing most likely to confuse a new player. This article sticks to what the official Steam page states, separates that from community impressions, and offers general reasoning about how to approach the game rather than invented numbers.
 
-## What Is a DROP Command and Why It Matters
+You can find the official store listing at https://store.steampowered.com/app/1944880/ — that page is the authority for the game's advertised features, and it is worth reading before you buy or before you trust any third-party summary.
 
-The DROP command is a Data Definition Language (DDL) statement that removes an object from a database server entirely. It does not just delete rows — it deletes the container. When you drop a table, you lose the rows, the column definitions, the indexes, the constraints, the triggers, and the access permissions attached to it, all in one operation.
+## What the Steam page actually advertises
 
-That makes DROP fundamentally different from ordinary data manipulation. Several characteristics set it apart:
+The verified description covers several distinct promises. First, combined-arms combat at a grand scale. Second, the ability to pilot any unit under your command. Third, dropping into combat alone, leading a squad, or commanding an army. Fourth, an evolving battlefield with fully destructible debris and unit wreckage. Fifth, customisable and levelable pilots. Sixth, the choice between elite squads of veterans and disposable rookies. Seventh, personalisation of Mechs, Tanks, VTOLs, and Battle Armour.
 
-- **It is DDL, so it commits implicitly.** In most relational engines, you cannot simply wrap a DROP in a transaction and roll it back the way you would with an UPDATE.
-- **It takes a heavy lock.** Dropping a table usually requires an exclusive lock, which means active queries against that object may block or fail.
-- **It is destructive and immediate.** Once the operation completes, the object is gone from the catalog.
-- **It is permission-sensitive.** Typically only the object owner or a privileged administrative role can execute it.
+That is the complete list of advertised pillars. Notice what is missing: the store page does not publish unit stats, damage tables, build costs, tech trees, faction lists, or any kind of code system. If a guide online presents those as fact, treat it as a third-party observation at best, and possibly as guesswork. The developer has not documented them on the product page.
 
-Because of these traits, the DROP command deserves more caution than almost any other statement you will type. The official [PostgreSQL documentation for DROP TABLE](https://www.postgresql.org/docs/current/sql-droptable.html) is a good reference point for how strictly a mature engine defines the behavior, dependencies, and options involved.
+The four unit categories named — Mech, Tank, VTOL, Battle Armour — are the only ones confirmed. You should not assume there are others, and you should not assume the naming implies specific stat profiles. A VTOL is a VTOL; the page does not say how fast or how fragile.
 
-## DROP vs. DELETE vs. TRUNCATE: Know the Difference
+## Piloting any unit changes how you should think about role
 
-Confusing these three commands is one of the most common causes of accidental data loss. They operate at different levels, and only one of them is easy to undo.
+The headline feature is that you can pilot any unit under your command. In most mech games you are the mech, and everything else is scenery or support. Here, the player is a commander who can also take the controls. That single design fact reshapes tactics.
 
-| Command | What it removes | Rollback possible? | Relative speed | Typical use case |
-|---|---|---|---|---|
-| DROP | The entire object: rows, structure, indexes, constraints, permissions | No — DDL commits immediately in most engines | Fastest | Retiring an obsolete table or cleaning up a test schema |
-| TRUNCATE | All rows, but keeps the table structure intact | Rarely; depends on the engine and transaction support | Very fast — deallocates storage pages | Emptying a staging table before a nightly reload |
-| DELETE | Only rows matching a WHERE clause | Yes, when wrapped in an explicit transaction | Slowest — logs row by row | Removing specific records while preserving history |
+If you can jump into any unit, then your value as a player is not tied to one chassis. You can move to where the fight is failing. That suggests a few general habits, framed as reasoning from the premise rather than measured advice:
 
-A simple rule of thumb: use DELETE when you want to remove *some* data, TRUNCATE when you want to remove *all* data but keep the table, and the DROP command when you want the object itself to stop existing. If you are unsure which one you need, you almost certainly need DELETE.
+- Keep a mental map of which unit type is under pressure at any moment, because you may be the best reinforcement available.
+- Treat your own piloting time as a scarce resource and spend it where a human decision beats an AI one.
+- Avoid committing personally to a fight that a subordinate unit could win without you.
 
-## The Most Common DROP Commands by Object Type
+None of this is documented as a mechanic. It is simply what follows from "pilot any unit under your command" as the Steam page describes it. Verify the real behaviour in-game.
 
-DROP is not a single statement — it is a family. Each object type in a relational database has its own variant, and each one behaves slightly differently.
+## Veterans, rookies, and the squad economy
 
-| Object type | Typical statement | Key notes |
+The page explicitly offers "elite squads of veterans or disposable rookies." That is a design choice about attrition. Veterans presumably survive longer and perform better; rookies are cheap and expendable in the sense the page implies.
+
+Two readings are possible, and the page does not settle which is true. One is a persistent roster where you invest in named pilots over time and lose them permanently. The other is a per-mission pool where veterans and rookies differ only in starting quality. The phrase "customisable and levelable pilots" points toward persistence, but the page does not confirm perma-death, respec rules, or experience curves.
+
+| Question | Documented on Steam page? | How to verify |
 |---|---|---|
-| Table | `DROP TABLE orders;` | Removes data and structure together |
-| Database | `DROP DATABASE analytics;` | Destroys every object inside; usually requires elevated privileges |
-| Column | `ALTER TABLE orders DROP COLUMN notes;` | Alters the parent table rather than dropping it |
-| Index | `DROP INDEX idx_customer_email;` | Frees storage and speeds up writes; no data lost |
-| View | `DROP VIEW monthly_summary;` | Removes the saved query definition only |
-| Schema | `DROP SCHEMA staging;` | Often fails unless the schema is empty or CASCADE is used |
-| User or role | `DROP USER reporting_bot;` | Revokes access; owned objects may need reassignment first |
-| Function or procedure | `DROP FUNCTION calculate_tax(numeric);` | Signature may be required to identify the right routine |
+| Are pilots persistent across missions? | Not stated | Play the campaign, or ask in the Steam community hub |
+| Do rookies cost less than veterans? | Not stated | Check in-game recruitment screens |
+| Is there permadeath for pilots? | Not stated | Observe after losing a pilot in combat |
 
-Two patterns are worth noticing. First, index and view drops are relatively low-risk because no table data disappears. Second, database and schema drops are high-risk precisely because they cascade across many objects at once.
+A practical stance: build a small core of pilots you actually care about, and accept that a large part of any force will be replaceable. That is the tension the description invites. It is not a guarantee of success, and the balance may differ from launch.
 
-## DROP Command Syntax, Options, and Safety Switches
+## The evolving battlefield and wreckage
 
-The core syntax is almost always `DROP <object type> <object name>;`, but the modifiers around it are what separate a careful operator from a reckless one.
+"Fully destructible debris and unit wreckage" is one of the more concrete claims. Destroyed units leave wreckage, and the battlefield changes as the fight goes on. In combined-arms games this usually means cover shifts, lanes close, and what was open ground becomes cluttered.
 
-| Option | Where it appears | What it does |
-|---|---|---|
-| `IF EXISTS` | Nearly all engines | Prevents an error when the object is already gone — essential for repeatable scripts |
-| `CASCADE` | PostgreSQL, and equivalents elsewhere | Drops dependent objects such as foreign keys and views along with the target |
-| `RESTRICT` | PostgreSQL and others | Refuses the drop if any dependency exists — the safer default mindset |
-| `PURGE` | Oracle | Skips the recycle bin so the object cannot be restored from it |
-| `TEMPORARY` | Several engines | Restricts the operation to temporary objects only |
-| `ONLINE` | Some engines, for indexes | Attempts to drop an index without blocking concurrent traffic |
+General reasoning: do not plan a route once and commit to it. Reassess as debris accumulates. Wreckage that blocks a tank may not block Battle Armour. Conversely, wreckage that gives you cover may give the enemy cover on the next push. The page does not describe how wreckage is cleared, whether it blocks line of sight, or whether it can be removed. Confirm in-game.
 
-Two practical tips stand out. First, prefer `RESTRICT` semantics when you are exploring, because a failed drop tells you something important about hidden dependencies. Second, `CASCADE` should be a deliberate decision, not a reflex — it can silently remove objects you forgot were connected to the target.
+## Personalisation without published stats
 
-## A Safe DROP Command Workflow, Step by Step
+The page names four chassis types and says they are personalisable. It does not say what "personalisation" includes. It could be cosmetic, it could be modular loadouts, it could affect performance. Do not assume a build system with published numbers, because none are published.
 
-Most production incidents involving DROP are not caused by bad syntax. They are caused by running a correct statement against the wrong target. A short, repeatable workflow closes that gap.
+If customisation is mechanical, the sensible approach is to specialise rather than generalise. Combined-arms games reward units that do one job well over units that do several jobs poorly. But that is a general principle, not a Drop Command fact. Check the in-game customisation screen, and check the official page for updates, since post-launch patches may add detail the page does not yet carry.
 
-1. **Verify your connection.** Confirm which server, database, and environment your session is pointed at. Production and staging credentials should never be interchangeable.
-2. **Confirm the object exists and is the right one.** Run a `SELECT` against the catalog or a `LIMIT 1` query on the table itself. Seeing real data is the fastest way to catch a typo.
-3. **Map the dependencies.** Look for foreign keys, views, materialized views, stored procedures, and application code that reference the object.
-4. **Take a backup.** A logical dump or snapshot of the affected schema is cheap insurance compared with reconstruction.
-5. **Rehearse on a non-production copy.** Restore the backup into a scratch environment and run the statement there first.
-6. **Use `IF EXISTS` and `RESTRICT` for the first attempt.** This makes the operation idempotent and surfaces unexpected dependencies.
-7. **Drop, then verify.** Query the catalog afterward and check application logs for errors referencing the removed object.
+## FAQ
 
-| Pre-drop checkpoint | Question to answer | Why it matters |
-|---|---|---|
-| Target confirmation | Am I connected to the intended environment? | Prevents staging statements from hitting production |
-| Dependency scan | What references this object? | Avoids breaking views, jobs, and API endpoints |
-| Backup status | Can I restore this object within the recovery window? | Determines whether the drop is reversible in practice |
-| Change approval | Is this change logged and reviewed? | Creates an audit trail and a second pair of eyes |
-| Timing | Is this a low-traffic window? | Reduces lock contention and failed requests |
+**What is the release date?**
+28 September 2026, per the official Steam app details.
 
-Teams that treat the DROP command as a change-managed event rather than a quick console command report far fewer "oops" moments. The workflow costs a few minutes; recovery can cost days.
+**Who developed it?**
+PillBugGames.
 
-## DROP Commands Beyond SQL: Firewalls, Document Stores, and Game Servers
+**Is Drop Command related to a mod unit of the same name?**
+No. That is a separate, unrelated use of the phrase. This article concerns the Steam game, app 1944880.
 
-The word "drop" appears in several other technical contexts, and the meaning shifts each time. Recognizing the difference prevents a lot of confusion when you search for a drop command guide.
+**Where are the unit stats and build costs?**
+Not published on the Steam page. Anyone quoting exact numbers is working from third-party observation or speculation, not developer documentation.
 
-| Platform or context | Drop mechanism | What it actually does |
-|---|---|---|
-| Relational databases | `DROP TABLE`, `DROP DATABASE`, and related statements | Removes schema objects permanently |
-| MongoDB | `db.collection.drop()` | Deletes an entire collection, including its indexes |
-| Cloud data warehouses | `DROP TABLE` and `DROP SCHEMA` variants | Removes warehouse objects; some platforms support a limited restore window |
-| Firewalls (iptables, nftables) | The `DROP` target, for example `-j DROP` | Silently discards matching packets instead of rejecting them with an error response |
-| Game servers and mods | Item-drop commands such as `/drop` | Transfers or discards an item in the player's inventory |
+**Can I command an army and pilot a unit at the same time?**
+The page says you drop in alone, lead a squad, or command an army, and that you can pilot any unit under your command. How those modes interact at any given moment is not documented; test it yourself or ask the community.
 
-The firewall case is a useful contrast. A DROP target in a firewall rule is not destructive to data at all — it simply tells the kernel to ignore traffic that matches the rule, which is why it is often preferred over a REJECT target when you want to avoid revealing that a port is filtered.
-
-In gaming environments, item-drop behavior varies widely by platform, server framework, and installed mods. Community reports and player experience suggest that the exact syntax and permissions depend heavily on the specific server configuration, so always check the documentation for your particular setup rather than assuming a command from one game works in another.
-
-## Frequently Asked Questions
-
-**Is the DROP command reversible?**
-
-In most relational engines, no. DROP is a DDL statement that commits immediately, so a standard transaction rollback will not bring the object back. Recovery depends on having a backup, a point-in-time restore capability, or a platform-specific recycle bin. Some managed warehouses offer a limited restore window, but you should never rely on it as your primary safety net.
-
-**What happens if I run a DROP command on a table with foreign keys?**
-
-Usually the operation fails, because other tables depend on the target through referential integrity constraints. That failure is a feature, not a bug — it protects related data. If you genuinely need to remove the table, drop or redefine the dependent constraints first, or use CASCADE deliberately after you have confirmed exactly which objects will be removed along with it.
-
-**Does DROP TABLE free disk space immediately?**
-
-Not always. The catalog entry disappears right away, but the underlying storage may be reclaimed lazily, depending on the engine and its storage layer. In many systems the space is returned to the tablespace or file system for reuse rather than shrinking the database file on disk.
-
-**Can I run a drop command in a transaction?**
-
-It depends on the engine. PostgreSQL supports transactional DDL, so you can drop an object inside a transaction and roll it back. MySQL and Oracle generally treat DDL as auto-committing, which means the statement takes effect the moment it succeeds. Check your engine's behavior before you count on a rollback.
-
-## Final Thoughts
-
-The DROP command is one of the most powerful statements in any database toolkit, and it is also one of the least forgiving. Understanding the difference between DROP, TRUNCATE, and DELETE, knowing which modifiers like CASCADE and RESTRICT actually do, and following a short pre-drop checklist will protect you far better than memorizing syntax alone. Treat every destructive statement as a change worth reviewing, verify your target twice, and keep a recent backup within reach — then you can use DROP confidently instead of nervously.
+**Does the game guarantee a particular playstyle will work?**
+No. Nothing here guarantees success. The features described allow a range of approaches, and balance will likely change after release.

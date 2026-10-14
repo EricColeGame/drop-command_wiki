@@ -1,106 +1,99 @@
 export const metadata = {
-  title: "Drop Command Combat Guide: How to Use Drop Commands to Win Fights and Manage Loot",
-  description: "Learn how the drop command works in combat — item drops, aggro drops, and tactical uses — plus keybinds, risks, and pro tips.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command actually advertises, how to reason about combined-arms tactics, and how to verify undocumented details yourself.",
   category: "combat",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Pressing one button at the wrong moment can lose you a fight — and pressing it at the right moment can win one. The **drop command** is one of the most underestimated inputs in combat gaming: it releases an item, a target, or a chunk of aggro from your character's control, and knowing when to fire it separates clean kills from messy wipes. Whether you're shedding weight so you can dodge faster or dumping threat so your tank can step back in, mastering the **drop command** in combat changes how you approach every encounter.
+Drop Command is a Steam game from developer PillBugGames, released on 28 September 2026 under app ID 1944880. Its pitch is unusually broad for the mech genre: instead of locking you into a single chassis, it hands you an entire battlefield of combined-arms units and lets you pilot any one of them while still giving orders to the rest. If you are trying to work out whether that freedom is a gimmick or the core of the design, the honest answer is that the store page tells you the shape of the game and leaves the numbers to the game itself.
 
-## What Exactly Is a Drop Command?
+This article sticks to what the developer actually advertises, flags what is community observation rather than documentation, and is explicit about what nobody has published yet.
 
-A drop command is any input or instruction that makes your character, your squad, or the game world release something currently under your control. In combat-focused games, that "something" usually falls into one of four families: an item in your inventory, a target you have locked or aggroed, a weapon in your hands, or your standing posture.
+## What the official store page actually promises
 
-New players tend to think of the drop command as housekeeping — something you use back in town when your bags are full. Experienced players treat it as a combat input with real tactical value. The same keystroke that clears inventory space can also break a boss reset, deny an enemy a disarm, or shave a fraction of a second off your dodge window.
+According to the official Steam listing at https://store.steampowered.com/app/1944880/, Drop Command is described as "mech combat at a grand scale" with "combined arms combat" in which you pilot any unit under your command. The advertised scope runs "from small skirmishes to epic battles," and the game is framed around "building a stellar empire."
 
-| Family | What it releases | Typical combat use | Main risk |
-|---|---|---|---|
-| Item drop | A single item or a stack from your inventory | Shedding weight for movement speed, handing ammo to a teammate | Dropping the wrong item, or dropping when you meant to trade |
-| Target / aggro drop | Your lock-on or your threat on an enemy | Resetting a boss, escaping a gank, repositioning safely | Losing damage uptime; some bosses heal or fully reset |
-| Weapon drop | The weapon in your hands | Preempting a disarm, baiting an opponent, switching to fists or a sidearm | Leaving yourself unarmed if you can't re-equip quickly |
-| Posture drop | Standing to crouched or prone | Breaking line of sight, dodging ranged fire | Slower movement and a harder disengage |
+The listing also advertises:
 
-## Why the Drop Command Wins Fights
+- Dropping into combat alone, leading a squad, or commanding an army
+- An evolving battlefield with fully destructible debris and unit wreckage
+- Customisable and levelable pilots
+- The choice between elite squads and disposable rookies
+- Personalisation of Mechs, Tanks, VTOLs, and Battle Armour
 
-Weight and encumbrance systems are the clearest argument for learning your drop command. In many titles, carrying heavy loot slows your sprint, shortens your dodge distance, or increases stamina drain. A drop command that removes a few kilos mid-chase can be the difference between escaping a gank and feeding a kill.
+That is the complete set of verified feature claims. Notably, the page does not publish unit stats, weapon damage tables, build costs, faction lists, or a code system. Anyone presenting those as fact is working from something other than the developer.
 
-Aggro drops matter just as much in group content. If you're a damage dealer who has crept to the top of the threat meter, dropping your target at the right moment hands control back to the tank before the boss turns around and one-shots your healer. Community reports from raid-focused players consistently describe the aggro drop as the single most valuable non-damage button in their toolkit.
+## Why "pilot any unit" changes how you should think
 
-Then there's baiting. Dropping a valuable-looking item on the ground and backing off is an old trick, and it still works in games where loot is visible to other players. It's cheap, it's mean, and in PvP it occasionally wins a fight outright.
+Most mech games ask you to master one machine. Drop Command's advertised premise is that the machine is a choice, not an identity — you can be in a Mech, a Tank, a VTOL, or Battle Armour, and the rest of your force continues to exist and presumably continues to fight.
 
-| Situation | Drop or hold? | Reasoning |
+That single design decision reshapes tactics in a few predictable ways, and the reasoning below follows from the combined-arms premise rather than from measured data:
+
+**Your personal survival is not the win condition.** If you can command an army, then losing the unit you happen to be sitting in is a setback, not a defeat. Players who treat their own chassis as precious will under-commit; players who treat it as one asset among many will take positions that actually matter.
+
+**Unit choice is a positioning decision.** A VTOL and Battle Armour occupy completely different spaces on a battlefield. Whatever you pick determines where you can be useful, and by extension where your attention can be spent.
+
+**Wreckage and debris are advertised as evolving.** Fully destructible debris and unit wreckage mean the map you scouted at the start is not the map you fight on later. Plan for sightlines and routes to change rather than assuming a fixed layout.
+
+## Choosing between veterans and rookies
+
+The store page explicitly offers "elite squads or disposable rookies," which is a resource-management statement as much as a tactical one. The framing implies a real trade-off: veterans presumably represent accumulated investment that is painful to lose, while rookies are cheap enough to spend.
+
+Without published numbers, treat this as a judgment call you calibrate in play:
+
+- If a push is meant to fix an enemy in place, rookies are the natural choice.
+- If a push is meant to break something, that is where accumulated pilot investment should go.
+- If you cannot articulate what a squad is for, you probably should not send the expensive one.
+
+This is general reasoning, not a formula. The game does not publish the underlying values.
+
+## What is documented, observed, and unknown
+
+| Category | Status | Detail |
 |---|---|---|
-| Encumbered while being chased | Drop the heaviest junk | Movement and dodge speed often scale with carried weight |
-| You're top threat and the boss is about to enrage | Drop aggro | Lets the tank re-establish control before the switch |
-| An enemy is winding up a disarm | Test a preemptive drop | Some games let you deny the disarm; verify in your title first |
-| Pinned in the open by a ranged attacker | Drop to prone | A smaller silhouette is harder to hit at distance |
-| Inventory full right after a rare kill | Hold, then bank | Dropped loot can despawn or be picked up by someone else |
+| Developer, app ID, release date | Documented | PillBugGames, 1944880, 28 September 2026 |
+| Four unit classes | Documented | Mech, Tank, VTOL, Battle Armour |
+| Pilot customisation and leveling | Documented | Advertised on the store page |
+| Destructible debris and wreckage | Documented | Advertised on the store page |
+| Damage values, build costs, tech trees | Not documented | Not published on the store page |
+| Faction lists, code systems, hotkeys | Not documented | Do not trust claims about these |
 
-## How to Run a Drop Command Cleanly: Step by Step
+Third-party guides may offer opinions on matchups and builds, but those are secondary observations rather than developer documentation. Treat them the way you would treat any player's notes: useful as a hypothesis, unverified as fact.
 
-Speed matters, but sloppy drops cost gear. The players who never lose items to their own hotkeys are the ones who built a routine.
+## How to verify anything this article cannot tell you
 
-| Step | Action | Why it matters |
-|---|---|---|
-| 1 | Confirm which key or macro fires your drop command | Half of accidental losses come from a bind you forgot you changed |
-| 2 | Know whether your game *drops* or *destroys* | Dropped items can be picked back up; destroyed items are gone forever |
-| 3 | Glance at your feet and your surroundings | Items can fall through geometry, into lava, or into an enemy's reach |
-| 4 | Time the drop to a gap in the fight | Mid-animation drops often fail or get queued behind another action |
-| 5 | Re-equip, re-lock, or re-stance immediately | The value of a drop comes from what you do in the next two seconds |
+Because the official page withholds numbers, the fastest route to reliable information is the game itself. Practical steps:
 
-If your game offers both a "drop" and a "destroy" action, bind them far apart. Community reports of players losing rare gear almost always trace back to those two commands sharing a key or sitting next to each other in a menu.
+1. Open the official Steam page at https://store.steampowered.com/app/1944880/ and read the full description and any developer posts. If a feature is not there, it is not confirmed.
+2. In game, check whether tooltips or an in-game codex expose the values you want. If the game shows you a number on screen, that number is authoritative for your version.
+3. Check patch notes attached to the app. Balance in a game with four unit classes and pilot progression is likely to move, and a guide written before a patch may describe a game that no longer exists.
+4. Test one variable at a time in a small skirmish before committing to a large battle. The advertised skirmish-to-epic range is convenient for exactly this.
 
-## Keybinds, Modifiers, and Safety Toggles
+## A sensible first approach to combined arms
 
-Your drop command should be reachable without leaving your movement keys. That single constraint rules out a lot of otherwise sensible layouts.
+If you are new to Drop Command and want a starting posture rather than a build order, this sequence follows from the advertised structure:
 
-| Approach | How it works | Best for | Watch out for |
-|---|---|---|---|
-| Single dedicated key | One press drops the selected item | Fast weight dumps in PvP | Accidental drops while navigating menus |
-| Modifier + key | Hold a modifier, then press | Players with crowded hotbars | Slower when you're panicking |
-| Hold-to-drop | Press and hold until it registers | Protecting rare gear from misfires | Too slow for emergency situations |
-| Confirmation prompt | The game asks you to confirm | New players and high-value items | Breaks combat flow entirely |
+Start in a role you can actually control. Pick the unit class whose movement and positioning you understand, not the one that sounds strongest on paper. Then use the rest of your force to cover the weakness that choice creates — if you are slow and heavily armed, you need something fast watching your flanks; if you are fast and fragile, you need something durable holding ground you cannot hold yourself.
 
-A useful compromise is a two-tier setup: a fast key for common junk and a confirmation-gated command for anything rare. Many games also expose an interface option that prevents dropping equipped gear, which is worth enabling the day you start playing, not the day after your first loss.
+Keep a cheap element in reserve. The elite-versus-rookie split exists precisely so you can absorb a bad engagement without losing everything you have built. Finally, re-scout after major fighting, because destructible debris and wreckage mean yesterday's cover may be today's open ground.
 
-For a broader vocabulary of combat and interface terminology, [PC Gamer's guides hub](https://www.pcgamer.com/guides/) is a solid reference point when you're comparing how different titles implement the same basic actions.
-
-## Drop Commands in Group Play and PvP
-
-Group content adds a social layer to a purely mechanical action. Dropping loot in front of strangers invites theft; dropping aggro without warning can wipe a raid. Most veteran groups settle on simple etiquette: announce aggro drops in voice chat, and never drop tradeable loot in a shared instance unless you mean to give it away.
-
-In PvP, the calculus flips. Dropping your weapon to bait an opponent into a lunge, then re-equipping mid-animation, is a genuine high-skill play in games that allow it — though it's punishing if your re-equip fails. Likewise, dropping to prone behind cover is one of the cheapest ways to survive a sniper's sightline.
-
-## Common Drop Command Mistakes
-
-| Mistake | Why it hurts | Fix |
-|---|---|---|
-| Dropping instead of trading | Your item hits the ground and can be taken | Use the trade window for anything you intend to give away |
-| Dropping during a boss pull | Can reset the encounter or drop your threat at the worst time | Save aggro drops for phase transitions and tank swaps |
-| Binding drop next to a combat ability | Panic presses delete your own gear | Isolate the bind or add a confirmation prompt |
-| Dropping in an unsafe spot | Loot despawns, falls through terrain, or lands in hazards | Drop on flat, safe ground you can walk back to |
-| Never practicing the input | You fumble it exactly when it matters | Drill it in a low-stakes area until it's automatic |
-
-## Practice Drills That Actually Build Muscle Memory
-
-- Run a five-minute session in a safe zone dropping and re-picking up common junk until the motion is thoughtless.
-- Practice the aggro drop against a low-level enemy with a friend tanking, so you learn the timing without risking a raid.
-- Rehearse a weight dump mid-sprint: fill your bags, run a circuit, and drop the heaviest stack at the halfway mark.
-- Test whether your game allows preemptive weapon drops against disarms before you try it in ranked play.
-- Rebind, then re-test. A new key invalidates everything you practiced on the old one.
+None of this guarantees success. It is reasoning from the premise the developer advertised, and the numbers that would refine it are not public.
 
 ## FAQ
 
-**Is the drop command the same thing as a discard command?**
-Not always. In many games, "drop" places an item in the world where anyone can pick it up, while "discard" or "destroy" removes it permanently. Check your game's tooltip before you use either one on something valuable.
+**Is Drop Command the same as the mental-omega mod unit?**
+No. Drop Command is the Steam game by PillBugGames, app 1944880. The mental-omega mod unit is unrelated.
 
-**Can I drop aggro without losing my target entirely?**
-In some titles, yes — the two are separate actions. Look for a dedicated threat-reduction or "detarget" option in your ability list, and treat it as distinct from your item drop command.
+**What units can I pilot?**
+The store page advertises Mechs, Tanks, VTOLs, and Battle Armour, and states you can pilot any unit under your command.
 
-**Does dropping items really make me faster?**
-Only in games with weight or encumbrance systems. If your title has no such mechanic, the drop command is purely about inventory management and baiting.
+**Can I play alone without commanding anything?**
+The official description says you can drop into combat alone, or lead a squad, or command an army — so solo play is advertised, though the listing does not detail how that mode is structured.
 
-**Why did my dropped item disappear?**
-Most likely it despawned on a timer, fell through terrain, or was picked up by another player. Drop in a safe, flat area and pick your gear back up quickly.
+**Are there published damage values or build costs?**
+No. The official page does not publish unit stats, damage tables, build costs, tech trees, faction lists, or a code system. Verify in game rather than trusting unsourced numbers.
 
-Get the drop command onto a key you can hit without thinking, learn whether your game drops or destroys, and practice it until it's as automatic as your dodge. That one input will quietly win you more fights than any new piece of gear.
+**Does a larger force always win?**
+Nothing in the official material supports that claim, and it is not something to assume. Composition, positioning, and pilot quality are all advertised variables, so force size is only one input among several.
+
+For anything beyond the advertised feature set, the official Steam page and the game's own interface are the only sources worth treating as authoritative.

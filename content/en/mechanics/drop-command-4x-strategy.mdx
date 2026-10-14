@@ -1,113 +1,78 @@
 export const metadata = {
-  title: "Drop Command 4X Strategy Guide: Master Orbital Deployment",
-  description: "Learn how the drop command works in 4X strategy games: orbital deployment, timing, counters, and the setup checklist that turns one turn into a win.",
+  title: "Drop Command: How Combined-Arms Mech Combat Actually Works",
+  description: "A practical guide to Drop Command, PillBugGames' large-scale mech combat game: unit roles, pilot progression, and battle planning.",
   category: "mechanics",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What the Drop Command Actually Does
+Drop Command is a large-scale mech combat game from developer PillBugGames, released on Steam on 28 September 2026. The pitch is unusually broad for the genre: you do not pick one iconic war machine and live inside it for twenty hours. Instead, you pilot any unit under your command, and that command can be as small as yourself or as large as an army. That single design decision shapes almost everything else about how the game plays, and it is the detail most worth understanding before you spend your first hour in it.
 
-In most 4X games, armies crawl. They follow adjacency rules, pay movement points, respect terrain, and take turns to cross a map that keeps getting bigger. A drop command exists to break that contract. Instead of walking your stack across six turns of contested ground, you issue a single order and the units appear on a target tile — or at least attempt to.
+This article sticks to what PillBugGames actually advertises on the official Steam page, separates that from what players report, and is honest about what the store never documents.
 
-That is why the drop command 4X strategy conversation almost always starts with tempo rather than raw power. The mechanic does not necessarily make your units stronger. It makes them *present*, which in a turn-based game is often the same thing. A veteran stack that arrives three turns early can take a capital, cut a supply corridor, or force an entire enemy war plan to collapse before it starts.
+## The advertised design in plain terms
 
-Because "drop command" is used loosely across the genre, it helps to separate the major variants before you build a strategy around one.
+The official [Drop Command store page](https://store.steampowered.com/app/1944880/) describes combined arms combat at a grand scale, where you drop into battle alone, lead a squad, or command an army. The battlefield is described as evolving, with destructible debris and unit wreckage. Pilots can be customised and levelled. You can build squads of veterans or rush opponents with rookies. Mechs, Tanks, VTOLs and Battle Armour are all listed as personalisable unit types.
 
-| Variant | Typical Delivery Method | Best Use | Main Limitation |
-|---|---|---|---|
-| Orbital drop / drop pod | Direct to a tile within a deployment radius | Decapitating a capital, seizing a chokepoint | Long cooldown and a high per-unit cost |
-| Airborne insertion | From a carrier, airbase, or transport wing | Backline raiding, severing supply lines | Fragile on arrival; needs air control |
-| Teleport / gate network | Between linked structures | Instant reinforcement of an active front | Requires pre-built infrastructure |
-| Reinforcement beacon | Into friendly or neutral territory | Holding a freshly captured colony | Usually barred from occupied tiles |
-| Extraction / reverse drop | Pulls units out of a hot zone | Rescuing a doomed stack | Limited capacity and often one-way |
+Three things follow from that wording, and they matter more than any individual stat:
 
-The important detail is that nearly every version of the mechanic is *conditional*. It has a range, a capacity, a cooldown, or a resource cost — sometimes all four. Reading those constraints is the difference between a surgical strike and an expensive gift to your opponent.
+- **Unit switching is core, not a bonus feature.** If you can pilot any unit under your command, your moment-to-moment decisions include which seat to occupy, not just where to move.
+- **Scale is a variable you set.** The same game supports a lone drop and a full army command, which implies the challenge comes from force composition and positioning rather than a fixed difficulty curve.
+- **The map is a resource and a hazard.** Wreckage and destructible debris are advertised as part of an evolving battlefield, so terrain changes as the fight continues.
 
-## Why the Drop Command 4X Strategy Tempo Shift Matters
+## Reading combined arms as a planning problem
 
-Front lines in 4X games are a fiction you agree to. Both players garrison a border, both players push along a lane, and both players assume the fight happens where the armies meet. A drop command deletes that assumption. Suddenly every undefended city, every lone production hub, and every exposed stack is a target, and your opponent has to spend resources defending places that were never in danger before.
+Because PillBugGames has not published unit stats, damage tables, or build costs, any advice here is reasoning from the premise rather than measured data. Treat it as a framework for your own testing.
 
-The trade is rarely free. You are converting steady, cheap movement into a burst of expensive, irreversible movement. Compare the two approaches honestly before you commit.
+Combined arms works when each unit covers another's weakness. Tanks generally want open ground and long sightlines. VTOLs want vertical space and the ability to disengage. Battle Armour suggests close, small-scale work where a full-size vehicle is awkward. Mechs sit somewhere between armour and infantry in most settings, and in this game they are the most directly personalisable option.
 
-| Metric | Conventional March | Drop Command |
+The practical question is not "which unit is best" but "which unit should I be in right now." A useful habit is to ask, before each engagement:
+
+1. Which units in my force are exposed if I stay in my current seat?
+2. Which enemy unit is causing the most trouble, and which of my units counters it?
+3. If I switch, what breaks in the next thirty seconds?
+
+That third question is the one players forget. Leaving a command position to personally handle a threat can be correct, but the official description implies you are responsible for everything under your command, so a heroic solo run that costs you the wider fight is a bad trade.
+
+| Situation | Reasonable default | Why |
 |---|---|---|
-| Turns to reach a deep target | Often 6–15 | Usually 1–2 |
-| Exposure while traveling | Full stack vulnerable en route | Minimal or none |
-| Upfront cost | Low, mostly upkeep | High per unit plus cooldown |
-| Surprise factor | Low — scouts see it coming | High — vision is the only warning |
-| Ability to recall | Easy; turn around and go home | Difficult; extraction is often limited |
-| Failure state | Lose time | Lose the entire deployed force |
+| Small skirmish, few units | Pilot the unit best suited to the terrain | Little coordination overhead; personal skill matters most |
+| Mixed force, open ground | Stay in a command-capable unit | Rewards positioning and keeps you able to react |
+| Enemy air pressure | Consider VTOL or anti-air-capable units | Vertical mobility changes the engagement |
+| Cluttered, broken terrain | Battle Armour or a smaller unit | Debris and wreckage constrain large vehicles |
 
-That last row is the one players forget. When a march fails, you lose tempo. When a drop fails, you lose the army — and you often lose it somewhere you cannot reinforce.
+Those pairings are inference from the advertised unit types, not documented rules.
 
-## How to Set Up a Drop Command: A Step-by-Step Checklist
+## Pilots, veterans and rookies
 
-Experienced players rarely improvise a drop. They run a checklist, and community reports consistently point to the same five stages as the ones that separate clean strikes from disasters.
+The store page states that pilots are customisable and can be levelled, and that you can build squads of veterans or rush opponents with rookies. That framing suggests a genuine trade-off rather than a straight upgrade path. Veterans represent accumulated investment; rookies represent cheap, replaceable volume.
 
-| Step | What to Do | Why It Matters |
-|---|---|---|
-| 1. Recon | Confirm vision on the target tile and the tiles around it | Dropping blind into an unseen garrison is the most common way to lose a stack |
-| 2. Staging | Pre-position units, transport capacity, and the resources for the order | Capacity and cost are usually checked at the moment of the command, not before |
-| 3. Cover | Establish air superiority, suppress anti-air, or jam detection | Interception happens before landing, and it hurts |
-| 4. Timing | Fire the drop one turn before your main push, not after | The drop should open a door, not walk through one that is already closed |
-| 5. Follow-Up | Queue reinforcements, supply, and a second wave | A dropped stack with no supply line is a stack on a timer |
+Since no experience rates, level caps, or progression tables are published, you cannot plan around specific numbers from outside the game. What you can do is decide your risk posture. If you intend to absorb losses, rookie-heavy forces are consistent with that. If you intend to preserve a core of experienced pilots, you will want to avoid putting them in the most exposed roles. The game's own description presents both as legitimate, which is a reasonable signal that neither is a trap.
 
-A useful rule of thumb from player experience: if you cannot describe what the dropped units will be doing three turns after they land, you are not ready to drop them. The landing is the easy part. Holding the ground you took is where campaigns are decided.
+## Customisation and verification
 
-There is also a scouting cost most players underestimate. Vision denial is the strongest defense against any drop command 4X strategy, so if your opponent has invested in sensor coverage, radar pickets, or wide scout screens, your target list shrinks dramatically. Budget a turn or two to clear that vision before you commit.
+Mechs, Tanks, VTOLs and Battle Armour are all described as personalisable. The Steam page does not say how deep that customisation goes, whether it is cosmetic, functional, or both, and it publishes no build costs or module lists. Anyone claiming to know exact part values is working from something other than the official listing.
 
-## Defending Against a Drop Command
+To check for yourself, open the [official Steam page](https://store.steampowered.com/app/1944880/) and read the full feature list, then compare it against what the game shows you in a customisation screen. If a system is not described there and not visible in the interface, it is undocumented rather than confirmed.
 
-Defense against drops is not about building a wall. It is about making the drop unprofitable. That means layering answers so that any landing either fails outright or arrives into a fight it cannot win.
+## Community observations and their limits
 
-| Threat Layer | Practical Counter | What It Buys You |
-|---|---|---|
-| Vision | Sensor nets, radar, scout pickets, satellite coverage | Denies free target selection |
-| Interception | Interceptors, anti-air batteries, point defense | Attrition before the units even land |
-| Garrison discipline | Cheap defensive units in core cities | Forces the attacker to spend a turn clearing them |
-| Mobile reserve | A fast reaction stack kept centrally | Lets you crush the landed force |
-| Zone control | Area denial, shields, terrain denial | Makes key tiles invalid drop targets |
+Third-party guides and forum posts have begun appearing since release, and some are useful for orientation. The caveat is that they are secondary observations, not developer documentation. A guide writer may have tested one build path on one map and generalised from it. That does not make the advice wrong, but it does mean you should treat specific numbers, tier lists, or "best unit" claims as one player's experience rather than a specification.
 
-The mobile reserve is the piece most players skip, and it is the one that wins games. A drop that lands and immediately faces a counterattack has accomplished nothing except donating units. A drop that lands against an empty map has already won the war.
-
-It also helps to think about what your opponent is paying. If a drop command costs a cooldown and a resource stockpile, forcing them to waste it on a decoy city is a genuine victory — often a bigger one than killing the units.
-
-## Drop Command vs. Conventional Movement: A Decision Framework
-
-Not every situation calls for orbital theatrics. Use the table below as a quick filter before you spend the resources.
-
-| Situation | Better Choice | Reason |
-|---|---|---|
-| Target is two turns away along a safe road | Conventional march | You save the cost and keep the cooldown available |
-| Target is deep behind a fortified border | Drop command | Bypassing the fortification is the entire point |
-| You need to hold a tile for many turns | Conventional march | Drops rarely bring sustainable supply |
-| Enemy has thin vision but strong garrisons | Drop command | Vision is the bottleneck, not defense |
-| Enemy has dense vision and a mobile reserve | Conventional march or feint | The drop is likely to be punished |
-| You are behind on tempo and need a swing | Drop command | Nothing else generates a swing this fast |
-
-A useful pattern is the feint-and-drop: push a conventional army toward one border to pull the enemy reserve, then drop on the opposite flank. It works because it forces your opponent to answer two problems with one army — and in a turn-based game, one army can only be in one place.
-
-## Advanced Tips and Common Mistakes
-
-- **Do not drop onto a tile you cannot hold.** Capturing is easy; keeping is not. Bring a garrison unit or a follow-up wave.
-- **Do not stack everything into one drop.** Spreading across two targets forces split responses and protects you from a single bad roll.
-- **Do not ignore the cooldown.** If the drop command is on a multi-turn timer, the second use is often more valuable than the first. Save it for the turn that ends the game.
-- **Do not drop without extraction planning.** If your game supports pulling units out, know the range and capacity before you go in.
-- **Do watch for detection tech.** Community reports frequently note that a single detection upgrade can invalidate an entire drop-focused build.
-- **Do combine with siege or bombardment.** Landing next to a city is far stronger when its defenses are already suppressed.
-
-If you want to see how widely these mechanics vary between titles, browsing a [curated catalog of 4X strategy games on Steam](https://store.steampowered.com/tags/en/4X/) is a fast way to compare how different designers handle deployment, capacity, and cooldowns.
+Where third-party material is strongest is in describing feel: how a unit handles, how quickly a battle escalates, how much micromanagement a large force demands. Where it is weakest is in anything numeric.
 
 ## FAQ
 
-**Is the drop command 4X strategy mechanic always worth the cost?**
-No. It is a tempo tool, not a default opener. If a conventional march reaches the target in the same number of turns for less money, march. The drop command earns its cost when it bypasses a defense, skips a long route, or creates a threat your opponent cannot answer in one turn.
+**What kind of game is Drop Command?**
+A large-scale mech combined-arms combat game by PillBugGames, released 28 September 2026, in which you pilot any unit under your command.
 
-**Can you drop units onto tiles the enemy already occupies?**
-In most designs, no — a drop command targets empty, friendly, or neutral tiles, and occupied tiles are simply invalid. A few games allow contested landings with heavy penalties. Check your title's tooltip before you plan around it, because the difference completely changes how you use the mechanic.
+**Can I play solo, or do I need a squad?**
+The official description says you can drop into combat alone, lead a squad, or command an army. All three are advertised as supported.
 
-**How do you stop a drop command rush?**
-Layer vision, interception, and a mobile reserve. Vision removes the attacker's target list, interception taxes the landing itself, and the reserve punishes whatever survives. Garrisoning your core cities with cheap units is the cheapest insurance available.
+**Does it have a code system or unlock codes?**
+Not documented. The Steam store page publishes no code system, and no verified source confirms one.
 
-**Does the drop command work for non-military units?**
-Sometimes. Settlers, workers, and support units are frequently allowed if they fit within capacity, and dropping a colonist onto a contested continent is one of the strongest plays in the genre. Just remember that civilian units usually cannot defend themselves, so the landing tile needs protection on the same turn.
+**Are unit stats, damage values or build costs published?**
+No. The official listing does not include unit stats, damage tables, build costs, or a tech tree.
+
+**How do I find out how a specific mechanic works?**
+Check the in-game interface and the official [Steam page](https://store.steampowered.com/app/1944880/) first. If neither explains it, it is undocumented, and third-party claims should be treated as unverified.

@@ -1,124 +1,75 @@
 export const metadata = {
-  title: "Drop Command Infantry Guide: How to Deploy, Time, and Win With Drop Troops",
-  description: "Learn how drop command infantry works: deployment timing, unit roles, counters, and tips to turn airborne insertions into lasting map control.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Learn how Drop Command blends piloting, squad building, and combined-arms tactics on a destructible battlefield, plus how to verify details yourself.",
   category: "units",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What Is the Drop Command Infantry Mechanic?
+Drop Command is a mech combat game built around a simple but demanding promise: you fight at a grand scale, and you can pilot any unit under your command. Developed by PillBugGames and released on 28 September 2026, it puts combined-arms warfare and personal control in the same frame. That combination shapes almost every decision you make, from how you build a squad to whether you drop in alone or lead a full army. This article explains what the game actually advertises, what players reasonably infer from that premise, and what remains undocumented so you can check it yourself.
 
-Nothing flips a match faster than a squad that appears where the enemy has no answer ready. A **drop command infantry** play turns an empty corner of the map into a staging ground in seconds, and a stalled push into a decisive one. If you have ever watched a transport unload behind your lines while your main army was committed somewhere else, you already understand why the **drop command infantry** mechanic is one of the most feared tools in strategy and tactical games.
+## What Drop Command Actually Is
 
-At its core, the mechanic is a command that inserts infantry units directly onto the battlefield from an off-map source — an orbiting ship, a high-altitude carrier, a tunnel network, or a teleport gate. Unlike normal production, the units do not walk to the fight. They arrive at a chosen point, usually after a short delay, and they arrive as a complete squad rather than a trickle of replacements.
+According to the official Steam store page, Drop Command is mech combat at a grand scale. The short description highlights combined-arms combat where you pilot any unit under your command, ranging from small skirmishes to epic battles. The same listing describes building a stellar empire, dropping into combat alone or leading a squad or an army, and an evolving battlefield with fully destructible debris and unit wreckage.
 
-That single design choice creates three consequences that define every good drop:
+The supported unit categories are specific: Mechs, Tanks, VTOLs, and Battle Armour. The store page also advertises customisable and levelable pilots, the choice between elite squads or disposable rookies, and personalisation across those four unit types.
 
-- **Position becomes a resource.** You are spending a cooldown or a resource stockpile to buy map position, not raw damage.
-- **The drop is telegraphed.** Almost every implementation has a visible marker, a warning sound, or a delay timer, which gives the defender a window to react.
-- **The dropped squad is on its own.** No reinforcements, no retreat path, and often no repair or healing until you link up with your main force.
+That is the verified scope. Notably, the official page does not publish unit stats, damage tables, build costs, or a code system. If you see a guide claiming exact numbers, treat it as a third-party observation rather than developer documentation, and expect it may not match your build.
 
-| Trait | What It Means in Practice | Why It Matters |
+## Piloting Any Unit Under Your Command
+
+The headline feature is direct control. Rather than only issuing orders from a distance, you can take the cockpit or driver's seat of any unit you command. In practice, this reframes combined arms as a personal tool: a Mech gives you a durable frontline presence, Tanks suggest ground firepower and mobility trade-offs, VTOLs imply air mobility and a different attack profile, and Battle Armour reads as lighter, closer infantry-scale fighting.
+
+Those role assumptions come from the names and the combined-arms premise, not from measured data. The developer has not published a unit-by-unit breakdown on the store page. If you want to know how a specific chassis handles, the reliable path is to try it in a match, note its speed, durability, and weapon feel, and compare it against the others yourself.
+
+A useful habit is to rotate through each category early. Because you can pilot anything under your command, your own experience becomes the spec sheet. That is not a shortcut around missing documentation; it is the intended way to learn a game that keeps its numbers in the client rather than the store page.
+
+## Squad Building: Veterans or Rookies
+
+The store description names two contrasting approaches: elite squads or disposable rookies. That is a genuine strategic fork, and it maps onto two different playstyles.
+
+| Approach | Likely strengths | Likely risks |
 |---|---|---|
-| Off-map arrival | Units spawn at a chosen point rather than a production building | Bypasses chokepoints, walls, and static defense |
-| Telegraph window | A marker or timer warns the defender before landing | Skilled opponents can reposition or scatter |
-| Self-contained squad | The group lands with limited support and no supply line | Losses are permanent and expensive |
-| Cooldown-gated | Usually limited by a timer, resource cost, or charge count | Forces you to pick one high-value target |
-| High tempo, low staying power | Strong for a burst of pressure, weak in a grind | Rewards players who convert the drop into something else |
+| Elite squads | Experience compounds over a campaign | Losing trained pilots stings more |
+| Rookie rushes | Cheap, replaceable numbers | Less reliable in sustained fights |
 
-## How a Drop Command Infantry Insertion Works
+These are reasoned expectations from the advertised contrast, not verified mechanics. The official page does not state how pilot leveling works, how much veterans improve, or how rookie replacement is handled. It does say pilots are customisable and levelable, so building and preserving experience appears to matter. A reasonable early experiment is to run a veteran-heavy squad and a rookie-heavy squad in similar situations and see which fits your command style.
 
-Most games follow the same four-step loop, even when the presentation differs. Understanding the loop lets you plan around the delay instead of being surprised by it.
+## The Evolving, Destructible Battlefield
 
-| Step | Action | Common Failure Point |
-|---|---|---|
-| 1. Select the target | Choose a landing zone near the objective you want to threaten | Picking a spot inside enemy vision or overlapping defenses |
-| 2. Confirm the drop | Spend the resource, charge, or cooldown to lock in the command | Firing the drop "just because it is off cooldown" |
-| 3. Wait out the telegraph | The marker appears and the defender gets a short reaction window | Standing still instead of pre-positioning the follow-up force |
-| 4. Convert the landing | Use the dropped squad to take a resource node, snipe a key unit, or force a rotation | Letting the squad sit idle until it is surrounded and killed |
+Drop Command advertises fully destructible debris and unit wreckage on an evolving battlefield. This matters tactically even without published stats. If wreckage and debris persist, the map changes as a fight drags on: cover can appear, lanes can close, and the terrain you scouted at the start may not exist later.
 
-The most important part of that table is step four. A drop that lands and does nothing is worse than no drop at all, because you have traded a long cooldown for a squad that is now trapped behind enemy lines. The value of the **drop command infantry** command is not the landing — it is what the landing forces your opponent to do next.
+Treat that as a prompt to re-read the battlefield instead of committing to one plan. Combined-arms play already rewards matching the right unit to the right job; a shifting field adds timing to that decision. A Mech that anchored a position early may need to relocate once its cover is gone. Again, the exact behavior is undocumented, so the honest advice is to watch how debris and wreckage interact with movement and line of fire in your own matches.
 
-Before you commit, check three things:
+## Combined-Arms Reasoning Without Invented Numbers
 
-- **Vision.** Do you actually know what is at the landing zone, or are you guessing?
-- **Reinforcement distance.** How long until your main army can reach the dropped squad?
-- **Enemy mobility.** Can their fastest units rotate to the drop faster than you can exploit it?
+Because the official page withholds unit stats, damage values, and build costs, any tactics advice here is general reasoning from the combined-arms premise. That is still useful if you apply it carefully.
 
-## Drop Command Infantry Unit Roles: What to Load Into the Bay
+Start with roles rather than raw power. A balanced force typically wants something durable to hold ground, something mobile to pressure flanks, and something that can reach targets others cannot. The four advertised categories give you natural candidates for those jobs. Then let direct control fill gaps: if a fight stalls, piloting the unit best suited to the moment is often more decisive than adding more of what you already have.
 
-The composition of the dropped squad matters as much as the location. Since you cannot reinforce mid-fight, every slot should have a clear job. Community reports from strategy and tactical players consistently favor small, purpose-built squads over large, general-purpose ones.
+Avoid the trap of treating any single category as strictly best. In combined-arms games, dominance usually comes from composition and timing, not one unbeatable unit. Since no faction lists or tech trees are published, you should also expect to discover the roster through play rather than from a wiki-style database.
 
-| Unit Role | Best Used Against | Main Weakness | Ideal Drop Size |
-|---|---|---|---|
-| Anti-structure specialists | Undefended production buildings and resource nodes | Slow against mobile defenders | Small, 1–2 squads |
-| Ranged line infantry | Static defenses and clustered light units | Vulnerable once melee closes in | Medium, 2–3 squads |
-| Melee or assault troops | Isolated ranged units and support crews | Cut down in open ground by focused fire | Small, 1–2 squads |
-| Engineers or support | Repairing captured structures, planting charges, building forward cover | Almost no combat value alone | Minimal, 1 squad |
-| Mixed arms | General harassment and area denial | Expensive; a partial loss hurts badly | Medium, 2–4 squads |
+## How to Verify Details Yourself
 
-A useful rule of thumb: if the dropped squad cannot accomplish its job in roughly thirty seconds without help, it is too big. Large drops are visible, slow to maneuver, and easy to surround. Small drops that force a reaction are almost always better than big drops that try to win the fight alone.
-
-## Timing Windows: When a Drop Command Infantry Play Pays Off
-
-Timing is where most players gain or lose value. The same squad dropped at the wrong moment is a wasted cooldown; dropped at the right moment, it ends the game.
-
-| Timing Window | Why It Works | Risk Level |
-|---|---|---|
-| While the enemy army is committed to a fight elsewhere | Defenders cannot rotate without losing the main engagement | Low |
-| The moment a key defensive structure finishes or is about to finish | You deny an investment before it pays off | Medium |
-| Right after the enemy spends their detection or anti-air cooldown | Their best answer is unavailable | Low |
-| During a resource expansion push | You force a split response and slow their economy | Medium |
-| Late game, when their main army is fully teched | Dropped infantry melt against upgraded units | High |
-| Immediately at match start with no follow-up planned | You gain a small distraction and lose tempo | High |
-
-Notice the pattern: drops are strongest when they create a dilemma rather than a fight. If your opponent can answer the drop without giving anything up, the play was neutral at best. If answering the drop means abandoning a siege, losing a resource node, or turning their army around, you have already won something regardless of whether the squad survives.
-
-## Counterplay: Defending Against a Drop Command Infantry Rush
-
-Knowing how to defend makes you better at attacking, because you learn which targets are not worth hitting. Every drop has a cheap answer if you see it coming.
-
-| Threat | Practical Counter | Notes |
-|---|---|---|
-| Telegraph marker spotted early | Scatter workers and pull units out of the blast or landing zone | Denies the drop its target entirely |
-| Drop aimed at an undefended resource node | Pre-place a small garrison or static defense nearby | Cheap insurance that pays off all game |
-| Drop on your main production | Keep one fast-response squad on standby | Mobility beats static defense here |
-| Repeated drops on the same flank | Lay detection and vision coverage on that side | Removes the attacker's information advantage |
-| Drop timed with a frontal push | Do not chase the drop; hold the front line first | Splitting your army is exactly what they want |
-
-The most common defensive mistake is overreacting. Pulling your entire army back to kill one dropped squad hands the map to your opponent. Send the minimum force required to contain the landing, and keep your main body focused on the fight that actually matters.
-
-## Common Mistakes and Actionable Tips
-
-Even experienced players leak value with this mechanic. Here is what to fix first.
-
-- **Do not drop without a follow-up.** Queue your next move before the squad lands.
-- **Do not drop into fog of war.** Unseen defenses and hidden units turn a clean insertion into a wipe.
-- **Do not drop the same target twice in a row.** Predictable drops get pre-countered.
-- **Do use the drop to buy time, not just damage.** Forcing a rotation is a win even if the squad dies.
-- **Do pair the landing with vision.** A cheap scouting unit nearby makes the drop twice as effective.
-- **Do review the replay.** Check whether the cooldown you spent was worth what you got back.
-
-| Skill Level | Typical Mistake | Better Habit |
-|---|---|---|
-| Beginner | Dropping on the nearest enemy building | Dropping on the objective that matters most |
-| Intermediate | Dropping without a second wave ready | Pre-staging reinforcements before the marker appears |
-| Advanced | Overusing one drop pattern | Rotating landing zones to stay unpredictable |
-
-For broader context on how these mechanics fit into the wider strategy genre, [Steam's strategy category hub](https://store.steampowered.com/tags/en/Strategy/) is a useful place to compare how different titles handle off-map deployment and unit reinforcement.
+When a claim about Drop Command is not on the official page, verification is straightforward. Check the Steam listing at https://store.steampowered.com/app/1944880/ for the developer's own wording. Then confirm in-game behavior directly: pilot each unit type, test pilot leveling, and observe how destructible debris and wreckage affect a battle. If a third-party guide contradicts what you observe, trust your own testing and attribute the guide as secondary.
 
 ## FAQ
 
-**Is drop command infantry worth using in every match?**
-No. It is a tempo tool, not a universal answer. If your opponent has strong anti-air, wide vision coverage, and fast-rotating units, the cooldown is often better spent on conventional production. Use it when the enemy is stretched thin.
+**Who develops Drop Command?**
+PillBugGames, per the official Steam page.
 
-**How many squads should a single drop command infantry play include?**
-Usually one to three. Smaller squads are harder to spot, easier to reposition, and cheaper to lose. Large drops only make sense when you are confident the landing zone is safe and you have reinforcements on the way.
+**When did it release?**
+28 September 2026, according to the Steam appdetails.
 
-**What is the best target for a drop?**
-The target that forces the biggest reaction: an undefended resource node, a key production building, or a siege line that cannot turn around in time. Damage is secondary to the decision you force.
+**Can I pilot any unit?**
+The store page says you can pilot any unit under your command, across Mechs, Tanks, VTOLs, and Battle Armour.
 
-**Can a drop command infantry push win a game on its own?**
-Rarely. It creates an opening, and openings have to be converted. Pair the drop with a frontal push, an expansion, or a tech timing so the pressure compounds instead of fading.
+**Are unit stats or build costs published?**
+No. The official page does not list stats, damage tables, build costs, or a code system.
 
-**How do I stop losing squads to drops?**
-Keep vision on your flanks, garrison your expansions lightly, and always hold one fast-response unit in reserve. Most drops fail the moment the defender sees them coming and simply refuses to take the bait.
+**Is there a code system?**
+Not documented. Do not rely on any code list you find until the developer publishes one.
+
+**Should I use veterans or rookies?**
+Both are advertised as viable. Test each and decide based on how much you value experience versus replaceable numbers.
+
+Drop Command rewards players who learn by doing. Use the official page as your source of truth, treat guides as secondhand, and let your own cockpit time fill in the numbers the developer has not published.

@@ -1,114 +1,91 @@
 export const metadata = {
-  title: "Date de sortie de la commande drop : quand elle arrive, comment la suivre et à quoi s'attendre",
-  description: "La date de sortie de la commande drop expliquée : comment les lancements sont annoncés, comment les vérifier et à quoi s'attendre sur chaque plateforme.",
+  title: "Drop Command : ce que le jeu de mêlée interarmes de mechs promet réellement",
+  description: "Drop Command est le jeu de mêlée interarmes de mechs à grande échelle de PillBugGames sur Steam. Voici ce qui est vérifié, ce qui relève des suppositions de la communauté, et ce qui n'est pas documenté.",
   category: "release",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-La date de sortie de la commande drop fait partie de ces détails qui semblent simples jusqu'à ce que vous essayiez réellement de la déterminer. Une commande drop est une instruction textuelle — saisie dans une zone de chat, une console ou un terminal — qui fait apparaître un objet, une pile d'objets ou un lot de butin au sol, ou qui l'envoie directement dans un inventaire. Comme cette même expression est utilisée dans les jeux sandbox, les plateformes de jeux créées par les utilisateurs, les bots de chat et même les outils de développement, la date de sortie de la commande drop dépend entièrement du système dont vous parlez. Ce guide détaille comment ces lancements fonctionnent généralement, comment les vérifier et comment repérer les fausses dates qui circulent dans les canaux communautaires à chaque cycle de mise à jour.
+Drop Command est un jeu Steam du développeur PillBugGames, sorti le 28 septembre 2026 sous l'ID d'application 1944880. Son argument de vente est inhabituellement large pour un jeu de mechs : vous ne pilotez pas seulement une machine, vous commandez une force et pouvez prendre les commandes de n'importe quelle unité qui en fait partie. Cela signifie qu'une seule session peut vous voir piloter un VTOL, conduire un tank et manœuvrer un Mech, le tout dans la même bataille.
 
-## Ce que les gens entendent réellement par « commande drop »
+Cet article s'appuie sur la [page officielle du store de Drop Command](https://store.steampowered.com/app/1944880/) comme autorité. Là où la page du store est muette — et elle l'est sur beaucoup de points — nous le disons, plutôt que de combler les lacunes avec des statistiques inventées. Si vous essayez de déterminer si ce jeu correspond à ce que vous attendez d'un titre interarmes, les sections ci-dessous séparent ce qui est annoncé, ce que les joueurs ont observé, et ce qui n'est tout simplement pas encore documenté.
 
-Dans les jeux sandbox et de survie, une commande drop est généralement une instruction préfixée — une barre oblique ou un point suivis d'un mot-clé, d'un identifiant d'objet et d'une quantité facultative. C'est le raccourci qu'utilisent les joueurs lorsqu'ils veulent faire apparaître du butin, passer un objet à un coéquipier ou vider un inventaire complet sans ouvrir de menu.
+## Ce que la page officielle du store dit réellement
 
-Dans les frameworks de bots et les outils serveur, « drop » décrit quelque chose de légèrement différent : un événement planifié qui libère une récompense, un giveaway ou une caisse de butin pour la première personne qui la réclame. La commande elle-même est le déclencheur ; le drop est l'événement.
+La description vérifiée est courte mais dense. PillBugGames annonce :
 
-Dans les outils de développement, « drop » signifie souvent supprimer une table, abandonner une tâche en file d'attente ou effacer un fichier — un sens totalement différent qui pollue fortement les résultats de recherche. Une grande partie des pages qui se classent sur ce terme décrivent des logiciels qui n'ont rien à voir avec le butin de jeu vidéo. Filtrez-les avant de passer du temps à les lire.
+- Des combats de mechs à grande échelle
+- Des combats interarmes où vous pilotez n'importe quelle unité sous votre commandement
+- Un jeu allant de petites escarmouches à des batailles épiques
+- La construction d'un « empire stellaire »
+- La possibilité de plonger au combat seul, à la tête d'une escouade, ou en commandant une armée
+- Un champ de bataille évolutif avec des débris et des épaves d'unités entièrement destructibles
+- Des pilotes personnalisables et pouvant monter en niveau
+- Un choix entre des escouades d'élite et des recrues jetables
+- Des Mechs, Tanks, VTOLs et Armures de combat personnalisables
 
-| Contexte | Ce que fait la commande | Qui contrôle le timing | Ce que « sortie » signifie généralement |
-|---|---|---|---|
-| Jeux sandbox / de survie | Fait apparaître ou transfère un objet | Studio ou propriétaire de la plateforme | La commande devient disponible dans un patch ou une mise à jour |
-| Plateformes de jeux créées par les utilisateurs | Déclenche un événement de butin ou une récompense | Créateur individuel | Le créateur publie le script ou le module |
-| Bots de chat et de communauté | Lance un giveaway ou un drop | Développeur du bot | Le module est livré dans une nouvelle build |
-| Outils de développement / bases de données | Supprime ou abandonne des données | Mainteneur de l'outil | La version avec la fonctionnalité est publiée |
+Cette liste constitue l'intégralité de l'affirmation officielle. Notez ce qui est absent : aucune statistique d'unité, aucune table de dégâts, aucun coût de construction, aucun arbre technologique, aucun roster de factions. La page décrit une structure et une intention, pas des chiffres. Quiconque cite des dégâts d'arme spécifiques ou des coûts de ressources puise ailleurs que dans la page du store, et vous devriez traiter ces chiffres avec méfiance à moins qu'une publication du développeur ne les confirme.
 
-## Pourquoi il n'existe pas une date de sortie unique pour la commande drop
+## Piloter n'importe quelle unité : ce que cela signifie en pratique
 
-La plus grande erreur des joueurs est de supposer qu'il existe un seul moment de lancement mondial. Ce n'est généralement pas le cas. Une date de sortie de commande drop peut être répartie entre plusieurs régions, plateformes et niveaux d'autorisation, et chacun de ces éléments peut tomber un jour différent.
+La mécanique phare est que vous pouvez occuper n'importe quelle unité que vous commandez. C'est un choix de conception significatif car il change la façon dont vous lisez une bataille. Dans un jeu de stratégie conventionnel, votre attention est une caméra ; dans Drop Command, c'est un corps. Si un flanc s'effondre, vous pouvez intervenir personnellement — ou vous pouvez rester au-dessus et donner des ordres.
 
-Les studios échelonnent souvent les déploiements volontairement. Ils activent d'abord une commande pour les testeurs internes, puis pour un groupe limité de joueurs, puis pour tout le monde. Les consoles et les boutiques mobiles accusent fréquemment un retard par rapport au PC, car la certification prend du temps supplémentaire. Les serveurs communautaires exécutant des versions modifiées d'un jeu peuvent y avoir accès des semaines avant ou après la build officielle.
+Raisonnement général à partir de cette prémisse, et non données mesurées :
 
-Ce déploiement par étapes explique pourquoi deux joueurs, le même jour, peuvent honnêtement donner des réponses différentes à la même question. L'un se trouve sur une plateforme qui a déjà reçu la mise à jour ; l'autre non.
+- **Jouer en tant qu'unité unique** convient aux joueurs qui veulent un contrôle mécanique direct et un retour immédiat. La contrepartie est que vous ne pouvez pas microgérer ailleurs pendant que vous êtes dans un cockpit.
+- **Commander au niveau d'une escouade ou d'une armée** convient aux joueurs qui préfèrent le positionnement et le timing aux réflexes. La contrepartie est que les combats individuels peuvent se résoudre sans votre intervention.
+- **Alterner entre les deux** est probablement le rythme prévu, puisque la page du store présente les largages en solo, le commandement d'escouade et le commandement d'armée comme un continuum continu plutôt que comme des modes séparés.
 
-| Étape de déploiement | Qui y a accès | Écart typique par rapport à la première étape |
-|---|---|---|
-| Build interne / QA | Développeurs et testeurs | Référence |
-| Groupe limité ou bêta | Joueurs volontaires, créateurs de contenu | De quelques jours à quelques semaines |
-| PC / plateforme principale | Base de joueurs générale | Peu après la bêta |
-| Console et mobile | Boutiques certifiées | Souvent en retard de quelques jours à quelques semaines par rapport au PC |
-| Serveurs de mods communautaires | Propriétaires de serveurs et moddeurs | Varie fortement, peut être plus tôt ou plus tard |
+Étant donné que la page officielle ne documente pas les raccourcis clavier, le comportement de la caméra ou les contrôles de transmission d'ordres, vérifiez-les vous-même en jeu. Une session de dix minutes dans le tutoriel ou une escarmouche vous en apprendra plus que n'importe quel résumé de seconde main.
 
-## Comment les dates de sortie de la commande drop sont réellement annoncées
+## Le champ de bataille évolutif et les épaves destructibles
 
-Les annonces fiables suivent un schéma prévisible, et connaître ce schéma vous fait gagner des heures de défilement. Les studios publient presque toujours une note de patch, un blog de développeur ou une mise à jour de boutique avant ou en même temps que le déploiement. Ce sont les sources à privilégier.
+« Débris et épaves d'unités entièrement destructibles » est l'une des rares affirmations à la fois spécifique et testable. Si elle tient, cela signifie que le terrain lui-même accumule l'histoire du combat — structures effondrées, coques calcinées, sections éparpillées de machines détruites.
 
-Les signalements de la communauté sont utiles, mais doivent être considérés comme un point de départ, pas comme une conclusion. L'expérience des joueurs partagée sur les forums et les serveurs Discord est souvent précise sur *ce qui* a changé, mais floue sur *quand* cela a été mis en ligne, surtout lorsqu'il y a des fuseaux horaires en jeu.
+Deux implications pratiques découlent de cette prémisse, là encore comme raisonnement et non comme fait documenté :
 
-| Type de source | Délai typique | Fiabilité | Meilleure utilisation |
-|---|---|---|---|
-| Notes de patch officielles | Le jour même ou avant le déploiement | Élevée | Confirmer que la commande existe et ce qu'elle fait |
-| Blog de développeur ou feuille de route | Des semaines à des mois à l'avance | Moyenne à élevée | Estimer une fenêtre, pas un jour exact |
-| Listes de mises à jour des boutiques | Le jour même | Élevée | Confirmer la disponibilité sur votre plateforme |
-| Vidéos et streams de créateurs | De quelques heures à quelques jours | Moyenne | Voir la commande en action |
-| Discussions sur les forums et Discord | À tout moment | Faible à moyenne | Signal précoce à vérifier ailleurs |
+| Observation | Inférence raisonnable |
+|---|---|
+| Les épaves persistent sur le terrain | La couverture peut changer pendant une bataille ; une voie qui était ouverte au début peut être bloquée plus tard |
+| Les débris sont destructibles | Les structures ne sont probablement pas des points sûrs permanents |
+| Le champ de bataille évolue avec le temps | La reconnaissance effectuée au début peut devenir obsolète à mi-parcours |
 
-Une bonne règle : si une date n'est pas attachée à une publication officielle, considérez-la comme une rumeur. Les captures d'écran de notes de patch sont modifiées, et les calendriers « fuités » ne sont souvent que des suppositions déguisées en information.
+La page du store n'indique pas si les épaves bloquent le mouvement, fournissent une couverture, ou sont purement visuelles. Testez-le : lancez une partie, détruisez une grande unité dans une zone ouverte, et observez si le mouvement ultérieur à travers cet espace change. Cette simple expérience répond à la question mieux que la spéculation.
 
-## Comment vérifier vous-même une date de sortie de commande drop
+## Pilotes, vétérans et la ruée des recrues
 
-La vérification prend environ cinq minutes et vous évitera d'attendre une date qui n'a jamais été réelle.
+Deux systèmes annoncés interagissent ici : des pilotes personnalisables et pouvant monter en niveau, et un choix entre des escouades d'élite et des recrues jetables. Lus ensemble, cela suggère une couche de gestion du risque par-dessus le combat. Investir dans un pilote sur plusieurs batailles produit vraisemblablement un atout plus fort ; dépenser des unités bon marché de manière agressive échange vraisemblablement la survie contre le tempo.
 
-1. **Vérifiez d'abord le site officiel ou la page de la boutique.** Pour les jeux sandbox, le [site officiel de Minecraft](https://www.minecraft.net/) est un point de référence utile pour voir comment les changements au niveau des patchs sont documentés et annoncés.
-2. **Associez le numéro de version à votre plateforme.** Une commande disponible sur PC peut ne pas encore exister sur console.
-3. **Cherchez la commande dans la liste d'aide en jeu.** Si elle n'y figure pas, elle n'a pas été déployée sur votre build.
-4. **Recoupez deux sources indépendantes.** Une publication officielle plus une fiche de boutique suffisent.
-5. **Vérifiez l'horodatage, pas seulement le contenu.** Une ancienne annonce est la source de confusion la plus courante.
+Ce qui n'est pas documenté : comment les pilotes gagnent de l'expérience, s'ils peuvent être définitivement perdus, ce qu'un « niveau » change, ou comment la composition d'escouade est contrainte. Les guides tiers peuvent spéculer sur ces systèmes, mais traitez ces affirmations comme des observations secondaires plutôt que comme de la documentation du développeur, et vérifiez vous-même la version actuelle.
 
-| Étape de vérification | Ce qu'il faut rechercher | Pourquoi c'est important |
-|---|---|---|
-| Annonce officielle | Une publication nommée avec une date | Établit la référence |
-| Fiche de boutique | Votre plateforme et région spécifiques | Confirme la disponibilité réelle |
-| Menu d'aide en jeu | La commande apparaît dans la liste | Prouve qu'elle existe sur votre build |
-| Confirmation indépendante | Une deuxième source, indépendante | Élimine les captures d'écran modifiées |
-| Vérification de l'horodatage | Date de publication, pas date de mise à jour | Évite les informations obsolètes |
+La lecture stratégique générale est standard pour les jeux interarmes : les forces à forte proportion de vétérans récompensent le jeu prudent et punissent la surextension, tandis que les forces à forte proportion de recrues récompensent l'agressivité et tolèrent les pertes. Savoir si Drop Command est réellement équilibré de cette façon est quelque chose que seul le jeu vous dira.
 
-## Signaux d'alerte indiquant qu'une date de sortie de commande drop est erronée
+## Ce qui n'est pas documenté
 
-Toutes les dates erronées ne sont pas des mensonges. La plupart sont des erreurs honnêtes causées par la même poignée de confusions.
+Être explicite sur les lacunes évite les mauvaises décisions :
 
-- **Une date sans année.** « Ça sort le 14 » n'a aucun sens sans mois ni année.
-- **Une date tirée d'un mod, pas du jeu de base.** Les signalements communautaires confondent souvent les deux.
-- **Une capture d'écran sans lien source.** Les notes de patch modifiées circulent constamment.
-- **Une date répétée sur de nombreux sites avec une formulation identique.** C'est de la syndication, pas une confirmation.
-- **Un compte à rebours sur une page non officielle.** Les minuteurs sont faciles à falsifier et correspondent rarement au vrai déploiement.
+- **Aucune statistique d'unité publiée.** Aucune valeur d'armure, vitesse ou portée d'arme.
+- **Aucune table de dégâts.** Aucun moyen de savoir à partir de sources officielles quelle arme bat quelle cible.
+- **Aucun coût de construction ni détail économique.** « Empire stellaire » est une expression, pas un système chiffré dans un tableur.
+- **Aucun arbre technologique ni liste de factions.** Les quatre types de châssis sont nommés ; leurs variantes ne le sont pas.
+- **Aucun système de code, liste de raccourcis clavier ou notes de patch** sur la page du store.
 
-| Signe d'alerte | Ce que cela signifie généralement | Que faire à la place |
-|---|---|---|
-| Date vague (« bientôt », « prochaine mise à jour ») | Aucun calendrier confirmé n'existe | Attendez les notes de patch officielles |
-| Source anonyme unique | Affirmation non vérifiée | Trouvez une deuxième source |
-| Aucune plateforme précisée | Suppose un lancement mondial unique | Vérifiez votre propre plateforme |
-| Page agrégateur sans auteur | Contenu peu fiable | Allez à la source primaire |
-
-## Que faire en attendant
-
-Si la date de sortie de la commande drop sur votre plateforme n'est pas encore arrivée, vous n'êtes pas bloqué. Vous pouvez préparer beaucoup de choses à l'avance.
-
-- **Apprenez les paramètres de la commande.** Connaître l'identifiant d'objet et le format de quantité vous permet de l'utiliser dès son apparition.
-- **Vérifiez vos paramètres de mise à jour.** Les mises à jour automatiques se mettent parfois en pause, et une mise à jour en attente ressemble exactement à une fonctionnalité manquante.
-- **Suivez un canal officiel et un canal communautaire.** Plus de sources créent plus de bruit, pas plus de clarté.
-- **Sauvegardez tout ce qui vous importe.** Les commandes qui font apparaître ou suppriment des objets peuvent se comporter de manière inattendue dans les premières builds.
-- **Notez ce que vous observez.** Signaler le numéro de build exact et le comportement aide tout le monde à vérifier plus rapidement.
+Pour vérifier l'un de ces éléments, utilisez l'interface en jeu, la page Steam officielle et ses annonces, ou les canaux propres au développeur. Évitez de faire confiance aux pages d'agrégateurs ou aux entrées de wiki qui ne peuvent pas citer une déclaration du développeur.
 
 ## FAQ
 
-**Existe-t-il une date de sortie officielle unique de la commande drop pour chaque jeu ?**
-Non. Chaque jeu, plateforme et framework de bot définit son propre calendrier. La date de sortie de la commande drop pour une build PC peut différer de la version console ou mobile de quelques jours, voire de quelques semaines, et les serveurs communautaires peuvent suivre leurs propres calendriers modifiés.
+**Quand Drop Command est-il sorti ?**
+Le 28 septembre 2026, selon la fiche Steam officielle de l'application 1944880.
 
-**Pourquoi les signalements de la communauté ne sont-ils pas d'accord sur le moment où une commande a été lancée ?**
-Parce que les déploiements sont échelonnés et que les fuseaux horaires compliquent tout. L'expérience des joueurs reflète souvent le moment où quelqu'un a personnellement remarqué le changement, pas le moment où il a réellement été déployé. Recoupez toujours avec les notes de patch officielles.
+**Qui l'a développé ?**
+PillBugGames.
 
-**Comment savoir si une date de sortie de commande drop divulguée est réelle ?**
-Cherchez une source nommée, une plateforme précise et une date complète avec l'année. Si l'un de ces éléments manque, considérez l'affirmation comme une rumeur jusqu'à ce qu'une publication officielle la confirme.
+**Puis-je jouer en tant que tank ou VTOL au lieu d'un Mech ?**
+Oui — la page du store annonce que l'on peut piloter n'importe quelle unité sous votre commandement, et nomme les Mechs, Tanks, VTOLs et Armures de combat comme châssis personnalisables.
 
-**Que faire si la commande est absente après la date de sortie annoncée de la commande drop ?**
-Forcez une vérification manuelle des mises à jour, confirmez votre numéro de build et vérifiez que la fonctionnalité n'est pas limitée par la région, le niveau de compte ou les paramètres du serveur. Si elle est toujours absente, consultez la page de statut officielle avant de supposer qu'un problème est survenu.
+**Y a-t-il des statistiques d'unité ou des chiffres de dégâts disponibles ?**
+Pas de sources officielles. La page du store n'en publie aucune.
+
+**Est-ce la même chose que l'unité du mod mental-omega ?**
+Non. C'est une chose distincte partageant un nom similaire.
+
+Pour tout ce qui dépasse la liste des fonctionnalités annoncées, la [page Steam officielle](https://store.steampowered.com/app/1944880/) reste le seul point de départ fiable.

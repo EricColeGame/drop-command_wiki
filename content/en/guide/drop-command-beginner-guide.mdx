@@ -1,134 +1,80 @@
 export const metadata = {
-  title: "Drop Command Beginner Guide: How to Use Drop Commands in Games and Bots",
-  description: "A practical drop command beginner guide covering syntax, step-by-step examples, common errors, and safety tips for games, chat bots, and shells.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "Drop Command is a large-scale mech combined-arms game. Here is what the Steam page confirms, what it leaves open, and how to approach it.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## What Is a Drop Command?
+Drop Command is a Steam game from developer PillBugGames, released on 28 September 2026 under app ID 1944880. Its pitch is unusually broad for the genre: mech combat at a grand scale, where combined-arms warfare meets the freedom to pilot any unit under your command. You can drop into combat alone, lead a squad, or command an army. This article sticks strictly to what the official store listing at https://store.steampowered.com/app/1944880/ actually advertises, notes where community impressions differ from documentation, and explains how to approach the game without inventing numbers that do not exist.
 
-A drop command is a single instruction you type to release an item, resource, or object from your inventory, hand, or account. In a game it might push a stack of ore onto the ground so a teammate can grab it. In a chat bot it might hand out a reward to a viewer. In a database shell, a similar-sounding command deletes an entire structure at once. The word "drop" does the same job in every case: something leaves where it currently lives.
+## What the Official Page Actually Advertises
 
-If you are working through a drop command beginner guide, the goal is not to memorize a hundred different instructions. It is to learn the pattern. Once you can read the pattern — action, target, quantity, options — you can figure out most command systems in a minute or two. That is the skill this guide builds.
+The Steam listing is the authority here, and it is worth reading the description literally rather than reading genre expectations into it. According to the official store page, Drop Command offers:
 
-### Why the pattern matters more than the exact words
+- Mech combat at a grand scale, framed as combined-arms combat.
+- The ability to pilot any unit under your command.
+- A progression from small skirmishes up to epic battles.
+- Dropping into combat alone, leading a squad, or commanding an army.
+- An evolving battlefield with fully destructible debris and unit wreckage.
+- Customisable and levelable pilots.
+- A choice between elite squads of veterans and disposable rookies.
+- Personalisable Mechs, Tanks, VTOLs, and Battle Armour.
 
-Every game, bot, and tool writes its own version of the command. The words change, the punctuation changes, and sometimes the whole thing is hidden behind a menu instead of a text box. What rarely changes is the underlying logic:
+That is the full advertised scope. Notably, the page does not publish unit statistics, damage tables, build costs, tech trees, faction lists, or any kind of code system. If you have seen a fan wiki page claiming otherwise, treat it as unverified until you can check it against the game itself.
 
-- **The verb comes first.** "Drop" tells the system what to do.
-- **The target comes second.** Which item, which stack, which table.
-- **Quantity and options come last.** How many, and under what conditions.
-- **A prefix marks it as a command.** A slash, a dot, or an exclamation point separates a command from ordinary chat.
+| Advertised feature | What it implies for play |
+|---|---|
+| Pilot any unit under your command | No permanent "class lock" on the player avatar |
+| Combined arms | Unit types are meant to be used together, not in isolation |
+| Destructible debris and wreckage | Terrain and remains change over a match |
+| Levelable pilots | Individual pilot progression exists alongside unit choice |
+| Veterans vs. rookies | A deliberate trade-off between quality and replaceability |
 
-Learn that skeleton and you will spend far less time hunting for documentation.
+## Piloting Any Unit: Why That Matters
 
-## Where You'll Use a Drop Command
+Most mech games ask you to pick a chassis before the match and live with it. Drop Command's official description instead says you can pilot any unit under your command. Read that without adding numbers: it describes flexibility of control, not a guarantee that every unit is equally strong or equally available at all times.
 
-Drop commands show up in more places than most beginners expect. The table below maps the common environments and what the command actually does in each one.
+The practical consequence is that your attention becomes the real resource. In small skirmishes you may only have a handful of units, so piloting one directly is straightforward. As battles scale toward the "epic" end the page mentions, the question shifts from "what do I pilot" to "what do I pilot right now, and what do I let the rest of my force handle."
 
-| Environment | What "drop" does | How you enter it |
-|---|---|---|
-| Sandbox / creative game console | Removes an item from inventory and places it in the world | Chat line starting with a slash |
-| MMO or co-op RPG | Moves loot from your bag to the ground or a trade window | Chat line, keybind, or drag-and-drop |
-| Discord or stream chat bot | Grants a random reward or item to a viewer | Bot prefix plus command name |
-| Server admin console | Forces a player to release a held object | Console line typed as an operator |
-| Database or query shell | Deletes a table, column, or object permanently | Statement typed in a query window |
-| Automation or scripting | Sends a drop action to a device or process | Function call inside a script |
+This is general reasoning from the combined-arms premise, not measured data. No one outside the developer can tell you which unit wins a specific matchup, because the store page publishes no such tables.
 
-Most readers land on this page because of the first two rows — game inventories and loot. But it is worth knowing that the database version of "drop" is the most destructive of the group. If you ever search for a drop command and find results about tables and schemas, you are looking at a completely different tool with a shared name.
+## Combined Arms and the Evolving Battlefield
 
-A useful habit is to identify which environment you are in before you type anything. Ask yourself three questions: Does this system have a chat box or a console? Is there an operator or admin role? Can the action be undone? The answers tell you how careful you need to be.
+Combined arms is a real military concept: different arms cover each other's weaknesses. The Steam description names Mechs, Tanks, VTOLs, and Battle Armour as four personalisable categories. That is the clearest structural hint the page gives.
 
-For a real-world reference on how a major sandbox game documents command structure, the community-maintained [Minecraft Wiki command reference](https://minecraft.wiki/w/Commands) is a solid example of verb-first syntax in practice.
+The evolving battlefield detail is equally important. Fully destructible debris and unit wreckage mean the map you started on is not the map you finish on. Rubble can block routes; wreckage can mark where fighting already happened. Because the page does not document whether debris blocks line of sight, slows movement, or can be cleared, the honest answer is that you should watch for it during your first matches and form your own view.
 
-## Drop Command Syntax and Your First Command
+Tactically, the safe assumption rooted in the premise — not in any published figure — is that a force with only one arm is more predictable than a mixed one, and that a battlefield you have altered is one you should re-read rather than assume.
 
-### Anatomy of the command
+## Veterans, Rookies, and Pilot Progression
 
-Almost every drop command breaks into the same four or five pieces. Once you can label each piece, reading error messages becomes much easier.
+The store page offers two named approaches: building squads of veterans, or rushing opponents with rookies. It also confirms pilots are customisable and levelable.
 
-| Part | What it does | Placeholder example |
-|---|---|---|
-| Prefix | Marks the line as a command, not chat | `/` or `!` |
-| Verb | The action itself | `drop` |
-| Target | The item, object, or player affected | `item_name` |
-| Amount | How many units to release | `1`, `32`, `all` |
-| Options | Extra conditions, such as a recipient | `to player_name` |
+What it does not say is how much experience a pilot needs per level, what a level changes, or whether a leveled pilot can be lost permanently. Those are undocumented. You can verify them in-game by checking your pilot screen after a few missions, or by looking for a manual or patch notes on the official page.
 
-The exact spelling of the target is the most common tripwire for beginners. Many systems use internal IDs rather than the display name you see on screen, and those IDs are often case-sensitive. A single capital letter in the wrong place can be the difference between a working command and an error message.
+The design tension is familiar. Veterans likely represent invested time that you would rather not throw away; rookies are, by the page's own wording, disposable. Treat that as an interpretation of the description, not a rule. Where the game draws the line between the two is something only play will show you.
 
-### Your first drop command, step by step
+## Customisation Without Invented Specs
 
-Use this sequence the first time you try a drop command in any new system.
+"Personalisable" appears once and covers four unit categories. It does not promise a specific number of slots, a list of weapons, or a currency. Anyone quoting build costs or damage values for Drop Command is quoting something the official listing does not contain.
 
-| Step | What to do | Why it helps |
-|---|---|---|
-| 1 | Find the command prompt (chat box, console, or terminal) | Commands only work where the system listens for them |
-| 2 | Confirm the prefix by checking the in-game help or bot docs | The wrong prefix is the #1 cause of "unknown command" |
-| 3 | Type the verb alone and submit it | Many systems reply with usage instructions |
-| 4 | Add the target and submit again | Isolates target errors from syntax errors |
-| 5 | Add the amount, starting with a single unit | A test drop of one item is easy to undo |
-| 6 | Watch the result and note what changed | Confirms where the item actually went |
-| 7 | Write down the working line | Saves you from re-deriving it later |
+If you want to know what customisation actually includes, open the game, start a match or a hangar screen, and read what is presented to you. If the game has a code system — cheat codes, share codes, anything of that kind — the official store page does not mention one, so do not expect a list to exist until the developer publishes it.
 
-Starting with a quantity of one is not just caution — it is faster. If something goes wrong, you have lost one item instead of a full stack. Player experience in community forums consistently points to this single habit as the difference between a quick learning curve and an afternoon spent recovering lost gear.
+## FAQ
 
-## Drop Command Errors, Safety, and Etiquette
+**Is Drop Command the same as the mental-omega mod unit of the same name?**
+No. Drop Command is a standalone Steam game by PillBugGames. The shared name is a coincidence of wording, not a connection.
 
-### Reading error messages
+**When did it release?**
+28 September 2026, per the official Steam appdetails, developer PillBugGames.
 
-Most drop command failures fall into a handful of categories. The table below matches the symptom you see with the cause and the fix.
+**Can I find unit stats or build costs online?**
+The store page does not publish them, and third-party guides that do should be treated as observations, not documentation.
 
-| Symptom | Likely cause | Fix |
-|---|---|---|
-| "Unknown command" | Wrong prefix, or commands disabled on the server | Check the help list or ask an operator |
-| "Unknown item" | Misspelled name or wrong internal ID | Copy the exact name from inventory or docs |
-| Nothing happens | The command ran but no target was selected | Select or click the item first |
-| Item vanishes with no trace | Dropped somewhere unsafe, or a despawn timer expired | Use a safe zone; check despawn rules |
-| "Permission denied" | Your account lacks operator or admin rights | Request the role from a moderator |
-| An entire structure is gone | You ran a destructive database command instead | Restore from a recent backup immediately |
+**Do I have to command an army?**
+No. The description covers dropping in alone, leading a squad, or commanding an army.
 
-That last row is the one to remember. In query shells, a drop command is permanent and irreversible. Never run one against a live database without a verified backup, and never run one on a system you do not own.
+**Is there a guaranteed best way to play?**
+No. Nothing here promises success. The honest approach is to read the official page, play, and verify undocumented details yourself.
 
-### Safety and etiquette checklist
-
-- **Test in a private world or sandbox server first.** Mistakes there cost nothing.
-- **Drop in safe zones.** Many games let dropped items despawn, and some let other players take them.
-- **Announce your drops in multiplayer.** A quick message prevents a teammate from stepping on your loot.
-- **Know the despawn timer.** Items that sit too long may disappear on their own.
-- **Double-check the target before pressing enter.** Reading the line once more takes one second.
-- **Keep valuables out of the drop flow.** Use a trade or mail system for anything you cannot replace.
-
-Etiquette matters as much as mechanics. In shared worlds, dropping items in a doorway, on a spawn point, or on top of a chest is a common complaint. Drop to the side, in a designated area, and clean up anything you decide not to keep.
-
-## Drop Command vs. Related Commands
-
-Beginners often use "drop" when another command would serve them better. This comparison table shows when each option is the right call.
-
-| Command | What it does | Best used for |
-|---|---|---|
-| drop | Releases an item into the world or to a target | Handing something to a nearby player |
-| give | Transfers or creates an item directly | Rewards without ground clutter |
-| take / remove | Removes an item with no world object created | Cleaning up junk |
-| destroy / delete | Removes permanently, with no recovery | Admin cleanup (high risk) |
-| trade / mail | Moves items through a protected system | Anything valuable or cross-map |
-
-The practical rule: if the item is replaceable and the recipient is standing next to you, drop it. If the item is valuable, remote, or one of a kind, use a trade or mail system instead. If you just want it gone, remove it rather than dropping it on the floor for someone else to deal with.
-
-## Drop Command FAQ
-
-### Do all games and bots use the same drop command?
-
-No. The verb "drop" is common, but the prefix, target format, and available options differ from system to system. What carries over is the structure: prefix, verb, target, amount, options. Learn that order and you can adapt to a new drop command in a few minutes rather than a few hours.
-
-### Why does my drop command say "unknown item"?
-
-In almost every case, the target name does not match what the system expects. Display names and internal IDs are often different, and IDs are frequently case-sensitive. Copy the exact string from your inventory screen or the official documentation instead of typing it from memory.
-
-### Is a drop command dangerous?
-
-In games, it is usually low risk — the worst outcome is losing an item to a despawn timer or another player. In database shells, a drop command is destructive and permanent, which is why backups are mandatory before you run one. Always confirm which environment you are in before you type.
-
-### How should a beginner practice a drop command?
-
-Open a private world, a test server, or a scratch database and run the command with a quantity of one. Repeat it until the syntax feels automatic, then increase the amount. Practicing in an environment where failure costs nothing is the fastest way to build confidence before you use the command in a live session.
+For the authoritative source on features, requirements, and any future updates, check the official Steam page: https://store.steampowered.com/app/1944880/.

@@ -1,130 +1,86 @@
 export const metadata = {
-  title: "Drop Command Strategy Guide: Master Timing, Placement, and Team Drops",
-  description: "A complete drop command strategy guide covering timing, placement, cooldowns, and team coordination so every drop you call lands exactly where it matters.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command actually advertises, how its combined-arms premise shapes play, and what players must verify in-game because nothing else is documented.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-A drop command looks like a single line of input, but in the right hands it decides fights before they start. This drop command strategy guide starts from one idea: the drop command is a delivery tool, not a damage button, and its value comes entirely from where and when it lands. Whether you are calling reinforcements onto a contested point, handing supplies to a teammate who is out of everything, or repositioning a squad onto a flank, the command is the fastest way to move value from where it sits to where it matters.
+Drop Command is a mech combat game built around a single, unusually broad promise: you can pilot any unit under your command. That sentence does more work than it first appears to. It means the game is not organized around a fixed hero mech you upgrade forever, but around a battlefield where the player's role shifts constantly, from lone pilot to squad leader to army commander. Developer PillBugGames released the game on 28 September 2026, and its [official Steam page](https://store.steampowered.com/app/1944880/) frames it as "mech combat at a grand scale."
 
-Most players pick up the mechanic the hard way: they fire it once, something happens, and they never build a system around it. The result is a cooldown that is always empty during the fight that actually counts. This drop command strategy guide fixes that with decision tables, timing windows, placement rules, and repeatable drills you can run in a practice lobby tonight.
+This article sticks to what the store page actually states, separates that from community impressions, and is honest about the large amount of information that simply is not documented yet. Where the game withholds specifics, the useful move is not to guess but to know what to test yourself.
 
-## What the Drop Command Actually Does
+## What Drop Command Actually Advertises
 
-At its core, a drop command releases something at a location you choose: troops, supplies, loot, a respawning teammate, or an area effect. What separates it from most abilities is that it does not damage or heal anything on its own. It relocates value. The skill is not in triggering it — it is in choosing the destination and the moment.
+The verified feature list is short and worth reading closely, because each item changes how you should approach the game:
 
-That is why the same command can feel broken in one match and completely wasted in the next. Send a squad onto a contested point two seconds before contact and you win the exchange. Send the same squad four seconds after contact and you have donated bodies to a fight that was already decided. Player experience across team shooters, survival sandboxes, and strategy titles tends to agree on one thing: drop quality, not drop frequency, is what separates consistent winners.
+- Combined-arms combat where you pilot any unit under your command
+- Battles ranging from small skirmishes to epic engagements
+- Dropping into combat alone, leading a squad, or commanding an army
+- An evolving battlefield with fully destructible debris and unit wreckage
+- Customisable, levelable pilots
+- A choice between elite squads of veterans and disposable rookies
+- Personalisable Mechs, Tanks, VTOLs and Battle Armour
 
-### The forms a drop command takes
+Notice what is absent. There are no published unit statistics, no damage tables, no build costs, no tech tree, no faction list, and no code system. If you have seen any of those presented as fact elsewhere, treat them as unverified. The developer has not published them, and this article will not invent them.
 
-| Form | Where it shows up | Precision | Best used for |
-|---|---|---|---|
-| Typed chat command | Team-based online games with command support | Medium — usually tied to a marker or cursor position | Fast mid-fight calls |
-| Console command with coordinates | Sandbox and survival titles with developer consoles | Very high — exact position | Setup, testing, scripted play |
-| Aim-based hotkey | Shooters and battle-royale style games | High — follows your crosshair | Reactive repositioning |
-| Ability button | Real-time strategy and tactics games | Medium to high — target selection | Reinforcements and pressure |
-| Macro or scripted sequence | Any game that permits input scripting | Variable | Practice drills and repeatable setups |
+## The Combined-Arms Premise and What It Implies
 
-### A command is not the same as a drop key
+Combined arms is a real military concept: different unit types cover each other's weaknesses. Tanks are durable but slow and vulnerable from above. VTOLs are fast and hit from angles ground units cannot easily answer, but they cannot hold ground. Battle Armour is small and possibly suited to close or urban work. Mechs sit somewhere in the middle, carrying weight and firepower at the cost of being a large target.
 
-An aim-based hotkey and a typed command that spawns units at coordinates are not the same tool, even when players call both of them "drop." The first is reactive and forgiving; the second is precise but slow. Know which one you are working with before you build habits around it, because the mistakes are different in each case.
+That logic is general reasoning from the premise, not measured data from Drop Command. The game's four advertised chassis types map neatly onto it, which suggests the intended experience is about composition rather than a single dominant machine. If you can pilot any unit under your command, the interesting question stops being "what is the best mech" and becomes "what does my current force lack."
 
-## Why the Drop Command Decides Fights
+A practical starting habit, once you are in game: note which of your units dies first in a given fight and ask what would have covered it. If tanks keep getting picked apart before they close distance, the gap is probably air or screening units. If Battle Armour gets shredded in the open, it likely wants cover or a distraction. These are hypotheses to test, not rules.
 
-A drop is a tempo play. It converts a resource — a cooldown, an inventory slot, a respawn timer — into immediate presence at a chosen spot on the map. Presence is what wins objectives, and objectives are what win matches. That is the whole argument for treating drops as a strategic layer rather than a panic button.
+## Choosing Veterans or Rookies
 
-The cost side matters just as much. Every drop you send is a drop you no longer have. Good players count their drops the way they count ammunition, and they treat an empty cooldown during a contested push as a mistake worth reviewing.
+The store page presents two philosophies side by side: build squads of veterans, or rush opponents with rookies. It does not say how experience accumulates, what leveling changes, or whether rookies cost less.
 
-| What a drop buys you | What it costs | When it is worth it |
+| Approach | What it likely demands | What it likely risks |
 |---|---|---|
-| Instant reinforcements at a contested point | The cooldown for the next fight | When you are holding, not chasing |
-| Free repositioning for a teammate | Travel time and a visible marker | When the fight is still undecided |
-| Supplies delivered to a sieging squad | The supplies themselves | When the squad cannot retreat to resupply |
-| Loot transferred to a carry | Your own inventory space | When the carry can convert it immediately |
-| A feint that pulls enemy attention | A real cooldown spent on a fake threat | Only when you have a second drop ready |
+| Veteran squads | Patience, protection of experienced pilots | Losing a veteran may hurt more than losing a rookie |
+| Rookie rush | Willingness to accept losses | Attrition against better-trained opponents |
 
-One warning: drops are loud. Most games telegraph them with a marker, a sound cue, or a visible arrival animation. If you can see an enemy drop coming, assume they can see yours. That is exactly why placement rules, covered below, matter more than raw speed.
+Treat the table as reasoning, not documentation. The honest position is that the trade-off's real shape is unknown until you play it. What you can check quickly in game: whether pilots persist across battles, whether their level visibly changes unit performance, and whether losing them is permanent.
 
-## Core Drop Command Strategy: The Five Decision Points
+## Reading the Evolving Battlefield
 
-Every drop comes down to five questions. Answer them before you execute, and the command stops being a gamble.
+"Fully destructible debris and unit wreckage" is one of the more consequential advertised features, because a battlefield that changes shape over a match is a battlefield where cover is temporary. Wreckage from destroyed units may become new obstacles or new cover. Debris from destroyed terrain may open or close routes.
 
-| Decision | Ask yourself | Strong answer | Weak answer |
-|---|---|---|---|
-| Target | Who converts this into map control? | The player or unit that turns it into a hold | "Whoever asked loudest" |
-| Timing | Will the fight still be open when this lands? | Land it at the moment of contact | Land it after the fight is decided |
-| Placement | Where is this safe for a full second? | Behind cover, offset from the marker | Directly on the objective |
-| Follow-up | What do I do the instant it arrives? | Push, retreat, or reset with the new resource | Stand still and watch |
-| Reserve | Do I have an answer for the next fight? | Keep one drop in hand | Spend both on a single push |
+This reframes tactical thinking in a way that is genuinely useful regardless of specific numbers:
 
-### Timing windows that actually matter
+- Positions are depreciating assets. A good firing spot may not survive the next few minutes.
+- Destruction is information. New wreckage tells you where fighting has concentrated.
+- Planning should be short-horizon. Long, static strategies fit poorly with a battlefield that keeps rewriting itself.
 
-| Phase of the fight | Drop priority | Reasoning |
-|---|---|---|
-| Pre-contact (scouting, rotating) | Low | Nothing to reinforce yet — bank the cooldown |
-| First contact | High | The exchange is still open; arrivals change the numbers |
-| Mid-fight, even numbers | Highest | One extra body or supply tips the balance |
-| Mid-fight, losing badly | Low to medium | You may simply be feeding the enemy |
-| Post-fight cleanup | Low | You already own the space |
-| Reset and resupply | Medium | Value comes from being ready for the next fight |
+Whether wreckage blocks line of sight, impedes movement, or can be cleared is not documented. Test it deliberately in a small skirmish before relying on it in a large battle.
 
-Cooldown discipline is the quiet half of this drop command strategy guide. The temptation is to spend a drop the moment it comes up, because spending feels productive. It is not. A drop held for ninety seconds and spent on the decisive push is worth more than three drops scattered across meaningless skirmishes. Set a rule for yourself: no drops once a fight is already lost, and no drops in the first thirty seconds of a neutral rotation.
+## Dropping Alone, With a Squad, or With an Army
 
-## Placement, Coordination, and Team Play
+The scale range is the game's headline. Small skirmishes and epic battles are described as the two ends of one system, and the player can drop in alone, lead a squad, or command an army. That flexibility suggests the same underlying simulation scales up and down, but the store page does not explain how command works at the top end—whether you issue orders to formations, switch control between units, or something else.
 
-Placement is where most drops quietly fail. The command executes perfectly, the units or supplies arrive on time, and everything dies anyway because it landed in the one spot the enemy was already watching.
+If you intend to play at army scale, verify how control actually functions before committing to it. Games in this space often look similar in trailers and feel completely different in the hand. The [Steam store page](https://store.steampowered.com/app/1944880/) is the authority here; if it does not describe the command interface, no third-party claim about it should be trusted without testing.
 
-| Placement rule | Why it works | Common failure |
-|---|---|---|
-| Offset from the objective marker | Enemies pre-aim the obvious spot | Dropping dead center |
-| Land behind hard cover | Arrivals survive their first second | Landing in the open |
-| Take high ground when available | Better sightlines immediately after arrival | Low ground beside a chokepoint |
-| Spread away from your own cluster | Avoids one area-of-effect wiping everyone | Stacking on a single pixel |
-| Stay within walking distance of the fight | Arriving is only half the job | Dropping across the map |
-| Keep an exit route open | You can disengage if the drop fails | Corners with one way out |
+## Community Observations and Documentation Gaps
 
-Any drop command strategy guide worth reading will tell you the same thing about communication: silence loses games. Call the target before you execute, not after. A three-second countdown is enough for teammates to reposition, and a single assigned player covering the arrival point turns a risky drop into a safe one.
+Third-party guides exist for many games in this genre, and where they appear for Drop Command they should be attributed as third-party guides rather than developer documentation. They may describe what a writer experienced, which can be useful, but they are not authoritative about how the game is designed.
 
-| Role | Job during a drop |
-|---|---|
-| Caller | Names the target, the timing, and the follow-up |
-| Dropper | Executes the command and confirms the landing |
-| Cover | Holds the arrival point for the first few seconds |
-| Anchor | Stays on the objective so the drop is not a full rotation |
+What remains genuinely undocumented as of this writing: unit statistics, weapon damage values, build costs, tech trees, faction lists, and any code system. If a source presents these as established fact, that is a reason to be skeptical, not a reason to copy it.
 
-## Common Mistakes, Fixes, and Practice Drills
-
-Most drop command strategy guide advice boils down to removing bad habits. Here are the ones that show up again and again in community reports and replay reviews.
-
-| Mistake | Symptom | Fix |
-|---|---|---|
-| Reacting instead of planning | Cooldown always empty when it matters | Choose your drop target before the fight starts |
-| Dropping on the marker | Arrivals die within a second | Offset a few steps behind cover |
-| Dropping into a lost fight | Reinforcements feed the enemy | Hard rule: no drops once the fight is decided |
-| Silent execution | Teammates never support the arrival | Call it out before you press anything |
-| Predictable targets | Enemies pre-position every time | Rotate between two or three drop patterns |
-| Hoarding forever | Cooldown unused at match end | Spend it on the first genuinely contested objective |
-
-Drills that build real drop skill:
-
-- **Practice-lobby repetitions.** Run ten drops in a row at the same target, then move the target. Track how many land behind cover without you thinking about it.
-- **Replay review.** Watch your last five matches and mark every drop with a one-word verdict: early, late, exposed, or clean.
-- **Cooldown discipline.** Play a session where you only drop when a fight is still open. It will feel restrictive, and that is the point.
-- **Coordination reps.** Pair with one teammate and practice the caller-cover pattern until the call takes under two seconds.
-- **Compare notes.** Player-written guides on the [Steam Community guides hub](https://steamcommunity.com/sharedfiles/browse/?browsesort=trend&section=guides) are a useful place to see how other players structure their drills and decision rules.
-
-Improvement in drops is measurable even without hard statistics. Count three things per session: drops that arrived before contact, drops that landed in cover, and drops you still had available for the final objective. If those three numbers trend upward, your command usage is getting better regardless of your win rate that night.
+The reliable verification path is straightforward: play the game, watch the numbers and behaviour yourself, and compare against the official store page. Anything you observe firsthand beats anything repeated secondhand.
 
 ## FAQ
 
-**What is a drop command in simple terms?**
-It is an instruction that places something — units, supplies, loot, or a player — at a location you choose. It moves value rather than dealing damage, so its usefulness depends almost entirely on the destination and the timing.
+**Is Drop Command the same as the mental-omega "drop command" mod unit?**
+No. Those are unrelated. Drop Command by PillBugGames is a standalone mech combined-arms game on Steam.
 
-**Do I need a drop command strategy guide if I only play casually?**
-Yes, but a short version. Learn two rules: never drop into a fight that is already lost, and always offset your landing spot from the obvious marker. Those two habits alone will improve most casual matches.
+**When was it released?**
+28 September 2026, per the official Steam listing.
 
-**How do I stop my drops from being countered?**
-Assume the enemy can see or hear every drop you make. Land behind cover, vary your target patterns, and keep one drop in reserve so a countered drop does not leave you with nothing for the next engagement.
+**Does it have a code system for units?**
+No code system is published. The store page does not describe one, so any code list you encounter is unverified.
 
-**Should I bind the drop command to a hotkey or type it out?**
-If the game supports a bind, use it — speed matters in contested moments. Typed commands are better for precision work like coordinates or scripted practice, where accuracy beats reaction time.
+**Can I really pilot any unit?**
+The official description says you can pilot any unit under your command. It does not detail restrictions, so confirm in game.
+
+**Should I build veterans or rush with rookies?**
+Both are advertised as viable postures. The store page does not quantify the trade-off, so the answer depends on your tolerance for losses and how leveling actually behaves—something only play will reveal.

@@ -1,136 +1,74 @@
 export const metadata = {
-  title: "Guía de construcción de bases con el comando drop: genera recursos y acelera la progresión",
-  description: "Aprende cómo funciona el comando drop en los juegos de construcción de bases, cuándo usarlo y cómo evitar corromper tu partida o recibir sanciones en servidores multijugador.",
+  title: "Drop Command: Una guía práctica para el combate de armas combinadas con mechs",
+  description: "Aprende cómo Drop Command combina el pilotaje, la creación de escuadrones y las tácticas de armas combinadas. Una guía práctica y fundamentada en fuentes sobre el juego de mechs de Steam.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Por qué el comando drop cambia tu forma de construir
+Drop Command es un juego de Steam de PillBugGames, lanzado el 28 de septiembre de 2026, que te pone en la cabina de una guerra a escala de mechs. Lo que lo separa de un shooter de mechs convencional es la palabra en su propio nombre: command. No solo pilotas una máquina; eres responsable de todo lo demás que esté en el campo contigo. Eso incluye un solo escuadrón, un ejército completo o, si lo prefieres, nada más que tú mismo. Este artículo explica lo que el juego realmente anuncia, dónde la comunidad ha llenado los vacíos y lo que simplemente deberías verificar por tu cuenta en lugar de confiar en una guía.
 
-Si alguna vez te has quedado mirando una fortaleza a medio terminar con el inventario vacío, ya entiendes el atractivo de una configuración de construcción de bases con el comando drop. El comando drop es la instrucción de consola o de chat que coloca objetos, recursos o estructuras directamente en tu mundo en lugar de obligarte a farmearlos nodo a nodo. Usado con disciplina, convierte una semana de grinding en una tarde de construcción real.
+Para la página oficial del producto, empieza aquí: [Drop Command en Steam](https://store.steampowered.com/app/1944880/).
 
-Eso importa porque los juegos de construcción de bases se basan en una tensión: la parte divertida es diseñar y defender una estructura, pero la parte lenta es reunir los materiales para hacerlo. Un flujo de trabajo de construcción de bases con el comando drop te permite saltarte la parte lenta en tus propios términos —para pruebas, para recuperación o para proyectos creativos— sin abandonar por completo el bucle de supervivencia.
+## Qué es realmente Drop Command
 
-Esta guía cubre qué hace realmente el comando, cómo interactúa con los sistemas de progresión y cómo usarlo sin arruinar tu archivo de guardado ni molestar a tu administrador de servidor.
+La descripción verificada de Steam presenta Drop Command como "combate de mechs a gran escala" con "combate de armas combinadas". El gancho central es que puedes pilotar "cualquier unidad bajo tu mando". Esa es una afirmación de diseño significativa, no relleno de marketing. Implica que el jugador no está limitado a un solo chasis o un solo rol durante toda una partida. Si puedes saltar a un Mech, un Tanque, un VTOL o una Armadura de Batalla, entonces tu decisión sobre qué pilotar es en sí misma una elección táctica, no una elección de equipamiento hecha antes de que comience la partida.
 
-## Qué hace realmente un comando drop
+La descripción también promete un rango de escala: "desde pequeñas escaramuzas hasta batallas épicas". Combinado con "lanzarte al combate solo o liderando un escuadrón o un ejército", esto sugiere que el juego admite estilos de juego muy diferentes. Una caída en solitario y un mando de ejército no son solo ajustes de dificultad; cambian lo que el juego te exige. El juego en solitario pone a prueba tu pilotaje y tu posicionamiento. El mando de ejército pone a prueba tu capacidad de gestionar muchas unidades a la vez mientras sigues contribuyendo como piloto.
 
-Un comando drop es un comando de tipo spawn. Mientras que la mayoría de los comandos cambian una configuración o teletransportan a un jugador, un comando drop crea algo: una pila de materiales, una herramienta, un mueble o, en algunos juegos, una estructura prefabricada completa. La palabra "drop" normalmente indica que el objeto aparece en el mundo —a menudo cayendo al suelo cerca de ti o en las coordenadas que especifiques— en lugar de deslizarse silenciosamente dentro de tu inventario.
+Un detalle importante: la página de la tienda tiene pocos datos concretos. No publica estadísticas de unidades, tablas de daño, costes de construcción ni un sistema de códigos. Cualquier guía que presente esos números como hechos o bien se basa en la experiencia de juego o bien está adivinando. Trata esos números como observaciones de terceros y pruébalos tú mismo.
 
-La sintaxis exacta varía enormemente entre títulos e incluso entre versiones del mismo título, así que trata cualquier código concreto que leas en internet como un punto de partida y verifícalo en el menú de ayuda de tu propio juego o en la documentación oficial. La mayoría de los motores siguen un patrón similar: un carácter de activación como una barra inclinada, el nombre del comando y luego argumentos sobre qué generar, cuántos y dónde.
+## El bucle de armas combinadas en la práctica
 
-| Familia de comandos | Qué suele crear | Dónde aparece | ¿Requiere trucos normalmente? |
-|---|---|---|---|
-| Spawn de objetos | Materiales, comida, herramientas, munición | Inventario o en el suelo | Sí |
-| Spawn de entidades | Criaturas, NPC, vehículos | En tu posición o coordenadas | Sí |
-| Estructura o prefab | Edificios completos, muros, cimientos | En una ubicación objetivo | Sí |
-| Llenado de botín o contenedores | Cofres y cajas preabastecidos | Dentro de un bloque contenedor | Sí |
-| Copia o plano | Duplicados de una construcción existente | Superpuestos en el mundo | Sí |
+"Armas combinadas" es un concepto militar real: diferentes tipos de unidades que cubren las debilidades de las demás. En el contexto de un juego, normalmente significa que te penalizan por depender de un solo tipo de unidad y te recompensan por mezclarlos. Dado que Drop Command incluye Mechs, Tanques, VTOLs y Armadura de Batalla como opciones pilotables, el razonamiento práctico es sencillo.
 
-Si estás jugando a un título sandbox como Minecraft, la arquitectura de comandos está bien documentada y vale la pena leerla antes de experimentar —la [referencia de comandos de la Wiki de Minecraft](https://minecraft.wiki/w/Commands) es un buen ejemplo del tipo de documentación casi oficial que deberías buscar en tu propio juego.
-
-## Por qué el comando drop importa para la progresión
-
-La progresión en los juegos de construcción de bases suele estar bloqueada por niveles de recursos. Necesitas madera para conseguir piedra, piedra para conseguir metal, metal para conseguir muros reforzados, y así sucesivamente. Cada nivel exige horas de recolección, lo cual está bien la primera vez y resulta tedioso la quinta.
-
-El comando drop cortocircuita esa escalera. Es exactamente por eso que es a la vez poderoso y controvertido.
-
-| Etapa de progresión | Ruta normal | Ruta con el comando drop | Mejor caso de uso |
-|---|---|---|---|
-| Inicio de partida | Recolectar materiales básicos a mano | Generar recursos iniciales | Recuperarse de un borrado o de una partida perdida |
-| Mediados de partida | Farmear, fundir, fabricar | Generar materiales procesados | Probar un diseño de construcción rápidamente |
-| Final de partida | Asaltar, comerciar o farmear drops raros | Generar componentes raros | Proyectos creativos de exhibición |
-| Post-partida | Decorar y optimizar | Generar sets decorativos | Capturas de pantalla y contenido de vídeo |
-
-La experiencia de los jugadores sugiere que el comando resulta más satisfactorio cuando lo usas para eliminar la *fricción* en lugar de eliminar el *desafío*. Saltarte la recolección para prototipar un diseño de base es muy distinto a generar armadura de endgame el primer día y borrar la razón para jugar.
-
-## Comando drop frente a recolección manual
-
-Los informes de la comunidad en servidores de supervivencia y sandbox describen constantemente el mismo compromiso: el comando drop ahorra enormes cantidades de tiempo, pero drena la sensación de logro si se abusa de él. Así se comparan ambos enfoques en la práctica.
-
-| Factor | Recolección manual | Comando drop |
+| Clase de unidad | Rol probable en una fuerza mixta | Generalización razonable |
 |---|---|---|
-| Tiempo hasta una base terminada | Horas o días | Minutos u horas |
-| Sensación de logro | Alta | Variable |
-| Riesgo para la integridad de la partida | Bajo | Moderado si se abusa |
-| Aceptación en multijugador | Universal | Restringido o prohibido |
-| Mejor para aprender recetas | Sí | No |
-| Mejor para probar diseños | Lento | Excelente |
+| Mech | Ancla y plataforma de fuego directo | Normalmente el más flexible, a menudo el más lento en reposicionarse |
+| Tanque | Potencia de fuego terrestre y durabilidad | Suele ser fuerte en terreno abierto, vulnerable a los flanqueos |
+| VTOL | Movilidad y presión vertical | Probablemente rápido pero expuesto cuando está quieto |
+| Armadura de Batalla | Hostigamiento a pequeña escala y trabajo de objetivos | Probablemente barata y prescindible, débil en un combate directo |
 
-Un compromiso práctico que adoptan muchos constructores es un ritmo de "fase creativa, fase de supervivencia". Construye e itera con el comando drop, y luego reconstruye el diseño final de forma legítima en una partida nueva o en un mundo de supervivencia. Conservas el conocimiento de diseño sin llevar objetos generados a una partida que te importa.
+Esa tabla es un razonamiento a partir de la premisa de armas combinadas, no datos medidos. La página de la tienda no confirma estos roles. Úsala como hipótesis inicial y luego pruébala en escaramuzas antes de comprometerte con una estrategia.
 
-## Cómo usar el comando drop de forma segura: paso a paso
+## Pilotos, veteranos y novatos prescindibles
 
-Generar objetos sin cuidado es la causa número uno de partidas corruptas, geometría flotante y flags de misiones rotos. Sigue este orden siempre.
+Drop Command anuncia "pilotos personalizables y que pueden subir de nivel". También menciona "escuadrones de élite o novatos prescindibles". Ese emparejamiento es la tensión de diseño más interesante del juego. Un piloto que sube de nivel es una inversión. Un novato es un cuerpo barato. La pregunta que todo comandante afronta es si gastar un veterano en un objetivo de alto valor o reservarlo y dejar que los novatos absorban el riesgo.
 
-| Paso | Acción | Por qué importa |
-|---|---|---|
-| 1 | Haz una copia de seguridad de tu archivo de guardado | Los comandos de trucos pueden escribir cambios permanentes |
-| 2 | Confirma que los trucos o el modo administrador están activados | La mayoría de los juegos bloquean los comandos de spawn en caso contrario |
-| 3 | Prueba primero en un mundo desechable | Aísla cuelgues y errores |
-| 4 | Genera cantidades pequeñas antes de hacerlo en masa | Evita el desbordamiento de objetos y los picos de lag |
-| 5 | Coloca estructuras en terreno plano y despejado | Evita bugs de clipping y de colisión |
-| 6 | Comprueba el estado de misiones y logros después | Algunos flags se desactivan permanentemente al usar trucos |
-| 7 | Registra lo que generaste | Te ayuda a deshacer o reconstruir después |
+La descripción verificada no explica cómo funciona la subida de nivel de los pilotos, qué estadísticas mejoran ni si los pilotos pueden morir de forma permanente. No lo asumas. Si estás decidiendo si comprometer a un veterano, comprueba en el juego si ese piloto persiste tras una derrota. Ese único hecho cambia lo agresivo que deberías ser al usarlos.
 
-Algunos hábitos adicionales que vale la pena adoptar:
+Un enfoque razonable, planteado como razonamiento general y no como consejo probado: usa novatos para explorar, cubrir y disputar objetivos menores, y reserva a los pilotos con nivel para los momentos en que su experiencia importe. Si los pilotos son permanentes y la muerte es permanente, esa lógica se vuelve mucho más fuerte. Si los pilotos son reemplazables, puedes permitirte ser agresivo.
 
-- **Nunca ejecutes comandos de spawn durante una pelea contra un jefe o un evento guionizado.** Los conflictos de sincronización pueden bloquear los desencadenantes de progresión.
-- **Evita generar miles de entidades a la vez.** Los objetos con mucha física hunden la tasa de fotogramas rápidamente.
-- **Mantén una partida "limpia" separada de tu partida de "experimentos".** Este único hábito ahorra más frustración que cualquier otro.
-- **Lee la salida de la consola.** Los mensajes de error suelen decirte exactamente qué argumento está mal.
+## El campo de batalla en evolución
 
-## Errores comunes con el comando drop
+La descripción destaca un campo de batalla con "escombros y restos de unidades totalmente destructibles" que evoluciona durante el combate. Esto es más que un efecto visual. El terreno destructible y los restos normalmente cambian la línea de visión, crean cobertura y bloquean el movimiento con el tiempo. Un pasillo que estaba despejado al inicio de una partida puede estar obstruido diez minutos después.
 
-La mayoría de los problemas vienen de una lista corta de errores evitables. Si algo sale mal, revisa esto primero.
+En la práctica, esto significa que deberías evitar comprometerte con una única posición de disparo durante toda la partida. Si se acumulan los restos, tus líneas de visión se degradarán. A la inversa, los escombros frescos pueden dar a una unidad frágil un lugar donde esconderse. Como la página de la tienda no documenta cómo funciona la física de los escombros, verifícalo tú mismo: lucha en un solo punto, destruye unas cuantas unidades y observa si el terreno cambia tus disparos disponibles.
 
-| Error | Síntoma | Solución |
-|---|---|---|
-| Orden de argumentos incorrecto | El comando no hace nada | Consulta la ayuda de sintaxis en el juego |
-| Falta el valor de cantidad | Genera uno en vez de una pila | Añade el argumento de cantidad |
-| Identificador de objeto inválido | Error u objeto de marcador de posición | Verifica el nombre exacto del ID |
-| Generar dentro de un muro | Los objetos desaparecen o atraviesan | Muévete a terreno abierto primero |
-| Usarlo en un servidor protegido | Fallo silencioso o expulsión | Consulta las reglas y permisos del servidor |
-| Ignorar los flags de logros | Los trofeos dejan de desbloquearse | Usa una partida separada para los trucos |
+## Construir escuadrones sin inventar números
 
-El problema de los identificadores desconcierta a más jugadores que cualquier otra cosa. Los nombres de los objetos distinguen entre mayúsculas y minúsculas en muchos motores, y el contenido con mods o actualizado renombra entradas con frecuencia. En caso de duda, copia el identificador de una fuente oficial en lugar de reescribirlo de memoria.
+La página de la tienda no enumera costes de construcción, estadísticas de unidades ni un árbol tecnológico. Merece la pena decirlo claramente, porque muchos resultados de búsqueda sobre juegos de mechs rellenan artículos con números inventados. No hay un sistema de códigos verificado, ni valores de daño publicados, ni una lista oficial de unidades más allá de las cuatro clases nombradas.
 
-## Reglas de servidor y etiqueta en multijugador
+Lo que puedes hacer en su lugar es razonar a partir de la estructura declarada del juego. Si puedes pilotar cualquier unidad bajo tu mando y puedes construir escuadrones, entonces tu recurso real es la atención. Cuantas más unidades controles, menos atención recibe cada una. Una fuerza pequeña de veteranos recompensa la concentración. Una fuerza grande de novatos recompensa la delegación y las órdenes simples. Ajusta el tamaño de tu fuerza a lo bien que realmente puedes gestionarla. Un ejército que no puedes mandar es solo una multitud.
 
-En un mundo privado, el comando drop es asunto tuyo. En un servidor compartido, es asunto de todos. Los administradores suelen dividirse en tres grupos.
+## Personalización y verificación
 
-| Tipo de servidor | Política típica sobre el comando drop | Consejo práctico |
-|---|---|---|
-| Supervivencia estricta | Totalmente desactivado | No lo pidas; juega el bucle previsto |
-| Semi-vanilla | Solo para administradores, uso en eventos | Solicítalo por los canales del staff |
-| Servidor creativo o de construcción | Totalmente permitido | Aun así, evita el spam de entidades |
-| Cooperativo privado | Depende del anfitrión | Acordad las reglas básicas de antemano |
-| PvP público | Normalmente prohibido | Asume que generar objetos equivale a un baneo |
+Los Mechs, Tanques, VTOLs y Armaduras de Batalla se describen todos como "personalizables". La personalización en los juegos de armas combinadas normalmente significa intercambiar velocidad, potencia de fuego y durabilidad entre sí. Sin estadísticas publicadas, el consejo honesto es experimental: cambia una cosa a la vez, luego juega una escaramuza y comprueba si el cambio ayudó. No copies una configuración de una guía que no puede mostrar su fuente.
 
-Incluso donde el comando está permitido, la moderación gana buena voluntad. Generar una pila de piedra para un proyecto comunitario compartido suele ser bienvenido. Generar equipo de asalto y arrasar la base del vecino es la forma más rápida de perder el acceso.
+Para verificar cualquier cosa que este artículo no pueda confirmar, usa dos lugares. Primero, los detalles de unidad en el juego y cualquier tutorial o panel de ayuda, ya que reflejan la versión real. Segundo, la [página oficial de Steam](https://store.steampowered.com/app/1944880/), que es la propia declaración de características del desarrollador. Si una afirmación no está en ninguno de los dos sitios, trátala como no confirmada.
 
-## Ideas prácticas de construcción que justifican el comando
+## FAQ
 
-Si quieres usar el comando drop sin destripar tu progresión, apúntalo a tareas que son genuinamente tediosas en lugar de genuinamente desafiantes.
+**¿Drop Command es un juego de estrategia o un juego de acción?**
+Ambos, según la descripción oficial. Pilotas una unidad directamente mientras también mandas a otras. El equilibrio entre ambos depende del tamaño de la fuerza que lleves.
 
-- **Prototipado de planos:** Construye tres variaciones de un diseño de muro y compáralas lado a lado.
-- **Comprobaciones de simetría:** Genera piezas de esquina que coincidan para que una base grande parezca deliberada en lugar de improvisada.
-- **Pruebas de redstone o lógica:** Aísla un mecanismo en un mundo en blanco antes de comprometerlo en tu base real.
-- **Recuperación:** Reemplaza el equipo perdido por un cuelgue, un bug o un despawn desafortunado.
-- **Creación de contenido:** Monta una base totalmente decorada para capturas de pantalla, tutoriales o guías en vídeo.
+**¿Puedo jugar en solitario?**
+Sí. La página de la tienda indica que puedes lanzarte al combate solo, con un escuadrón o liderando un ejército.
 
-Cada uno de estos usos emplea el comando para eliminar el trabajo pesado mientras deja intactas las partes creativas y estratégicas de la construcción de bases. Ese es el punto óptimo que buscan la mayoría de los constructores experimentados.
+**¿El juego tiene un sistema de códigos o estadísticas de unidades publicadas?**
+No. A fecha del 14 de octubre de 2026, la página de Steam no publica estadísticas de unidades, tablas de daño, costes de construcción ni un sistema de códigos. Verifica cualquier afirmación de ese tipo en el juego.
 
-## Preguntas frecuentes
+**¿Los pilotos son permanentes?**
+No está documentado. Compruébalo en el juego antes de arriesgar a un piloto con nivel.
 
-**¿Usar un comando drop desactiva los logros?**
-En muchos juegos, sí —activar los trucos o el modo administrador marca una partida de forma permanente, y algunos logros dejan de desbloquearse. El enfoque más seguro es probar en un mundo separado y mantener intacta tu partida de caza de logros. Consulta la documentación de tu juego concreto, ya que las políticas varían mucho entre títulos y actualizaciones.
-
-**¿Puede un comando drop romper mi archivo de guardado?**
-Puede hacerlo, aunque normalmente por mal uso más que por el propio comando. Generar cantidades enormes de entidades, colocar estructuras en terreno inválido o interrumpir eventos guionizados son los culpables habituales. Haz siempre una copia de seguridad antes de experimentar.
-
-**¿Está permitido el comando drop en servidores multijugador?**
-Eso depende enteramente del servidor. Los servidores de supervivencia estricta y de PvP público casi siempre lo prohíben, mientras que los servidores creativos y centrados en la construcción suelen permitirlo libremente. Pregunta a un administrador antes de darlo por hecho, y nunca lo uses para obtener ventaja sobre otros jugadores.
-
-**¿Cuál es la forma más rápida de aprender un flujo de trabajo de construcción de bases con el comando drop?**
-Empieza en un mundo desechable, no hagas copia de seguridad de nada importante y experimenta en pasos pequeños. Lee la ayuda integrada de tu juego o la wiki oficial para conocer la sintaxis exacta, genera un objeto a la vez hasta que te sientas cómodo y luego escala. Los informes de la comunidad coinciden de forma consistente en que la práctica lenta y deliberada supera a copiar comandos de publicaciones aleatorias en foros.
+**¿Qué debería aprender primero?**
+Pilotar bien una unidad y luego mandar un escuadrón pequeño. Aumenta la escala solo cuando la fuerza más pequeña deje de parecerte suficiente.

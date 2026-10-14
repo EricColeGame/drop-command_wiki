@@ -1,129 +1,75 @@
 export const metadata = {
-  title: "Tutoriel sur la commande DROP : un guide sûr, étape par étape, pour DROP en SQL",
-  description: "Découvrez comment la commande DROP supprime des tables, des bases de données et des colonnes en SQL — avec des exemples de syntaxe, des contrôles de sécurité et des conseils de récupération.",
+  title: "Drop Command : Guide pratique du combat interarmes de mechas",
+  description: "Ce que Drop Command annonce réellement, comment son principe interarmes façonne le jeu, et comment vérifier vous-même les détails non documentés.",
   category: "guide",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-La commande DROP est l’instruction la plus décisive en SQL : une courte ligne et une table, une vue ou une base de données entière disparaît — structure, lignes, index et tout le reste. Il n’y a aucune invite de confirmation et, dans la plupart des moteurs, aucune corbeille. C’est exactement pourquoi un tutoriel sur la commande drop qui couvre à la fois la syntaxe *et* les bonnes pratiques de sécurité vaut la peine d’être lu avant de toucher à un serveur de production.
+La plupart des jeux vous demandent de choisir un camp et de rester dans un seul siège. Drop Command, développé par PillBugGames et sorti sur Steam le 28 septembre 2026, est construit autour de l'idée inverse. La fiche officielle du magasin décrit un combat de mechas à grande échelle, où vous pilotez n'importe quelle unité sous votre commandement et combattez des petites escarmouches jusqu'à des batailles épiques. Si vous essayez de comprendre ce que cela signifie en pratique, la réponse honnête est que la partie intéressante est un principe de conception, pas une fiche de statistiques. Voici ce que les sources soutiennent réellement, où se trouvent les lacunes, et comment raisonner sur le jeu sans inventer des chiffres qui n'existent pas.
 
-Dans ce guide, vous apprendrez ce que DROP supprime réellement, comment la syntaxe change pour les tables versus les colonnes versus les bases de données, quels garde-fous vous évitent les ennuis, et comment récupérer lorsque quelque chose tourne mal. Chaque exemple est écrit pour être facile à copier et neutre vis-à-vis du moteur lorsque c’est possible, avec des notes sur les différences de comportement des principaux systèmes de bases de données.
+## Ce que Drop Command annonce officiellement
 
-## Ce que fait réellement la commande DROP
+La page appdetails Steam pour l'application 1944880 donne une liste compacte de fonctionnalités, et il vaut la peine de traiter cette liste comme la frontière de ce qui est confirmé. Selon la description officielle, Drop Command propose :
 
-La commande DROP appartient au langage de définition de données (DDL). Elle supprime l’objet de base de données lui-même — pas seulement les lignes qu’il contient. Lorsque vous supprimez une table, vous perdez les définitions de colonnes, les données, les index, les contraintes et tous les déclencheurs qui y sont attachés. Lorsque vous supprimez une base de données, vous perdez tous les objets qu’elle contient d’un seul coup.
+- Un combat de mechas à grande échelle
+- Un combat interarmes où vous pilotez n'importe quelle unité sous votre commandement
+- Des combats allant de petites escarmouches à des batailles épiques
+- La possibilité d'arriver au combat seul, en menant une escouade, ou en commandant une armée
+- Un champ de bataille évolutif avec des débris et des épaves d'unités entièrement destructibles
+- Des pilotes personnalisables et améliorables
+- Le choix entre des escouades d'élite et des recrues jetables
+- Des Mechs, Tanks, VTOLs et Armures de combat personnalisables
 
-Cela rend DROP fondamentalement différent de DELETE, qui supprime les lignes que vous sélectionnez, et de TRUNCATE, qui vide une table mais conserve sa structure. Choisir la mauvaise option est l’une des causes les plus courantes de perte accidentelle de données, il est donc payant de connaître les différences sur le bout des doigts.
+C'est un large ensemble de promesses. Remarquez ce qui est absent. Il n'y a pas de décomposition publiée des statistiques des unités, pas de tableaux de dégâts, pas de coûts de construction, pas d'arbre technologique, et pas de liste de factions. Si vous avez vu des chiffres attribués à Drop Command ailleurs, ils ne proviennent pas de la page officielle, et vous devriez les traiter avec méfiance jusqu'à ce que vous puissiez les confirmer en jeu.
 
-| Caractéristique | DELETE | TRUNCATE | DROP |
-|---|---|---|---|
-| Ce qu’elle supprime | Les lignes correspondant à un filtre | Toutes les lignes | L’objet entier |
-| Type d’instruction | DML | DDL (principalement) | DDL |
-| Prend en charge la clause WHERE | Oui | Non | Non applicable |
-| La structure de l’objet survit | Oui | Oui | Non |
-| Prise en charge de l’annulation | Oui | Dépend du moteur | Transactionnel dans certains moteurs, commit implicite dans d’autres |
-| Vitesse typique sur les grandes tables | Lente (ligne par ligne) | Rapide | Rapide |
-| Idéal pour | Nettoyage ciblé | Réinitialiser une table | Retirer définitivement un objet |
+## Le principe interarmes et ce qu'il implique
 
-Règle simple : si vous voulez récupérer la table demain, utilisez DELETE ou TRUNCATE. Si vous ne voulez plus jamais la revoir, utilisez la commande DROP.
+Le combat interarmes est un véritable concept militaire : différents types d'unités couvrent les faiblesses les unes des autres, et le mélange compte plus que n'importe quelle plateforme individuelle. Drop Command annonce quatre grandes catégories de matériel — Mechs, Tanks, VTOLs et Armures de combat — et indique que vous pouvez piloter n'importe quelle unité sous votre commandement. Cette seule phrase a d'énormes conséquences sur la façon dont vous devriez envisager le jeu.
 
-## Syntaxe de la commande DROP pour chaque type d’objet
+Si vous pouvez occuper n'importe quel siège dans votre propre force, alors votre rôle change constamment. Dans un engagement, vous pourriez être l'élément le plus lourd sur le terrain ; dans le suivant, vous pourriez être le mobile rapide qui repère pour quelque chose de plus lent et de plus puissant. Les VTOLs et les Armures de combat suggèrent des profils de mouvement très différents des Tanks et des Mechs, et une force interarmes sensée veut généralement quelque chose qui peut atteindre une position rapidement, quelque chose qui peut la tenir, et quelque chose qui peut briser une position défendue. Laquelle des quatre catégories remplit quel rôle n'est pas documenté, donc c'est un raisonnement à partir du principe, pas des données mesurées.
 
-Le modèle de base est simple — `DROP <type d’objet> <nom de l’objet>` — mais les détails changent selon ce que vous supprimez. Les colonnes, par exemple, ne peuvent pas être supprimées seules ; elles sont retirées via une instruction `ALTER TABLE`.
+La conclusion pratique est d'éviter de construire une force d'un seul type jusqu'à ce que vous ayez testé si le jeu la punit. C'est une hypothèse à vérifier, pas une règle.
 
-| Objet | Modèle de syntaxe | Notes |
-|---|---|---|
-| Table | `DROP TABLE nom_table;` | Supprime la structure, les données, les index et les déclencheurs |
-| Base de données | `DROP DATABASE nom_base;` | Exige généralement que personne n’y soit connecté |
-| Colonne | `ALTER TABLE nom_table DROP COLUMN nom_colonne;` | Encapsulé dans ALTER TABLE car une colonne n’est pas un objet autonome |
-| Index | `DROP INDEX nom_index;` | Sur certains moteurs, vous devez aussi nommer la table |
-| Vue | `DROP VIEW nom_vue;` | N’affecte pas les tables sous-jacentes |
-| Schéma | `DROP SCHEMA nom_schema;` | Refuse souvent de s’exécuter tant que des objets restent à l’intérieur |
-| Procédure ou fonction | `DROP PROCEDURE nom;` / `DROP FUNCTION nom;` | La signature peut être requise si des surcharges existent |
+| Fonctionnalité annoncée | Question pratique à tester en jeu |
+|---|---|
+| Piloter n'importe quelle unité sous votre commandement | À quelle vitesse pouvez-vous changer, et l'IA tient-elle sa position pendant ce temps ? |
+| Escouades d'élite ou recrues jetables | L'expérience des vétérans persiste-t-elle à travers les missions ? |
+| Débris et épaves destructibles | Les épaves bloquent-elles le mouvement, fournissent-elles une couverture, ou les deux ? |
+| Pilotes personnalisables et améliorables | Quels traits de pilote survivent à un anéantissement d'escouade ? |
 
-### Les deux mots-clés qui vous sauvent : IF EXISTS et CASCADE
+## Arriver seul, avec une escouade, ou avec une armée
 
-`IF EXISTS` transforme un échec dur en une opération sans effet. Au lieu de renvoyer une erreur parce que l’objet a déjà été supprimé par une migration ou un collègue, l’instruction se termine simplement. Cela rend les scripts idempotents et sûrs à réexécuter.
+La description officielle présente l'échelle comme un choix : arriver au combat seul, mener une escouade, ou commander une armée. Dans la plupart des jeux de cette forme, ce ne sont pas des réglages cosmétiques. Commander une force plus grande signifie généralement que davantage de votre attention va au positionnement et moins à votre propre tir, parce que vous ne pouvez pas piloter personnellement chaque unité.
 
-`CASCADE` est le type d’outil opposé : il indique au moteur de supprimer aussi les objets dépendants. Supprimez une table dont dépend une vue, et la vue disparaît avec elle. C’est pratique — et dangereux. Listez toujours d’abord les dépendances, puis décidez si CASCADE ou un nettoyage manuel et ordonné est la meilleure option.
+Deux fonctionnalités annoncées interagissent avec cela. Les pilotes peuvent être personnalisés et améliorés, ce qui implique un investissement. Les recrues sont décrites comme jetables, ce qui implique le contraire. Une approche raisonnable est de garder vos pilotes améliorés dans des rôles où une erreur est survivable, et d'utiliser les recrues pour la poussée initiale, la reconnaissance, ou tout travail où vous attendez des pertes. Si le jeu récompense réellement cette répartition est quelque chose que seul le jeu vous dira.
 
-De nombreuses équipes utilisent aussi `RESTRICT`, l’opposé explicite de CASCADE, pour forcer une erreur dès que des dépendances existent. C’est une ceinture de sécurité utile pour les scripts automatisés.
+## Champs de bataille détruits et le brouillard du détail
 
-## Un workflow sécurisé étape par étape pour la commande DROP
+Des débris et des épaves d'unités entièrement destructibles est l'une des affirmations les plus spécifiques de la page du magasin. Cela suggère que le champ de bataille change au fur et à mesure que le combat progresse, ce qui tend à récompenser les joueurs qui relisent constamment le terrain au lieu de s'engager dans un seul plan. Cela ne vous dit pas si les épaves bloquent la ligne de vue, ralentissent le mouvement, ou peuvent être dégagées.
 
-Supprimer quelque chose intentionnellement devrait quand même suivre une routine. Cette séquence prend quelques minutes et évite la plupart des catastrophes.
+C'est exactement le genre de détail que la page officielle ne documente pas. Les guides tiers peuvent faire des affirmations à ce sujet, mais ce sont des observations secondaires plutôt que de la documentation de développeur, et elles peuvent être erronées ou obsolètes. Si un guide vous dit qu'un morceau spécifique d'épave donne un bonus de couverture spécifique, demandez d'où vient ce chiffre.
 
-1. **Confirmez la cible.** Écrivez le nom pleinement qualifié — schéma plus objet — pour ne jamais supprimer `orders` du mauvais environnement.
-2. **Vérifiez les dépendances.** Interrogez le catalogue système ou la visionneuse d’objets de votre base de données pour voir ce qui référence l’objet : clés étrangères, vues, procédures stockées, code applicatif.
-3. **Faites une sauvegarde ou un instantané.** Un dump logique du schéma concerné suffit souvent pour une seule table.
-4. **Choisissez la bonne instruction.** Utilisez `DROP TABLE` pour une suppression complète, `ALTER TABLE ... DROP COLUMN` pour une seule colonne, et `DROP DATABASE` uniquement avec une validation explicite.
-5. **Encapsulez-la dans une transaction lorsque c’est pris en charge.** Les moteurs avec DDL transactionnel vous permettent d’inspecter le résultat et d’annuler avant de valider.
-6. **Ajoutez IF EXISTS.** Cela garde le script réexécutable.
-7. **Exécutez-la pendant une fenêtre de maintenance** si l’objet est volumineux ou fortement utilisé, car la suppression de grandes tables peut maintenir des verrous.
-8. **Vérifiez et documentez.** Confirmez que l’objet a disparu et consignez le changement dans votre historique de migration.
+## Personnalisation sans chiffres inventés
 
-| Vérification préalable | Pourquoi c’est important | Comment vérifier |
-|---|---|---|
-| Environnement correct | Supprimer en production au lieu de l’environnement de staging est l’erreur classique | Vérifiez la chaîne de connexion et le nom d’hôte |
-| Dépendances listées | CASCADE peut supprimer silencieusement des vues et des procédures | Inspectez le catalogue système pour trouver les références |
-| Sauvegarde confirmée | La récupération est impossible sans elle | Restaurez le dump dans une base de données de test |
-| Autorisations vérifiées | DROP exige généralement la propriété ou un privilège spécifique | Demandez qui possède l’objet |
-| Impact applicatif évalué | Le code qui interroge une table supprimée échouera immédiatement | Recherchez le nom de la table dans la base de code |
+La page du magasin indique que les Mechs, Tanks, VTOLs et Armures de combat peuvent être personnalisés, et que les pilotes peuvent être personnalisés et améliorés. Elle ne publie pas de système de codes, de liste de pièces, ou de coûts. Quiconque cite des coûts de construction exacts ou une chaîne de code cachée va au-delà des sources.
 
-## Erreurs courantes avec la commande DROP et comment les corriger
+Ce que vous pouvez faire, c'est vérifier les choses vous-même. Chargez une escarmouche, notez quelles options l'écran de personnalisation expose réellement, et confirmez si un changement se comporte comme son étiquette le suggère. Il en va de même pour les pilotes : améliorez-en un délibérément et observez quelles valeurs changent. C'est plus lent que lire un wiki, mais c'est la seule méthode fondée sur ce qui est réellement confirmé.
 
-Même les ingénieurs expérimentés rencontrent la même poignée d’erreurs. La plupart sont informatives une fois que vous savez les lire.
+Pour la liste autoritative des fonctionnalités, consultez la page Steam officielle à https://store.steampowered.com/app/1944880/ et comparez-la avec tout ce qu'un guide prétend. Si un guide décrit des mécaniques que la page du magasin ne mentionne jamais, traitez-les comme non vérifiées jusqu'à ce que vous les ayez vues en jeu.
 
-| Situation d’erreur | Cause probable | Correctif |
-|---|---|---|
-| « Impossible de supprimer car d’autres objets en dépendent » | Des clés étrangères, vues ou procédures référencent l’objet | Supprimez d’abord les dépendants, ou utilisez CASCADE après les avoir examinés |
-| « La base de données est utilisée par d’autres utilisateurs » | Des connexions ouvertes sont encore actives | Fermez les sessions ou mettez-y fin pendant une fenêtre de maintenance |
-| « L’objet n’existe pas » | Faute de frappe, mauvais schéma ou déjà supprimé | Vérifiez le nom et ajoutez IF EXISTS |
-| « Vous devez être propriétaire de l’objet » | Privilèges insuffisants | Demandez la propriété ou le privilège DROP à un administrateur |
-| « Impossible de supprimer une colonne utilisée dans une contrainte » | Une clé ou un index dépend de cette colonne | Supprimez d’abord la contrainte ou l’index, puis la colonne |
+## FAQ
 
-Une habitude utile : lisez l’erreur au pied de la lettre. La plupart des moteurs nomment l’objet dépendant exact, ce qui transforme un échec effrayant en une courte liste de tâches.
+**Drop Command est-il identique à l'unité de mod mental-omega avec un nom similaire ?**
+Non. Drop Command est le jeu Steam de PillBugGames, application 1944880. C'est un produit distinct de toute unité de mod qui partage une formulation similaire.
 
-## Récupérer après une commande DROP accidentelle
+**Quand Drop Command est-il sorti ?**
+Les appdetails officiels de Steam listent une date de sortie au 28 septembre 2026.
 
-Si l’instruction a déjà été validée, vos options dépendent entièrement de ce que vous avez préparé à l’avance. La commande DROP elle-même n’offre aucun bouton d’annulation — la récupération vient de l’infrastructure, pas de la syntaxe.
+**Drop Command publie-t-il des statistiques d'unités ou des coûts de construction ?**
+Pas sur la page officielle du magasin. Aucune statistique d'unité, table de dégâts, coût de construction, arbre technologique, ou liste de factions n'y est documenté.
 
-| Méthode de récupération | Quand cela fonctionne | Limites |
-|---|---|---|
-| Annulation dans une transaction | Moteurs avec DDL transactionnel, avant validation | Uniquement tant que la transaction est encore ouverte |
-| Récupération à un instant précis | Sauvegarde continue avec journaux archivés | Nécessite une chaîne de sauvegarde complète et du temps pour restaurer |
-| Restauration à partir d’un dump logique | Vous disposez d’un export récent du schéma | Perd tout ce qui a été écrit depuis le dump |
-| Instantané ou clone de stockage | Votre fournisseur prend des instantanés planifiés | Granularité grossière, peut capturer des changements non liés |
-| Fonctionnalités de récupération propres au moteur | Systèmes qui conservent les objets supprimés pendant une fenêtre de rétention | La fenêtre est définie par le fournisseur et expire |
+**Puis-je piloter tous les types d'unités ?**
+La description officielle indique que vous pouvez piloter n'importe quelle unité sous votre commandement et nomme les Mechs, Tanks, VTOLs et Armures de combat. Elle ne précise pas de restrictions, donc confirmez en jeu.
 
-Le message pratique est sans détour : le meilleur outil de récupération est une sauvegarde testée. Une sauvegarde non testée est un espoir, pas un plan. Effectuez régulièrement un exercice de restauration pour que la première fois que vous l’utilisez ne soit pas le jour où vous en avez réellement besoin.
-
-Si votre moteur prend en charge le DDL transactionnel, envisagez d’encapsuler les changements risqués dans une transaction explicite et de vérifier le résultat avant de valider. Cette seule habitude transforme une action irréversible en action réversible — mais uniquement pendant la durée de la transaction.
-
-## La commande DROP dans d’autres outils et plateformes
-
-SQL n’est pas le seul endroit où vous rencontrerez cette instruction, même si la sémantique reste remarquablement cohérente.
-
-- **Wrappers en ligne de commande.** PostgreSQL fournit un utilitaire dédié `dropdb` qui encapsule l’instruction SQL, utile pour les scripts et les pipelines CI. Des wrappers similaires existent pour d’autres moteurs.
-- **ORM et outils de migration.** Des frameworks comme Django, Rails et Entity Framework génèrent des instructions DROP à partir de fichiers de migration. Lisez le SQL généré avant de l’appliquer — une migration qui supprime une colonne est aussi définitive qu’une instruction tapée à la main.
-- **Entrepôts de données cloud.** Les plateformes managées prennent en charge DROP pour les tables, vues et schémas, et beaucoup ajoutent des fenêtres de time-travel ou de fail-safe qui permettent de récupérer un objet supprimé pendant une période de rétention. Ces fenêtres sont propres au fournisseur, alors consultez la documentation de votre plateforme plutôt que de supposer.
-- **Scripts de sauvegarde et de restauration.** Lorsque vous restaurez un dump, le script commence souvent par des instructions DROP pour effacer les objets existants. C’est pourquoi restaurer dans la mauvaise base de données peut être destructeur.
-
-Pour des détails de syntaxe faisant autorité, la [documentation officielle DROP TABLE](https://www.postgresql.org/docs/current/sql-droptable.html) de PostgreSQL est une excellente référence pour les options abordées ici, notamment IF EXISTS, CASCADE et RESTRICT.
-
-## Questions fréquentes
-
-**Puis-je annuler une commande DROP ?**
-Uniquement dans des circonstances précises. Si votre moteur prend en charge le DDL transactionnel et que vous n’avez pas encore validé, une annulation annule la suppression. Après une validation, la récupération dépend des sauvegardes, des instantanés ou d’une fonctionnalité de rétention propre au moteur. Il n’existe pas d’annulation universelle.
-
-**Quelle est la différence entre DROP et DELETE ?**
-DELETE supprime les lignes qui correspondent à un filtre et laisse la table intacte ; c’est une instruction DML et elle peut généralement être annulée. La commande DROP supprime l’objet lui-même — structure, données, index et contraintes — et c’est une instruction DDL avec une prise en charge de l’annulation bien plus limitée.
-
-**DROP TABLE supprime-t-il les données définitivement ?**
-Logiquement, oui. L’objet est immédiatement retiré du catalogue. Les fichiers sous-jacents peuvent subsister brièvement sur le disque, et certaines plateformes conservent une copie récupérable pendant une fenêtre de rétention, mais vous devez considérer les données comme perdues sauf si vous avez une sauvegarde.
-
-**La commande DROP est-elle identique dans MySQL, PostgreSQL et SQL Server ?**
-La syntaxe de base est presque identique, mais le comportement diffère concernant les transactions, la gestion des dépendances et la récupération. MySQL et Oracle valident implicitement le DDL, tandis que PostgreSQL autorise le DDL dans une transaction. Vérifiez toujours la documentation de votre moteur avant d’exécuter DROP dans un pipeline automatisé.
-
-**« drop command » peut-il désigner autre chose en dehors des bases de données ?**
-Oui. Dans les serveurs de jeu, les chatbots et les environnements de script, une commande drop signifie souvent faire apparaître ou jeter un objet plutôt que supprimer un objet de base de données. La syntaxe diffère, mais la prudence reste la même : sachez exactement ce que la commande affecte avant de l’exécuter.
+**Dois-je utiliser des vétérans ou des recrues ?**
+Les deux sont annoncés comme des options. Les escouades d'élite et les recrues jetables sont présentées comme un choix, pas une recommandation, et aucune source n'indique lequel performe mieux dans une situation donnée. Testez les deux et voyez ce que vos propres résultats montrent.

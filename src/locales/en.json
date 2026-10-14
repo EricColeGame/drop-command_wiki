@@ -50,22 +50,22 @@
         {
           "number": "1",
           "title": "Beginner Guide",
-          "description": "Learn the core loop first: read the battlefield, choose a landing zone, call your first drop, and confirm where the payload actually lands before you commit to a fight."
+          "description": "Learn the core loop first: read the evolving battlefield, choose a landing zone, call your first drop, and confirm where the payload actually lands before you commit to a fight."
         },
         {
           "number": "2",
-          "title": "Choose Your Faction",
-          "description": "Vanguard, Support, Recon, Heavy, or Swarm. Your faction locks in a roster and a deployment rhythm, so pick the archetype that matches how you want to fight."
+          "title": "Choose Your Playstyle",
+          "description": "Decide whether you want to drop in alone, lead a squad of veterans, or rush opponents with rookies. The game supports all three approaches, so pick the rhythm that matches how you want to fight."
         },
         {
           "number": "3",
           "title": "Combat Basics",
-          "description": "Master drop timing and landing-zone safety: call reinforcements 20 to 30 seconds before contact, keep a reserve, and never drop into a fight you have already lost."
+          "description": "Master drop timing and landing-zone safety: call reinforcements before contact, keep a reserve, and never drop into a fight you have already lost."
         },
         {
           "number": "4",
           "title": "Mech Builds & Loadouts",
-          "description": "Build for immediate impact: mobility first, then heat and ammo endurance, then range coverage, and keep cheap replaceable chassis in the deck to protect your drop cadence."
+          "description": "Customise and level your pilots, then modify your Mech, Tank, VTOL, or Battle Armour. Build for immediate impact: mobility first, then heat and ammo endurance, then range coverage, and keep cheap replaceable chassis in your roster to protect your drop cadence."
         }
       ]
     },
@@ -88,7 +88,7 @@
         {
           "badge": "Popular",
           "title": "Drop Command Units Guide",
-          "description": "Mechs, tanks, infantry, VTOLs, dropships, and faction rosters in one overview.",
+          "description": "Mechs, Tanks, Infantry, VTOLs, Battle Armour, and Dropships in one overview.",
           "href": "/units/drop-command-mech-units"
         },
         {
@@ -124,7 +124,7 @@
         {
           "badge": "Community",
           "title": "Drop Command Community",
-          "description": "Discord drops, community reports, and where to follow development.",
+          "description": "Community discussions, player reports, and where to follow development.",
           "href": "/community/drop-command-discord"
         }
       ]
@@ -132,13 +132,13 @@
     "aboutGame": {
       "title": "What is Drop Command?",
       "paragraphs": [
-        "Drop Command is a tactical sci-fi strategy game built around off-map deployment. Instead of walking units through a doorway, you call mechs, tanks, infantry, VTOLs, and battle armour directly onto a landing zone you choose, spending a limited tonnage budget, a cooldown, and a delay timer to change the shape of a fight.",
-        "Every match turns on the same decisions: read the board, pick a safe landing point, match the payload to the problem, and keep roughly a third of your allowance in reserve for the push you have not seen yet. Our wiki covers unit roles, mech builds, campaign planning, mission tactics, controls, and updates so new commanders and veterans can drop with a plan."
+        "Drop Command is a large-scale mech combined-arms combat game where the player pilots any unit under their command. You fight from small skirmishes up to large battles, dropping into combat alone, leading a squad, or commanding an army on an evolving battlefield with destructible debris and unit wreckage.",
+        "You can customise and level pilots, build squads of veterans or rush opponents with rookies, and modify Mechs, Tanks, VTOLs, and Battle Armour. Our wiki covers unit roles, mech builds, campaign planning, mission tactics, controls, and updates so new commanders and veterans can drop with a plan. The Steam store page does not publish unit stats, damage tables, build costs, or a code system."
       ],
       "stats": [
         {
           "label": "Developer",
-          "value": "Pillbug Games"
+          "value": "PillBugGames"
         },
         {
           "label": "Platform",
@@ -146,23 +146,23 @@
         },
         {
           "label": "Genre",
-          "value": "Mech Strategy"
+          "value": "Mech Combined-Arms Combat"
         },
         {
           "label": "Unit Types",
-          "value": "5"
+          "value": "Mechs, Tanks, VTOLs, Battle Armour, Infantry"
         },
         {
-          "label": "Weight Classes",
-          "value": "4"
+          "label": "Release Date",
+          "value": "28 September 2026"
         },
         {
-          "label": "Drop Roles",
-          "value": "5"
+          "label": "Play Modes",
+          "value": "Solo, Squad, Army"
         },
         {
-          "label": "Campaign Phases",
-          "value": "6"
+          "label": "Pilot Progression",
+          "value": "Customisable & Levelable"
         }
       ],
       "cta": "Explore All Guides"
@@ -232,8 +232,8 @@
               "detail": "Transports that carry the payload in and are lost with everything inside if the zone is contested."
             },
             {
-              "label": "Factions",
-              "detail": "Vanguard, Support, Recon, Heavy, and Swarm rosters that shape your deployment rhythm."
+              "label": "Battle Armour",
+              "detail": "Personalised powered suits that bridge the gap between infantry and mechs."
             }
           ]
         },
@@ -245,19 +245,19 @@
           "displayType": "tier-grid",
           "highlights": [
             {
-              "label": "S",
+              "label": "Mobility",
               "detail": "Mobility-first chassis that repositions the moment it lands and never fights as a static target."
             },
             {
-              "label": "A",
+              "label": "Endurance",
               "detail": "Heat and ammo endurance, so the mech can fight immediately on arrival."
             },
             {
-              "label": "B",
+              "label": "Range",
               "detail": "Range coverage that avoids dropping three units built for the same engagement distance."
             },
             {
-              "label": "C",
+              "label": "Disposable",
               "detail": "Cheap replaceable frames that keep your drop cadence alive while the expensive metal is repaired."
             }
           ]
@@ -431,19 +431,19 @@
       "items": [
         {
           "question": "What is Drop Command?",
-          "answer": "Drop Command is a tactical sci-fi strategy game about off-map deployment. You spend a limited tonnage budget and a cooldown to call mechs, tanks, infantry, VTOLs, and battle armour onto a landing zone you choose, then use that arrival to break a stalemate or re-anchor a collapsing line."
+          "answer": "Drop Command is a large-scale mech combined-arms combat game where the player pilots any unit under their command. You fight from small skirmishes up to large battles, dropping into combat alone, leading a squad, or commanding an army on an evolving battlefield with destructible debris and unit wreckage."
         },
         {
           "question": "How does a drop command actually work in Drop Command?",
-          "answer": "A drop command has four parts: a call-in cost, a delay timer, a landing point, and a payload. The delay decides most fights, because a payload that lands after the engagement is over costs the resource and gains nothing."
+          "answer": "A drop command has four parts: a call-in cost, a delay timer, a landing point, and a payload. The delay decides most fights, because a payload that lands after the engagement is over costs the resource and gains nothing. The Steam store page does not publish exact stats, costs, or timings."
         },
         {
-          "question": "Which faction should beginners pick in Drop Command?",
-          "answer": "Vanguard is the easiest faction to feel productive with because it pressures early, but it fades without follow-up. For a safer first pick, Support or Heavy gives your team a role that stays useful in the mid-game."
+          "question": "Which playstyle should beginners pick in Drop Command?",
+          "answer": "You can choose to drop in alone, lead a squad of veterans, or rush opponents with rookies. Beginners often find leading a squad easier because you can rely on veteran pilots while you learn the flow. Ultimately, pick the rhythm that matches how you want to fight."
         },
         {
           "question": "How much tonnage should I keep in reserve in Drop Command?",
-          "answer": "A common rule is to hold roughly a third of your Drop Command allowance for the late game. Emptying the budget on one assault-class arrival leaves you with no answer when the enemy counter-pushes."
+          "answer": "A common rule is to hold roughly a third of your Drop Command allowance for the late game. Emptying the budget on one assault-class arrival leaves you with no answer when the enemy counter-pushes. Exact tonnage limits are not documented on the Steam store page."
         },
         {
           "question": "Where can I find Drop Command patch notes?",
@@ -491,7 +491,7 @@
     "activeCodes": "Active Codes",
     "updated": "Updated",
     "viewAllCodes": "View all codes",
-    "playOnRoblox": "Play on Roblox",
+    "playOnRoblox": "Play on Steam",
     "inThisSection": "In this section",
     "tableOfContents": "Table of Contents",
     "nextSteps": "Next Steps",

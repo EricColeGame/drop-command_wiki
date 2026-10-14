@@ -1,105 +1,81 @@
 export const metadata = {
-  title: "Guide de la commande drop sur Steam : comment fonctionnent réellement les drops d'objets et d'armes",
-  description: "Découvrez ce que fait la commande drop sur Steam, comment les drops via console fonctionnent dans les jeux de tir du moteur Source, et comment les drops d'objets et de cartes à collectionner Steam se comportent réellement.",
+  title: "Drop Command : le combat interarmes de mechas expliqué",
+  description: "Ce que Drop Command annonce, ce que les guides tiers ajoutent, et ce qui n'est tout simplement pas documenté à propos du jeu de combat de mechas à grande échelle de PillBugGames.",
   category: "release",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Si vous avez déjà vu un coéquipier rater un échange d'arme en plein round, vous savez déjà pourquoi la commande drop est importante. Une commande drop sur Steam semble simple — une courte ligne tapée dans une console — et pourtant son comportement change d'un jeu à l'autre, et mal l'interpréter peut vous coûter un round, un emplacement d'inventaire ou un échange. Ce guide explique ce que fait réellement la commande drop sur Steam, quand elle est utile, et comment éviter les erreurs qui prennent les nouveaux joueurs au dépourvu.
+Drop Command est un jeu Steam du développeur PillBugGames, sorti le 28 septembre 2026 (application Steam 1944880). Son argument de vente est le combat de mechas à grande échelle : des batailles interarmes où vous pilotez n'importe quelle unité sous votre commandement, où vous vous lancez dans un combat seul ou avec une escouade, et où vous progressez à travers un champ de bataille qui évolue à mesure que les débris et les épaves s'accumulent. Cet article s'en tient à ce que la page officielle du magasin déclare réellement, signale ce que les guides tiers affirment, et reste honnête sur ce que personne n'a encore documenté.
 
-## Ce que signifie « commande drop » dans les jeux Steam
+## Ce que Drop Command annonce officiellement
 
-Les joueurs emploient l'expression « commande drop » pour au moins trois choses différentes, et les confondre est le chemin le plus rapide vers la confusion. La première est une véritable instruction de console en jeu. La deuxième est un raccourci familier pour désigner les systèmes de drops automatiques d'objets de Steam. La troisième est une commande de chat ou de bot utilisée par les streamers et les community managers.
+Selon la page officielle du magasin Steam, Drop Command est construit autour du **combat interarmes à grande échelle**, le joueur pilotant n'importe quelle unité sous son commandement. L'ampleur annoncée va de petites escarmouches jusqu'à des batailles épiques. Deux idées structurelles se démarquent :
 
-| Contexte | Ce qu'elle fait | Où la taper | Qui l'utilise |
-|---|---|---|---|
-| Console en jeu | Lâche l'arme ou l'objet que vous tenez actuellement | La console de développement du jeu | Joueurs de tir et de survie |
-| Drops d'inventaire Steam | Attribue des objets automatiquement selon le temps de jeu ou les événements | Nulle part — géré côté serveur | Toute personne possédant un compte Steam |
-| Commande de chat ou de bot | Déclenche un giveaway, une distribution de clés ou une alerte | Chat du stream, Discord ou panneau de bot | Streamers et community managers |
+- **Vous vous lancez dans le combat à votre façon.** Le magasin décrit la possibilité de se lancer seul, de mener une escouade ou de commander une armée.
+- **Le champ de bataille évolue.** Les débris entièrement destructibles et les épaves d'unités s'accumulent pendant un combat, modifiant le terrain avec lequel vous et vos adversaires travaillez.
 
-Le client Steam lui-même ne propose pas de commande drop. Ouvrez la console du client et vous y trouverez des outils de mise à jour, de licence et de diagnostic — pas de génération d'objets. Tout ce qui vous remet un objet est décidé par les serveurs du jeu lui-même, pas par une ligne que vous tapez localement. Cette seule distinction explique la plupart des frustrations que rencontrent les joueurs.
+Le jeu annonce également des pilotes personnalisables et pouvant gagner des niveaux, avec un choix entre des escouades d'élite de vétérans ou des recrues jetables que vous pouvez lancer à l'assaut d'un adversaire. Côté matériel, le magasin liste des **Mechs, Tanks, VTOLs et Armures de combat** personnalisables — quatre grandes catégories d'unités plutôt qu'un roster détaillé.
 
-La version console est celle que la plupart des gens désignent. Dans les titres construits sur le moteur Source de Valve, la commande lâche ce que vous tenez pour qu'un coéquipier puisse le ramasser. C'est un utilitaire, pas une triche : elle déplace un objet que vous possédez déjà, et elle ne fait rien si vos mains sont vides.
+La page mentionne aussi « bâtir un empire stellaire », ce qui correspond au cadre stratégique du jeu mais n'est pas développé publiquement.
 
-## Comment utiliser une commande drop dans un jeu de tir du moteur Source
+## Ce que la page du magasin ne documente pas
 
-Faire fonctionner la commande relève surtout de la préparation. Faites la configuration avant le début de la partie, car taper en pleine fusillade se termine rarement bien.
+C'est ici que beaucoup de trafic de recherche fait fausse route. La page officielle ne publie **pas** :
 
-| Étape | Que faire | Pourquoi c'est important |
-|---|---|---|
-| 1 | Activez la console de développement dans les paramètres du jeu | La commande est invisible tant que la console n'existe pas |
-| 2 | Assignez la commande à une touche confortable | Taper en plein combat vous fait mourir |
-| 3 | Testez-la d'abord sur un serveur privé ou local | Confirme que la commande n'est pas bloquée |
-| 4 | Vérifiez sur le HUD que l'objet a quitté vos mains | Évite les drops en double et les ramassages inutiles |
-| 5 | Consultez les règles du serveur avant de jouer en classé | Certains modes compétitifs restreignent les drops d'armes |
+- Les statistiques des unités, les valeurs d'armure ou les chiffres de vitesse
+- Les tables de dégâts des armes ou les valeurs de précision
+- Les coûts de construction, les taux de ressources ou les règles économiques
+- Un arbre technologique, une liste de factions ou un ordre de déblocage des unités
+- Un quelconque système de codes, codes de triche ou codes de redemption
+- Les raccourcis clavier ou les affectations de commandes
 
-Quelques notes pratiques. De nombreuses commandes de console ne répondent que lorsque les cheats sont activés, ce qui signifie généralement des serveurs locaux ou privés plutôt que le matchmaking officiel. Si la commande renvoie une erreur « unknown command », le jeu n'utilise probablement pas du tout la syntaxe de console Source — cherchez plutôt une assignation de touche dédiée dans le menu des commandes.
+Si vous voyez une page promettant des « codes Drop Command » ou un tableur complet de statistiques sans aucune source, considérez-la comme non vérifiée. Le moyen le plus fiable de vérifier tout cela est d'ouvrir la [page Steam officielle de Drop Command](https://store.steampowered.com/app/1944880/) et de lire le panneau des fonctionnalités lui-même, puis de confirmer en jeu une fois que vous le possédez.
 
-L'assignation de touche compte plus qu'on ne l'imagine. Une commande drop liée à une touche que vous pouvez atteindre sans déplacer votre main vous permet de passer une arme dans la demi-seconde qui précède une poussée. Les joueurs qui comptent sur la saisie au clavier perdent généralement cette course.
+## Pilotage, commandement et choix des unités
 
-## Les systèmes de drops intégrés de Steam expliqués
+La mécanique phare — piloter n'importe quelle unité sous votre commandement — est un signal de design fort, même sans chiffres. Dans les jeux interarmes, cela signifie normalement que la différence entre un Mech, un Tank, un VTOL et une Armure de combat est une question de *rôle*, pas seulement de durabilité. Les Mechs ont tendance à ancrer un combat et à absorber l'attention. Les Tanks échangent généralement la mobilité contre le feu direct. Les VTOLs apportent la verticalité et la vitesse mais sont exposés. L'Armure de combat se situe à l'extrémité petite et agile.
 
-Les systèmes de drops de Steam sont distincts de toute commande de console, et ils suivent des règles définies par le développeur de chaque jeu. Quatre catégories couvrent presque tout ce que vous rencontrerez.
+Puisque le magasin confirme que les quatre catégories sont personnalisables, la question pratique n'est pas « laquelle est la meilleure » — cela dépend d'un équilibrage que personne n'a publié — mais **quelle unité vous permet d'influencer le combat dans lequel vous êtes réellement engagé**. Si votre camp perd le combat au sol, un VTOL peut vous permettre de vous repositionner plus vite qu'un Mech ne le pourrait jamais. Si vous tenez une ligne, une plateforme plus lourde achète généralement du temps à votre escouade.
 
-| Type de drop | Ce qui le déclenche | Échangeable ? | Où vérifier |
-|---|---|---|---|
-| Cartes à collectionner | Temps de jeu dans un jeu qui les prend en charge | Généralement oui, via le marché | Votre inventaire Steam |
-| Drops d'objets free-to-play | Temps de jeu et tirages aléatoires | Cela dépend du jeu | L'écran d'inventaire du jeu |
-| Drops d'événements à durée limitée | Regarder des streams ou participer à des événements | Souvent limité dans le temps | La page de l'événement |
-| Drops promotionnels | Bundles, précommandes, offres matérielles | Fréquemment verrouillés au début | Les petits caractères de la page du magasin |
+## Recrues, vétérans et composition d'escouade
 
-Les cartes à collectionner sont les plus mal comprises. Vous ne gagnez généralement qu'une partie du set de cartes d'un jeu en jouant normalement ; le reste provient de l'échange ou de l'achat sur le [Marché de la communauté Steam](https://steamcommunity.com/market/). Les cartes n'apparaissent pas instantanément — les drops sont répartis sur plusieurs sessions de jeu, donc une courte première session peut ne rien produire du tout.
+La description officielle propose une véritable tension : constituer des escouades de vétérans, ou submerger les adversaires avec des recrues. Cette formulation suggère que les vétérans apportent de l'expérience et de la survivabilité, tandis que les recrues sont moins chères ou plus rapides à déployer et donc sacrifiables.
 
-Les drops d'objets free-to-play fonctionnent selon un rythme différent. Les jeux distribuent des cosmétiques, des caisses ou des consommables à intervalles contrôlés par le développeur, et ces intervalles peuvent changer avec les mises à jour. Si vous voulez les règles exactes pour un titre précis, la page du magasin et les notes de patch du développeur sont les seules sources fiables.
+Raisonnement général à partir de la prémisse :
 
-Une remarque supplémentaire : l'éligibilité aux drops est liée à votre compte, pas à votre machine. Changer d'ordinateur, réinstaller ou jouer hors ligne ne réinitialisera ni n'accélérera une fenêtre de drop.
+- **Le rush de recrues** convient à la pression précoce, aux cartes larges et aux adversaires qui ont besoin de temps pour mettre en place des unités lourdes.
+- **Les escouades de vétérans** conviennent aux combats longs où les unités individuelles survivent et accumulent leur valeur.
+- Parce que les pilotes peuvent gagner des niveaux, perdre un pilote coûte probablement plus que perdre un châssis. C'est une inférence raisonnable à partir de « pilotes personnalisables et pouvant gagner des niveaux », pas une règle documentée.
 
-## Pourquoi les commandes drop échouent : une liste de vérification de dépannage
+Aucune courbe d'XP, aucun plafond de niveau ni aucune limite de taille d'escouade n'est publié, donc tout guide prétendant donner des chiffres exacts ne fait que deviner.
 
-Quand une commande drop cesse de fonctionner, la cause est généralement l'une de cinq choses. Parcourez cette liste avant de supposer que quelque chose est cassé.
+## Lire le champ de bataille évolutif
 
-| Symptôme | Cause probable | Solution |
-|---|---|---|
-| La saisie ne fait rien | Cheats désactivés ou serveur qui la bloque | Testez sur un serveur local ou privé |
-| Erreur « Unknown command » | Le jeu n'utilise pas la syntaxe de console Source | Cherchez une assignation de touche dans le menu des paramètres |
-| Le drop n'atteint jamais un coéquipier | Son inventaire ou son emplacement d'arme est plein | Demandez-lui de libérer un emplacement d'abord |
-| Aucun objet d'inventaire après des heures de jeu | Fenêtre de drop non atteinte ou déjà utilisée | Attendez la prochaine période de réinitialisation |
-| Aucune nouvelle carte à collectionner | Vous avez obtenu tous les drops disponibles | Échangez ou achetez les cartes restantes |
-
-Commencez par l'explication la plus simple. Neuf fois sur dix, la commande est correcte et c'est l'environnement qui pose problème — un serveur verrouillé, un inventaire plein, ou un jeu qui n'a tout simplement jamais implémenté cette syntaxe de console.
-
-Si une commande fonctionnait la semaine dernière et échoue aujourd'hui, consultez les notes de patch. Les développeurs suppriment ou renomment des commandes de console lors des mises à jour, et les modes compétitifs resserrent fréquemment les restrictions entre les saisons.
-
-## Étiquette des commandes drop, arnaques et signalements communautaires
-
-Dans les jeux de tir en équipe, une commande drop est une courtoisie. L'expérience des joueurs suggère que le moyen le plus rapide de perdre la bonne volonté d'autrui est de spammer la commande auprès de coéquipiers qui portent déjà l'économie du round sur leurs épaules. Demandez d'abord, lâchez ensuite.
-
-Les signalements communautaires pointent aussi un problème persistant : des gens qui vendent de faux outils de drop. L'économie d'objets de Steam attire les escrocs, et le discours est toujours une variante de « lance ceci et obtiens des skins gratuits ».
-
-| Offre | Ce qui se passe réellement |
+| Fonctionnalité annoncée | Implication pratique |
 |---|---|
-| « Lance cette commande drop pour des skins gratuits » | Un script ou une page de phishing, pas une commande de jeu |
-| Un outil qui « débloque les drops Steam » | Un logiciel tiers qui viole le Contrat de souscription |
-| Quelqu'un qui demande un code Steam Guard pour « activer les drops » | Un vol de compte pur et simple |
+| Débris destructibles | Le couvert peut apparaître ou disparaître en plein combat |
+| Épaves d'unités | Les champs de bataille s'encombrent, bloquant ou canalisant le mouvement |
+| Se lancer seul, avec une escouade ou une armée | L'ampleur semble être un choix du joueur pour chaque engagement |
 
-Aucune commande drop légitime ne génère des objets que vous n'avez pas gagnés. Si un outil demande vos identifiants, votre code Steam Guard ou la permission de s'exécuter en arrière-plan, fermez-le. Le [centre d'aide officiel de l'assistance Steam](https://help.steampowered.com/) est l'endroit approprié pour signaler un compte compromis, et agir rapidement permet généralement de sauver l'inventaire.
+Si les épaves s'accumulent, la mobilité et les lignes de vue se dégradent avec le temps. Cela favorise les joueurs qui gardent une option rapide en réserve plutôt que de tout engager dans une seule voie. Cela signifie aussi qu'une bataille que vous gagnez tôt peut encore s'enliser tard.
 
-Pour les streamers, la commande drop côté chat est une tout autre affaire. Les bots les déclenchent pour annoncer des giveaways ou distribuer des clés. Ce sont des outils communautaires, pas des mécaniques de jeu, et ils n'ont aucun effet sur votre inventaire Steam tant que quelqu'un ne vous envoie pas réellement un cadeau.
+## Comment vérifier tout ce que vous lisez
 
-## Questions fréquentes
+Parce que la couverture tierce est une observation secondaire plutôt qu'une documentation du développeur, recoupez les affirmations avec le jeu lui-même. Filtrez les discussions de la communauté par date de patch, car les changements d'équilibrage invalident les anciens conseils. Et gardez des attentes calibrées : la page du magasin décrit les ambitions de Drop Command, pas son équilibrage final. Un jeu interarmes à grande échelle avec des champs de bataille destructibles est exactement le type de design qui est fortement ajusté après la sortie, alors vérifiez en jeu plutôt que de faire confiance à un guide statique.
 
-**Existe-t-il une commande drop intégrée au client Steam lui-même ?**
+## FAQ
 
-Non. La console du client Steam gère les mises à jour, les licences et les diagnostics. Les drops d'objets sont accordés par les serveurs de chaque jeu, il n'existe donc aucune commande universelle qui fonctionne pour tous les titres de votre bibliothèque.
+**Drop Command est-il déjà sorti ?**
+Oui. La fiche Steam officielle donne une date de sortie au 28 septembre 2026.
 
-**Pourquoi la commande drop ne fait-elle rien dans mon jeu ?**
+**Drop Command a-t-il des codes ?**
+Rien sur la page officielle du magasin ne décrit un système de codes. Toute liste de codes est non vérifiée.
 
-Le plus souvent, les cheats sont désactivés ou le serveur bloque la saisie dans la console. Essayez d'abord sur un serveur local ou privé. Si vous obtenez toujours une erreur, le jeu utilise probablement son propre système d'assignation de touches plutôt que la syntaxe de console Source.
+**Puis-je piloter n'importe quelle unité ?**
+Le magasin indique que vous pilotez n'importe quelle unité sous votre commandement, parmi les Mechs, Tanks, VTOLs et Armures de combat.
 
-**Les cartes à collectionner Steam tombent-elles encore automatiquement ?**
+**Y a-t-il une campagne ou un arbre technologique ?**
+Ni l'un ni l'autre n'est documenté dans la description vérifiée du magasin. Consultez la page officielle et les menus en jeu pour les détails actuels.
 
-Oui. Les cartes continuent de tomber en fonction du temps de jeu dans les jeux compatibles, bien que vous n'obteniez généralement qu'une partie d'un set. Le reste doit être échangé ou acheté. Les drops arrivent progressivement plutôt que d'un seul coup.
-
-**Une commande drop trouvée en ligne peut-elle distribuer des objets gratuits ?**
-
-Non. Tout ce qui promet des objets gratuits en échange de l'exécution d'un script, du partage d'un mot de passe ou de la saisie d'un code Steam Guard est une arnaque. Les vrais drops sont automatiques, côté serveur, et liés à votre propre temps de jeu et à votre compte.
+**L'unité de mod mental-omega est-elle la même chose ?**
+Non. C'est une unité de mod séparée et cela n'a rien à voir avec ce jeu.

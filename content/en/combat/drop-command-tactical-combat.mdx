@@ -1,128 +1,83 @@
 export const metadata = {
-  title: "Drop Command Tactical Combat Guide: Master Positioning and Action Economy",
-  description: "Learn how the drop command tactical combat mechanic works across turn-based and real-time tactics games — with tips, tables, and mistakes to avoid.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command actually is, what the Steam page confirms, and how to think about piloting, squads and combined arms in PillBugGames' mech battler.",
   category: "combat",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-One button decides more fights than most players realize. The drop command tactical combat veterans treat as routine is the same order that saves a squad from a wipe — and the one rookies forget until it's too late. Whether you are shuffling medkits between units in a turn-based skirmish or calling an airborne insertion in a real-time tactics game, understanding what a drop costs and when to use it separates clean wins from messy losses.
+The name "Drop Command" reads like a verb and a noun stacked together, and that is a fair summary of the game behind it. Drop Command is a mech combined-arms combat game from developer PillBugGames, released on Steam on 28 September 2026. Its pitch is scale: you control any unit under your command, and you can fight alone, lead a squad, or run something closer to an army. This article covers what the official store page actually confirms, where third-party coverage stops being reliable, and how to reason about the game's combat loop without inventing numbers that were never published.
 
-Most guides obsess over damage numbers and meta builds. Very few explain the drop command tactical combat systems that quietly underpin positioning, resource sharing, and rescue mechanics. This guide breaks the mechanic down by genre, walks through a step-by-step decision process, and flags the mistakes that cost players entire missions.
+You can find the official listing here: [Drop Command on Steam](https://store.steampowered.com/app/1944880/). Everything in the next section comes from that page and its appdetails data, retrieved 14 October 2026.
 
-## What Is the Drop Command in Tactical Combat?
+## What the Official Sources Confirm
 
-At its core, the drop command is an order that makes a unit release something it is holding, carrying, or transporting and place it onto the battlefield. That "something" can be an inventory item, an equipped weapon, a rescued ally, or an entire squad of reinforcements arriving from a transport.
+The verified description describes "mech combat at a grand scale" and "combined arms combat," with the player piloting any unit under their command. Scale ranges from small skirmishes to epic battles. You can drop into combat alone, lead a squad, or command an army.
 
-Every game implements it a little differently, but the intent never changes: move a resource from inside a unit to a position on the map. Sometimes that resource is gear. Sometimes it is a person. Sometimes it is a whole second front.
+The combat environment is described as an evolving battlefield with fully destructible debris and unit wreckage. Pilots are customisable and can level up. Squads can be built from elite veterans or from disposable rookies. Finally, the game advertises personalisation for four unit classes: Mech, Tank, VTOL, and Battle Armour.
 
-Because the drop command tactical combat systems vary so widely, the fastest way to understand the mechanic is to compare its variants side by side.
+That is the full extent of the reliable feature list. Notably, the store page does not publish unit stats, damage tables, build costs, or any kind of code system. Any article claiming to list exact armour values, weapon DPS, or spawn codes is either working from datamined files it has not disclosed or is simply making things up.
 
-| Variant | What gets released | Typical action cost | Best used for |
-|---|---|---|---|
-| Drop item | A single inventory object | Free or minor action | Passing ammo, medkits, or keys between allies |
-| Drop weapon | Currently equipped gear | Usually free, occasionally minor | Shedding weight, switching to a sidearm, disarming |
-| Drop carried unit | An ally you are carrying or rescuing | Full action in most turn-based games | Repositioning a downed or rescued teammate |
-| Airborne / troop drop | Units from a transport | Mission-level order with a cooldown | Flanking, opening a second front |
-| Supply drop | Ammo, meds, or resources | Cooldown-based, sometimes global | Sustaining a long fight far from base |
+| Confirmed on the Steam page | Not published on the Steam page |
+| --- | --- |
+| Four unit classes: Mech, Tank, VTOL, Battle Armour | Per-unit statistics or damage values |
+| Piloting any unit under your command | Build costs or economy rules |
+| Solo, squad, and army-scale command | Tech trees or faction lists |
+| Destructible debris and unit wreckage | A code, cheat, or console system |
+| Customisable, levelable pilots | Hotkeys and control bindings |
+| Veteran squads or rookie squads | Patch notes or post-launch balance history |
 
-A useful rule of thumb: the more valuable the payload, the more the game charges you for the drop. Free actions release objects. Full actions release people.
+## Why "Any Unit Under Your Command" Changes the Tactics
 
-## How the Drop Command Changes by Genre
+Most mech games lock you into a single chassis and ask you to master it. Drop Command's advertised hook is the opposite: the unit you pilot is a choice, not an identity. That has a practical consequence for how you approach a fight. Instead of asking "how do I play my mech well," the more useful question is "which unit does this moment need me to be."
 
-The drop command tactical combat players learn in one genre rarely transfers cleanly to another. A free action in a looter shooter can be a full turn in a grid-based tactics game.
+If you are commanding an army, the unit you personally occupy should probably be the one whose presence most changes the outcome — not necessarily the biggest or the flashiest. If you are dropping alone, the calculus flips, because there is no one else to cover the gaps in your loadout. These are reasoning exercises drawn from the combined-arms premise, not measured conclusions; the game does not publish the data that would let anyone assert them as fact.
 
-| Genre | How the command behaves | Action cost | Biggest risk |
-|---|---|---|---|
-| Turn-based tactics | Unit lands on an adjacent tile; the drop often ends the turn | Full action | Dropping into enemy overwatch or a hazard |
-| Real-time tactics | Instant execution, no turn structure | Cooldown or animation lock | Dropping mid-firefight with no cover |
-| Military sims | Context or radial menu; gear lands permanently | Real-time seconds | Losing kit you cannot recover |
-| Looter shooters | Free action; loot sits on the ground briefly | Free | Loot despawning or being stolen |
-| RPG hybrids | Tied to inventory weight and encumbrance | Free to minor | Overloading a unit and losing mobility |
+The destructible debris and unit wreckage detail matters here too. The store page presents the battlefield as evolving, meaning the terrain you fight over is not static scenery. Wreckage accumulates, and sight lines and cover can shift over the course of an engagement. A cautious player can verify how much this actually affects play by watching whether downed units and collapsed structures block or open firing lanes during a match.
 
-If you remember only one column from that table, remember the action cost. Misjudging it is the most common reason a drop command tactical combat play falls apart. Browsing a broad catalog like [Steam's tactical RPG hub](https://store.steampowered.com/tags/en/Tactical%20RPG/) makes the genre differences obvious within a few store pages.
+## Solo Drops, Squads, and Army Command
 
-## The Three Rules That Govern Every Drop: Cost, Landing, and Weight
+The official description lays out three broad modes of play, and they ask for different habits:
 
-Every drop command tactical combat system follows the same three constraints, even when the interface looks completely different.
+- **Dropping alone.** No squad to manage, no orders to issue. Your attention goes entirely into piloting and positioning. This is the cleanest way to learn a unit class, because mistakes are yours and feedback is immediate.
+- **Leading a squad.** You are responsible for a small number of units while also piloting. Veteran squads and rookie squads are both advertised, which suggests a deliberate trade-off between reliability and cost that the page does not quantify.
+- **Commanding an army.** At this scale, your personal unit is one piece of a much larger machine. The interesting decisions move from reflexes toward allocation — where the mass of your force goes and what you personally do while it gets there.
 
-### 1. Action economy
+The "elite squads or disposable rookies" phrasing is worth taking at face value rather than over-reading. The page frames it as a choice between building veterans up and rushing opponents with rookies. How that trade-off is balanced in practice is not documented, and third-party guides that claim precise numbers should be treated as observations rather than developer documentation.
 
-In turn-based games, dropping competes with attacking, moving, and using items. Spending a full action to set down an ally only pays off if the freed unit does something meaningful in the same turn. If it cannot, you have traded tempo for nothing.
+## Pilots, Progression, and Customisation
 
-### 2. Landing space
+Two progression systems are advertised: customisable, levelable pilots, and personalisable Mech, Tank, VTOL, and Battle Armour units. The distinction is useful even without published details. Pilot progression presumably attaches to the person, while unit personalisation attaches to the machine. Whether a leveled pilot carries benefits across unit classes, or whether bonuses are class-specific, is not stated. You can check this yourself by leveling a pilot and then switching unit classes to see what persists.
 
-A drop needs somewhere to land. Crowded corridors, occupied tiles, and narrow ledges can block the command outright. Always confirm the destination tile is empty and legal before committing.
+Because no stat tables exist in the official material, the sensible approach is to test in-game and keep your own notes. Treat community claims about optimal builds as starting hypotheses, not verified facts.
 
-### 3. Weight and encumbrance
+## How to Read Third-Party Drop Command Content
 
-Dropping gear is often the fastest way to escape a movement penalty. Carrying too much typically reduces speed, dodge, or initiative, so a well-timed drop restores mobility right when it matters most.
+A lot of search results for this name are noise. Some pages are dictionary entries for the word "drop." Others describe a mental-omega mod unit that has nothing to do with this game. Aggregator listings scrape the Steam page without adding information. None of that helps you play.
 
-| Landing terrain | Typical result | Tactical note |
-|---|---|---|
-| Open ground | Lands safely, fully exposed | Only drop if the unit can move again |
-| Elevation or ledge | May fall and take damage | Check fall rules before dropping |
-| Water or deep terrain | Item or unit may be lost | Avoid dropping over water entirely |
-| Fire, acid, or hazard tile | Damage or destruction | Never drop into an active hazard |
-| Cover tile | Unit gains cover on arrival | The ideal destination when available |
+A rough hierarchy for judging any Drop Command article:
 
-## How to Use the Drop Command Effectively: A Step-by-Step Process
+1. The official Steam page — authoritative for features and release information.
+2. Developer posts or patch notes, if and when they appear — authoritative for changes.
+3. Third-party guides — useful as observations, unreliable as documentation.
 
-Treat every drop command tactical combat play as a mini-plan rather than a reflex. The sequence below works across most tactical systems, from small indie skirmish games to full-scale military sims.
-
-| Step | Action | Why it matters |
-|---|---|---|
-| 1 | Check the action cost | A free drop is almost always worth it; a full-action drop needs a payoff |
-| 2 | Scout the landing tile | Blocked or hazardous tiles cancel the play |
-| 3 | Confirm who can pick up | An item nobody collects is a wasted turn |
-| 4 | Drop before you move, not after | Order of operations decides whether you end in cover |
-| 5 | Watch despawn or pickup timers | In real-time games, dropped gear can vanish |
-| 6 | Re-equip or re-carry immediately | Units left empty-handed are easy targets |
-
-Community reports from tactics players consistently point to step four as the most overlooked. Moving first and dropping second frequently leaves your unit stranded in the open, which is exactly where enemy units want it.
-
-## Common Drop Command Mistakes (and How to Fix Them)
-
-Even experienced drop command tactical combat players fall into the same traps. Here are the ones that surface most often in player experience threads and strategy forums.
-
-| Mistake | Why it hurts | The fix |
-|---|---|---|
-| Dropping with no follow-up | Burns a full action for zero tempo | Chain the drop into a move, attack, or pickup in the same turn |
-| Dropping into a hazard | Destroys the payload or damages the unit | Preview the tile before confirming |
-| Ignoring weight limits | Unit stays slow after the drop | Drop enough to clear the threshold, not just one item |
-| Dropping unique or quest gear | Item may be lost permanently | Store or trade irreplaceable items instead |
-| Forgetting enemy pickup AI | Enemies grab your dropped weapons | Drop outside enemy movement range |
-| Dropping a carried ally into overwatch | Frees a unit directly into lethal fire | Clear the threat or drop behind cover first |
-
-## Advanced Drop Command Tactics Worth Practicing
-
-Once the basics are automatic, the drop command becomes a combo tool rather than a utility button.
-
-- **The relay drop.** Pass an item down a line of units in a single turn. Each free drop hands the object one step closer to the unit that needs it, resupplying across half the map without spending a movement action.
-- **The bait drop.** Leave a valuable-looking item on the ground near a chokepoint. Enemy AI that prioritizes loot will walk into your overwatch to grab it.
-- **The emergency handoff.** When a unit is about to fall, drop its medkit or ammo first. A dropped item stays on the map even when the carrier goes down.
-- **The airborne opener.** In real-time tactics games, a well-timed troop drop behind enemy lines splits the defender's attention and forces a choice of direction.
-- **The rescue chain.** Carry, move, drop, and let a second unit carry the same ally further. Two units can move a downed teammate much farther than one.
-
-Practice these in low-stakes missions first. The drop command tactical combat tricks that look simple on paper demand precise ordering, and a single misclick can undo the entire sequence.
-
-| Combo | Units required | Difficulty | Payoff |
-|---|---|---|---|
-| Relay drop | 2–3 | Low | Fast resupply across distance |
-| Bait drop | 2+ with overwatch | Medium | Free damage on greedy AI |
-| Emergency handoff | 1 | Low | Preserves consumables after a death |
-| Airborne opener | Full squad | High | Splits enemy attention |
-| Rescue chain | 2 | Medium | Long-range ally repositioning |
+If a guide quotes exact damage numbers, build costs, or a code system, ask where it got them. The store page does not provide any of that, so the source has to be something other than official documentation.
 
 ## FAQ
 
-**What does the drop command actually do in tactical combat games?**
-It makes a unit release whatever it is holding — an item, a weapon, a carried ally, or a transported squad — and place it on the battlefield. The exact rules depend on the game, but the purpose is always to move a resource from inside a unit to a specific position on the map.
+**When did Drop Command release?**
+28 September 2026, per the official Steam appdetails retrieved 14 October 2026.
 
-**Does the drop command cost a turn?**
-It depends on the genre. Turn-based tactics games usually charge a full action to drop a carried unit but nothing to drop an item. Real-time tactics games use cooldowns or animation locks instead of turns. Check the tooltip or the rules panel before you commit.
+**Who developed it?**
+PillBugGames.
 
-**Can enemies pick up items I drop?**
-In many games, yes. Dropped gear becomes a neutral object on the map, and enemy AI with a loot priority will collect it. Drop items behind your own lines or outside enemy movement range.
+**Is there a code system or console commands?**
+Nothing of the sort is published on the store page. Claims about codes are unsupported by official sources.
 
-**What is the difference between drop and throw?**
-Dropping places something on an adjacent or designated tile with no trajectory, while throwing sends it across a distance with a chance to miss or scatter. Use drop for precise handoffs and throw when you need range.
+**Can I play without commanding a squad?**
+Yes. Dropping into combat alone is explicitly advertised.
+
+**What unit types can I personalise?**
+Mech, Tank, VTOL, and Battle Armour.
+
+**How do I verify a mechanic the page does not explain?**
+Test it in-game, or check the [official Steam listing](https://store.steampowered.com/app/1944880/) for updates.

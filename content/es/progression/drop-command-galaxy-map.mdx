@@ -1,137 +1,85 @@
 export const metadata = {
-  title: "Guía del comando drop: Domina el comando drop para botín, inventario y progreso en el mapa galáctico",
-  description: "Aprende cómo funciona el comando drop, cuándo usarlo para gestionar inventario y botín, y cómo ayuda al progreso en juegos con mapa galáctico.",
+  title: "Drop Command: Una guía práctica del combate combinado de mechs",
+  description: "Qué ofrece realmente Drop Command, cómo su premisa de armas combinadas da forma al juego y cómo verificar los detalles de las unidades por tu cuenta antes de comprar.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## ¿Qué es un comando drop?
+Drop Command es un juego de Steam del desarrollador PillBugGames, lanzado el 28 de septiembre de 2026. Su propuesta es inusualmente específica: combate de mechs a gran escala, donde no estás atado a una única máquina heroica, sino que puedes pilotar cualquier unidad bajo tu mando. Esa única decisión de diseño cambia casi todo en tu forma de abordar una partida, por lo que vale la pena analizarla con cuidado antes de empezar a planificar tácticas.
 
-Un comando drop es una línea de texto que escribes en la consola, el chat o el menú de desarrollador de un juego para colocar un objeto en el mundo en lugar de en tu inventario. Es una de las herramientas más antiguas y útiles de los videojuegos: una sola línea que puede darte una pila de recursos, vaciar una mochila llena o entregar un objeto a otro jugador sin abrir un solo menú.
+Este artículo se ciñe estrictamente a lo que el desarrollador anuncia en la página oficial de Steam, a lo que han dicho observadores externos y a lo que simplemente no está documentado en ninguna parte. Cuando los detalles no existen, lo decimos en lugar de adivinar. Puedes consultar el material original tú mismo en la [página oficial de la tienda de Steam](https://store.steampowered.com/app/1944880/) en cualquier momento.
 
-Eso importa más de lo que parece. El espacio de inventario es uno de los límites más duros en la mayoría de los sistemas de progresión, y un comando drop suele ser la forma más rápida de mover, probar o despejar objetos cuando estás inmerso en una partida. Los speedrunners lo usan para saltarse misiones de recolección, los modders para probar árboles de crafteo, y los jugadores comunes para recuperarse de un bug que se comió un objeto de misión.
+## Lo que PillBugGames realmente anuncia
 
-La ortografía exacta cambia de un juego a otro, pero la idea no: nombras un objeto, normalmente una cantidad y, a veces, una ubicación objetivo. Una vez entiendes el patrón, puedes leer casi cualquier lista de comandos en segundos.
+La ficha de la tienda describe un juego de armas combinadas con varios pilares distintos. Según la descripción oficial, entras en combate solo, lideras un escuadrón o comandás un ejército. El campo de batalla evoluciona durante la partida, con escombros y restos de unidades totalmente destructibles. Los pilotos son personalizables y pueden subir de nivel. Puedes formar escuadrones de veteranos o lanzarte contra los oponentes con novatos. Y puedes personalizar Mechs, Tanques, VTOLs y Blindaje de Batalla.
 
-### Por qué los jugadores dependen de él
+Esa lista es la base. Fíjate en lo que no incluye: no hay estadísticas de unidades publicadas, ni tablas de daño, ni costes de construcción, ni árboles tecnológicos, ni listas de facciones, ni sistema de códigos. El desarrollador no ha publicado esas cifras en la página de la tienda. Cualquier cosa que veas en otro lugar afirmando cifras exactas ha sido extraída de los datos del juego, medida por la comunidad o inventada, y debe tratarse en consecuencia.
 
-- **Presión de inventario** — soltar botín de sobra es más rápido que caminar hasta un cofre de almacenamiento.
-- **Pruebas de progresión** — comprobar si una receta o mejora funciona antes de farmear para conseguirla.
-- **Recuperación** — reemplazar un objeto perdido por un cierre inesperado, un bug o un clic accidental.
-- **Compartir** — entregar materiales a un compañero de equipo en una sesión cooperativa.
-- **Creación de contenido** — montar una escena o una toma para miniatura sin grindear.
-
-## Fundamentos de la sintaxis del comando drop
-
-Casi todos los comandos drop siguen el mismo esqueleto: una palabra de acción, un identificador de objeto, una cantidad y un objetivo opcional. Lo que cambia es cómo el juego quiere ordenar esas piezas: argumentos posicionales separados por espacios, o argumentos con nombre escritos como pares `key=value`.
-
-Un ejemplo genérico sería `/drop item_name 5`. La acción es `drop`, el objeto es `item_name` y `5` es la cantidad. Algunos juegos quieren el objetivo primero, otros quieren un nombre de jugador y otros quieren coordenadas. Si tienes dudas, escribe el comando sin argumentos: la mayoría de las consolas te muestran el patrón esperado.
-
-### Las cuatro partes de un comando drop típico
-
-| Parte | Qué hace | Marcador de ejemplo | Notas |
-|---|---|---|---|
-| Acción | Le dice al juego qué hacer | `drop`, `spawn`, `place` | Normalmente es el primer token |
-| ID del objeto | Identifica qué crear | `item_name`, `item_id` | Los nombres suelen distinguir mayúsculas y minúsculas |
-| Cantidad | Cuántos soltar | `1`, `5`, `64` | Omitirla suele hacer que sea 1 por defecto |
-| Objetivo | Dónde o a quién | `@p`, coordenadas, nombre de jugador | Opcional en la mayoría de los juegos |
-
-### Argumentos posicionales vs. con nombre
-
-| Estilo | Se ve así | Común en | Cuidado con |
-|---|---|---|---|
-| Posicional | `/drop iron_ore 10` | Motores antiguos, comandos de chat | El orden importa; si intercambias dos valores, da error |
-| Con nombre | `/drop item=iron_ore qty=10` | Motores modernos, cargadores de mods | Un error tipográfico en la clave rompe toda la línea |
-| Híbrido | `/drop iron_ore qty=10 @p` | Motores de generación intermedia | Reglas mezcladas; lee con atención la información emergente |
-
-Si quieres estudiar cómo se documentan los comandos relacionados con objetos en un juego mainstream, la [referencia de comandos de Minecraft Wiki](https://minecraft.wiki/w/Commands) es un ejemplo realmente útil de cómo se explican el orden de argumentos, los selectores de objetivo y los límites de cantidad. Esas convenciones se trasladan a docenas de otros títulos.
-
-## Comando drop vs. otros comandos de objetos
-
-Los jugadores suelen confundir el comando drop con sus primos. No son intercambiables, y usar el equivocado es la razón más común de que un comando "no funcione".
-
-| Tipo de comando | Qué hace en realidad | Mejor para | Nivel de riesgo |
-|---|---|---|---|
-| Drop | Coloca un objeto en el mundo cerca de ti o de un objetivo | Liberar espacio, intercambios rápidos, preparar escenas | Bajo |
-| Give | Añade un objeto directamente a un inventario | Reabastecerse, probar, regalar | Medio |
-| Spawn | Crea una entidad u objeto, no un objeto apilable | Probar jefes, construir bases | Alto |
-| Clear | Elimina objetos de un inventario | Limpiar una partida desordenada | Alto |
-| Transfer | Mueve objetos entre contenedores | Logística de base, ordenar almacenamiento | Medio |
-
-La diferencia práctica está en **dónde termina el objeto**. Un comando give pone algo en un bolsillo. Un comando drop lo pone en el suelo, en una caja o en una ubicación, lo que significa que la física, los temporizadores de desaparición y las reglas de colisión pueden afectarlo. En un servidor concurrido, un objeto que cae fuera de una zona segura puede ser recogido por otra persona antes de que llegues.
-
-Los informes de la comunidad señalan sistemáticamente una cosa: si tu comando drop parece no hacer nada, comprueba si el objeto atravesó el mundo o fue aspirado al instante por un mod de auto-loot.
-
-## Usar el comando drop para la progresión
-
-La progresión es donde el comando drop se gana su lugar. Las distintas etapas de un juego crean distintos problemas de inventario, y el comando resuelve cada uno de forma diferente.
-
-| Etapa de progresión | Problema típico | Cómo ayuda el comando drop |
+| Característica anunciada | Lo que implica para el juego | Lo que no está documentado |
 |---|---|---|
-| Inicio del juego | Inventario pequeño, pocas opciones de almacenamiento | Suelta basura en vez de volver caminando al pueblo |
-| Mitad del juego | El crafteo exige materiales en grandes cantidades | Prepara pilas grandes para una mesa de crafteo |
-| Final del juego | Equipamiento de endgame completo, sin ranuras libres | Cambia de equipo sin hacer un viaje completo al alijo |
-| Post-juego | Probar builds y optimización | Genera objetos de prueba para comparar estadísticas |
+| Pilotar cualquier unidad bajo tu mando | Puedes cambiar de rol a mitad de batalla en lugar de estar atado a un solo chasis | Qué unidades están disponibles en cada momento |
+| Escala de solo, escuadrón o ejército | La estructura de la partida varía desde escaramuza hasta gran enfrentamiento | Cómo se selecciona o se limita la escala |
+| Escombros y restos destructibles | El terreno y la cobertura cambian a medida que avanza el combate | Si los restos bloquean el movimiento o la línea de fuego |
+| Pilotos personalizables y con niveles | Existe progresión persistente a nivel de piloto | Tasas de XP, límites de nivel o árboles de habilidades |
+| Veteranos o novatos prescindibles | La composición del escuadrón es un compromiso deliberado | Costes de reclutamiento o bonificaciones por veterania |
 
-### El contexto del mapa galáctico
+## La idea central: cualquier unidad bajo tu mando
 
-En simuladores espaciales, juegos de estrategia 4X y otros títulos construidos alrededor de un mapa galáctico, el comando drop suele vivir en la misma consola que los comandos de navegación. El mapa galáctico es tu vista de largo alcance —sistemas estelares, rutas, posiciones de flotas— y la consola de comandos es donde das instrucciones precisas.
+La mayoría de los juegos de mechs te meten en una cabina y te mantienen ahí. El gancho anunciado de Drop Command es que pilotas cualquier unidad bajo tu mando. En un marco de armas combinadas, eso es un cambio significativo, porque cada clase de unidad tiende a resolver un problema diferente.
 
-Algunos patrones aparecen repetidamente en juegos que combinan ambos:
+Esta parte es razonamiento general a partir de la premisa de armas combinadas, no datos medidos. Los Mechs normalmente sacrifican velocidad a cambio de durabilidad y potencia de fuego. Los Tanques suelen aportar pegada de fuego directo con límites de movilidad diferentes. Los VTOLs sugieren posicionamiento vertical y alcanzar objetivos que las unidades terrestres no pueden abordar fácilmente. El Blindaje de Batalla implica unidades pequeñas y ágiles a escala de infantería que pueden ocupar espacios que las máquinas más grandes no pueden.
 
-- El comando drop actúa sobre tu **ubicación actual** a menos que especifiques un sistema o punto de ruta.
-- Los juegos basados en flotas suelen interpretar un drop como **transferencia de carga** en lugar de un objeto físico que cae.
-- La planificación de rutas y los drops de objetos comparten el mismo **argumento de coordenadas o nombre de sistema**, así que un error tipográfico puede enviar suministros al sistema estelar equivocado.
+Si el juego realmente te permite alternar entre estos roles, tu toma de decisiones sube un nivel. En lugar de preguntarte "cómo gano este combate con mi mech", te preguntas "cuál de mis unidades es la herramienta adecuada para este momento exacto". Esa es una pregunta más sana, y recompensa a los jugadores que leen el campo de batalla en lugar de a los que dominan una sola configuración.
 
-Si estás jugando a un juego con mapa galáctico, trata el comando drop como cualquier otra instrucción de navegación: confirma el sistema objetivo antes de pulsar enter. Deshacer una entrega de carga mal dirigida suele ser mucho más caro que escribir un argumento extra.
+## Leer un campo de batalla en evolución
 
-### Un flujo de trabajo seguro paso a paso
+La descripción oficial destaca un campo de batalla en evolución con escombros y restos de unidades totalmente destructibles. En la práctica, esa frase sugiere dos cosas para las que conviene prepararse.
 
-1. **Abre la consola** y lee la cadena de versión. La sintaxis de los comandos puede cambiar entre parches.
-2. **Escribe el comando sin argumentos** para ver el formato esperado.
-3. **Prueba con una sola unidad** de un objeto barato y común.
-4. **Verifica el resultado**: revisa el suelo, la caja o el inventario objetivo.
-5. **Aumenta la escala** solo después de que el drop de prueba caiga donde esperas.
-6. **Registra cualquier comportamiento extraño** para poder reportarlo o evitar repetirlo.
+Primero, la cobertura no es permanente. Las posiciones que son fuertes al principio pueden quedar expuestas después. Segundo, el campo de batalla acumula los resultados de los combates anteriores. Si los restos permanecen, un pasillo que estaba abierto al inicio puede quedar obstruido, o un acceso antes peligroso puede quedar protegido. La página de la tienda no confirma si los escombros bloquean el movimiento, la línea de visión o ambas cosas, así que pruébalo deliberadamente en una partida de bajo riesgo antes de construir un plan en torno a ello.
 
-| Paso | Acción | Por qué importa |
-|---|---|---|
-| 1 | Leer la cadena de versión | La sintaxis cambia entre actualizaciones |
-| 2 | Ejecutar un comando sin argumentos | Revela los argumentos requeridos |
-| 3 | Soltar un objeto barato | Limita el coste de un error |
-| 4 | Confirmar la colocación | La física y el auto-loot pueden interferir |
-| 5 | Escalar a la cantidad completa | Evita la pérdida masiva de objetos |
-| 6 | Anotar comportamientos raros | Crea tus propias notas de referencia |
+El hábito práctico aquí es sencillo: relee el mapa a intervalos en lugar de comprometerte con un plan formado en el primer minuto. Los juegos que anuncian entornos destructibles suelen castigar a los jugadores que tratan el terreno como un decorado estático.
 
-## Errores comunes con el comando drop y sus soluciones
+## Veteranos, novatos y construcción de escuadrones
 
-La mayoría de los fallos se reducen a un puñado de causas. Aquí tienes una tabla rápida de solución de problemas basada en la experiencia común de los jugadores.
+PillBugGames anuncia dos filosofías opuestas de escuadrón: formar escuadrones de veteranos o lanzarte contra los oponentes con novatos. Ese planteamiento es honesto sobre el compromiso sin dar cifras.
 
-| Síntoma | Causa probable | Solución |
-|---|---|---|
-| "Comando desconocido" | Palabra de acción incorrecta o consola desactivada | Comprueba si los trucos o la consola de desarrollo están activados |
-| "Objeto desconocido" | ID mal escrito o espacio de nombres incorrecto | Copia el ID de la lista de objetos del juego |
-| El comando se ejecuta, pero no aparece nada | El objeto cayó fuera de los límites o fue recogido automáticamente | Muévete a suelo sólido; desactiva el auto-loot |
-| Solo cae un objeto | Argumento de cantidad ignorado o limitado | Comprueba el límite por comando |
-| Funciona en un jugador, pero no en un servidor | Los permisos del servidor bloquean el comando | Pregunta a un administrador o revisa tu rango |
-| El objeto cae en el lugar equivocado | Argumento de objetivo omitido o mal escrito | Especifica el objetivo explícitamente |
+Aquí se aplica el razonamiento general. Los veteranos implican tiempo o recursos invertidos por unidad, así que perder uno duele más. Los novatos son baratos en el sentido de que perderlos cuesta menos, pero presumiblemente son menos eficaces individualmente. Un escuadrón de veteranos recompensa el posicionamiento cuidadoso y la preservación. Una avalancha de novatos recompensa la velocidad y aceptar pérdidas como coste de la presión.
 
-Dos hábitos previenen casi todos estos problemas. Primero, **prueba siempre con cantidad uno**. Segundo, **nunca ejecutes un comando drop con el inventario lleno** en un juego que empuja los objetos sobrantes al mundo: puedes acabar con una pila de botín y varios temporizadores de desaparición corriendo a la vez.
+Lo que no está documentado es cómo se gana la veterania, si sobrevive a una misión o cuál es la brecha de rendimiento real. Las guías de la comunidad pueden ofrecer observaciones, pero trátalas como informes de terceros y no como documentación del desarrollador. La forma fiable de aprender esto es probar ambos enfoques tú mismo y observar los resultados.
 
-Una nota más para multijugador: un comando drop no es privado. Todo lo que coloques en el mundo es visible y accesible para otros jugadores, a menos que el servidor tenga protecciones. En servidores públicos, usa un comando give para objetos personales y reserva el comando drop para preparar escenas y compartir.
+## Personalización y progresión del piloto
+
+En la descripción aparecen dos sistemas de progresión separados: pilotos personalizables que pueden subir de nivel, y Mechs, Tanques, VTOLs y Blindaje de Batalla personalizables. Mantenerlos distintos importa a la hora de planificar.
+
+La progresión del piloto probablemente sigue al piloto entre distintas unidades, lo que tendría sentido dado que puedes pilotar cualquier unidad bajo tu mando. La personalización de unidades, en cambio, va ligada a la máquina. Si esa lectura es correcta, un piloto con nivel más una máquina configurada es la verdadera unidad de poder, no una u otra por separado.
+
+Nada de esto está confirmado con cifras. No hay lista de habilidades publicada, ni desglose de atributos, ni indicación de cómo se desbloquean las opciones de personalización. No confíes en ninguna fuente que presente eso como un hecho a menos que sea el propio desarrollador quien lo diga.
+
+## Cómo verificar cualquier cosa no documentada
+
+Como la página oficial omite estadísticas y costes, tus mejores herramientas son el propio juego y los canales del desarrollador.
+
+- Carga una partida de bajo riesgo y prueba una variable cada vez: si los restos bloquean un disparo, si un VTOL alcanza una posición que un tanque no puede, si un escuadrón de novatos se derrumba bajo un fuego que los veteranos sobreviven.
+- Revisa la interfaz del juego en busca de tooltips. Los juegos de este género suelen mostrar información de las unidades ahí incluso cuando la página de la tienda no lo hace.
+- Vuelve a leer la [ficha de Steam](https://store.steampowered.com/app/1944880/) después de los parches, ya que las características anunciadas pueden cambiar.
+- Trata las wikis y vídeos de la comunidad como observación secundaria. Son útiles para ideas, no son autoritativos para cifras.
 
 ## Preguntas frecuentes
 
-**¿Todos los juegos tienen un comando drop?**
-No. Muchos juegos solo exponen la generación de objetos mediante una consola de desarrollador, y algunos la desactivan por completo en el juego normal. Si no encuentras un comando drop, busca un equivalente como give, spawn o un menú de trucos: la función suele ser la misma aunque el nombre cambie.
+**¿Drop Command es lo mismo que la unidad del mod mental-omega?**
+No. Drop Command aquí se refiere al juego de Steam de PillBugGames, app 1944880. Cualquier otro uso del nombre no tiene relación.
 
-**¿Por qué mi comando drop funciona en un jugador pero no en línea?**
-Los servidores suelen restringir los comandos según los permisos. Tu partida local te da control total, mientras que un servidor multijugador comprueba tu rango, la configuración de trucos del mundo o la lista blanca de un mod antes de aceptar la línea.
+**¿Cuándo se lanzó?**
+La ficha oficial indica el 28 de septiembre de 2026.
 
-**¿Puede un comando drop romper mi progresión?**
-Puede hacerlo si lo usas para saltarte contenido que de verdad querías jugar. Generar materiales de final del juego acorta los bucles de crafteo, economía y exploración. Úsalo para recuperación y pruebas, no como sustituto del propio juego.
+**¿Hay estadísticas de unidades o costes de construcción publicados?**
+No. La página de la tienda no publica estadísticas de unidades, tablas de daño, costes de construcción, árboles tecnológicos ni listas de facciones.
 
-**¿Cómo uso un comando drop en una pantalla de mapa galáctico?**
-Abre la consola mientras el mapa está activo y luego indica tu sistema objetivo o punto de ruta como argumento. En la mayoría de los juegos, el comando usa tu ubicación actual por defecto si dejas el objetivo en blanco, que es como la carga termina en el lugar equivocado. Confirma siempre el destino antes de pulsar enter.
+**¿Puedo pilotar cualquier unidad?**
+El desarrollador anuncia que puedes pilotar cualquier unidad bajo tu mando. Qué unidades existen y cuándo están disponibles no está documentado.
 
-Dominar el comando drop tiene menos que ver con memorizar códigos y más con entender el patrón: acción, objeto, cantidad, objetivo. Cuando eso haga clic, podrás mover objetos con confianza en casi cualquier juego, incluidos aquellos en los que el mapa es una galaxia y la bodega de carga se mide en toneladas.
+**¿El juego tiene un sistema de códigos?**
+Nada en la página oficial describe uno. Si ves códigos circulando, verifícalos antes de confiar en ellos.
+
+**¿Estos consejos garantizan el éxito?**
+No. Son razonamientos basados en el diseño anunciado, no datos medidos. Juega, observa y ajusta.

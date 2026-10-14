@@ -1,115 +1,86 @@
 export const metadata = {
-  title: "Drop Command Economy Explained: How Loot Spawning Shapes Game Progression",
-  description: "Learn how the drop command works, why it can flatten or fix a game's progression curve, and how to use loot-spawning commands without wrecking your save.",
+  title: "Drop Command: A Practical Guide to Mech Combined-Arms Combat",
+  description: "What Drop Command actually advertises, how its combined-arms premise shapes play, and how to verify details the Steam page leaves undocumented.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-Every game with a console has a rite of passage: typing the drop command for the first time and watching an item materialize out of thin air. It feels like magic — and it can also undo hundreds of hours of careful progression design in a single afternoon. That is exactly why the drop command economy deserves more scrutiny than the average cheat sheet gives it. This guide covers what drop commands actually do, how they interact with loot tables and difficulty pacing, and how to use them in a way that supports progression instead of quietly destroying it.
+Drop Command is a mech combat game about scale. Its official Steam listing describes combined-arms battles where you pilot any unit under your command, starting from small skirmishes and escalating to large engagements. You can drop into combat alone, lead a squad, or command an army. The battlefield evolves as debris and wreckage accumulate, pilots are customisable and can level up, and you can field elite veteran squads or rush opponents with disposable rookies. Mechs, Tanks, VTOLs and Battle Armour can all be personalised.
 
-## What Exactly Is a Drop Command?
+That is the advertised promise. What follows separates what the store page confirms from what it does not, then offers practical reasoning about how to approach the game given a combined-arms premise. You can check the official page at https://store.steampowered.com/app/1944880/ for the current description before buying.
 
-A drop command is an instruction typed into a developer console, chat window, or admin panel that places an item into the world or directly into a player's inventory. The exact syntax varies wildly from title to title, but the underlying function never changes: it bypasses the normal acquisition loop of exploration, combat, crafting, or trading.
+## What the official description confirms
 
-In single-player sandbox games, these commands are usually framed as a creative tool. On multiplayer servers and private MMO realms, they are administrative instruments. In bot-driven community economies, a drop command may even be a public feature that lets moderators hand out currency or collectibles during live events.
+The Steam appdetails entry for app 1944880 lists PillBugGames as developer and gives a release date of 28 September 2026. The short description is the only substantial source of feature information, and it is worth reading closely because it makes a specific structural claim: you pilot any unit under your command.
 
-Because the same words describe so many different tools, it helps to separate them by function rather than by game.
+That phrase matters. It implies you are not locked to a single chassis or a single role. A commander who can take the controls of a VTOL, a Tank or Battle Armour is being invited to switch perspective as the battle demands. Combined arms, in this framing, is not just a unit roster — it is the ability to personally occupy different parts of it.
 
-| Command category | What it does | Typical use case |
+The description also confirms three progression-adjacent systems:
+
+- Pilots are customisable and can be levelled.
+- Squads can be built from veterans or filled with rookies.
+- Unit classes — Mech, Tank, VTOL, Battle Armour — support personalisation.
+
+None of those statements include numbers. There are no published unit statistics, damage tables, build costs or tech trees on the store page.
+
+## How the combined-arms premise shapes decisions
+
+Because the official material gives no stats, any tactical advice has to be framed as reasoning from the premise rather than measured fact. Still, the premise is informative.
+
+If the player can pilot any unit under their command, then a useful mental model is role substitution. In a combined-arms battle, different units presumably answer different problems: something breaks armour, something controls airspace, something holds ground or absorbs fire. When you are losing, the question is often whether the unit you are personally piloting is the one the fight actually needs right now. Being able to switch means the correct play may be to stop flying the thing you enjoy and take the thing the situation requires.
+
+That reasoning suggests a habit rather than a build order: before an engagement, ask what the enemy composition demands, and confirm which of your available units matches. The store page does not document how switching works in practice, whether it is instantaneous, whether it costs anything, or whether it is limited to units you deployed. Those are things to test directly in game.
+
+| Advertised feature | What it implies for play | What is undocumented |
 |---|---|---|
-| Spawn / give | Adds an item straight to inventory | Testing, replacing lost gear |
-| Drop-at-location | Spawns a pickup entity in the world | Events, loot showers, cinematics |
-| Loot-table roll | Runs a weighted random table | Randomized rewards, boss drops |
-| Currency grant | Adds coins, gold, or tokens | Economy testing, compensation |
-| Clear / remove | Deletes items or entities | Cleanup after a mistake |
+| Pilot any unit under your command | Flexibility; you are not role-locked | Switching rules, timing, restrictions |
+| Squad or army command | Force composition matters at two scales | Squad sizes, command limits |
+| Elite squads vs disposable rookies | A trade-off between investment and attrition | XP curves, casualty rules |
+| Evolving battlefield with debris and wreckage | Terrain changes as a fight progresses | Whether wreckage blocks, shields or is destructible |
+| Personalisable Mechs, Tanks, VTOLs, Battle Armour | Class-level customisation | Slots, parts, costs, stats |
 
-The distinction matters for progression because each category applies a different kind of pressure. Granting a single item changes one player's inventory. Running a loot table a hundred times in a public square changes the entire server's perception of what "rare" means.
+## Veterans, rookies, and the attrition question
 
-## Why the Drop Command Economy Matters for Progression
+The description presents a deliberate contrast: build squads of veterans, or rush opponents with rookies. This is a real strategic tension in most games that offer it, and the underlying logic does not require published numbers.
 
-Progression systems run on a simple bargain: time and skill are exchanged for power. A drop command breaks that bargain by removing the cost side of the equation while leaving the reward untouched. The item still exists, but the meaning attached to it changes.
+Veterans represent accumulated investment. If a levelled pilot is lost, the cost is not just the unit but the time spent improving them. Rookies are cheap in that sense — losing one presumably stings less — but they may perform worse in a fight. The practical question is where you can afford to spend lives. A defensive holding action may be a reasonable place to absorb losses with inexpensive units, while a decisive assault may be where you want your experienced pilots.
 
-Community reports from server administrators consistently describe the same pattern. When rare items are handed out freely, players do not simply enjoy them more — they stop caring about them, and the long-term retention that the progression curve was built to create starts to erode.
+The store page does not state experience gain rates, whether pilots can die permanently, or whether rookies can be promoted into veterans. Third-party guides may speculate about this, but they are secondary observations and should be treated as such. Verify in game.
 
-| Scale of use | Effect on item supply | Player reaction | Progression outcome |
-|---|---|---|---|
-| One-off, single item | Negligible | Curiosity, relief | Unchanged |
-| Routine self-service | Slow inflation | Convenience | Curve flattens |
-| Server-wide drops | Mass supply | Hype, then boredom | Endgame reached early |
-| Unrestricted admin use | Total collapse | Distrust, attrition | Economy abandoned |
+## Personalisation across four unit classes
 
-The important insight is that a drop command does not just add an item to a world — it adds information. Once players learn that a legendary weapon can be summoned on request, they reprice every hour they would have spent earning it. Supply is only half the story; expectations are the other half.
+The advertised classes are Mech, Tank, VTOL and Battle Armour. The description says each can be personalised, which is broader than customising a single mech. That scope is unusual and worth noting, because it implies the game expects you to care about more than one platform.
 
-This is also why the drop command economy behaves so differently in single-player than in multiplayer. A solo player who spawns a full set of endgame armor has only changed their own experience. An administrator who does the same on a shared realm has changed everyone's.
+A practical approach is to treat each class as a tool with a distinct relationship to terrain and to other units. VTOLs presumably care about airspace and vertical position; Tanks about ground and armour; Battle Armour about scale and possibly infantry-like roles; Mechs as the flexible centrepiece. Because no stats are published, the honest advice is to learn each class by using it in low-stakes fights first, noting what it survives and what it cannot, and building your own reference rather than trusting a tier list.
 
-## Drop Command vs. Natural Loot: A Side-by-Side Comparison
+If you want official answers about customisation options, the Steam page is the correct starting point: https://store.steampowered.com/app/1944880/
 
-Most healthy games use both systems, but for very different purposes. The trick is knowing which one should be driving your progression at any given moment.
+## What is not documented, and how to check
 
-| Factor | Drop command | Natural loot |
-|---|---|---|
-| Time investment | Seconds | Minutes to hours |
-| Randomness | None, unless a table is used | High |
-| Player agency | Absolute | Limited by drop rates |
-| Risk of inflation | Very high if unrestricted | Self-limiting |
-| Best suited for | Testing, recovery, events | Core progression loop |
-| Failure mode | Trivializes content | Frustration, bad luck streaks |
+This is the most important section for anyone researching the game. The official listing does not publish:
 
-If you want a concrete sense of how deep command syntax can go, [Minecraft's documented command reference on minecraft.wiki](https://minecraft.wiki/w/Commands) shows how spawn, loot, and item commands are structured — and how quickly a simple give instruction can turn into a full loot-table system.
+- Unit statistics or damage values.
+- Build costs, resource systems or economy rules.
+- A tech tree, faction list or progression map.
+- Any code system, hotkeys or console commands.
 
-A useful rule of thumb: natural loot should define what players *want*, and the drop command should only define what players *can* when something has gone wrong. That framing keeps the command in a support role instead of letting it become the primary content pipeline.
+If you see a page claiming exact numbers, treat it as unverified unless it is the developer speaking. Patch notes and post-launch changes are also not reflected in a static store description, so the listing may lag behind the live build.
 
-## How to Use a Drop Command Without Breaking Your Game
-
-Whether you are testing a build in a sandbox world or running a live server, a few habits separate responsible command use from chaos.
-
-| Step | Action | Why it matters |
-|---|---|---|
-| 1 | Back up the save or database | Every command becomes reversible |
-| 2 | Set an item budget for the session | Caps inflation before it starts |
-| 3 | Log every command issued | Creates accountability and a paper trail |
-| 4 | Test in an isolated world first | Protects the live economy |
-| 5 | Reset or revert when finished | Returns the game to its intended state |
-
-Beyond the mechanics, a few principles apply almost universally:
-
-- **Prefer targeted drops over global ones.** One item to one player is a fix; a hundred items to everyone is a policy change.
-- **Use loot tables when randomness matters.** Rolling a weighted table preserves some of the tension that a direct give command removes.
-- **Announce compensation openly.** If you are replacing lost gear, say so — players forgive generosity far more readily than they forgive secrecy.
-- **Never drop currency you cannot sink.** Anything added to an economy needs a way to be removed again, or prices will drift upward permanently.
-- **Watch the auction house or trading channel.** Community reports suggest that inflation often shows up in player-to-player prices weeks before it shows up in official stats.
-
-For developers, the drop command is also an underrated balancing tool. Spawning a weapon and testing it against early-game enemies tells you in minutes whether its damage curve belongs in the first hour or the twentieth. That kind of fast iteration is difficult to replicate by playing normally.
-
-## Common Mistakes, Community Reports, and Fixes
-
-Player experience across sandbox, survival, and private-server communities points to a handful of recurring errors. Most of them are not about the command itself — they are about timing and transparency.
-
-- **Testing on the live save.** A dropped item that never gets removed becomes a permanent fixture of the economy.
-- **Silent compensation.** Handing out replacements without explanation fuels rumors of favoritism.
-- **Overusing the drop command in tutorials.** Players who learn the game through spawned gear never learn the acquisition loop.
-- **Ignoring achievement flags.** In many titles, using console commands disables achievements or marks the save, which surprises players later.
-- **Forgetting that drops persist.** Items spawned in a world stay there, and a stack of high-value items left in a shared chest can distort prices for months.
-
-| Mistake | Immediate symptom | Practical fix |
-|---|---|---|
-| No backup before testing | Irreversible damage | Copy the save first |
-| Unlimited self-service drops | Trivialized difficulty | Require a reason and a log entry |
-| Event drops with no cleanup | Permanent surplus | Schedule a removal window |
-| Undocumented admin drops | Community suspicion | Publish a short changelog |
-
-The through-line is simple: the drop command is a scalpel, not a bulldozer. Used deliberately, it repairs progression. Used casually, it removes the reason progression existed in the first place.
+To verify anything specific, the reliable methods are: read the official store page and any developer posts linked from it, check the Steam community hub and patch notes, and test the mechanic yourself in game. Because the release date is 28 September 2026, information may still be filling in, and community findings can change quickly.
 
 ## FAQ
 
-**Is using a drop command considered cheating?**
-That depends entirely on context. In a single-player sandbox, it is a built-in feature and often the fastest way to test builds. On a multiplayer server, using a drop command without permission is almost always a violation of server rules and can lead to a ban.
+**Is Drop Command the mental-omega mod unit?**
+No. Drop Command here refers to the Steam game by PillBugGames, app 1944880. Unrelated search results that reuse the words should be discarded.
 
-**Will a drop command disable achievements or trophies?**
-In many games, yes — console commands and cheat flags are tracked, and activating them can lock achievements for that save. Always check your game's documentation before testing on a profile you care about.
+**Does the game publish unit stats or build costs?**
+Not on the Steam store page. No statistics, prices, damage tables or tech trees are documented there as of the official appdetails retrieved 2026-10-14.
 
-**Can the drop command recover an item I lost to a bug?**
-Frequently, yes. This is one of the most legitimate uses of the drop command: replacing gear lost to a crash, a rollback, or a glitch. Back up your save first so the recovery itself does not create a new problem.
+**Can I play a single unit type the whole time?**
+The description says you pilot any unit under your command. Whether that means switching freely or choosing a focus is not documented; test it in game.
 
-**How do I keep a drop command economy balanced on a shared server?**
-Treat every drop as a withdrawal from a shared bank. Log it, justify it, limit its scale, and give the economy a way to absorb the new supply through sinks like repairs, taxes, or consumables.
+**Are rookies strictly worse than veterans?**
+The description frames them as disposable, which implies a trade-off rather than a strict ranking. The actual performance gap is not published.
+
+**Where should I start?**
+Read the official page at https://store.steampowered.com/app/1944880/ , then treat any guide's specific numbers as secondary until you can confirm them in game.

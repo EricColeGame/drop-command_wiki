@@ -1,128 +1,100 @@
 export const metadata = {
-  title: "Drop-Befehl-Technologie erklärt: Wie Loot-Spawn-Befehle funktionieren",
-  description: "Erfahre, wie Drop-Befehl-Technologie in Spielen funktioniert: Syntaxgrundlagen, Loot-Tabellen, Berechtigungsprüfungen und sichere Wege, Items zum Testen oder für Admin-Arbeiten zu spawnen.",
+  title: "Drop Command: Mechs, kombinierte Waffen und Schlachtfeldkommando",
+  description: "Drop Command ist das groß angelegte Mech-Combined-Arms-Spiel von PillBugGames. Hier erfährst du, was die Steam-Seite bestätigt, was sie offen lässt und wie du es angehst.",
   category: "progression",
-  date: "2026-10-04",
-}
+  date: "2026-10-14",
+};
 
-## Was genau ist ein Drop-Befehl?
+Drop Command ist ein Steam-Spiel, das auf einem einfachen, aber ehrgeizigen Pitch aufbaut: Mech-Kampf in großem Maßstab, bei dem du als einzelner Pilot, als Teil eines Trupps oder als Kommandant einer ganzen Armee kämpfst. Es wird von PillBugGames entwickelt und erschien auf Steam als App 1944880 mit einem Veröffentlichungsdatum vom 28. September 2026, laut offiziellem Store-Eintrag. Du findest diese Seite unter [Drop Command auf Steam](https://store.steampowered.com/app/1944880/).
 
-Nur wenige Werkzeuge verändern eine Spielsession schneller als ein Drop-Befehl. Gib eine Zeile in eine Konsole oder ein Chatfenster ein, und eine Waffe, ein Stapel Ressourcen oder ein seltener Quest-Gegenstand erscheint genau dort, wo du ihn brauchst. Diese Art der Sofortlieferung ist der Grund, warum Drop-Befehl-Technologie im Zentrum von Spieltests, Serveradministration und benutzerdefinierten Spielmodi steht – und warum es eine Rolle spielt, ob du einen Community-Server betreibst, Mods baust oder einfach einen Gegenstand wiederherstellen möchtest, den du durch einen Bug verloren hast.
+Wo es zwischen den beiden Polen einzuordnen ist, ist der interessante Teil. Es ist ein Combined-Arms-Spiel, kein Duell-Simulator und kein rein abstraktes Strategiespiel. Du kannst jede Einheit unter deinem Kommando steuern, was bedeutet, dass die Top-down- und die Cockpit-Ansicht zwei Seiten derselben Schlacht sein sollen, nicht getrennte Modi.
 
-Ein Drop-Befehl ist eine Anweisung, die dem Spiel sagt, es soll einen Gegenstand, eine Entität oder eine Ressource erzeugen und in die Welt oder direkt ins Inventar eines Spielers legen. Er umgeht die normale Fortschrittsschleife vollständig: kein Farmen, kein Crafting, kein Loot-Wurf. Diese Abkürzung ist der ganze Sinn – und auch der Grund, warum diese Befehle üblicherweise hinter Berechtigungen gesperrt sind.
+## Was die offizielle Store-Seite tatsächlich bestätigt
 
-Den Unterschied zwischen dem Spawnen eines Gegenstands und dem Fallenlassen eines Gegenstands zu verstehen, ist der erste Schritt zum verantwortungsvollen Umgang mit diesem Werkzeug. Der zweite Schritt ist zu wissen, was auf dem Server passiert, nachdem du die Eingabetaste drückst.
+Die appdetails-Daten von Steam für App 1944880 liefern eine kurze, aber konkrete Reihe von Aussagen. PillBugGames ist der Entwickler. Das Veröffentlichungsdatum ist der 28. September 2026. Die Beschreibung bewirbt:
 
-## Wie Drop-Befehl-Technologie unter der Haube funktioniert
+- Mech-Kampf in großem Maßstab.
+- Combined-Arms-Kampf, bei dem du jede Einheit unter deinem Kommando steuerst.
+- Gefechte von kleinen Scharmützeln bis hin zu epischen Schlachten.
+- Allein in den Kampf abspringen, einen Trupp anführen oder eine Armee befehligen.
+- Ein sich entwickelndes Schlachtfeld mit vollständig zerstörbaren Trümmern und Einheitenwracks.
+- Anpassbare und levelbare Piloten.
+- Trupps aus Elite-Veteranen oder entbehrlichen Neulingen.
+- Personalisierbare Mechs, Panzer, VTOLs und Battle Armour.
 
-Die meisten Engines verarbeiten einen Drop-Befehl über dieselbe allgemeine Pipeline, auch wenn die Syntax von einem Spiel zum nächsten völlig unterschiedlich aussieht. Diese Pipeline zu erkennen, hilft dir, Fehler zu debuggen, statt auf Tippfehler zu raten.
+Das ist die gesamte Identität, die der Entwickler veröffentlicht hat. Bemerkenswert abwesend auf der Store-Seite: Einheitenwerte, SchadensTabellen, Baukosten, TechTrees, Fraktionslisten und jegliche Art von In-Game-Code- oder Cheat-System. Wenn ein Video behauptet, ein „Drop Command Code-System" oder eine vollständige SchadensTabelle zu zeigen, wird dieser Inhalt nicht von der offiziellen Seite gestützt, und du solltest ihn als unbestätigt behandeln.
 
-| Phase | Was passiert | Warum es wichtig ist |
-|---|---|---|
-| 1. Eingabeerfassung | Konsole, Chatzeile oder Skriptparser liest deinen Text | Formatierungsfehler scheitern hier, bevor etwas spawnt |
-| 2. Berechtigungsprüfung | Der Server verifiziert deine Rolle, dein Flag oder deinen Operatorstatus | Erklärt „unbekannter Befehl“ und stille Fehlschläge |
-| 3. Registry-Abfrage | Die Engine gleicht deinen Item-Namen oder deine ID mit ihrer internen Liste ab | Falsche IDs erzeugen Fehler oder Platzhalter-Items |
-| 4. Argumentanalyse | Menge, Zielspieler und Koordinaten werden gelesen | Fehlende Argumente führen oft zu seltsamen Standardwerten |
-| 5. Spawn-Ausführung | Das Item oder die Entität wird serverseitig erzeugt | Nur clientseitige Spawns verschwinden beim Neuverbinden |
-| 6. Replikation | Das neue Objekt wird an nahe Clients übertragen | Desync verursacht „Geister“-Items, die niemand aufheben kann |
-| 7. Protokollierung | Viele Server schreiben die Aktion in eine Logdatei | Unverzichtbar für Audits auf geteilten Servern |
+## Die vier Einheitenklassen und was „jede Einheit" impliziert
 
-### Die Anatomie eines typischen Befehls
+Der Satz „steuere jede Einheit unter deinem Kommando" ist das Design-Rückgrat. Die Store-Beschreibung nennt vier Chassis-Familien: Mechs, Panzer, VTOLs und Battle Armour. Sie sagt nicht, wie viele Varianten pro Familie existieren, wie sie freigeschaltet werden oder ob jede Einheit von Anfang an steuerbar ist.
 
-Während die genaue Formulierung je nach Titel variiert, teilen die meisten Drop-Befehle dieselben Bausteine. Die folgende Tabelle zeigt das allgemeine Muster und nicht die Syntax eines einzelnen Spiels.
+Was wir ableiten können, ist die Rollentrennung. In Combined-Arms-Spielen verläuft der Standard-Kompromiss üblicherweise entlang von drei Achsen: Geschwindigkeit und Mobilität, Robustheit und Reichweite oder Direktheit der Feuerkraft. VTOLs neigen dazu, die dritte Dimension zu kontrollieren und am schnellsten zu reagieren. Panzer tauschen üblicherweise Mobilität gegen Durchhaltevermögen. Battle Armour sitzt am kleinen, günstigen, schwer zu treffenden Ende. Mechs sitzen im mittleren bis schweren Bereich und neigen dazu, am modularsten zu sein.
 
-| Komponente | Zweck | Beispielmuster |
-|---|---|---|
-| Aktionstoken | Benennt die Operation | give, spawn, drop, loot |
-| Item-Bezeichner | Verweist auf das Objekt | Item-Name oder numerische ID |
-| Menge | Legt fest, wie viele | Anzahl- oder Mengenargument |
-| Ziel | Wählt den Empfänger | Spielername oder Selektor |
-| Ort | Positioniert den Spawn | Koordinaten oder „beim Spieler“ |
-| Modifikatoren | Fügt Metadaten hinzu | Haltbarkeit, Verzauberung, Variante |
+Das ist allgemeine Genre-Überlegung, keine gemessenen Daten aus diesem Spiel. Die ehrliche Position ist, dass die Werte pro Einheit undokumentiert bleiben, bis der Entwickler oder In-Game-Tooltips sie veröffentlichen.
 
-Community-Berichte zeigen durchgängig, dass der Item-Bezeichner die häufigste Fehlerquelle ist. Namen sind häufig groß-/kleinschreibungssensibel, und viele Engines unterscheiden zwischen einer internen ID und einem Anzeigenamen.
+| Einheitenfamilie | Wahrscheinliche Schlachtfeldrolle (allgemeine Überlegung) | Was nicht dokumentiert ist |
+| --- | --- | --- |
+| Battle Armour | Späher, Flanker, günstige Abschirmung | Kosten, Freischaltreihenfolge, Loadout-Optionen |
+| Panzer | Eine Linie halten, anhaltendes Feuer | Panzerungswerte, Geschwindigkeit, Turmverhalten |
+| VTOLs | Schnelle Reaktion, vertikale Winkel, Überfälle | Flugmodell, Treibstoff, Flugabwehr-Konter |
+| Mechs | Modularer Mehrzweck-Kern | Hardpoint-Anzahl, Gewichtslimits |
 
-## Die wichtigsten Arten von Drop-Befehlen
+Wenn du die echte Antwort willst, ist die Überprüfung einfach: Starte das Spiel, öffne die Einheitenliste und lies das In-Game-Statusfenster oder den Tooltip. Alles, was dort nicht angezeigt wird, ist entweder verborgen oder noch nicht implementiert.
 
-Nicht jeder Drop-Befehl erfüllt dieselbe Aufgabe. Wenn man sie nach Funktion gruppiert, ist es viel einfacher, den richtigen auszuwählen und vorherzusagen, wie er den Fortschritt beeinflusst.
+## Warum zerstörbare Trümmer deine Denkweise ändern sollten
 
-| Typ | Was er bewirkt | Typischer Anwendungsfall |
-|---|---|---|
-| Inventarvergabe | Fügt Items direkt in die Tasche eines Spielers ein | Verlorene Ausrüstung ersetzen, Builds testen |
-| Welt-Spawn | Platziert ein Item an Koordinaten auf dem Boden | Kartenbau, Puzzle-Einrichtung |
-| Loot-Tabellen-Wurf | Führt eine gewichtete Tabelle aus und lässt das Ergebnis fallen | Echtes Loot ohne Farmen nachbilden |
-| Entitäts-Spawn | Erzeugt eine Kreatur oder NPC, die Loot tragen kann | Boss-Tests, Event-Vorbereitung |
-| Ressourcen-Injektion | Gewährt Währung oder Rohmaterialien | Wirtschaftstests auf privaten Servern |
-| Skriptgesteuerter Drop | Wird automatisch aus Code oder einem Trigger ausgelöst | Benutzerdefinierte Spielmodi und Mods |
+Die Store-Seite nennt das Schlachtfeld „sich entwickelnd", mit „vollständig zerstörbaren Trümmern und Einheitenwracks". Das ist eine Aussage über die Umgebung, aber sie hat taktische Konsequenzen, die es wert sind, durchdacht zu werden.
 
-Loot-Tabellen-Drops verdienen besondere Aufmerksamkeit. Statt einen einzelnen Gegenstand zu benennen, richtest du den Befehl auf eine Tabelle und lässt die Engine würfeln. Dieser Ansatz hält Testergebnisse realistisch, weil er dieselben Gewichtungen, Seltenheitsstufen und Drop-Chancen berücksichtigt, die das normale Gameplay verwendet.
+Wenn Trümmer bestehen bleiben, dann ist Deckung nicht zu Matchende fixiert. Eine Mauer, die du in Runde eins genutzt hast, kann bis Runde vier Schutt sein, und ein frischer Haufen Wracks kann neue Deckung schaffen, wo keine existierte. Zwei Gewohnheiten folgen aus dieser Prämisse:
 
-Entitäts-Spawns sind die kniffligste Kategorie. Eine Kreatur, die korrekt spawnt, kann trotzdem mit leerem Inventar erscheinen, wenn ihre Loot-Tabelle nicht angehängt ist. Deshalb überprüfen Tester üblicherweise sowohl die Entität als auch ihren Inhalt.
+1. Baue deinen Plan nicht um ein einziges Stück harter Deckung für den gesamten Kampf herum.
+2. Beobachte, wo sich Wracks ansammeln. In Spielen mit persistenten Trümmern werden Wracks oft zu einem Engpass, der Bewegung kanalisiert.
 
-## Drop-Befehl vs. verwandte Befehle: Die Namensfalle vermeiden
+Vollständig zerstörbare Umgebungen neigen auch dazu, Flächenwaffen zu belohnen und statische Verteidigung zu bestrafen. Nichts davon sind bestätigte Mechaniken; es ist das, was die beworbene Zerstörbarkeit für einen Spieler impliziert, der die Beschreibung beim Wort nimmt.
 
-Einer der verwirrendsten Aspekte der Drop-Befehl-Technologie ist, dass das Wort „Drop“ nicht überall dasselbe bedeutet. In vielen Titeln entfernt ein Drop-Befehl einen Gegenstand aus deinem eigenen Inventar und legt ihn auf den Boden. In anderen spawnt er etwas Neues. Diese zu verwechseln kostet Zeit und gelegentlich Ausrüstung.
+## Veteranen versus Neulinge: die Trupp-Design-Frage
 
-| Befehlsfamilie | Richtung | Auswirkung auf den Fortschritt |
-|---|---|---|
-| Give / grant | Ins Inventar | Überspringt Crafting und Sammeln vollständig |
-| Spawn / summon | In die Welt | Erzeugt neue Objekte oder Kreaturen |
-| Drop | Aus dem Inventar | Entfernt Items von einem Spieler, meist unwiderruflich |
-| Loot | Tabellengesteuert | Simuliert einen echten Loot-Wurf |
-| Clear / remove | Löschung | Entfernt Items, oft zum Zurücksetzen eines Tests |
+Der Store-Text bietet zwei Trupp-Philosophien: „Elite-Trupps oder entbehrliche Neulinge". Er veröffentlicht keine Veteranen-Kurve, Erfahrungswerte oder Verluststrafen.
 
-Wenn du unsicher bist, zu welcher Familie ein Befehl gehört, prüfe, ob er ein Spielerziel akzeptiert. Befehle, die Items nach außen schieben, benötigen normalerweise ein Ziel oder gehen von der eintippenden Person aus, während Befehle, die Items nach innen ziehen, fast immer eines benötigen.
+Als Design-Aussage gelesen, scheint das Spiel beide Ansätze legitim haben zu wollen. Das bedeutet üblicherweise, dass der Kompromiss eher Verlusttoleranz als reine Stärke betrifft. Ein Veteranentrupp konzentriert Fähigkeiten in wenigen Einheiten, die du nicht leicht ersetzen kannst. Ein Neulings-Schwarm verteilt Risiko, hängt aber von Zahlen und Koordination ab.
 
-## Fortschritt, Wirtschaft und Servergesundheit
+Eine praktische Einordnung, keine Erfolgsgarantie:
 
-Auf einer privaten Testwelt ist ein Drop-Befehl eine harmlose Annehmlichkeit. Auf einem Live-Server mit Handel und Spielerwirtschaft kann derselbe Befehl lautlos Monate der Balance zerstören. Items, für die man normalerweise Stunden braucht, können in Sekunden dupliziert werden, und ein aufgeblähtes Angebot treibt die Preise gegen null.
+- Anfangs, wenn du wenig zu verlieren hast, lassen dich günstige Einheiten die Karte und die Einheitenfamilien ohne große Kosten erlernen.
+- Während deine benannten Piloten Level ansammeln, wird ihr Schutz wichtiger als ihr Verbrauch.
+- Weil Piloten „anpassbar und levelbar" sind, sind Personal wahrscheinlich in irgendeiner Weise eine separate Ressource von Hardware. Ob das permanenter Tod, Verletzungen oder etwas Weicheres bedeutet, wird auf der Store-Seite nicht gesagt.
 
-Die Erfahrung von Spielern auf Community-Servern weist auf eine Handvoll Schutzmaßnahmen hin, die verhindern, dass diese Werkzeuge Schaden anrichten:
+## Anpassung: was bestätigt ist und was nicht
 
-- **Berechtigungen strikt einschränken.** Beschränke Spawn-Befehle auf Operatoren, Moderatoren oder eine dedizierte Build-Rolle.
-- **Jede Nutzung protokollieren.** Mit Zeitstempeln versehene Logs machen es möglich, verdächtige Item-Zuflüsse zurückzuverfolgen.
-- **Staging von Live trennen.** Teste neue Drop-Befehle in einer kopierten Welt, bevor du die Produktion anfasst.
-- **Vor Massenoperationen ein Backup erstellen.** Massenvergaben sind ohne Snapshot schwer rückgängig zu machen.
-- **Genehmigte Item-IDs dokumentieren.** Eine gemeinsame Referenzliste verhindert versehentliche Spawns unfertiger Inhalte.
-- **Wirtschaftsauswirkungen monatlich prüfen.** Achte auf plötzliche Überschüsse seltener Materialien.
+PillBugGames bestätigt zwei Anpassungsebenen: Piloten, die angepasst und gelevelt werden können, und Fahrzeuge, die über Mechs, Panzer, VTOLs und Battle Armour hinweg „personalisierbar" sind. Das ist die gesamte offizielle Aussage.
 
-Eine nützliche Faustregel: Wenn ein Item handelbar ist, behandle jeden Drop-Befehl, der es betrifft, als Wirtschaftsereignis, nicht als Annehmlichkeit.
+Nicht dokumentiert: welche Waffen existieren, wie viele Slots eine Einheit hat, ob es Stufen gibt oder ob Modifikationen kosmetisch, statistisch oder beides sind. Third-Party-Guides mögen das irgendwann füllen, aber sie sind sekundäre Beobachtung, keine Entwicklerdokumentation, und sollten als solche gekennzeichnet werden, wenn sie zitiert werden.
 
-| Risikostufe | Szenario | Empfohlene Kontrolle |
-|---|---|---|
-| Niedrig | Singleplayer-Tests | Keine Einschränkung nötig |
-| Mittel | Privater Freundeserver | Nur Operatoren, einfache Protokollierung |
-| Hoch | Öffentlicher Survival-Server | Rollenbasierte Berechtigungen, vollständiges Audit-Log |
-| Kritisch | Wettbewerbs- oder Wirtschaftsserver | Genehmigungsworkflow, geplante Audits |
+Um selbst zu überprüfen, nutze den In-Game-Hangar oder den Loadout-Bildschirm. Wenn dort eine Zahl erscheint, ist sie real für die Version, die du spielst. Wenn ein Wiki oder Video eine Zahl zeigt, die das Spiel nicht zeigt, behandle sie als veraltet oder falsch.
 
-## Fehlerbehebung bei einem Drop-Befehl, der nicht ausgelöst wird
+## Einen Schlachtplan aus der Prämisse bauen
 
-Wenn ein Drop-Befehl nichts tut, ist die Ursache normalerweise eines von wenigen vorhersehbaren Problemen. Die folgende Tabelle ordnet häufige Symptome wahrscheinlichen Ursachen und Lösungen zu.
+Die beworbenen Teile zu kombinieren ergibt ein vernünftiges mentales Modell, wieder als allgemeine Überlegung statt getesteter Strategie:
 
-| Symptom | Wahrscheinliche Ursache | Lösung |
-|---|---|---|
-| „Unbekannter Befehl“ | Befehl nicht aktiviert oder falsch geschrieben | Prüfe, ob der Befehl existiert und die Groß-/Kleinschreibung stimmt |
-| Stiller Fehlschlag | Fehlende Berechtigung | Prüfe deine Rolle, dein Flag oder deinen Operatorstatus |
-| Platzhalter-Item erscheint | Ungültige oder veraltete Item-ID | Bestätige die ID anhand der aktuellen Dokumentation |
-| Item spawnt, verschwindet aber | Nur clientseitiger Spawn | Führe den Befehl über die Serverkonsole aus |
-| Falsche Menge | Argumentreihenfolge oder Standardwert | Prüfe die Argumentreihenfolge erneut |
-| Drop kann nicht aufgehoben werden | Eigentums- oder Aufnahme-Verzögerungsregeln | Passe Eigentum an oder warte die Verzögerung ab |
-| Funktioniert allein, scheitert im Skript | Quoting- oder Escaping-Fehler | Umschließe Strings korrekt und teste Zeile für Zeile |
+- Spring allein ab, wenn du die Handhabung einer Einheitenfamilie lernen willst, ohne einen Trupp zu riskieren.
+- Führe einen Trupp an, wenn du kombinierte Waffen brauchst, aber den entscheidenden Moment direkt kontrollieren willst.
+- Befehlige eine Armee, wenn das Ziel breit ist und deine Aufmerksamkeit besser für Positionierung als für Zielen aufgewendet wird.
 
-Für korrekte, versionsspezifische Syntax konsultiere immer die Dokumentation des Spiels selbst statt eines beliebigen Forumsbeitrags. Zum Beispiel ist [die Befehlsreferenz des Minecraft Wiki](https://minecraft.wiki/w/Commands) eine verlässliche Autorität für die give- und loot-Syntax dieses Titels, und sie wird von einer aktiven Bearbeitungscommunity gepflegt.
-
-Wenn ein Befehl nach Überprüfung von Berechtigungen und IDs immer noch nicht ausgeführt wird, versuche ihn in einer frischen Singleplayer-Welt. Das grenzt ein, ob das Problem im Befehl selbst oder in deiner Serverkonfiguration liegt.
+Weil du jede Einheit unter deinem Kommando steuern kannst, ist die eigentliche Fertigkeitsfrage die Wechselkosten: wie schnell du eine Einheit abgeben und direkt die Kontrolle über eine andere übernehmen kannst, wenn die Schlacht sich wendet. Diese Übergabe zu üben ist wahrscheinlich wertvoller als ein Chassis zu meistern, aber das ist eine Schlussfolgerung aus dem Design-Versprechen, keine dokumentierte Mechanik.
 
 ## FAQ
 
-**Ist ein Drop-Befehl dasselbe wie ein Cheat-Code?**
-Funktional ja – beide umgehen den normalen Fortschritt. Der Unterschied ist der Umfang. Cheat-Codes sind üblicherweise für Solospiel gedacht und können Erfolge deaktivieren, während ein Drop-Befehl oft ein administratives Werkzeug mit Berechtigungskontrollen, Protokollierung und serverseitiger Durchsetzung ist.
+**Ist Drop Command dasselbe wie die mental-omega-Mod-Einheit?**
+Nein. Dies ist das Steam-Spiel von PillBugGames, App 1944880, veröffentlicht am 28. September 2026. Die mental-omega-Einheit ist unabhängig.
 
-**Beschädigt die Verwendung eines Drop-Befehls meine Speicherdatei?**
-Selten, aber Massenoperationen bergen Risiken. Tausende Entitäten zu spawnen kann die Performance belasten, und Items zu gewähren, auf die eine Quest prüft, kann gelegentlich Fortschritts-Trigger verwirren. Erstelle zuerst ein Backup deiner Welt.
+**Listet die Store-Seite Einheitenwerte, Baukosten oder Codes auf?**
+Nein. Die offiziellen appdetails-Daten veröffentlichen keine Werte, SchadensTabellen, Baukosten, TechTrees, Fraktionslisten oder ein Code-System.
 
-**Warum funktioniert mein Drop-Befehl bei manchen Spielern, bei anderen nicht?**
-Berechtigungen sind fast immer die Antwort. Viele Server weisen Befehlszugriff nach Rolle zu, sodass ein Moderator einen anderen Befehlssatz haben kann als ein Operator. Community-Berichte weisen auch darauf hin, dass einige Server bestimmte Item-Kategorien selbst für Personal einschränken.
+**Welche Einheiten kann ich steuern?**
+Der Entwickler bewirbt Mechs, Panzer, VTOLs und Battle Armour und gibt an, dass du jede Einheit unter deinem Kommando steuern kannst.
 
-**Kann ich einen Drop-Befehl verwenden, um Loot fair nachzubilden?**
-Ja – eine Loot-Tabellen-Version des Befehls ist dafür die beste Wahl. Sie berücksichtigt dieselben Gewichtungen und Seltenheitsstufen wie normale Drops, sodass die Ergebnisse konsistent mit dem übrigen Fortschrittsdesign deines Spiels bleiben.
+**Wo sollte ich nach echten Zahlen suchen?**
+Zuerst In-Game-Tooltips und Statusfenster, dann die offizielle [Steam-Store-Seite](https://store.steampowered.com/app/1944880/) für Entwickler-Updates. Alles andere ist zweitrangig.
+
+**Kann ich solo spielen?**
+Die Beschreibung sagt, dass du allein in den Kampf abspringen kannst. Sie beschreibt keine separate Einzelspieler-Kampagnenstruktur, also ob „allein" solo innerhalb eines Scharmützels oder eine formale Kampagne bedeutet, ist nicht dokumentiert.
